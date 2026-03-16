@@ -136,11 +136,8 @@ online-retail-sales-analysis/
 This project is complete and showcases an end-to-end retail sales analysis workflow, from data cleaning and preparation to dashboard design and business insight generation.
 
 ## Future Improvements
-- Add dashboard screenshots to the repository
 - Include a data dictionary
 - Document key DAX measures
-- Add a short business recommendations section
-- Publish the report to Power BI Service
 
 ## Author
 **Angel W. Miller**  
