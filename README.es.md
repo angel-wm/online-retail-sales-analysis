@@ -135,13 +135,6 @@ online-retail-sales-analysis/
 ## Estado del Proyecto
 Este proyecto está completo y muestra un flujo de trabajo de análisis de ventas de punta a punta, desde la limpieza y preparación de datos hasta el diseño del dashboard y la generación de insights de negocio.
 
-## Mejoras Futuras
-- Añadir más capturas del dashboard al repositorio
-- Incluir un diccionario de datos
-- Documentar las medidas DAX clave
-- Agregar una sección breve de recomendaciones de negocio
-- Publicar el reporte en Power BI Service
-
 ## Autor
 **Angel W. Miller**  
 Junior Data Analyst enfocado en business intelligence, analytics y desarrollo de dashboards.
