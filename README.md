@@ -5,6 +5,14 @@ This project analyzes transactional data from a UK-based online retail business 
 
 The final output is a two-page interactive **Power BI dashboard** built on a cleaned and transformed dataset. The project combines data cleaning, modeling, DAX measures, and dashboard design to turn raw retail transactions into business-ready insights.
 
+## Dashboard Preview
+
+### Sales Overview
+![Sales Overview](dashboard/sales-overview.png)
+
+### Product & Customer Insights
+![Product & Customer Insights](dashboard/product-customer-insights.png)
+
 ## Business Questions
 This project is designed to answer questions such as:
 - How are sales evolving over time?
