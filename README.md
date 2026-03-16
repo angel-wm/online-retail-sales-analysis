@@ -135,10 +135,6 @@ online-retail-sales-analysis/
 ## Project Status
 This project is complete and showcases an end-to-end retail sales analysis workflow, from data cleaning and preparation to dashboard design and business insight generation.
 
-## Future Improvements
-- Include a data dictionary
-- Document key DAX measures
-
 ## Author
 **Angel W. Miller**  
 Junior Data Analyst focused on business intelligence, analytics, and dashboard development.
