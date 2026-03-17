@@ -141,4 +141,4 @@ Junior Data Analyst enfocado en business intelligence, analytics y desarrollo de
 
 ## Contacto
 - GitHub: [angel-wm](https://github.com/angel-wm)
-- LinkedIn: [Angel W. Miller](https://www.linkedin.com/in/angel-w-m-227451276/)
+- LinkedIn: [Angel W. Miller](https://www.linkedin.com/in/angel-w-miller/)
