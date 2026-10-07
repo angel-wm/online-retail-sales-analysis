@@ -63,7 +63,7 @@ Las cancelaciones, cantidades negativas, IDs de cliente vacíos y códigos espec
 
 El flujo documentado estandariza tipos de datos, identifica cancelaciones y devoluciones, distingue productos de vouchers de regalo y ajustes, revisa valores faltantes y prepara una tabla calendario para reportes temporales.
 
-La regla principal, `Include_In_Main_Analysis`, limita las ventas principales a líneas **Product** normales, no canceladas, con cantidad positiva y precio distinto de cero. Las devoluciones se analizan por separado. Para las clasificaciones y reglas completas, consultar el [diccionario de datos](data/data-dictionary.md#business-rules-for-calculated-columns).
+La regla principal, `Include_In_Main_Analysis`, limita las ventas principales a líneas **Product** normales, no canceladas, con cantidad no negativa y precio distinto de cero. Las devoluciones se analizan por separado. Para las clasificaciones y reglas completas, consultar el [diccionario de datos](data/data-dictionary.md#business-rules-for-calculated-columns).
 
 ## Modelo de Datos
 
