@@ -15,14 +15,14 @@ The screenshots are visual evidence, not an interactive dashboard.
 
 ## How to Use
 
-1.  **Preview the report:** inspect the two [dashboard screenshots](#dashboard-preview) below. No software
+1. **Preview the report:** inspect the two [dashboard screenshots](#dashboard-preview) below. No software
    installation is needed to view them on GitHub.
-2.  **Inspect the source:** open or download [Online Retail.xlsx](data/raw/Online%20Retail.xlsx) with a compatible
+2. **Inspect the source:** open or download [Online Retail.xlsx](data/raw/Online%20Retail.xlsx) with a compatible
    spreadsheet application. The dataset includes cancellations, negative quantities, missing customer identifiers,
    and special transaction codes.
-3.  **Understand the processing:** read [Data Cleaning Notes](docs/cleaning-notes.md) for the documented
+3. **Understand the processing:** read [Data Cleaning Notes](docs/cleaning-notes.md) for the documented
    classification and preparation decisions.
-4.  **Interpret the model:** use the [Data Dictionary](data/data-dictionary.md) for documented field names,
+4. **Interpret the model:** use the [Data Dictionary](data/data-dictionary.md) for documented field names,
    inclusion rules, measures, and KPI definitions.
 
 Power BI Desktop is relevant to the original report workflow, but the committed `.pbix` cannot be opened or
