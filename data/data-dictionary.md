@@ -1,10 +1,16 @@
 # Data Dictionary
 
-This is the **reference for the documented Power BI model**, not a schema extracted from a runnable report. The committed `powerbi/online-retail-sales-analysis .pbix` contains only two bytes, so the field types, formulas, model relationships, and measure definitions below cannot currently be verified against an openable PBIX. They are preserved as the project's recorded model specifications.
+This is the **reference for the documented Power BI model**, not a schema extracted from a runnable report. The
+committed `powerbi/online-retail-sales-analysis .pbix` contains only two bytes, so the field types, formulas,
+model relationships, and measure definitions below cannot currently be verified against an openable PBIX. They are
+preserved as the project's recorded model specifications.
 
-For the preparation rationale, read [Data Cleaning Notes](../docs/cleaning-notes.md). For an overview and dashboard evidence, return to the [English README](../README.md) or [Spanish README](../README.es.md).
+For the preparation rationale, read [Data Cleaning Notes](../docs/cleaning-notes.md). For an overview and
+dashboard evidence, return to the [English README](../README.md) or [Spanish README](../README.es.md).
 
-**Find the relevant reference:** [Calendar fields](#table-calendar) · [Transaction fields](#table-online-retail) · [Classification and inclusion rules](#business-rules-for-calculated-columns) · [Measures](#measures) · [KPI interpretation](#kpi-interpretation-notes)
+**Find the relevant reference:** [Calendar fields](#table-calendar) · [Transaction fields](#table-online-retail) ·
+[Classification and inclusion rules](#business-rules-for-calculated-columns) · [Measures](#measures) ·
+[KPI interpretation](#kpi-interpretation-notes)
 
 ## Overview
 
@@ -159,7 +165,8 @@ These are documented modeling recommendations; they cannot be verified against t
 - Sort `YearMonth_Label` by `YearMonthSort`.
 - Use `Invoice_Day` as the transaction date key for time intelligence.
 - Use `Include_In_Main_Analysis` as the standard filter for executive KPIs.
-- Use `Return Value` or `Returns Amount` for return-focused visuals, depending on whether the analysis is product-only or broader sales-impact oriented.
+-  Use `Return Value` or `Returns Amount` for return-focused visuals, depending on whether the analysis is
+  product-only or broader sales-impact oriented.
 
 
 ## Naming Notes
@@ -173,4 +180,5 @@ This dictionary documents the model using the final field names shown in Power B
 - `Is_Zero_Price`
 - `Include_In_Main_Analysis`
 
-These are the final field labels recorded in this dictionary. Editable model formulas and a valid PBIX are not versioned here, so current model-view labels cannot be independently verified.
+These are the final field labels recorded in this dictionary. Editable model formulas and a valid PBIX are not
+versioned here, so current model-view labels cannot be independently verified.
