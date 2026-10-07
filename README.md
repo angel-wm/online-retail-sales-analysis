@@ -63,7 +63,7 @@ Cancelled invoices, negative-quantity lines, blank customer IDs, and special cod
 
 The documented workflow standardizes data types, identifies cancellations and returns, distinguishes products from gift vouchers and adjustments, reviews missing values, and prepares a calendar table for time-based reporting.
 
-The key inclusion rule, `Include_In_Main_Analysis`, limits the core sales scope to normal, non-cancelled, positive-quantity, non-zero-price **Product** lines. Returns are tracked separately. For the complete classification and rule details, see the [Data Dictionary](data/data-dictionary.md#business-rules-for-calculated-columns).
+The key inclusion rule, `Include_In_Main_Analysis`, limits the core sales scope to normal, non-cancelled, non-negative-quantity, non-zero-price **Product** lines. Returns are tracked separately. For the complete classification and rule details, see the [Data Dictionary](data/data-dictionary.md#business-rules-for-calculated-columns).
 
 ## Data Model
 
