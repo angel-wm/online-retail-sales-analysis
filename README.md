@@ -3,142 +3,145 @@ English | [Español](README.es.md)
 # UK Online Retail Sales Analysis
 
 ## Overview
-This project analyzes transactional data from a UK-based online retail business to uncover trends in sales performance, customer behavior, product demand, and returns.
 
-The final output is a two-page interactive **Power BI dashboard** built on a cleaned and transformed dataset. The project combines data cleaning, modeling, DAX measures, and dashboard design to turn raw retail transactions into business-ready insights.
+This project explores sales performance, customer behavior, product demand, and returns in transactional data from
+a UK online retailer. It demonstrates a business intelligence workflow: inspect the source data, classify
+transaction lines, model time-based measures, and communicate findings through a two-page Power BI report.
+
+The repository is useful for reviewing the **analytical approach and dashboard design**. It contains the original
+Excel dataset, model and cleaning documentation, and dashboard screenshots. **It does not currently contain an
+openable Power BI report:** the committed `powerbi/online-retail-sales-analysis .pbix` is a two-byte placeholder.
+The screenshots are visual evidence, not an interactive dashboard.
+
+## How to Use
+
+1. **Preview the report:** inspect the two [dashboard screenshots](#dashboard-preview) below. No software
+   installation is needed to view them on GitHub.
+2. **Inspect the source:** open or download [Online Retail.xlsx](data/raw/Online%20Retail.xlsx) with a compatible
+   spreadsheet application. The dataset includes cancellations, negative quantities, missing customer identifiers,
+   and special transaction codes.
+3. **Understand the processing:** read [Data Cleaning Notes](docs/cleaning-notes.md) for the documented
+   classification and preparation decisions.
+4. **Interpret the model:** use the [Data Dictionary](data/data-dictionary.md) for documented field names,
+   inclusion rules, measures, and KPI definitions.
+
+Power BI Desktop is relevant to the original report workflow, but the committed `.pbix` cannot be opened or
+refreshed. Reproducing the interactive report requires a valid report file or a separate reconstruction; neither
+is provided as a runnable procedure here.
 
 ## Dashboard Preview
 
+These screenshots document the layout of the original two-page report. Their metrics are not supplied as
+independently validated numerical findings in this repository.
+
 ### Sales Overview
-![Sales Overview](dashboard/sales-overview.png)
+
+![Power BI Sales Overview page showing commercial KPIs and sales trends](dashboard/sales-overview.png)
+
+The executive page brings together sales, orders, unique customers, average order value, return rate, net sales
+over time, country performance, top ten products by net sales, and monthly order volume.
 
 ### Product & Customer Insights
-![Product & Customer Insights](dashboard/product-customer-insights.png)
+
+![Power BI Product and Customer Insights page showing customer and returns comparisons](dashboard/product-customer-insights.png)
+
+This page compares the top ten customers by net sales, returned value by country, highest-returned products by
+value, and sales versus returns by product.
+
+The documented report uses **Year**, **Country**, and **Line Type** filters. Filtering requires the original
+interactive report; the committed screenshots are static.
 
 ## Business Questions
-This project is designed to answer questions such as:
-- How are sales evolving over time?
-- Which products generate the highest sales?
-- Which countries contribute the most orders and returned value?
-- What is the return rate across products and countries?
-- How do order volume and average order value behave over time?
-- Which customers generate the highest net sales?
+
+The analysis was designed to explore:
+
+- How do sales and order volume change over time?
+- Which products and customers contribute most to net sales?
+- Which countries account for orders and returned value?
+- How do returns differ across products and countries?
+- How does average order value vary over time?
+
+These are questions the dashboard is designed to investigate, **not independently verified findings**. Do not
+interpret possible concentration or return patterns as measured results without the underlying report or an
+analysis of the raw data.
 
 ## Tools Used
-- **Excel** – initial data inspection
-- **Power Query** – data cleaning and transformation
-- **Power BI** – data modeling, DAX measures, and dashboard development
+
+- **Excel:** initial source-data inspection.
+- **Power Query:** documented data preparation, classification, and transformation.
+- **Power BI / DAX:** documented data model, measures, and visual reporting.
 
 ## Dataset
-The dataset contains transaction-level retail data, including:
-- Invoice / order identifiers
-- Product codes and product descriptions
-- Quantities sold or returned
-- Unit price
-- Customer identifiers
-- Country
-- Transaction date
 
-> Note: The dataset includes cancellations, returns, missing customer IDs, and non-product or special-code records, so a significant part of the project focused on data cleaning and classification.
+The versioned source is [`data/raw/Online Retail.xlsx`](data/raw/Online%20Retail.xlsx). Its transaction fields
+cover invoice identifiers and dates, stock codes, product descriptions, quantities, unit prices, customer
+identifiers, and countries.
+
+Cancelled invoices, negative-quantity lines, blank customer IDs, and special codes require different treatment
+depending on the metric. The [cleaning notes](docs/cleaning-notes.md) explain the decisions; the
+[data dictionary](data/data-dictionary.md) specifies the documented fields and rules.
 
 ## Data Cleaning and Preparation
-Key preparation steps included:
-- Standardizing data types
-- Identifying cancelled invoices
-- Flagging returned transactions
-- Separating valid product records from non-product or special codes
-- Handling missing values
-- Creating business logic and data quality flags
-- Building a calendar table for time-based analysis
-- Creating time fields for monthly and yearly reporting
+
+The documented workflow standardizes data types, identifies cancellations and returns, distinguishes products from
+gift vouchers and adjustments, reviews missing values, and prepares a calendar table for time-based reporting.
+
+The key inclusion rule, `Include_In_Main_Analysis`, limits the core sales scope to normal, non-cancelled,
+non-negative-quantity, non-zero-price **Product** lines. Returns are tracked separately. For the complete
+classification and rule details, see the
+[Data Dictionary](data/data-dictionary.md#business-rules-for-calculated-columns).
 
 ## Data Model
-The Power BI model is built around an **Online Retail** transactional table connected to a **Calendar** table to support monthly and yearly trend analysis.
 
-Additional calculated columns and measures were created to evaluate:
-- Main Sales
-- Net Sales
-- Orders
-- Unique Customers
-- Average Order Value
-- Return Value
-- Return Rate
+The documented model consists of an **Online Retail** transactional table and a **Calendar** date table derived
+from `Invoice_Day`.
 
-## Dashboard Structure
-The report is organized into two pages:
+Its measures cover main and net sales, orders, unique customers, average order value, return value, and return
+rate. The authoritative documentation of the *reported* model is the
+[field and measure reference](data/data-dictionary.md); these definitions cannot be independently checked against
+the placeholder PBIX.
 
-### 1. Sales Overview
-This page provides a high-level summary of business performance through KPI cards and trend visuals. It includes:
-- Sales KPI
-- Orders
-- Unique Customers
-- Average Order Value
-- Return Rate
-- Net Sales Over Time
-- Sales by Country
-- Top 10 Products by Net Sales
-- Orders by Month
+## Documentation Map
 
-### 2. Product and Customer Insights
-This page focuses on customer value, product returns, and comparative analysis. It includes:
-- Top 10 Customers by Net Sales
-- Returned Value by Country
-- Top Returned Products by Value
-- Sales vs Returns by Product
+| If you want to… | Go to… |
+| --- | --- |
+| See what the report looked like | [Sales Overview](dashboard/sales-overview.png) or [Product & Customer Insights](dashboard/product-customer-insights.png) |
+| Examine the original data | [Online Retail.xlsx](data/raw/Online%20Retail.xlsx) |
+| Understand preparation decisions and assumptions | [Data Cleaning Notes](docs/cleaning-notes.md) |
+| Look up model fields, classifications, or measures | [Data Dictionary](data/data-dictionary.md) |
 
-## Filters
-The dashboard includes interactive filters for:
-- **Year**
-- **Country**
-- **Line Type**
+The main checked-in paths are:
 
-## Key Insights
-This dashboard helps identify patterns such as:
-- A small group of products may account for a large share of total sales.
-- Some countries may generate strong order volume while also showing high returned value.
-- Return behavior can vary significantly by product.
-- Net sales and order trends can shift meaningfully across months.
-- Customer contribution is concentrated among a relatively small number of buyers.
-
-## Files in This Repository
-- `README.md` – English project documentation
-- `README.es.md` – Spanish project documentation
-- `dashboard/` – dashboard screenshots or exported visuals
-- `powerbi/` – Power BI project file
-- `docs/` – supporting notes, definitions, or project documentation
-- `data/` – optional supporting files such as a data dictionary
-
-## Recommended Repository Structure
 ```text
-online-retail-sales-analysis/
-│
-├── README.md
-├── README.es.md
-├── dashboard/
-│   ├── sales-overview.png
-│   └── product-customer-insights.png
-├── docs/
-│   └── cleaning-notes.md
-├── data/
-│   └── data-dictionary.md
-└── powerbi/
-    └── online-retail-sales-analysis.pbix
+README.md
+README.es.md
+dashboard/
+  sales-overview.png
+  product-customer-insights.png
+data/
+  raw/Online Retail.xlsx
+  data-dictionary.md
+docs/
+  cleaning-notes.md
+powerbi/
+  online-retail-sales-analysis .pbix   # two-byte placeholder; not a runnable report
 ```
 
-## How to Use
-1. Download or open the `.pbix` file from the `powerbi/` folder.
-2. Open the file in Power BI Desktop.
-3. Refresh the data source if needed.
-4. Use the filters to explore performance by year, country, and line type.
-5. Review both report pages to compare sales, orders, customers, and returns.
-
 ## Project Status
-This project is complete and showcases an end-to-end retail sales analysis workflow, from data cleaning and preparation to dashboard design and business insight generation.
+
+The repository documents a completed **analytical and dashboard design exercise** through its descriptions and
+screenshots. It does **not** provide an independently runnable Power BI deliverable: the only tracked `.pbix` is a
+placeholder, and source-to-report transformation steps are documented conceptually rather than supplied as a
+complete executable pipeline.
+
+This distinction preserves the available project evidence without implying that the interactive dashboard can be
+reproduced directly from the committed files.
 
 ## Author
-**Angel W. Miller**  
-Junior Data Analyst focused on business intelligence, analytics, and dashboard development.
+
+**Angel W. Miller** — Junior Data Analyst focused on business intelligence, analytics, and dashboard development.
 
 ## Contact
+
 - GitHub: [angel-wm](https://github.com/angel-wm)
 - LinkedIn: [Angel W. Miller](https://www.linkedin.com/in/angel-w-miller/)
