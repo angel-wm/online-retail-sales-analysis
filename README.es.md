@@ -16,14 +16,14 @@ posición de dos bytes. Las capturas son evidencia visual, no un dashboard inter
 
 ## Cómo Usarlo
 
-1.  **Explorar el reporte:** revisar las dos [capturas del dashboard](#vista-previa-del-dashboard). No hace falta
+1. **Explorar el reporte:** revisar las dos [capturas del dashboard](#vista-previa-del-dashboard). No hace falta
    instalar software para verlas en GitHub.
-2.  **Inspeccionar la fuente:** abrir o descargar [Online Retail.xlsx](data/raw/Online%20Retail.xlsx) con una
+2. **Inspeccionar la fuente:** abrir o descargar [Online Retail.xlsx](data/raw/Online%20Retail.xlsx) con una
    aplicación de hojas de cálculo compatible. El dataset incluye cancelaciones, cantidades negativas,
    identificadores de cliente faltantes y códigos especiales.
-3.  **Entender la preparación:** leer las [notas de limpieza](docs/cleaning-notes.md) sobre clasificación de
+3. **Entender la preparación:** leer las [notas de limpieza](docs/cleaning-notes.md) sobre clasificación de
    líneas y decisiones de preparación.
-4.  **Interpretar el modelo:** consultar el [diccionario de datos](data/data-dictionary.md) para los nombres de
+4. **Interpretar el modelo:** consultar el [diccionario de datos](data/data-dictionary.md) para los nombres de
    campos, reglas de inclusión, medidas y KPIs documentados.
 
 Power BI Desktop corresponde al flujo de trabajo original, pero el `.pbix` versionado no puede abrirse ni
