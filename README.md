@@ -77,6 +77,16 @@ The versioned source is [`data/raw/Online Retail.xlsx`](data/raw/Online%20Retail
 cover invoice identifiers and dates, stock codes, product descriptions, quantities, unit prices, customer
 identifiers, and countries.
 
+The source is the **Online Retail** dataset published by the UCI Machine Learning Repository and created by
+Daqing Chen. UCI identifies it as 541,909 transactions from 1 December 2010 through 9 December 2011 for a
+UK-based registered non-store retailer.
+
+**Dataset citation:** Chen, D. (2015). *Online Retail* [Dataset]. UCI Machine Learning Repository.
+https://doi.org/10.24432/C5BW33
+
+The dataset is licensed under **Creative Commons Attribution 4.0 International (CC BY 4.0)**. The copy stored in
+this repository remains under that dataset license; see [Dataset License and Attribution](DATA_LICENSE.md).
+
 Cancelled invoices, negative-quantity lines, blank customer IDs, and special codes require different treatment
 depending on the metric. The [cleaning notes](docs/cleaning-notes.md) explain the decisions; the
 [data dictionary](data/data-dictionary.md) specifies the documented fields and rules.
@@ -109,12 +119,15 @@ the placeholder PBIX.
 | Examine the original data | [Online Retail.xlsx](data/raw/Online%20Retail.xlsx) |
 | Understand preparation decisions and assumptions | [Data Cleaning Notes](docs/cleaning-notes.md) |
 | Look up model fields, classifications, or measures | [Data Dictionary](data/data-dictionary.md) |
+| Verify dataset provenance and reuse terms | [Dataset License and Attribution](DATA_LICENSE.md) |
 
 The main checked-in paths are:
 
 ```text
 README.md
 README.es.md
+LICENSE
+DATA_LICENSE.md
 dashboard/
   sales-overview.png
   product-customer-insights.png
@@ -136,6 +149,14 @@ complete executable pipeline.
 
 This distinction preserves the available project evidence without implying that the interactive dashboard can be
 reproduced directly from the committed files.
+
+## License
+
+Repository-authored project materials are released under the [MIT License](LICENSE).
+
+The source dataset is **not relicensed under MIT**. `data/raw/Online Retail.xlsx` is the UCI **Online Retail**
+dataset by Daqing Chen and remains licensed under **CC BY 4.0**. Attribution and reuse details are documented in
+[DATA_LICENSE.md](DATA_LICENSE.md).
 
 ## Author
 
