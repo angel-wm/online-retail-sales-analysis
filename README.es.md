@@ -79,6 +79,16 @@ La fuente versionada es [`data/raw/Online Retail.xlsx`](data/raw/Online%20Retail
 incluyen identificadores y fechas de factura, códigos y descripciones de productos, cantidades, precios unitarios,
 identificadores de clientes y países.
 
+La fuente es el dataset **Online Retail** publicado por UCI Machine Learning Repository y creado por Daqing Chen.
+UCI lo identifica como 541,909 transacciones entre el 1 de diciembre de 2010 y el 9 de diciembre de 2011 de una
+empresa de retail online registrada en el Reino Unido y sin tienda física.
+
+**Cita del dataset:** Chen, D. (2015). *Online Retail* [Dataset]. UCI Machine Learning Repository.
+https://doi.org/10.24432/C5BW33
+
+El dataset está licenciado bajo **Creative Commons Attribution 4.0 International (CC BY 4.0)**. La copia incluida
+en este repositorio conserva esa licencia; consultar [Licencia y atribución del dataset](DATA_LICENSE.md).
+
 Las cancelaciones, cantidades negativas, IDs de cliente vacíos y códigos especiales requieren tratamiento distinto
 según la métrica. Las [notas de limpieza](docs/cleaning-notes.md) explican las decisiones; el
 [diccionario de datos](data/data-dictionary.md) recoge los campos y reglas documentados.
@@ -111,12 +121,15 @@ PBIX de marcador de posición.
 | Examinar los datos originales | [Online Retail.xlsx](data/raw/Online%20Retail.xlsx) |
 | Entender decisiones y supuestos de limpieza | [Notas de limpieza](docs/cleaning-notes.md) |
 | Buscar campos, clasificaciones o medidas | [Diccionario de datos](data/data-dictionary.md) |
+| Verificar procedencia y condiciones de reutilización del dataset | [Licencia y atribución del dataset](DATA_LICENSE.md) |
 
 Las rutas principales almacenadas son:
 
 ```text
 README.md
 README.es.md
+LICENSE
+DATA_LICENSE.md
 dashboard/
   sales-overview.png
   product-customer-insights.png
@@ -138,6 +151,14 @@ completo ejecutable.
 
 Esta distinción conserva la evidencia disponible sin sugerir que el dashboard interactivo pueda reproducirse
 directamente con los archivos versionados.
+
+## Licencia
+
+Los materiales originales del proyecto incluidos en este repositorio se publican bajo la [Licencia MIT](LICENSE).
+
+El dataset de origen **no se relicencia bajo MIT**. `data/raw/Online Retail.xlsx` corresponde al dataset
+**Online Retail** de UCI, creado por Daqing Chen, y conserva su licencia **CC BY 4.0**. La atribución y las
+condiciones de reutilización se documentan en [DATA_LICENSE.md](DATA_LICENSE.md).
 
 ## Autor
 
