@@ -1,0 +1,4 @@
+/// Full path to the unchanged source workbook. Set in Manage parameters or with scripts/configure_source.py.
+expression SourceFilePath = "C:\Users\angel\Documents\Proyectos\online-retail-sales-analysis\review\data\raw\Online Retail.xlsx" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=true]
+	lineageTag: 93c19dd5-a439-510b-8e64-d749d3ac56d7
+	annotation PBI_ResultType = Text

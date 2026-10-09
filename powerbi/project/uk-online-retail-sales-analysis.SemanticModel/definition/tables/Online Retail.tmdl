@@ -131,6 +131,7 @@ table 'Online Retail'
 		annotation SummarizationSetBy = Automatic
 
 	column Stock_Code
+		isHidden
 		dataType: string
 		lineageTag: ea5414f1-47f5-4594-9633-b2e89ef3c857
 		summarizeBy: none
@@ -139,6 +140,7 @@ table 'Online Retail'
 		annotation SummarizationSetBy = Automatic
 
 	column Product_Name
+		isHidden
 		dataType: string
 		lineageTag: 78a1c48c-585e-4299-b860-ecaf5d3f3cfe
 		summarizeBy: none
@@ -171,8 +173,9 @@ table 'Online Retail'
 
 	column Unit_Price
 		dataType: double
+		formatString: £0.0000
 		lineageTag: d9e38773-0cd3-4bb8-8f7a-08050e5c544f
-		summarizeBy: sum
+		summarizeBy: none
 		sourceColumn: Unit_Price
 
 		annotation SummarizationSetBy = Automatic
@@ -215,6 +218,7 @@ table 'Online Retail'
 		annotation UnderlyingDateTimeDataType = Date
 
 	column Record_Flag
+		isHidden
 		dataType: string
 		lineageTag: c0752f01-0113-46f5-9a8c-70c34e93e3d7
 		summarizeBy: none
@@ -223,6 +227,7 @@ table 'Online Retail'
 		annotation SummarizationSetBy = Automatic
 
 	column Is_Cancelled
+		isHidden
 		dataType: boolean
 		formatString: """TRUE"";""TRUE"";""FALSE"""
 		lineageTag: 54e75457-ef81-43cb-8fe8-e2ff20d511e3
@@ -232,6 +237,7 @@ table 'Online Retail'
 		annotation SummarizationSetBy = Automatic
 
 	column Is_Negative_Qty
+		isHidden
 		dataType: boolean
 		formatString: """TRUE"";""TRUE"";""FALSE"""
 		lineageTag: 3d01a6f1-bb3f-4e34-8907-7135470d2d1a
@@ -241,6 +247,7 @@ table 'Online Retail'
 		annotation SummarizationSetBy = Automatic
 
 	column Is_Zero_Price
+		isHidden
 		dataType: boolean
 		formatString: """TRUE"";""TRUE"";""FALSE"""
 		lineageTag: df581c9f-75e9-4822-a0dc-4d130a1c9208
@@ -250,16 +257,18 @@ table 'Online Retail'
 		annotation SummarizationSetBy = Automatic
 
 	column Sales_Amount
-		dataType: double
+		isHidden
+		dataType: decimal
+		formatString: £#,0.00;(£#,0.00);£0.00
 		lineageTag: a01a5b65-bcd1-41f7-bc0d-b06179be95de
 		summarizeBy: sum
 		sourceColumn: Sales_Amount
 
 		annotation SummarizationSetBy = Automatic
 
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	column Include_In_Main_Analysis
+		isHidden
 		dataType: boolean
 		formatString: """TRUE"";""TRUE"";""FALSE"""
 		lineageTag: f0ab06ae-eaf9-4fd0-82f1-ed4beffd4969
@@ -269,12 +278,14 @@ table 'Online Retail'
 		annotation SummarizationSetBy = Automatic
 
 	column Is_Merchandise_Reversal
+		isHidden
 		dataType: boolean
 		lineageTag: d21d402c-2580-5f91-b3e0-7f1314554d8c
 		summarizeBy: none
 		sourceColumn: Is_Merchandise_Reversal
 
 	column Movement_Type
+		isHidden
 		dataType: string
 		lineageTag: 0504447a-47f4-5650-b22f-6798cd818a9a
 		summarizeBy: none
@@ -284,96 +295,37 @@ table 'Online Retail'
 		mode: import
 		source =
 				let
-				    Origen = Excel.Workbook(File.Contents("C:\Users\angel\Documents\Courses\DA\proyecto_personal\online+retail\Online Retail.xlsx"), null, true),
-				    #"Online Retail_Sheet" = Origen{[Item="Online Retail",Kind="Sheet"]}[Data],
-				    #"Encabezados promovidos" = Table.PromoteHeaders(#"Online Retail_Sheet", [PromoteAllScalars=true]),
-				    #"Tipo cambiado" = Table.TransformColumnTypes(#"Encabezados promovidos",{{"InvoiceNo", type any}, {"StockCode", type any}, {"Description", type text}, {"Quantity", Int64.Type}, {"InvoiceDate", type datetime}, {"UnitPrice", type number}, {"CustomerID", Int64.Type}, {"Country", type text}}),
-				    #"Columnas con nombre cambiado" = Table.RenameColumns(#"Tipo cambiado",{{"InvoiceNo", "Invoice_ID"}, {"StockCode", "Stock_Code"}, {"Description", "Product_Name"}, {"InvoiceDate", "Invoice_Date"}, {"UnitPrice", "Unit_Price"}, {"CustomerID", "Customer_ID"}}),
-				    #"Tipo cambiado1" = Table.TransformColumnTypes(#"Columnas con nombre cambiado",{{"Invoice_ID", type text}, {"Stock_Code", type text}, {"Customer_ID", type text}}),
-				    #"Filas filtradas" = Table.SelectRows(#"Tipo cambiado1", each ([Product_Name] <> null)),
-				    #"Personalizada agregada" = Table.AddColumn(#"Filas filtradas", "Line_Type", each let
-				    code = Text.Upper(Text.Trim(Text.From([Stock_Code]))),
-				    name = Text.Upper(Text.Trim(Text.From([Product_Name])))
+				    Source = Excel.Workbook(File.Contents(SourceFilePath), null, true),
+				    Sheet = Source{[Item="Online Retail", Kind="Sheet"]}[Data],
+				    Headers = Table.PromoteHeaders(Sheet, [PromoteAllScalars=true]),
+				    Renamed = Table.RenameColumns(Headers, {{"InvoiceNo", "Invoice_ID"}, {"StockCode", "Stock_Code"}, {"Description", "Product_Name"}, {"InvoiceDate", "Invoice_Date"}, {"UnitPrice", "Unit_Price"}, {"CustomerID", "Customer_ID"}}),
+				    Typed = Table.TransformColumnTypes(Renamed, {{"Invoice_ID", type text}, {"Stock_Code", type text}, {"Product_Name", type text}, {"Quantity", Int64.Type}, {"Invoice_Date", type datetime}, {"Unit_Price", type number}, {"Customer_ID", type text}, {"Country", type text}}, "en-GB"),
+				    // Preserve the original quality rule: 1,454 null descriptions, total amount GBP 0.
+				    Described = Table.SelectRows(Typed, each [Product_Name] <> null),
+				    Codes = Table.TransformColumns(Described, {{"Stock_Code", each Text.Upper(Text.Trim(_)), type text}}),
+				    LineType = Table.AddColumn(Codes, "Line_Type", each
+				        let code = [Stock_Code], name = Text.Upper(Text.Trim([Product_Name]))
+				        in if Text.StartsWith(code, "GIFT_") or Text.Contains(name, "GIFT VOUCHER") then "Gift Voucher"
+				        else if List.Contains({"M", "S", "POST", "AMAZONFEE", "AMAZON FEE", "BANK CHARGES", "D", "DOT", "C2", "B", "CRUK"}, code) or name = "EBAY" then "Adjustment"
+				        else "Product", type text),
+				    Day = Table.AddColumn(LineType, "Invoice_Day", each Date.From([Invoice_Date]), type date),
+				    Quality = Table.AddColumn(Day, "Record_Flag", each
+				        let name = Text.Upper(Text.Trim([Product_Name])),
+				            hasCustomer = [Customer_ID] <> null and Text.Trim([Customer_ID]) <> "",
+				            manual = Text.StartsWith(name, "*") and not hasCustomer,
+				            operational = not hasCustomer and List.AnyTrue(List.Transform({"?", "MISSING", "LOST", "DAMAGE", "DISPLAY", "SOLD AS SETS"}, (word) => Text.Contains(name, word))) and ([Unit_Price] = null or [Unit_Price] = 0)
+				        in if manual then "Manual / Review" else if operational then "Operational / Non-Product" else "Normal", type text),
+				    Cancelled = Table.AddColumn(Quality, "Is_Cancelled", each [Invoice_ID] <> null and Text.StartsWith(Text.Upper(Text.Trim([Invoice_ID])), "C"), type logical),
+				    Negative = Table.AddColumn(Cancelled, "Is_Negative_Qty", each [Quantity] <> null and [Quantity] < 0, type logical),
+				    ZeroPrice = Table.AddColumn(Negative, "Is_Zero_Price", each [Unit_Price] <> null and [Unit_Price] = 0, type logical),
+				    // Keep original rounding after quantity x full-precision price, with explicit half-even policy.
+				    Amount = Table.AddColumn(ZeroPrice, "Sales_Amount", each if [Quantity] = null or [Unit_Price] = null then null else Number.Round([Quantity] * [Unit_Price], 2, RoundingMode.ToEven), Currency.Type),
+				    GrossEligible = Table.AddColumn(Amount, "Include_In_Main_Analysis", each [Line_Type] = "Product" and [Record_Flag] = "Normal" and not [Is_Cancelled] and [Quantity] > 0 and [Unit_Price] > 0, type logical),
+				    ReversalEligible = Table.AddColumn(GrossEligible, "Is_Merchandise_Reversal", each [Line_Type] = "Product" and [Record_Flag] = "Normal" and [Quantity] < 0 and [Unit_Price] > 0, type logical),
+				    Movement = Table.AddColumn(ReversalEligible, "Movement_Type", each if [Include_In_Main_Analysis] then "Merchandise sale" else if [Is_Merchandise_Reversal] then "Merchandise cancellation / reversal" else if [Line_Type] = "Adjustment" then "Administrative adjustment" else if [Line_Type] = "Gift Voucher" then "Gift voucher movement" else "Other / excluded movement", type text)
 				in
-				    if Text.StartsWith(code, "GIFT_") or Text.Contains(name, "GIFT VOUCHER") then "Gift Voucher"
-				    else if List.Contains({"M","S","POST","AMAZONFEE","AMAZON FEE","BANK CHARGES","D","DOT","C2","B","CRUK"}, code)
-				         or name = "EBAY"
-				    then "Adjustment"
-				    else "Product"),
-				    #"Columna duplicada" = Table.DuplicateColumn(#"Personalizada agregada", "Invoice_Date", "Invoice_Date - Copia"),
-				    #"Tipo cambiado2" = Table.TransformColumnTypes(#"Columna duplicada",{{"Invoice_Date - Copia", type date}}),
-				    #"Columnas con nombre cambiado1" = Table.RenameColumns(#"Tipo cambiado2",{{"Invoice_Date - Copia", "Invoice_Day"}}),
-				    #"Columnas reordenadas" = Table.ReorderColumns(#"Columnas con nombre cambiado1",{"Invoice_ID", "Stock_Code", "Line_Type", "Product_Name", "Quantity", "Invoice_Date", "Invoice_Day", "Unit_Price", "Customer_ID", "Country"}),
-				    #"Personalizada agregada1" = Table.AddColumn(#"Columnas reordenadas", "Record_Flag", each let
-				    pname = if [Product_Name] = null then "" else Text.Upper(Text.Trim(Text.From([Product_Name]))),
-				    custid = if [Customer_ID] = null then "" else Text.Upper(Text.Trim(Text.From([Customer_ID]))),
-				    uprice = try Number.From([Unit_Price]) otherwise null,
+				    Movement
 
-				    hasCustomer = custid <> "",
-
-				    isManualReview =
-				        Text.StartsWith(pname, "*") and not hasCustomer,
-
-				    isOperationalNonProduct =
-				        not hasCustomer and
-				        (
-				            Text.Contains(pname, "?") or
-				            Text.Contains(pname, "MISSING") or
-				            Text.Contains(pname, "LOST") or
-				            Text.Contains(pname, "DAMAGE") or
-				            Text.Contains(pname, "DISPLAY") or
-				            Text.Contains(pname, "SOLD AS SETS")
-				        ) and
-				        (uprice = null or uprice = 0)
-
-				in
-				    if isManualReview then "Manual / Review"
-				    else if isOperationalNonProduct then "Operational / Non-Product"
-				    else "Normal"),
-				    #"Tipo cambiado3" = Table.TransformColumnTypes(#"Personalizada agregada1",{{"Record_Flag", type text}, {"Line_Type", type text}}),
-				    #"Personalizada agregada2" = Table.AddColumn(#"Tipo cambiado3", "Is_Cancelled", each let
-				    inv = if [Invoice_ID] = null then "" else Text.Upper(Text.Trim(Text.From([Invoice_ID])))
-				in
-				    Text.StartsWith(inv, "C")),
-				    #"Personalizada agregada3" = Table.AddColumn(#"Personalizada agregada2", "Is_Negative_Qty", each let
-				    qty = try Number.From([Quantity]) otherwise null
-				in
-				    if qty = null then false
-				    else qty < 0),
-				    #"Personalizada agregada4" = Table.AddColumn(#"Personalizada agregada3", "Is_ZeroPrice", each let
-				    price = try Number.From([Unit_Price]) otherwise null
-				in
-				    if price = null then false
-				    else price = 0),
-				    #"Personalizada agregada5" = Table.AddColumn(#"Personalizada agregada4", "Sales_Amount", each let
-				    qty = try Number.From([Quantity]) otherwise null,
-				    price = try Number.From([Unit_Price]) otherwise null
-				in
-				    if qty = null or price = null then null
-				    else Number.Round(qty * price, 2)),
-				    #"Tipo cambiado6" = Table.TransformColumnTypes(#"Personalizada agregada5",{{"Is_Cancelled", type text}, {"Is_Negative_Qty", type text}, {"Is_ZeroPrice", type text}, {"Sales_Amount", type number}}),
-				    #"Filas filtradas1" = Table.SelectRows(#"Tipo cambiado6", each true),
-				    #"Tipo cambiado4" = Table.TransformColumnTypes(#"Filas filtradas1",{{"Is_Cancelled", type text}, {"Is_Negative_Qty", type text}, {"Is_ZeroPrice", type text}, {"Sales_Amount", type number}}),
-				    #"Columnas con nombre cambiado2" = Table.RenameColumns(#"Tipo cambiado4",{{"Is_ZeroPrice", "Is_Zero_Price"}}),
-				    #"Changed Type" = Table.TransformColumnTypes(#"Columnas con nombre cambiado2",{{"Is_Cancelled", type logical}, {"Is_Negative_Qty", type logical}, {"Is_Zero_Price", type logical}}),
-				    #"Added Custom" = Table.AddColumn(#"Changed Type", "Include_In_Main_Analysis", each let
-				    line = if [Line_Type] = null then "" else Text.Upper(Text.Trim(Text.From([Line_Type]))),
-				    flag = if [Record_Flag] = null then "" else Text.Upper(Text.Trim(Text.From([Record_Flag]))),
-				    cancelled = if [Is_Cancelled] = null then false else [Is_Cancelled],
-				    negativeQty = if [Is_Negative_Qty] = null then false else [Is_Negative_Qty],
-				    zeroprice = if [Is_Zero_Price] = null then false else [Is_Zero_Price]
-				in
-				    line = "PRODUCT"
-				    and flag = "NORMAL"
-				    and cancelled = false
-				    and [Quantity] > 0
-				    and [Unit_Price] > 0),
-				    #"Changed Type1" = Table.TransformColumnTypes(#"Added Custom",{{"Include_In_Main_Analysis", type logical}}),
-				    #"Merchandise reversals" = Table.AddColumn(#"Changed Type1", "Is_Merchandise_Reversal", each [Line_Type] = "Product" and [Record_Flag] = "Normal" and [Quantity] < 0 and [Unit_Price] > 0, type logical),
-				    #"Movement classification" = Table.AddColumn(#"Merchandise reversals", "Movement_Type", each if [Include_In_Main_Analysis] then "Merchandise sale" else if [Is_Merchandise_Reversal] then "Merchandise cancellation / reversal" else if [Line_Type] = "Adjustment" then "Administrative adjustment" else if [Line_Type] = "Gift Voucher" then "Gift voucher movement" else "Other / excluded movement", type text)
-				in
-				    #"Movement classification"
-
-	annotation PBI_NavigationStepName = Navegación
+	annotation PBI_NavigationStepName = Navigation
 
 	annotation PBI_ResultType = Table

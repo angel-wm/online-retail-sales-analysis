@@ -8,7 +8,7 @@ model Model
 
 annotation __PBI_TimeIntelligenceEnabled = 1
 
-annotation PBI_QueryOrder = ["Online Retail"]
+annotation PBI_QueryOrder = ["SourceFilePath","Online Retail","DimProduct"]
 
 annotation PBI_ProTooling = ["DevMode"]
 
@@ -16,6 +16,8 @@ ref table 'Online Retail'
 ref table DateTableTemplate_0d4fcce8-da58-4559-a0a7-b0c6e2eb4b9c
 ref table LocalDateTable_7ed12bcd-d2a7-41a7-9452-cf3af0f2044c
 ref table Calendar
+ref table DimProduct
+
+ref expression SourceFilePath
 
 ref cultureInfo en-US
-

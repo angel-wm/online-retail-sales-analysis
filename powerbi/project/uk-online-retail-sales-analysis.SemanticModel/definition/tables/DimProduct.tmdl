@@ -1,0 +1,51 @@
+/// One row per stock code. Representative source description; not an authoritative product master.
+table DimProduct
+	lineageTag: 10cad7fe-7ef4-5fd6-b045-c3a3710c7985
+
+	column Stock_Code
+		dataType: string
+		isKey
+		lineageTag: 9686817a-d286-5715-b5b3-6f290dccf8e6
+		summarizeBy: none
+		sourceColumn: Stock_Code
+
+	column Product_Name
+		dataType: string
+		lineageTag: 993f29cc-fb86-5f37-bcd8-7930640aa1e0
+		summarizeBy: none
+		sourceColumn: Product_Name
+
+	column Product_Label
+		dataType: string
+		lineageTag: 690dc022-4f35-502a-9f06-bbac5c8cdc37
+		summarizeBy: none
+		sourceColumn: Product_Label
+
+	column Description_Variants
+		dataType: int64
+		lineageTag: ab819af5-b3b8-50ee-8929-072f04b42a74
+		summarizeBy: none
+		sourceColumn: Description_Variants
+
+	partition DimProduct = m
+		mode: import
+		source =
+				let
+				    Source = #"Online Retail",
+				    Columns = Table.SelectColumns(Source, {"Stock_Code", "Product_Name", "Include_In_Main_Analysis"}),
+				    Normalized = Table.TransformColumns(Columns, {{"Product_Name", each Text.Upper(Text.Trim(_)), type text}}),
+				    Products = Table.Group(Normalized, {"Stock_Code"}, {
+				        {"Product_Name", each
+				            let Sales = Table.SelectRows(_, each [Include_In_Main_Analysis]),
+				                Candidates = if Table.IsEmpty(Sales) then _ else Sales,
+				                Frequency = Table.Group(Candidates, {"Product_Name"}, {{"Count", each Table.RowCount(_), Int64.Type}}),
+				                MaxCount = List.Max(Frequency[Count]),
+				                Tied = Table.SelectRows(Frequency, each [Count] = MaxCount)[Product_Name]
+				            in List.First(List.Sort(Tied, Comparer.Ordinal)), type text},
+				        {"Description_Variants", each List.Count(List.Distinct([Product_Name])), Int64.Type}
+				    }),
+				    Labels = Table.AddColumn(Products, "Product_Label", each [Stock_Code] & " — " & [Product_Name], type text)
+				in
+				    Labels
+
+	annotation PBI_ResultType = Table

@@ -1,0 +1,6 @@
+{
+  "status": "PASS",
+  "tested": "Configure alternate valid XLSX location then restore default; exact bytes restored",
+  "data_changed": false,
+  "native_refresh_executed": false
+}

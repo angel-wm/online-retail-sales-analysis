@@ -1,0 +1,493 @@
+{
+  "status": "PARTIAL",
+  "json_files": 44,
+  "schema_validated_files": 41,
+  "exact_schema_files": 10,
+  "compatibility_schema_files": 31,
+  "project_schema_versions_unchanged": true,
+  "desktop_rendered": false,
+  "files": [
+    {
+      "file": "powerbi/project/uk-online-retail-sales-analysis.pbip",
+      "parsed": true,
+      "schema_validated": true,
+      "exact_declared_schema": true,
+      "schema": "https://developer.microsoft.com/json-schemas/fabric/pbip/pbipProperties/1.0.0/schema.json",
+      "errors": []
+    },
+    {
+      "file": "powerbi/project/uk-online-retail-sales-analysis.Report/.platform",
+      "parsed": true,
+      "schema_validated": true,
+      "exact_declared_schema": true,
+      "schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+      "errors": []
+    },
+    {
+      "file": "powerbi/project/uk-online-retail-sales-analysis.Report/definition/pages/9ce4074e277290a594b7/page.json",
+      "parsed": true,
+      "schema_validated": true,
+      "exact_declared_schema": true,
+      "schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.1.0/schema.json",
+      "errors": []
+    },
+    {
+      "file": "powerbi/project/uk-online-retail-sales-analysis.Report/definition/pages/9ce4074e277290a594b7/visuals/00c6198092a372ab0910/visual.json",
+      "parsed": true,
+      "schema_validated": true,
+      "exact_declared_schema": false,
+      "declared_schema_http_status": 404,
+      "compatibility_schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+      "schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+      "errors": []
+    },
+    {
+      "file": "powerbi/project/uk-online-retail-sales-analysis.Report/definition/pages/9ce4074e277290a594b7/visuals/0483efcc26aa02cd5527/visual.json",
+      "parsed": true,
+      "schema_validated": true,
+      "exact_declared_schema": false,
+      "declared_schema_http_status": 404,
+      "compatibility_schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+      "schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+      "errors": []
+    },
+    {
+      "file": "powerbi/project/uk-online-retail-sales-analysis.Report/definition/pages/9ce4074e277290a594b7/visuals/0b519c8ca5250d606ea0/visual.json",
+      "parsed": true,
+      "schema_validated": true,
+      "exact_declared_schema": false,
+      "declared_schema_http_status": 404,
+      "compatibility_schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+      "schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+      "errors": []
+    },
+    {
+      "file": "powerbi/project/uk-online-retail-sales-analysis.Report/definition/pages/9ce4074e277290a594b7/visuals/1ce1ac3b318881b82400/visual.json",
+      "parsed": true,
+      "schema_validated": true,
+      "exact_declared_schema": false,
+      "declared_schema_http_status": 404,
+      "compatibility_schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+      "schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+      "errors": []
+    },
+    {
+      "file": "powerbi/project/uk-online-retail-sales-analysis.Report/definition/pages/9ce4074e277290a594b7/visuals/326efa6cd15edb5615ca/visual.json",
+      "parsed": true,
+      "schema_validated": true,
+      "exact_declared_schema": false,
+      "declared_schema_http_status": 404,
+      "compatibility_schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+      "schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+      "errors": []
+    },
+    {
+      "file": "powerbi/project/uk-online-retail-sales-analysis.Report/definition/pages/9ce4074e277290a594b7/visuals/488130f83c29980e808d/visual.json",
+      "parsed": true,
+      "schema_validated": true,
+      "exact_declared_schema": false,
+      "declared_schema_http_status": 404,
+      "compatibility_schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+      "schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+      "errors": []
+    },
+    {
+      "file": "powerbi/project/uk-online-retail-sales-analysis.Report/definition/pages/9ce4074e277290a594b7/visuals/4945712e83cd21b9868e/visual.json",
+      "parsed": true,
+      "schema_validated": true,
+      "exact_declared_schema": false,
+      "declared_schema_http_status": 404,
+      "compatibility_schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+      "schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+      "errors": []
+    },
+    {
+      "file": "powerbi/project/uk-online-retail-sales-analysis.Report/definition/pages/9ce4074e277290a594b7/visuals/5a6dfdeab84eec858701/visual.json",
+      "parsed": true,
+      "schema_validated": true,
+      "exact_declared_schema": false,
+      "declared_schema_http_status": 404,
+      "compatibility_schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+      "schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+      "errors": []
+    },
+    {
+      "file": "powerbi/project/uk-online-retail-sales-analysis.Report/definition/pages/9ce4074e277290a594b7/visuals/5d94eeb50cdd08a9dc2d/visual.json",
+      "parsed": true,
+      "schema_validated": true,
+      "exact_declared_schema": false,
+      "declared_schema_http_status": 404,
+      "compatibility_schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+      "schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+      "errors": []
+    },
+    {
+      "file": "powerbi/project/uk-online-retail-sales-analysis.Report/definition/pages/9ce4074e277290a594b7/visuals/8659739282b008532eee/visual.json",
+      "parsed": true,
+      "schema_validated": true,
+      "exact_declared_schema": false,
+      "declared_schema_http_status": 404,
+      "compatibility_schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+      "schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+      "errors": []
+    },
+    {
+      "file": "powerbi/project/uk-online-retail-sales-analysis.Report/definition/pages/9ce4074e277290a594b7/visuals/a13243354215609ec4c0/visual.json",
+      "parsed": true,
+      "schema_validated": true,
+      "exact_declared_schema": false,
+      "declared_schema_http_status": 404,
+      "compatibility_schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+      "schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+      "errors": []
+    },
+    {
+      "file": "powerbi/project/uk-online-retail-sales-analysis.Report/definition/pages/9ce4074e277290a594b7/visuals/bfd4fc73192936bc42c7/visual.json",
+      "parsed": true,
+      "schema_validated": true,
+      "exact_declared_schema": false,
+      "declared_schema_http_status": 404,
+      "compatibility_schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+      "schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+      "errors": []
+    },
+    {
+      "file": "powerbi/project/uk-online-retail-sales-analysis.Report/definition/pages/9ce4074e277290a594b7/visuals/fc81c2d8bc82287d528b/visual.json",
+      "parsed": true,
+      "schema_validated": true,
+      "exact_declared_schema": false,
+      "declared_schema_http_status": 404,
+      "compatibility_schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+      "schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+      "errors": []
+    },
+    {
+      "file": "powerbi/project/uk-online-retail-sales-analysis.Report/definition/pages/e2e71b2b39b7e00b93de/page.json",
+      "parsed": true,
+      "schema_validated": true,
+      "exact_declared_schema": true,
+      "schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.1.0/schema.json",
+      "errors": []
+    },
+    {
+      "file": "powerbi/project/uk-online-retail-sales-analysis.Report/definition/pages/e2e71b2b39b7e00b93de/visuals/0d26f07ae3e59165a455/visual.json",
+      "parsed": true,
+      "schema_validated": true,
+      "exact_declared_schema": false,
+      "declared_schema_http_status": 404,
+      "compatibility_schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+      "schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+      "errors": []
+    },
+    {
+      "file": "powerbi/project/uk-online-retail-sales-analysis.Report/definition/pages/e2e71b2b39b7e00b93de/visuals/0d43bab4e45532bcc190/visual.json",
+      "parsed": true,
+      "schema_validated": true,
+      "exact_declared_schema": false,
+      "declared_schema_http_status": 404,
+      "compatibility_schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+      "schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+      "errors": []
+    },
+    {
+      "file": "powerbi/project/uk-online-retail-sales-analysis.Report/definition/pages/e2e71b2b39b7e00b93de/visuals/103453003bcd8ca655ca/visual.json",
+      "parsed": true,
+      "schema_validated": true,
+      "exact_declared_schema": false,
+      "declared_schema_http_status": 404,
+      "compatibility_schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+      "schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+      "errors": []
+    },
+    {
+      "file": "powerbi/project/uk-online-retail-sales-analysis.Report/definition/pages/e2e71b2b39b7e00b93de/visuals/17704764da05a4761017/visual.json",
+      "parsed": true,
+      "schema_validated": true,
+      "exact_declared_schema": false,
+      "declared_schema_http_status": 404,
+      "compatibility_schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+      "schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+      "errors": []
+    },
+    {
+      "file": "powerbi/project/uk-online-retail-sales-analysis.Report/definition/pages/e2e71b2b39b7e00b93de/visuals/1efd5c26d1b097445d63/visual.json",
+      "parsed": true,
+      "schema_validated": true,
+      "exact_declared_schema": false,
+      "declared_schema_http_status": 404,
+      "compatibility_schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+      "schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+      "errors": []
+    },
+    {
+      "file": "powerbi/project/uk-online-retail-sales-analysis.Report/definition/pages/e2e71b2b39b7e00b93de/visuals/3774ff8807dbaa3ca5ce/visual.json",
+      "parsed": true,
+      "schema_validated": true,
+      "exact_declared_schema": false,
+      "declared_schema_http_status": 404,
+      "compatibility_schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+      "schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+      "errors": []
+    },
+    {
+      "file": "powerbi/project/uk-online-retail-sales-analysis.Report/definition/pages/e2e71b2b39b7e00b93de/visuals/49a95c32ed08401404c0/visual.json",
+      "parsed": true,
+      "schema_validated": true,
+      "exact_declared_schema": false,
+      "declared_schema_http_status": 404,
+      "compatibility_schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+      "schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+      "errors": []
+    },
+    {
+      "file": "powerbi/project/uk-online-retail-sales-analysis.Report/definition/pages/e2e71b2b39b7e00b93de/visuals/5aa06803ebeac0c1cbba/visual.json",
+      "parsed": true,
+      "schema_validated": true,
+      "exact_declared_schema": false,
+      "declared_schema_http_status": 404,
+      "compatibility_schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+      "schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+      "errors": []
+    },
+    {
+      "file": "powerbi/project/uk-online-retail-sales-analysis.Report/definition/pages/e2e71b2b39b7e00b93de/visuals/5f1c21068041053e9103/visual.json",
+      "parsed": true,
+      "schema_validated": true,
+      "exact_declared_schema": false,
+      "declared_schema_http_status": 404,
+      "compatibility_schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+      "schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+      "errors": []
+    },
+    {
+      "file": "powerbi/project/uk-online-retail-sales-analysis.Report/definition/pages/e2e71b2b39b7e00b93de/visuals/866c411e4dac10cc1484/visual.json",
+      "parsed": true,
+      "schema_validated": true,
+      "exact_declared_schema": false,
+      "declared_schema_http_status": 404,
+      "compatibility_schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+      "schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+      "errors": []
+    },
+    {
+      "file": "powerbi/project/uk-online-retail-sales-analysis.Report/definition/pages/e2e71b2b39b7e00b93de/visuals/b7f03dd49cd6692b1d55/visual.json",
+      "parsed": true,
+      "schema_validated": true,
+      "exact_declared_schema": false,
+      "declared_schema_http_status": 404,
+      "compatibility_schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+      "schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+      "errors": []
+    },
+    {
+      "file": "powerbi/project/uk-online-retail-sales-analysis.Report/definition/pages/e2e71b2b39b7e00b93de/visuals/c1e7baf0796e55151039/visual.json",
+      "parsed": true,
+      "schema_validated": true,
+      "exact_declared_schema": false,
+      "declared_schema_http_status": 404,
+      "compatibility_schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+      "schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+      "errors": []
+    },
+    {
+      "file": "powerbi/project/uk-online-retail-sales-analysis.Report/definition/pages/e2e71b2b39b7e00b93de/visuals/c6a83e50232cca065cd5/visual.json",
+      "parsed": true,
+      "schema_validated": true,
+      "exact_declared_schema": false,
+      "declared_schema_http_status": 404,
+      "compatibility_schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+      "schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+      "errors": []
+    },
+    {
+      "file": "powerbi/project/uk-online-retail-sales-analysis.Report/definition/pages/e2e71b2b39b7e00b93de/visuals/dd400a8a673caa8ed6a7/visual.json",
+      "parsed": true,
+      "schema_validated": true,
+      "exact_declared_schema": false,
+      "declared_schema_http_status": 404,
+      "compatibility_schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+      "schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+      "errors": []
+    },
+    {
+      "file": "powerbi/project/uk-online-retail-sales-analysis.Report/definition/pages/e2e71b2b39b7e00b93de/visuals/e062531a409aa34d2575/visual.json",
+      "parsed": true,
+      "schema_validated": true,
+      "exact_declared_schema": false,
+      "declared_schema_http_status": 404,
+      "compatibility_schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+      "schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+      "errors": []
+    },
+    {
+      "file": "powerbi/project/uk-online-retail-sales-analysis.Report/definition/pages/e2e71b2b39b7e00b93de/visuals/eb470f7e84ed9703a8d8/visual.json",
+      "parsed": true,
+      "schema_validated": true,
+      "exact_declared_schema": false,
+      "declared_schema_http_status": 404,
+      "compatibility_schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+      "schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+      "errors": []
+    },
+    {
+      "file": "powerbi/project/uk-online-retail-sales-analysis.Report/definition/pages/e2e71b2b39b7e00b93de/visuals/f416263b317d0044c051/visual.json",
+      "parsed": true,
+      "schema_validated": true,
+      "exact_declared_schema": false,
+      "declared_schema_http_status": 404,
+      "compatibility_schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+      "schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+      "errors": []
+    },
+    {
+      "file": "powerbi/project/uk-online-retail-sales-analysis.Report/definition/pages/e2e71b2b39b7e00b93de/visuals/fe3958954c94c6c880eb/visual.json",
+      "parsed": true,
+      "schema_validated": true,
+      "exact_declared_schema": false,
+      "declared_schema_http_status": 404,
+      "compatibility_schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+      "schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+      "errors": []
+    },
+    {
+      "file": "powerbi/project/uk-online-retail-sales-analysis.Report/definition/pages/pages.json",
+      "parsed": true,
+      "schema_validated": true,
+      "exact_declared_schema": true,
+      "schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/pagesMetadata/1.1.0/schema.json",
+      "errors": []
+    },
+    {
+      "file": "powerbi/project/uk-online-retail-sales-analysis.Report/definition/report.json",
+      "parsed": true,
+      "schema_validated": true,
+      "exact_declared_schema": true,
+      "schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/report/3.3.0/schema.json",
+      "errors": []
+    },
+    {
+      "file": "powerbi/project/uk-online-retail-sales-analysis.Report/definition/version.json",
+      "parsed": true,
+      "schema_validated": true,
+      "exact_declared_schema": true,
+      "schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/versionMetadata/1.0.0/schema.json",
+      "errors": []
+    },
+    {
+      "file": "powerbi/project/uk-online-retail-sales-analysis.Report/definition.pbir",
+      "parsed": true,
+      "schema_validated": true,
+      "exact_declared_schema": true,
+      "schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definitionProperties/2.0.0/schema.json",
+      "errors": []
+    },
+    {
+      "file": "powerbi/project/uk-online-retail-sales-analysis.Report/StaticResources/SharedResources/BaseThemes/CY26SU02.json",
+      "parsed": true,
+      "schema_validated": false
+    },
+    {
+      "file": "powerbi/project/uk-online-retail-sales-analysis.Report/StaticResources/SharedResources/BuiltInThemes/AccessibleOrchid.json",
+      "parsed": true,
+      "schema_validated": false
+    },
+    {
+      "file": "powerbi/project/uk-online-retail-sales-analysis.SemanticModel/.platform",
+      "parsed": true,
+      "schema_validated": true,
+      "exact_declared_schema": true,
+      "schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+      "errors": []
+    },
+    {
+      "file": "powerbi/project/uk-online-retail-sales-analysis.SemanticModel/definition.pbism",
+      "parsed": true,
+      "schema_validated": true,
+      "exact_declared_schema": true,
+      "schema": "https://developer.microsoft.com/json-schemas/fabric/item/semanticModel/definitionProperties/1.0.0/schema.json",
+      "errors": []
+    },
+    {
+      "file": "powerbi/project/uk-online-retail-sales-analysis.SemanticModel/diagramLayout.json",
+      "parsed": true,
+      "schema_validated": false
+    }
+  ],
+  "schemas": {
+    "https://developer.microsoft.com/json-schemas/fabric/pbip/pbipProperties/1.0.0/schema.json": {
+      "sha256": "757c88ccf4e42f7cca9e46efae6f7bdc999c6f7d91f4f3964d9bd4fb31ba3056",
+      "cache": "ceaec1e19ff71f742c33369bc9fdae507b8112017246004c9d0e125e4fdc1904.json",
+      "retrieved_from": "https://developer.microsoft.com/json-schemas/fabric/pbip/pbipProperties/1.0.0/schema.json"
+    },
+    "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json": {
+      "sha256": "18846fb5f71f1db2421ed86d727f9df7b76081c7175cfb00e52ff4699732cc83",
+      "cache": "f82466b90b564efbe2a71d1916e8628acaf80a293a2f1e102955b95590ff3fcb.json",
+      "retrieved_from": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json"
+    },
+    "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.1.0/schema.json": {
+      "sha256": "722d1545f1060340b74ebc0030b0ccbce74dd2da68f3af136591cdeb22d0b1d6",
+      "cache": "21c28dcfe0d296bb9dbd5f6d4226944d3c25b691219c7d0e067188d79d57be31.json",
+      "retrieved_from": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.1.0/schema.json"
+    },
+    "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json": {
+      "sha256": "6532ceaec54b6422a6e57f13ba282b818a07a144b889dfc1d5272dde5ff35ad5",
+      "cache": "49399db5ad128c60275fddc61d539d1f9f31124370664987e02a0214fa634107.json",
+      "retrieved_from": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json"
+    },
+    "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualConfiguration/2.3.0/schema-embedded.json": {
+      "sha256": "842d14d3d7065f7f70288f9e146176a7ce581adf2652086047fa633cc2148986",
+      "cache": "41d8393d0998d7f50b1a3b5113032746bc223b8c143e507467e1b50da5495554.json",
+      "retrieved_from": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualConfiguration/2.3.0/schema-embedded.json"
+    },
+    "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/formattingObjectDefinitions/1.5.0/schema.json": {
+      "sha256": "56870bef66c80b7eb6133ac2188dcc56de2a5ad1784b3e7c8f2e7a8e7cd4cbd4",
+      "cache": "03b94f622daec778965e82747e87eeaccaa20d1605db791149c9123701bfd337.json",
+      "retrieved_from": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/formattingObjectDefinitions/1.5.0/schema.json"
+    },
+    "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualConfiguration/2.3.0/schema.embedded.json": {
+      "sha256": "842d14d3d7065f7f70288f9e146176a7ce581adf2652086047fa633cc2148986",
+      "cache": "b34e4c3a6e7ac0f2dd2a6d003a1c15dce9ca684e863a54ace6317f646822189a.json",
+      "retrieved_from": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualConfiguration/2.3.0/schema-embedded.json"
+    },
+    "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/semanticQuery/1.4.0/schema.json": {
+      "sha256": "7b8e9a75e9c24e66002c63ba5d33bfc5d9d7e5e0627ed3017c02e442a12110e5",
+      "cache": "0b9f8a866310d44ddd98553b0b28d08f8b455cdb581b0b461e004a26bcd8b778.json",
+      "retrieved_from": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/semanticQuery/1.4.0/schema.json"
+    },
+    "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/filterConfiguration/1.3.0/schema-embedded.json": {
+      "sha256": "121572623063b9d0dc1e234e24f93a2295a4c8d7ca88d935cb50c600ec7d1c5e",
+      "cache": "93c8af806e239a811417981e9d66a9b7f685c5ad88b1ea337772b2d6d2bacafa.json",
+      "retrieved_from": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/filterConfiguration/1.3.0/schema-embedded.json"
+    },
+    "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/filterConfiguration/1.3.0/schema.embedded.json": {
+      "sha256": "121572623063b9d0dc1e234e24f93a2295a4c8d7ca88d935cb50c600ec7d1c5e",
+      "cache": "d5f87f9831edf2a420677502fde24f5aef26453a3993aa4f4e2f892f49bdd10f.json",
+      "retrieved_from": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/filterConfiguration/1.3.0/schema-embedded.json"
+    },
+    "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/pagesMetadata/1.1.0/schema.json": {
+      "sha256": "c5b65aa3a55433ee82ed0127a94bc09b0847394468aed9014cce0c48798f76f2",
+      "cache": "94c7560dba3ba2c83ce5d526af94c31bb97afe8c98b67e45b1a3207b3a7a3b0b.json",
+      "retrieved_from": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/pagesMetadata/1.1.0/schema.json"
+    },
+    "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/report/3.3.0/schema.json": {
+      "sha256": "06ddadea9b99d0da2f483a51ba0b5111880ed0324a6d48dd9b4eaac70d731fe3",
+      "cache": "ad6df07a3e99c7a567364391366efcf8044eaf99d6dd9fddd278c59826d56703.json",
+      "retrieved_from": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/report/3.3.0/schema.json"
+    },
+    "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/versionMetadata/1.0.0/schema.json": {
+      "sha256": "852c18edb4b15e00f1ed777ad85314c9a7f1d1644d9f3a8fb1ea506eb04ebce2",
+      "cache": "bfc24a400e44c23bf46f4f92235e4ae1ce44d09e1c8887fa31ca1a7cf832fd7d.json",
+      "retrieved_from": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/versionMetadata/1.0.0/schema.json"
+    },
+    "https://developer.microsoft.com/json-schemas/fabric/item/report/definitionProperties/2.0.0/schema.json": {
+      "sha256": "431effbdeaca16d29e776cc80a10e5f26102aef2e9cc40bdc2c26e1913cd2e6e",
+      "cache": "b0f4d20273f04f465ae230e3746d36e9625084259f7149c6b1a37b5559c618f4.json",
+      "retrieved_from": "https://developer.microsoft.com/json-schemas/fabric/item/report/definitionProperties/2.0.0/schema.json"
+    },
+    "https://developer.microsoft.com/json-schemas/fabric/item/semanticModel/definitionProperties/1.0.0/schema.json": {
+      "sha256": "e31a2811463f240e15eebc5ea149216e47a3e4e9799eed3249a8ab7044db80d3",
+      "cache": "4e00ed342fd7963f9f68d31f5c6b5c65b5f297cd7c970c3df6c8f9f59a3aa272.json",
+      "retrieved_from": "https://developer.microsoft.com/json-schemas/fabric/item/semanticModel/definitionProperties/1.0.0/schema.json"
+    }
+  }
+}

@@ -17,14 +17,14 @@ table Calendar
 	column Year = YEAR('Calendar'[Date])
 		formatString: 0
 		lineageTag: 2d961391-73f2-417d-8ba7-b82d03c4a137
-		summarizeBy: sum
+		summarizeBy: none
 
 		annotation SummarizationSetBy = Automatic
 
 	column Month# = MONTH('Calendar'[Date])
 		formatString: 0
 		lineageTag: 4df0d189-0399-4e00-b1f1-1e04c881f2c8
-		summarizeBy: sum
+		summarizeBy: none
 
 		annotation SummarizationSetBy = Automatic
 
@@ -51,14 +51,14 @@ table Calendar
 	column Day = DAY('Calendar'[Date])
 		formatString: 0
 		lineageTag: dbc5060f-1c38-4fbb-9de8-cc635a12a6ab
-		summarizeBy: sum
+		summarizeBy: none
 
 		annotation SummarizationSetBy = Automatic
 
 	column Weekday# = WEEKDAY('Calendar'[Date],2)
 		formatString: 0
 		lineageTag: 0b0bcd21-b9df-4f7f-95a1-8008a8b0c7df
-		summarizeBy: sum
+		summarizeBy: none
 
 		annotation SummarizationSetBy = Automatic
 
@@ -95,9 +95,8 @@ table Calendar
 		mode: import
 		source =
 				CALENDAR(
-				    MIN('Online Retail'[invoice_day]),
-				    MAX('Online Retail'[invoice_day])
+				    MIN('Online Retail'[Invoice_Day]),
+				    MAX('Online Retail'[Invoice_Day])
 				)
 
 	annotation PBI_Id = 4bc68ffc06b1436e8979bd37282e3563
-
