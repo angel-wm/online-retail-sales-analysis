@@ -1,0 +1,2 @@
+# Preserve the recovered historical reference exactly, including its spacing.
+docs/archive/original-measures.txt -text -whitespace

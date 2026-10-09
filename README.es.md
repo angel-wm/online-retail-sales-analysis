@@ -4,31 +4,20 @@
 
 ## Resumen
 
-Este proyecto explora el desempeño de ventas, el comportamiento de clientes, la demanda de productos y las
-devoluciones mediante datos transaccionales de una empresa de retail online del Reino Unido. Demuestra un flujo de
-business intelligence: inspeccionar datos de origen, clasificar líneas de transacción, modelar medidas temporales
-y comunicar el análisis mediante un reporte de Power BI de dos páginas.
+Este proyecto analiza ventas, productos, cobertura de clientes y cancelaciones/reversiones de mercancía del dataset UK Online Retail mediante un reporte de Power BI de dos páginas.
 
-El repositorio permite revisar el **enfoque analítico y el diseño del dashboard**. Incluye el dataset original de
-Excel, documentación de limpieza y del modelo, y capturas del reporte. **Actualmente no contiene un reporte de
-Power BI que pueda abrirse:** el archivo `powerbi/online-retail-sales-analysis .pbix` versionado es un marcador de
-posición de dos bytes. Las capturas son evidencia visual, no un dashboard interactivo.
+El proyecto de trabajo es [uk-online-retail-sales-analysis.pbip](uk-online-retail-sales-analysis.pbip), directamente en la raíz. Sus componentes de reporte y modelo están en `powerbi/`. Las correcciones realizadas en el checkout separado `review` se consolidaron en este proyecto original; existe un único acceso PBIP activo. [La estructura del proyecto](docs/PROJECT_STRUCTURE.md) explica las carpetas y respaldos actuales.
+
+Es una rama local en revisión. El estado de las verificaciones nativas y los pendientes visuales/de interacción se documentan en [Aceptación en Desktop](docs/revision/DESKTOP_ACCEPTANCE.md). Las capturas siguientes muestran el reporte anterior.
 
 ## Cómo Usarlo
 
-1. **Explorar el reporte:** revisar las dos [capturas del dashboard](#vista-previa-del-dashboard). No hace falta
-   instalar software para verlas en GitHub.
-2. **Inspeccionar la fuente:** abrir o descargar [Online Retail.xlsx](data/raw/Online%20Retail.xlsx) con una
-   aplicación de hojas de cálculo compatible. El dataset incluye cancelaciones, cantidades negativas,
-   identificadores de cliente faltantes y códigos especiales.
-3. **Entender la preparación:** leer las [notas de limpieza](docs/cleaning-notes.md) sobre clasificación de
-   líneas y decisiones de preparación.
-4. **Interpretar el modelo:** consultar el [diccionario de datos](data/data-dictionary.md) para los nombres de
-   campos, reglas de inclusión, medidas y KPIs documentados.
+1. Abrir [uk-online-retail-sales-analysis.pbip](uk-online-retail-sales-analysis.pbip) en Power BI Desktop. El PBIX placeholder archivado no es un reporte válido.
+2. Si el proyecto cambió de ubicación, cerrar Desktop y ejecutar `python scripts/configure_source.py` desde la nueva raíz. Configura `SourceFilePath` para el archivo local `data/raw/Online Retail.xlsx`. Volver a abrir el mismo PBIP de la raíz y actualizar.
+3. Explorar **Sales Overview** y **Product & Customer Insights**. Los segmentadores Year, Country y Line Type están sincronizados entre ambas páginas.
+4. Revisar [cambios financieros](docs/revision/PHASE_1.md), [cambios del modelo](docs/revision/PHASE_2.md), [reproducción](docs/revision/REPRODUCE.md) y [pendientes en Desktop](docs/revision/DESKTOP_ACCEPTANCE.md).
 
-Power BI Desktop corresponde al flujo de trabajo original, pero el `.pbix` versionado no puede abrirse ni
-actualizarse. Para reproducir el reporte interactivo se necesita un archivo válido o reconstruirlo por separado;
-este repositorio no proporciona un procedimiento ejecutable completo.
+El PBIX real recuperado se conserva en `backups` como instantánea histórica. Editar el PBIP no actualiza ese binario; un PBIX actualizado debe guardarse desde Desktop tras la aceptación del proyecto.
 
 ## Vista Previa del Dashboard
 
@@ -37,7 +26,7 @@ resultados numéricos verificados de forma independiente.
 
 ### Sales Overview
 
-![Página Sales Overview de Power BI con KPIs comerciales y tendencias de ventas](dashboard/sales-overview.png)
+![Página Sales Overview de Power BI con KPIs comerciales y tendencias de ventas](screenshots/sales-overview.png)
 
 La página ejecutiva reúne ventas, pedidos, clientes únicos, valor promedio por pedido, tasa de devolución, ventas
 netas en el tiempo, desempeño por país, los diez productos principales por ventas netas y volumen mensual de
@@ -45,13 +34,12 @@ pedidos.
 
 ### Product & Customer Insights
 
-![Página Product and Customer Insights de Power BI con comparaciones de clientes y devoluciones](dashboard/product-customer-insights.png)
+![Página Product and Customer Insights de Power BI con comparaciones de clientes y devoluciones](screenshots/product-customer-insights.png)
 
 La segunda página compara los diez clientes principales por ventas netas, valor devuelto por país, productos con
 mayor valor de devoluciones y ventas frente a devoluciones por producto.
 
-El reporte documenta los filtros **Year**, **Country** y **Line Type**. Para interactuar con ellos se necesita el
-reporte original; las capturas almacenadas son estáticas.
+El reporte documenta los filtros **Year**, **Country** y **Line Type**. El PBIP actual permite interactuar con ellos; estas capturas históricas son estáticas.
 
 ## Preguntas de Negocio
 
@@ -95,62 +83,48 @@ según la métrica. Las [notas de limpieza](docs/cleaning-notes.md) explican las
 
 ## Limpieza y Preparación de Datos
 
-El flujo documentado estandariza tipos de datos, identifica cancelaciones y devoluciones, distingue productos de
-vouchers de regalo y ajustes, revisa valores faltantes y prepara una tabla calendario para reportes temporales.
+La fuente Excel se conserva byte a byte. El modelo excluye las 1,454 filas con descripción nula según la regla de calidad recuperada, dejando 540,455 filas en la tabla de hechos. Las líneas de transacción repetidas se conservan.
 
-La regla principal, `Include_In_Main_Analysis`, limita las ventas principales a líneas **Product** normales, no
-canceladas, con cantidad no negativa y precio distinto de cero. Las devoluciones se analizan por separado. Para
-las clasificaciones y reglas completas, consultar el
-[diccionario de datos](data/data-dictionary.md#business-rules-for-calculated-columns).
+Las ventas brutas de mercancía requieren líneas Product normales, cantidad y precio positivos y factura no cancelada. Los reversos de mercancía requieren cantidad negativa y precio positivo en líneas Product normales. El neto comercial resta estos reversos del bruto; los ajustes administrativos y otros movimientos permanecen separados. `AMAZONFEE` se clasifica como administrativo. Los importes usan GBP (£) y los cocientes conservan la precisión completa del cálculo.
+
+Consultar [Fase 1](docs/revision/PHASE_1.md), [Fase 2](docs/revision/PHASE_2.md) y [conciliación antes/después](evidence/financial/before_after.csv) para las definiciones actuales. Las [notas de limpieza originales](docs/cleaning-notes.md) documentan la implementación histórica y pueden diferir del modelo revisado.
 
 ## Modelo de Datos
 
-El modelo documentado consta de una tabla transaccional **Online Retail** y una tabla de fechas **Calendar**
-basada en `Invoice_Day`.
+El modelo actual contiene la tabla de hechos **Online Retail**, **Calendar** y **DimProduct**, además de las dos tablas automáticas de fecha ocultas conservadas. Hay 17 medidas y tres relaciones. La identidad de producto usa código y descripción representativa determinista; las variantes originales de descripción permanecen consultables.
 
-Las medidas abarcan ventas principales y netas, pedidos, clientes únicos, valor promedio por pedido, valor
-devuelto y tasa de devolución. La referencia autoritativa del modelo *documentado* es el
-[diccionario de campos y medidas](data/data-dictionary.md); no pueden verificarse de forma independiente frente al
-PBIX de marcador de posición.
+La implementación autoritativa es el TMDL en `powerbi/uk-online-retail-sales-analysis.SemanticModel/definition/`. [La Fase 2](docs/revision/PHASE_2.md) explica relaciones, descripciones y parámetro de origen. El [diccionario original](data/data-dictionary.md) se mantiene como referencia histórica.
 
 ## Mapa de Documentación
 
-| Si quieres… | Consulta… |
+| Para… | Consulta |
 | --- | --- |
-| Ver cómo era el reporte | [Sales Overview](dashboard/sales-overview.png) o [Product & Customer Insights](dashboard/product-customer-insights.png) |
-| Examinar los datos originales | [Online Retail.xlsx](data/raw/Online%20Retail.xlsx) |
-| Entender decisiones y supuestos de limpieza | [Notas de limpieza](docs/cleaning-notes.md) |
-| Buscar campos, clasificaciones o medidas | [Diccionario de datos](data/data-dictionary.md) |
-| Verificar procedencia y condiciones de reutilización del dataset | [Licencia y atribución del dataset](DATA_LICENSE.md) |
-
-Las rutas principales almacenadas son:
+| Abrir el proyecto actual | [PBIP de la raíz](uk-online-retail-sales-analysis.pbip) |
+| Entender carpetas y respaldos | [Estructura del proyecto](docs/PROJECT_STRUCTURE.md) |
+| Examinar la fuente original | [Online Retail.xlsx](data/raw/Online%20Retail.xlsx) |
+| Revisar las medidas corregidas | [Fase 1](docs/revision/PHASE_1.md), [antes/después](evidence/financial/before_after.csv) |
+| Revisar el modelo e identidad de producto | [Fase 2](docs/revision/PHASE_2.md) |
+| Repetir validaciones | [Guía de reproducción](docs/revision/REPRODUCE.md) |
+| Revisar pendientes nativos | [Aceptación en Desktop](docs/revision/DESKTOP_ACCEPTANCE.md) |
+| Verificar procedencia y licencia | [Licencia del dataset](DATA_LICENSE.md) |
 
 ```text
-README.md
-README.es.md
-LICENSE
-DATA_LICENSE.md
-dashboard/
-  sales-overview.png
-  product-customer-insights.png
-data/
-  raw/Online Retail.xlsx
-  data-dictionary.md
-docs/
-  cleaning-notes.md
-powerbi/
-  online-retail-sales-analysis .pbix   # marcador de dos bytes; no ejecutable
+uk-online-retail-sales-analysis.pbip
+powerbi/          # reporte PBIR y modelo semántico TMDL
+data/raw/        # fuente Excel original
+docs/revision/   # decisions, phase changes and acceptance
+docs/archive/    # recovered historical PDF, measures and theme
+screenshots/     # capturas del reporte original
+scripts/         # source configuration and validation
+evidence/        # baseline, reconciliation and validation receipts
+backups/         # respaldos locales; ignorados por Git
 ```
 
 ## Estado del Proyecto
 
-El repositorio documenta un **ejercicio de análisis y diseño de dashboard completado** mediante descripciones y
-capturas. Sin embargo, **no incluye una entrega de Power BI ejecutable**: el único `.pbix` versionado es un
-marcador de posición y los pasos entre la fuente y el reporte se describen conceptualmente, no como un pipeline
-completo ejecutable.
+Las correcciones están implementadas localmente en `codex/retail-dashboard-corrections`. No se hizo push, merge ni publicación en Power BI Service. La conciliación de fuente, parseo TMDL, cobertura de esquemas JSON, referencias y respaldos tienen evidencia reproducible en `evidence/validation`.
 
-Esta distinción conserva la evidencia disponible sin sugerir que el dashboard interactivo pueda reproducirse
-directamente con los archivos versionados.
+La actualización nativa se registra en `desktop-native-refresh.json` y el contraste final de medidas en `desktop-native-check.json`; no demuestran la representación visual ni las interacciones del reporte. Completar [Aceptación en Desktop](docs/revision/DESKTOP_ACCEPTANCE.md) antes de integrar. Las capturas son históricas; no se afirma haber exportado un PBIX ni capturas nuevas.
 
 ## Licencia
 

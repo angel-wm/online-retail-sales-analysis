@@ -1,0 +1,92 @@
+{
+  "status": "PASS_STATIC_PRESENTATION_AND_CANONICAL_STRUCTURE",
+  "native_visual_check": false,
+  "slicers": [
+    {
+      "page": "Product & Customer Insights",
+      "id": "0b519c8ca5250d606ea0",
+      "font_color": "#52667B",
+      "background": "#FFFFFF",
+      "contrast_ratio": 5.923
+    },
+    {
+      "page": "Product & Customer Insights",
+      "id": "4945712e83cd21b9868e",
+      "font_color": "#FFFFFF",
+      "background": "#2A4A6B",
+      "contrast_ratio": 9.169
+    },
+    {
+      "page": "Product & Customer Insights",
+      "id": "a13243354215609ec4c0",
+      "font_color": "#52667B",
+      "background": "#FFFFFF",
+      "contrast_ratio": 5.923
+    },
+    {
+      "page": "Sales Overview",
+      "id": "17704764da05a4761017",
+      "font_color": "#52667B",
+      "background": "#FFFFFF",
+      "contrast_ratio": 5.923
+    },
+    {
+      "page": "Sales Overview",
+      "id": "866c411e4dac10cc1484",
+      "font_color": "#FFFFFF",
+      "background": "#2A4A6B",
+      "contrast_ratio": 9.169
+    },
+    {
+      "page": "Sales Overview",
+      "id": "e062531a409aa34d2575",
+      "font_color": "#52667B",
+      "background": "#FFFFFF",
+      "contrast_ratio": 5.923
+    }
+  ],
+  "product_rankings": [
+    {
+      "page": "Product & Customer Insights",
+      "position": {
+        "x": 32,
+        "y": 504,
+        "z": 11000,
+        "height": 320,
+        "width": 904,
+        "tabOrder": 1400
+      },
+      "word_wrap": true,
+      "maximum_axis_percent": "50D"
+    },
+    {
+      "page": "Sales Overview",
+      "position": {
+        "x": 32,
+        "y": 508,
+        "z": 12000,
+        "height": 316,
+        "width": 904,
+        "tabOrder": 1800
+      },
+      "word_wrap": true,
+      "maximum_axis_percent": "50D"
+    }
+  ],
+  "scatter": {
+    "zoom_sliders": false,
+    "point_name_labels": false,
+    "full_product_name_in_tooltip": true,
+    "position": {
+      "x": 952,
+      "y": 504,
+      "z": 12000,
+      "height": 320,
+      "width": 374,
+      "tabOrder": 1500
+    }
+  },
+  "source_file_path_configured": "C:\\Users\\angel\\Documents\\Proyectos\\online-retail-sales-analysis\\data\\raw\\Online Retail.xlsx",
+  "source_sha256": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+  "remote_main_verified": "83d0e32e56e1ae539151ab383099565c3571ef2c"
+}

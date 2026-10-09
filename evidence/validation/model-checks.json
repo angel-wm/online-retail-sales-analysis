@@ -270,7 +270,7 @@
         "Return Value": 4320.85,
         "Net Sales": 1505928.31,
         "Orders": 1371,
-        "Unique Customers": 0,
+        "Unique Customers": null,
         "Average Order Value": 1098.4159810357403,
         "Return rate": 0.00286101797931144,
         "Units Sold": 419742,

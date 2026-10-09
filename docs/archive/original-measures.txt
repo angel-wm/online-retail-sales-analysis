@@ -1,0 +1,198 @@
+Formulas de las medidas
+--------------------------------------------------------------------------------
+
+Average Order Value = MROUND(DIVIDE([Net Sales], [Orders]), 2)
+
+Cancelled Orders = 
+CALCULATE(
+    DISTINCTCOUNT('Online Retail'[Invoice_ID]),
+    'Online Retail'[Is_Cancelled]  = TRUE()
+)
+
+Main Sales = 
+ROUND(
+    CALCULATE(
+        [Total Sales], 'Online Retail'[Include_In_Main_Analysis] = TRUE()
+    ),
+    2
+)
+
+Net Sales = ROUND([Main Sales] - [Returns Amount], 2)
+
+Orders = 
+CALCULATE(
+    DISTINCTCOUNT('Online Retail'[Invoice_ID]),
+    'Online Retail'[Include_In_Main_Analysis]
+)
+
+Return rate = ROUND(DIVIDE([Returns Amount], [Main Sales]), 2)
+
+Return Value = 
+CALCULATE(
+    SUMX(
+        'Online Retail',
+        ABS('Online Retail'[Sales_Amount])
+    ),
+    'Online Retail'[Is_Negative_Qty] = TRUE(),
+    'Online Retail'[Line_Type] = "Product"
+)
+
+Return Value = 
+CALCULATE(
+    SUMX(
+        'Online Retail',
+        ABS('Online Retail'[Sales_Amount])
+    ),
+    'Online Retail'[Is_Negative_Qty] = TRUE(),
+    'Online Retail'[Line_Type] = "Product"
+)
+
+Returns Amount = 
+ABS(
+    CALCULATE(
+        [Total Sales], 'Online Retail'[Is_Negative_Qty] = TRUE()
+    )
+)
+
+Total Sales = ROUND(SUM('Online Retail'[Sales_Amount]), 2)
+
+Unique Customers = 
+CALCULATE(
+    DISTINCTCOUNT('Online Retail'[Customer_ID]),
+    'Online Retail'[Include_In_Main_Analysis] = TRUE(),
+    NOT(ISBLANK('Online Retail'[Customer_ID]))
+)
+
+Units Sold = 
+CALCULATE(
+    SUM('Online Retail'[Quantity]),
+    'Online Retail'[Include_In_Main_Analysis] = TRUE()
+)
+
+Zero Price Records = 
+CALCULATE(
+    COUNTROWS('Online Retail'),
+    'Online Retail'[Is_Zero_Price] = TRUE()
+)
+
+
+Formulas de las columnas
+--------------------------------------------------------------------------------
+
+line_type = 
+let
+    code = Text.Upper(Text.Trim(Text.From([Stock_Code]))),
+    name = Text.Upper(Text.Trim(Text.From([Product_Name])))
+in
+    if Text.StartsWith(code, "GIFT_") or Text.Contains(name, "GIFT VOUCHER") then "Gift Voucher"
+    else if List.Contains({"M","S","POST","AMAZON FEE","BANK CHARGES","D","DOT","C2","B","CRUK"}, code)
+         or name = "EBAY"
+    then "Adjustment"
+    else "Product"
+
+
+record_flag = 
+let
+    pname = if [Product_Name] = null then "" else Text.Upper(Text.Trim(Text.From([Product_Name]))),
+    custid = if [Customer_ID] = null then "" else Text.Upper(Text.Trim(Text.From([Customer_ID]))),
+    uprice = try Number.From([Unit_Price]) otherwise null,
+
+    hasCustomer = custid <> "",
+
+    isManualReview =
+        Text.StartsWith(pname, "*") and not hasCustomer,
+
+    isOperationalNonProduct =
+        not hasCustomer and
+        (
+            Text.Contains(pname, "?") or
+            Text.Contains(pname, "MISSING") or
+            Text.Contains(pname, "LOST") or
+            Text.Contains(pname, "DAMAGE") or
+            Text.Contains(pname, "DISPLAY") or
+            Text.Contains(pname, "SOLD AS SETS")
+        ) and
+        (uprice = null or uprice = 0)
+
+in
+    if isManualReview then "Manual / Review"
+    else if isOperationalNonProduct then "Operational / Non-Product"
+    else "Normal"
+
+
+Is_Cancelled = 
+let
+    inv = if [Invoice_ID] = null then "" else Text.Upper(Text.Trim(Text.From([Invoice_ID])))
+in
+    Text.StartsWith(inv, "C")
+
+
+Is_Negative_Qty =
+let
+    qty = try Number.From([Quantity]) otherwise null
+in
+    if qty = null then false
+    else qty < 0
+
+
+Is_ZeroPrice = 
+let
+    price = try Number.From([Unit_Price]) otherwise null
+in
+    if price = null then false
+    else price = 0
+
+
+Sales_Amount = 
+let
+    qty = try Number.From([Quantity]) otherwise null,
+    price = try Number.From([Unit_Price]) otherwise null
+in
+    if qty = null or price = null then null
+    else Number.Round(qty * price, 2)
+
+
+Include_In_Main_Analysis =
+let
+    line = if [Line_Type] = null then "" else Text.Upper(Text.Trim(Text.From([Line_Type]))),
+    flag = if [Record_Flag] = null then "" else Text.Upper(Text.Trim(Text.From([Record_Flag]))),
+    cancelled = if [Is_Cancelled] = null then false else [Is_Cancelled],
+    negativeQty = if [Is_Negative_Qty] = null then false else [Is_Negative_Qty],
+    zeroprice = if [Is_Zero_Price] = null then false else [Is_Zero_Price]
+in
+    line = "PRODUCT"
+    and flag = "NORMAL"
+    and cancelled = false
+    and negativeQty = false
+    and zeroprice = false
+
+
+Formulas de las columnas calendar
+--------------------------------------------------------------------------------
+
+Calendar = CALENDAR(
+    MIN('Online Retail'[invoice_day]),
+    MAX('Online Retail'[invoice_day])
+)
+
+Year = YEAR('Calendar'[Date])
+
+Month# = MONTH('Calendar'[Date])
+
+Month = FORMAT('Calendar'[Date], "MMMM")
+
+Month_short = FORMAT('Calendar'[Date], "MMM")
+
+Trimester = "T" & FORMAT('Calendar'[Date], "Q")
+
+Day = DAY('Calendar'[Date])
+
+Weekday# = WEEKDAY('Calendar'[Date],2)
+
+Weekday = FORMAT('Calendar'[Date], "dddd")
+
+Year_Month = FORMAT('Calendar'[Date], "YYYY-MM")
+
+YearMonthSort = 'Calendar'[Year] * 100 + 'Calendar'[Month#]
+
+YearMonth_Label = FORMAT('Calendar'[Date], "MMM yyyy")

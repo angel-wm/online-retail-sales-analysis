@@ -1,18 +1,18 @@
 # Online Retail — Informe integral de cambios
 
-La revisión está implementada en el PBIP real de `powerbi/project`, con tres fases separadas y evidencia de fuente/estructura. **La aceptación en Power BI Desktop está pendiente**: no se han ejecutado DAX/M nativos, refresh, interacción o render. Los resultados calculados desde el Excel y la sintaxis del proyecto no prueban por sí solos su funcionamiento completo.
+La revisión está implementada en `uk-online-retail-sales-analysis.pbip`, directamente en la raíz, con los componentes en `powerbi`. Se verificaron apertura del modelo en Desktop 2.158.1304.0, actualización M completa y 17 medidas DAX en 15 contextos. **La aceptación visual y de interacción en la interfaz sigue pendiente**; los resultados de consultas no prueban dropdowns, representación ni navegación.
 
-Se trabajó en `codex/retail-dashboard-corrections`, a partir de main `83d0e32e56e1ae539151ab383099565c3571ef2c`, en un checkout `review` separado. El proyecto recuperado se conserva en el directorio padre y tiene un ZIP de respaldo con cada archivo contrastado por SHA-256. No se ha hecho push, merge ni publicación, y el PBIX de dos bytes del repositorio permanece intacto.
+La rama sigue siendo `codex/retail-dashboard-corrections`, a partir de main `83d0e32e56e1ae539151ab383099565c3571ef2c`. El checkout `review` se consolidó en el proyecto original por instrucción del usuario y su historial Git se trasladó a la raíz. Los 63 archivos originales se conservan dentro de su ZIP verificado; el checkout anterior y el placeholder se conservan en un segundo ZIP local. No se hizo push, merge ni publicación. [PROJECT_STRUCTURE.md](../PROJECT_STRUCTURE.md) documenta las rutas y el ensanchamiento de rankings realizado durante la consolidación.
 
 ## Cambios por fase
 
 | Fase | Implementación | Evidencia y límite |
 | --- | --- | --- |
-| 1 — Finanzas | AMAZONFEE administrativo; bruto y reversos con el mismo ámbito de mercancía; neto principal; ajustes/otros separados; KEEPFILTERS; precisión AOV/tasas; GBP. | Excel reconstruido, baseline de 12 KPI y contraste XML independiente. Ejecución DAX pendiente. |
-| 2 — Modelo/origen | SourceFilePath configurable; M simplificado y tipado; DimProduct por código; calendario y relaciones preservados/explícitos; duplicados conservados. | Join sin inflación/huérfanos, 3,848 códigos, 374 fechas, 17 medidas con contrato preservado y TOM oficial. Refresh M pendiente. |
+| 1 — Finanzas | AMAZONFEE administrativo; bruto y reversos con el mismo ámbito de mercancía; neto principal; ajustes/otros separados; KEEPFILTERS; precisión AOV/tasas; GBP. | Excel reconstruido, baseline de 12 KPI, contraste XML independiente y 17 medidas DAX comprobadas en 15 contextos. |
+| 2 — Modelo/origen | SourceFilePath configurable; M simplificado y tipado; DimProduct por código; calendario y relaciones preservados/explícitos; duplicados conservados. | Join sin inflación/huérfanos, 3,848 códigos, 374 fechas, 17 medidas con contrato preservado, TOM oficial y actualización M nativa completada. |
 | 3 — Reporte | Dos páginas; neto comercial y contexto; rankings por código; eje mensual y etiquetas; dispersograma explícito; cobertura; filtros sincronizados/reset explicado. | 31 visuales originales retenidos y 7 elementos de apoyo; referencias y geometría verificadas. Render/interacciones pendientes. |
 
-El detalle y la motivación están en [PHASE_1.md](PHASE_1.md), [PHASE_2.md](PHASE_2.md), [PHASE_3.md](PHASE_3.md) y [DECISIONS.md](DECISIONS.md). No hay una definición de negocio material pendiente para la implementación realizada; falta la aceptación nativa y revisión del usuario.
+El detalle y la motivación están en [PHASE_1.md](PHASE_1.md), [PHASE_2.md](PHASE_2.md), [PHASE_3.md](PHASE_3.md) y [DECISIONS.md](DECISIONS.md). No hay una definición de negocio material pendiente para la implementación realizada; falta la aceptación visual/de interacción y la revisión del usuario.
 
 ## Resultados financieros conciliados
 
@@ -40,7 +40,7 @@ Los resultados concretos se conservan en [validation-run.json](../../evidence/va
 - [model-checks.json](../../evidence/validation/model-checks.json): 540,455 filas preservadas, claves únicas, sin huérfanos, calendario y 15 selecciones esperadas desde Excel.
 - [report-checks.json](../../evidence/validation/report-checks.json): referencias, recursos, dependencias, 38 contenedores, Top N, reset, grupos e interacciones declaradas.
 - [final-json-schema.json](../../evidence/validation/final-json-schema.json): 51 JSON legibles; 10 esquemas exactos, 38 de compatibilidad y tres archivos sin esquema declarado. Sin errores detectados; cobertura **parcial** porque el esquema original visual 2.13 no está disponible públicamente.
-- [original-integrity.json](../../evidence/validation/original-integrity.json): 63 originales y 63 miembros de respaldo verificados; Excel idéntico, main y placeholder conservados.
+- [original-integrity.json](../../evidence/validation/original-integrity.json): 63 miembros del respaldo original verificados; Excel e instantánea PBIX idénticos, main conservado, placeholder archivado y un único PBIP activo.
 
 No se declara una mejora de rendimiento sin medición. La cobertura incluye 135,080 filas sin CustomerID y 5,268 repeticiones excedentes exactas preservadas. El periodo va de 1 de diciembre de 2010 a 9 de diciembre de 2011: 2010 y diciembre de 2011 son coberturas incompletas. La dimensión estabiliza identidad de código; su nombre es representativo, no un catálogo comercial aprobado.
 
@@ -48,4 +48,4 @@ No se declara una mejora de rendimiento sin medición. La cobertura incluye 135,
 
 Seguir la lista corta de [DESKTOP_ACCEPTANCE.md](DESKTOP_ACCEPTANCE.md): abrir/refresh, comparar medidas y casos límite, filtros/sincronización/reset, rankings/tooltips, legibilidad y evidencia nueva. Incluye [consultas DAX preparadas](../../evidence/validation/desktop-queries.dax) para comparar el motor con los valores esperados. Cualquier diferencia real requiere corregir y volver a validar.
 
-[GITHUB_NEXT_STEPS.md](GITHUB_NEXT_STEPS.md) recomienda cambios de README/diccionario/limpieza, capturas y un PBIX exportado desde la versión aceptada. Son pasos posteriores a revisión y aprobación; no se han ejecutado ni se presenta el placeholder como funcional.
+[GITHUB_NEXT_STEPS.md](GITHUB_NEXT_STEPS.md) recoge los pasos pendientes de documentación histórica, capturas, exportación PBIX e integración. Los README y las rutas se actualizaron localmente al consolidar el proyecto; las publicaciones y exportaciones finales siguen pendientes de aceptación.

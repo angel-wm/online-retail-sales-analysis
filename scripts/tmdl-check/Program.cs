@@ -1,6 +1,11 @@
 using Microsoft.AnalysisServices.Tabular;
 using System.Text.Json;
 
+if (args.Length >= 3 && args[0] == "--desktop") {
+    Environment.ExitCode = NativeCheck.Run(args);
+    return;
+}
+
 if (args.Length != 2) throw new ArgumentException("Usage: TmdlCheck <definition folder> <output json>");
 var db = TmdlSerializer.DeserializeDatabaseFromFolder(Path.GetFullPath(args[0]));
 var result = new {

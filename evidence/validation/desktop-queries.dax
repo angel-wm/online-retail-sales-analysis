@@ -1,4 +1,5 @@
-// Native acceptance queries. Prepared, NOT executed in this environment.
+// Manual acceptance queries. Equivalent measures/contexts were verified through ADOMD.NET.
+// See desktop-native-check.json; report interactions and query-view UI remain unverified.
 // Run each EVALUATE separately if the Desktop query view displays one result at a time.
 // Query-view execution validates measures; it does not validate report interactions.
 EVALUATE

@@ -63,6 +63,9 @@ def run():
         reversed_units = selected.loc[selected.Is_Merchandise_Reversal, "Quantity"]
         values["Units Reversed"] = -int(reversed_units.sum()) if len(reversed_units) else None
         known_sales = selected.loc[selected.Include_In_Main_Analysis & selected.Customer_ID.ne("")]
+        # DISTINCTCOUNTNOBLANK returns BLANK when the eligible rows have no known IDs.
+        if known_sales.empty:
+            values["Unique Customers"] = None
         values["Identified Sales Share"] = int(known_sales.Amount_Cents.sum()) / int(selected.loc[selected.Include_In_Main_Analysis, "Amount_Cents"].sum()) if sales_exist and len(known_sales) else None
         if selected.loc[selected.Customer_ID.eq("") & (selected.Include_In_Main_Analysis | selected.Is_Merchandise_Reversal)].empty:
             values["Unidentified Net Sales"] = None

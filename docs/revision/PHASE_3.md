@@ -12,7 +12,7 @@ Tras las capturas aportadas por el usuario, se corrige el contraste de Country y
 
 ## Sales Overview
 
-La tarjeta comercial principal utiliza **Net Sales** y se etiqueta **Net merchandise sales**. Pedidos se refiere a facturas con venta elegible; clientes a IDs conocidos; AOV a neto por factura de venta; la tasa a valor de reversos / bruto. El formato monetario del modelo y los overrides de consulta se alinean con GBP. Los dos cocientes conservan toda su precisión y se presentan con dos decimales.
+La tarjeta comercial principal utiliza **Net Sales** y se etiqueta **Net merchandise sales**. Pedidos se refiere a facturas con venta elegible; clientes a IDs conocidos; AOV a neto por factura de venta; la tasa a valor de reversos / bruto. El formato monetario del modelo y los overrides de consulta se alinean con GBP. AOV se calcula sin MROUND y tiene cuatro decimales de precisión Currency nativa; la tasa conserva Double. Ambos se presentan con dos decimales.
 
 La evolución mensual utiliza neto, línea sin área y sin etiquetas para todos los puntos. El eje monetario declara GBP y unidades de millones con un decimal, evitando que distintos niveles se muestren todos como £1M. La serie de pedidos conserva su pregunta propia; el AOV mensual se ofrece en tooltip, sin añadir otro gráfico. Los tooltips incluyen bruto, reversos y neto para explicar el resultado.
 

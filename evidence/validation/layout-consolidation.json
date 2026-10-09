@@ -1,0 +1,321 @@
+{
+  "native_render_checked": false,
+  "visuals_added_or_removed": 0,
+  "changes": [
+    {
+      "page": "Product & Customer Insights",
+      "visual": "0483efcc26aa02cd5527",
+      "type": "shape",
+      "before": {
+        "x": 16,
+        "y": 0,
+        "z": 0,
+        "height": 920,
+        "width": 176,
+        "tabOrder": 0
+      },
+      "after": {
+        "x": 16,
+        "y": 0,
+        "z": 0,
+        "height": 488,
+        "width": 176,
+        "tabOrder": 0
+      }
+    },
+    {
+      "page": "Product & Customer Insights",
+      "visual": "0b519c8ca5250d606ea0",
+      "type": "slicer",
+      "before": {
+        "x": 32,
+        "y": 208,
+        "z": 2000,
+        "height": 96,
+        "width": 144,
+        "tabOrder": 1000
+      },
+      "after": {
+        "x": 32,
+        "y": 176,
+        "z": 2000,
+        "height": 80,
+        "width": 144,
+        "tabOrder": 1000
+      }
+    },
+    {
+      "page": "Product & Customer Insights",
+      "visual": "326efa6cd15edb5615ca",
+      "type": "clusteredBarChart",
+      "before": {
+        "x": 200,
+        "y": 504,
+        "z": 11000,
+        "height": 320,
+        "width": 736,
+        "tabOrder": 1400
+      },
+      "after": {
+        "x": 32,
+        "y": 504,
+        "z": 11000,
+        "height": 320,
+        "width": 904,
+        "tabOrder": 1400
+      }
+    },
+    {
+      "page": "Product & Customer Insights",
+      "visual": "4945712e83cd21b9868e",
+      "type": "slicer",
+      "before": {
+        "x": 32,
+        "y": 64,
+        "z": 1000,
+        "height": 128,
+        "width": 144,
+        "tabOrder": 500
+      },
+      "after": {
+        "x": 32,
+        "y": 48,
+        "z": 1000,
+        "height": 112,
+        "width": 144,
+        "tabOrder": 500
+      }
+    },
+    {
+      "page": "Product & Customer Insights",
+      "visual": "5a6dfdeab84eec858701",
+      "type": "actionButton",
+      "before": {
+        "x": 32,
+        "y": 432,
+        "z": 8000,
+        "height": 34,
+        "width": 144,
+        "tabOrder": 1200
+      },
+      "after": {
+        "x": 32,
+        "y": 368,
+        "z": 8000,
+        "height": 32,
+        "width": 144,
+        "tabOrder": 1200
+      }
+    },
+    {
+      "page": "Product & Customer Insights",
+      "visual": "a13243354215609ec4c0",
+      "type": "slicer",
+      "before": {
+        "x": 32,
+        "y": 320,
+        "z": 3000,
+        "height": 96,
+        "width": 144,
+        "tabOrder": 1100
+      },
+      "after": {
+        "x": 32,
+        "y": 272,
+        "z": 3000,
+        "height": 80,
+        "width": 144,
+        "tabOrder": 1100
+      }
+    },
+    {
+      "page": "Product & Customer Insights",
+      "visual": "bfd4fc73192936bc42c7",
+      "type": "scatterChart",
+      "before": {
+        "x": 952,
+        "y": 504,
+        "z": 12000,
+        "height": 320,
+        "width": 374,
+        "tabOrder": 1500
+      },
+      "after": {
+        "x": 952,
+        "y": 504,
+        "z": 12000,
+        "height": 320,
+        "width": 374,
+        "tabOrder": 1500
+      }
+    },
+    {
+      "page": "Product & Customer Insights",
+      "visual": "retail_filter_scope",
+      "type": "textbox",
+      "before": {
+        "x": 32,
+        "y": 490,
+        "z": 6000,
+        "height": 350,
+        "width": 144,
+        "tabOrder": 1300
+      },
+      "after": {
+        "x": 32,
+        "y": 408,
+        "z": 6000,
+        "height": 76,
+        "width": 144,
+        "tabOrder": 1300
+      }
+    },
+    {
+      "page": "Sales Overview",
+      "visual": "103453003bcd8ca655ca",
+      "type": "clusteredBarChart",
+      "before": {
+        "x": 200,
+        "y": 508,
+        "z": 12000,
+        "height": 316,
+        "width": 736,
+        "tabOrder": 1800
+      },
+      "after": {
+        "x": 32,
+        "y": 508,
+        "z": 12000,
+        "height": 316,
+        "width": 904,
+        "tabOrder": 1800
+      }
+    },
+    {
+      "page": "Sales Overview",
+      "visual": "17704764da05a4761017",
+      "type": "slicer",
+      "before": {
+        "x": 32,
+        "y": 208,
+        "z": 4000,
+        "height": 96,
+        "width": 144,
+        "tabOrder": 1200
+      },
+      "after": {
+        "x": 32,
+        "y": 176,
+        "z": 4000,
+        "height": 80,
+        "width": 144,
+        "tabOrder": 1200
+      }
+    },
+    {
+      "page": "Sales Overview",
+      "visual": "3774ff8807dbaa3ca5ce",
+      "type": "actionButton",
+      "before": {
+        "x": 32,
+        "y": 432,
+        "z": 18000,
+        "height": 34,
+        "width": 144,
+        "tabOrder": 1600
+      },
+      "after": {
+        "x": 32,
+        "y": 368,
+        "z": 18000,
+        "height": 32,
+        "width": 144,
+        "tabOrder": 1600
+      }
+    },
+    {
+      "page": "Sales Overview",
+      "visual": "866c411e4dac10cc1484",
+      "type": "slicer",
+      "before": {
+        "x": 32,
+        "y": 64,
+        "z": 3000,
+        "height": 128,
+        "width": 144,
+        "tabOrder": 500
+      },
+      "after": {
+        "x": 32,
+        "y": 48,
+        "z": 3000,
+        "height": 112,
+        "width": 144,
+        "tabOrder": 500
+      }
+    },
+    {
+      "page": "Sales Overview",
+      "visual": "e062531a409aa34d2575",
+      "type": "slicer",
+      "before": {
+        "x": 32,
+        "y": 320,
+        "z": 5000,
+        "height": 96,
+        "width": 144,
+        "tabOrder": 1500
+      },
+      "after": {
+        "x": 32,
+        "y": 272,
+        "z": 5000,
+        "height": 80,
+        "width": 144,
+        "tabOrder": 1500
+      }
+    },
+    {
+      "page": "Sales Overview",
+      "visual": "fe3958954c94c6c880eb",
+      "type": "shape",
+      "before": {
+        "x": 16,
+        "y": 0,
+        "z": 1000,
+        "height": 920,
+        "width": 176,
+        "tabOrder": 0
+      },
+      "after": {
+        "x": 16,
+        "y": 0,
+        "z": 1000,
+        "height": 488,
+        "width": 176,
+        "tabOrder": 0
+      }
+    },
+    {
+      "page": "Sales Overview",
+      "visual": "retail_filter_scope",
+      "type": "textbox",
+      "before": {
+        "x": 32,
+        "y": 490,
+        "z": 16000,
+        "height": 350,
+        "width": 144,
+        "tabOrder": 1700
+      },
+      "after": {
+        "x": 32,
+        "y": 408,
+        "z": 16000,
+        "height": 76,
+        "width": 144,
+        "tabOrder": 1700
+      }
+    }
+  ]
+}

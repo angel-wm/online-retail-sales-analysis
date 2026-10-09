@@ -12,7 +12,7 @@ def main():
     source = (args.excel or repo / "data/raw/Online Retail.xlsx").resolve(strict=True)
     if source.suffix.lower() != ".xlsx" or not zipfile.is_zipfile(source):
         raise ValueError("Source must be a valid XLSX file")
-    parameter = repo / "powerbi/project/uk-online-retail-sales-analysis.SemanticModel/definition/expressions.tmdl"
+    parameter = repo / "powerbi/uk-online-retail-sales-analysis.SemanticModel/definition/expressions.tmdl"
     content = parameter.read_text(encoding="utf-8")
     value = str(source).replace('"', '""')
     content, count = re.subn(r'(?m)^(expression SourceFilePath = )"(?:[^"]|"")*"( meta .*)$', lambda m: m[1] + '"' + value + '"' + m[2], content)

@@ -11,7 +11,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1] / ".tools/python"))
 import jsonschema
 
 REPO = Path(__file__).resolve().parents[1]
-PROJECT = REPO / "powerbi/project"
+PROJECT = REPO / "powerbi"
 CACHE = REPO / ".tools/schemas"
 CACHE.mkdir(parents=True, exist_ok=True)
 used = {}
@@ -55,7 +55,7 @@ def fetch(url):
 
 def run(output):
     results = []
-    for path in sorted(PROJECT.rglob("*")):
+    for path in sorted([REPO / "uk-online-retail-sales-analysis.pbip", *PROJECT.rglob("*")]):
         if path.is_file() and (path.suffix in {".json", ".pbip", ".pbir", ".pbism"} or path.name == ".platform"):
             obj = json.loads(path.read_text(encoding="utf-8-sig"))
             result = {"file": path.relative_to(REPO).as_posix(), "parsed": True, "schema_validated": False}

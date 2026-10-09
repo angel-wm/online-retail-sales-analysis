@@ -5,7 +5,7 @@ import json
 import re
 
 REPO = Path(__file__).resolve().parents[1]
-PROJECT = REPO / "powerbi/project"
+PROJECT = REPO / "powerbi"
 REPORT = PROJECT / "uk-online-retail-sales-analysis.Report"
 TOM = json.loads((REPO / "evidence/validation/final-tom.json").read_text(encoding="utf-8"))
 TABLES = {t["name"]: {kind: {x["name"] for x in t[key]} for kind, key in [("Column", "columns"), ("Measure", "measures")]} for t in TOM["tables"]}
@@ -60,8 +60,8 @@ def walk(obj):
 def intersects(a, b):
     return min(a["x"] + a["width"], b["x"] + b["width"]) > max(a["x"], b["x"]) + .1 and min(a["y"] + a["height"], b["y"] + b["height"]) > max(a["y"], b["y"]) + .1
 
-pbip = json.loads((PROJECT / "uk-online-retail-sales-analysis.pbip").read_text(encoding="utf-8"))
-require((PROJECT / pbip["artifacts"][0]["report"]["path"]).resolve() == REPORT.resolve(), "PBIP report path")
+pbip = json.loads((REPO / "uk-online-retail-sales-analysis.pbip").read_text(encoding="utf-8"))
+require((REPO / pbip["artifacts"][0]["report"]["path"]).resolve() == REPORT.resolve(), "PBIP report path")
 pbir = json.loads((REPORT / "definition.pbir").read_text(encoding="utf-8"))
 require((REPORT / pbir["datasetReference"]["byPath"]["path"] / "definition.pbism").exists(), "PBIR semantic model path")
 baseline = json.loads((REPO / "evidence/baseline/original_manifest.json").read_text(encoding="utf-8"))

@@ -5,4 +5,5 @@
 .cache/
 .tools/
 *.pyc
+backups/
 

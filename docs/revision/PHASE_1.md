@@ -1,5 +1,7 @@
 # Fase 1 — Lógica financiera y KPI
 
+Actualización posterior a la fase inicial: el proyecto está consolidado en el PBIP de la raíz. Se completaron refresh M y contraste de 17 medidas DAX en 15 contextos en Desktop 2.158.1304.0. La comprobación de AOV respeta Currency de cuatro decimales y los recuentos vacíos respetan BLANK; las fórmulas se conservan. [Aceptación y evidencias actuales](DESKTOP_ACCEPTANCE.md). Las referencias a pruebas nativas pendientes del resto de este informe describen el cierre inicial de la fase.
+
 Estado: implementación aplicada; recálculo de fuente y comprobación independiente a céntimos. La ejecución de DAX/M en Power BI Desktop queda pendiente y no se sustituye por estas pruebas.
 
 ## Definición comercial adoptada

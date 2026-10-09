@@ -8,15 +8,7 @@
   "desktop_rendered": false,
   "files": [
     {
-      "file": "powerbi/project/uk-online-retail-sales-analysis.pbip",
-      "parsed": true,
-      "schema_validated": true,
-      "exact_declared_schema": true,
-      "schema": "https://developer.microsoft.com/json-schemas/fabric/pbip/pbipProperties/1.0.0/schema.json",
-      "errors": []
-    },
-    {
-      "file": "powerbi/project/uk-online-retail-sales-analysis.Report/.platform",
+      "file": "powerbi/uk-online-retail-sales-analysis.Report/.platform",
       "parsed": true,
       "schema_validated": true,
       "exact_declared_schema": true,
@@ -24,7 +16,7 @@
       "errors": []
     },
     {
-      "file": "powerbi/project/uk-online-retail-sales-analysis.Report/definition/pages/9ce4074e277290a594b7/page.json",
+      "file": "powerbi/uk-online-retail-sales-analysis.Report/definition/pages/9ce4074e277290a594b7/page.json",
       "parsed": true,
       "schema_validated": true,
       "exact_declared_schema": true,
@@ -32,7 +24,7 @@
       "errors": []
     },
     {
-      "file": "powerbi/project/uk-online-retail-sales-analysis.Report/definition/pages/9ce4074e277290a594b7/visuals/00c6198092a372ab0910/visual.json",
+      "file": "powerbi/uk-online-retail-sales-analysis.Report/definition/pages/9ce4074e277290a594b7/visuals/00c6198092a372ab0910/visual.json",
       "parsed": true,
       "schema_validated": true,
       "exact_declared_schema": false,
@@ -42,7 +34,7 @@
       "errors": []
     },
     {
-      "file": "powerbi/project/uk-online-retail-sales-analysis.Report/definition/pages/9ce4074e277290a594b7/visuals/0483efcc26aa02cd5527/visual.json",
+      "file": "powerbi/uk-online-retail-sales-analysis.Report/definition/pages/9ce4074e277290a594b7/visuals/0483efcc26aa02cd5527/visual.json",
       "parsed": true,
       "schema_validated": true,
       "exact_declared_schema": false,
@@ -52,7 +44,7 @@
       "errors": []
     },
     {
-      "file": "powerbi/project/uk-online-retail-sales-analysis.Report/definition/pages/9ce4074e277290a594b7/visuals/0b519c8ca5250d606ea0/visual.json",
+      "file": "powerbi/uk-online-retail-sales-analysis.Report/definition/pages/9ce4074e277290a594b7/visuals/0b519c8ca5250d606ea0/visual.json",
       "parsed": true,
       "schema_validated": true,
       "exact_declared_schema": false,
@@ -62,7 +54,7 @@
       "errors": []
     },
     {
-      "file": "powerbi/project/uk-online-retail-sales-analysis.Report/definition/pages/9ce4074e277290a594b7/visuals/1ce1ac3b318881b82400/visual.json",
+      "file": "powerbi/uk-online-retail-sales-analysis.Report/definition/pages/9ce4074e277290a594b7/visuals/1ce1ac3b318881b82400/visual.json",
       "parsed": true,
       "schema_validated": true,
       "exact_declared_schema": false,
@@ -72,7 +64,7 @@
       "errors": []
     },
     {
-      "file": "powerbi/project/uk-online-retail-sales-analysis.Report/definition/pages/9ce4074e277290a594b7/visuals/326efa6cd15edb5615ca/visual.json",
+      "file": "powerbi/uk-online-retail-sales-analysis.Report/definition/pages/9ce4074e277290a594b7/visuals/326efa6cd15edb5615ca/visual.json",
       "parsed": true,
       "schema_validated": true,
       "exact_declared_schema": false,
@@ -82,7 +74,7 @@
       "errors": []
     },
     {
-      "file": "powerbi/project/uk-online-retail-sales-analysis.Report/definition/pages/9ce4074e277290a594b7/visuals/488130f83c29980e808d/visual.json",
+      "file": "powerbi/uk-online-retail-sales-analysis.Report/definition/pages/9ce4074e277290a594b7/visuals/488130f83c29980e808d/visual.json",
       "parsed": true,
       "schema_validated": true,
       "exact_declared_schema": false,
@@ -92,7 +84,7 @@
       "errors": []
     },
     {
-      "file": "powerbi/project/uk-online-retail-sales-analysis.Report/definition/pages/9ce4074e277290a594b7/visuals/4945712e83cd21b9868e/visual.json",
+      "file": "powerbi/uk-online-retail-sales-analysis.Report/definition/pages/9ce4074e277290a594b7/visuals/4945712e83cd21b9868e/visual.json",
       "parsed": true,
       "schema_validated": true,
       "exact_declared_schema": false,
@@ -102,7 +94,7 @@
       "errors": []
     },
     {
-      "file": "powerbi/project/uk-online-retail-sales-analysis.Report/definition/pages/9ce4074e277290a594b7/visuals/5a6dfdeab84eec858701/visual.json",
+      "file": "powerbi/uk-online-retail-sales-analysis.Report/definition/pages/9ce4074e277290a594b7/visuals/5a6dfdeab84eec858701/visual.json",
       "parsed": true,
       "schema_validated": true,
       "exact_declared_schema": false,
@@ -112,7 +104,7 @@
       "errors": []
     },
     {
-      "file": "powerbi/project/uk-online-retail-sales-analysis.Report/definition/pages/9ce4074e277290a594b7/visuals/5d94eeb50cdd08a9dc2d/visual.json",
+      "file": "powerbi/uk-online-retail-sales-analysis.Report/definition/pages/9ce4074e277290a594b7/visuals/5d94eeb50cdd08a9dc2d/visual.json",
       "parsed": true,
       "schema_validated": true,
       "exact_declared_schema": false,
@@ -122,7 +114,7 @@
       "errors": []
     },
     {
-      "file": "powerbi/project/uk-online-retail-sales-analysis.Report/definition/pages/9ce4074e277290a594b7/visuals/8659739282b008532eee/visual.json",
+      "file": "powerbi/uk-online-retail-sales-analysis.Report/definition/pages/9ce4074e277290a594b7/visuals/8659739282b008532eee/visual.json",
       "parsed": true,
       "schema_validated": true,
       "exact_declared_schema": false,
@@ -132,7 +124,7 @@
       "errors": []
     },
     {
-      "file": "powerbi/project/uk-online-retail-sales-analysis.Report/definition/pages/9ce4074e277290a594b7/visuals/a13243354215609ec4c0/visual.json",
+      "file": "powerbi/uk-online-retail-sales-analysis.Report/definition/pages/9ce4074e277290a594b7/visuals/a13243354215609ec4c0/visual.json",
       "parsed": true,
       "schema_validated": true,
       "exact_declared_schema": false,
@@ -142,7 +134,7 @@
       "errors": []
     },
     {
-      "file": "powerbi/project/uk-online-retail-sales-analysis.Report/definition/pages/9ce4074e277290a594b7/visuals/bfd4fc73192936bc42c7/visual.json",
+      "file": "powerbi/uk-online-retail-sales-analysis.Report/definition/pages/9ce4074e277290a594b7/visuals/bfd4fc73192936bc42c7/visual.json",
       "parsed": true,
       "schema_validated": true,
       "exact_declared_schema": false,
@@ -152,7 +144,7 @@
       "errors": []
     },
     {
-      "file": "powerbi/project/uk-online-retail-sales-analysis.Report/definition/pages/9ce4074e277290a594b7/visuals/fc81c2d8bc82287d528b/visual.json",
+      "file": "powerbi/uk-online-retail-sales-analysis.Report/definition/pages/9ce4074e277290a594b7/visuals/fc81c2d8bc82287d528b/visual.json",
       "parsed": true,
       "schema_validated": true,
       "exact_declared_schema": false,
@@ -162,7 +154,7 @@
       "errors": []
     },
     {
-      "file": "powerbi/project/uk-online-retail-sales-analysis.Report/definition/pages/9ce4074e277290a594b7/visuals/retail_filter_scope/visual.json",
+      "file": "powerbi/uk-online-retail-sales-analysis.Report/definition/pages/9ce4074e277290a594b7/visuals/retail_filter_scope/visual.json",
       "parsed": true,
       "schema_validated": true,
       "exact_declared_schema": false,
@@ -172,7 +164,7 @@
       "errors": []
     },
     {
-      "file": "powerbi/project/uk-online-retail-sales-analysis.Report/definition/pages/9ce4074e277290a594b7/visuals/retail_identified_share/visual.json",
+      "file": "powerbi/uk-online-retail-sales-analysis.Report/definition/pages/9ce4074e277290a594b7/visuals/retail_identified_share/visual.json",
       "parsed": true,
       "schema_validated": true,
       "exact_declared_schema": false,
@@ -182,7 +174,7 @@
       "errors": []
     },
     {
-      "file": "powerbi/project/uk-online-retail-sales-analysis.Report/definition/pages/9ce4074e277290a594b7/visuals/retail_insights_limitations/visual.json",
+      "file": "powerbi/uk-online-retail-sales-analysis.Report/definition/pages/9ce4074e277290a594b7/visuals/retail_insights_limitations/visual.json",
       "parsed": true,
       "schema_validated": true,
       "exact_declared_schema": false,
@@ -192,7 +184,7 @@
       "errors": []
     },
     {
-      "file": "powerbi/project/uk-online-retail-sales-analysis.Report/definition/pages/9ce4074e277290a594b7/visuals/retail_unknown_net/visual.json",
+      "file": "powerbi/uk-online-retail-sales-analysis.Report/definition/pages/9ce4074e277290a594b7/visuals/retail_unknown_net/visual.json",
       "parsed": true,
       "schema_validated": true,
       "exact_declared_schema": false,
@@ -202,7 +194,7 @@
       "errors": []
     },
     {
-      "file": "powerbi/project/uk-online-retail-sales-analysis.Report/definition/pages/e2e71b2b39b7e00b93de/page.json",
+      "file": "powerbi/uk-online-retail-sales-analysis.Report/definition/pages/e2e71b2b39b7e00b93de/page.json",
       "parsed": true,
       "schema_validated": true,
       "exact_declared_schema": true,
@@ -210,7 +202,7 @@
       "errors": []
     },
     {
-      "file": "powerbi/project/uk-online-retail-sales-analysis.Report/definition/pages/e2e71b2b39b7e00b93de/visuals/0d26f07ae3e59165a455/visual.json",
+      "file": "powerbi/uk-online-retail-sales-analysis.Report/definition/pages/e2e71b2b39b7e00b93de/visuals/0d26f07ae3e59165a455/visual.json",
       "parsed": true,
       "schema_validated": true,
       "exact_declared_schema": false,
@@ -220,7 +212,7 @@
       "errors": []
     },
     {
-      "file": "powerbi/project/uk-online-retail-sales-analysis.Report/definition/pages/e2e71b2b39b7e00b93de/visuals/0d43bab4e45532bcc190/visual.json",
+      "file": "powerbi/uk-online-retail-sales-analysis.Report/definition/pages/e2e71b2b39b7e00b93de/visuals/0d43bab4e45532bcc190/visual.json",
       "parsed": true,
       "schema_validated": true,
       "exact_declared_schema": false,
@@ -230,7 +222,7 @@
       "errors": []
     },
     {
-      "file": "powerbi/project/uk-online-retail-sales-analysis.Report/definition/pages/e2e71b2b39b7e00b93de/visuals/103453003bcd8ca655ca/visual.json",
+      "file": "powerbi/uk-online-retail-sales-analysis.Report/definition/pages/e2e71b2b39b7e00b93de/visuals/103453003bcd8ca655ca/visual.json",
       "parsed": true,
       "schema_validated": true,
       "exact_declared_schema": false,
@@ -240,7 +232,7 @@
       "errors": []
     },
     {
-      "file": "powerbi/project/uk-online-retail-sales-analysis.Report/definition/pages/e2e71b2b39b7e00b93de/visuals/17704764da05a4761017/visual.json",
+      "file": "powerbi/uk-online-retail-sales-analysis.Report/definition/pages/e2e71b2b39b7e00b93de/visuals/17704764da05a4761017/visual.json",
       "parsed": true,
       "schema_validated": true,
       "exact_declared_schema": false,
@@ -250,7 +242,7 @@
       "errors": []
     },
     {
-      "file": "powerbi/project/uk-online-retail-sales-analysis.Report/definition/pages/e2e71b2b39b7e00b93de/visuals/1efd5c26d1b097445d63/visual.json",
+      "file": "powerbi/uk-online-retail-sales-analysis.Report/definition/pages/e2e71b2b39b7e00b93de/visuals/1efd5c26d1b097445d63/visual.json",
       "parsed": true,
       "schema_validated": true,
       "exact_declared_schema": false,
@@ -260,7 +252,7 @@
       "errors": []
     },
     {
-      "file": "powerbi/project/uk-online-retail-sales-analysis.Report/definition/pages/e2e71b2b39b7e00b93de/visuals/3774ff8807dbaa3ca5ce/visual.json",
+      "file": "powerbi/uk-online-retail-sales-analysis.Report/definition/pages/e2e71b2b39b7e00b93de/visuals/3774ff8807dbaa3ca5ce/visual.json",
       "parsed": true,
       "schema_validated": true,
       "exact_declared_schema": false,
@@ -270,7 +262,7 @@
       "errors": []
     },
     {
-      "file": "powerbi/project/uk-online-retail-sales-analysis.Report/definition/pages/e2e71b2b39b7e00b93de/visuals/49a95c32ed08401404c0/visual.json",
+      "file": "powerbi/uk-online-retail-sales-analysis.Report/definition/pages/e2e71b2b39b7e00b93de/visuals/49a95c32ed08401404c0/visual.json",
       "parsed": true,
       "schema_validated": true,
       "exact_declared_schema": false,
@@ -280,7 +272,7 @@
       "errors": []
     },
     {
-      "file": "powerbi/project/uk-online-retail-sales-analysis.Report/definition/pages/e2e71b2b39b7e00b93de/visuals/5aa06803ebeac0c1cbba/visual.json",
+      "file": "powerbi/uk-online-retail-sales-analysis.Report/definition/pages/e2e71b2b39b7e00b93de/visuals/5aa06803ebeac0c1cbba/visual.json",
       "parsed": true,
       "schema_validated": true,
       "exact_declared_schema": false,
@@ -290,7 +282,7 @@
       "errors": []
     },
     {
-      "file": "powerbi/project/uk-online-retail-sales-analysis.Report/definition/pages/e2e71b2b39b7e00b93de/visuals/5f1c21068041053e9103/visual.json",
+      "file": "powerbi/uk-online-retail-sales-analysis.Report/definition/pages/e2e71b2b39b7e00b93de/visuals/5f1c21068041053e9103/visual.json",
       "parsed": true,
       "schema_validated": true,
       "exact_declared_schema": false,
@@ -300,7 +292,7 @@
       "errors": []
     },
     {
-      "file": "powerbi/project/uk-online-retail-sales-analysis.Report/definition/pages/e2e71b2b39b7e00b93de/visuals/866c411e4dac10cc1484/visual.json",
+      "file": "powerbi/uk-online-retail-sales-analysis.Report/definition/pages/e2e71b2b39b7e00b93de/visuals/866c411e4dac10cc1484/visual.json",
       "parsed": true,
       "schema_validated": true,
       "exact_declared_schema": false,
@@ -310,7 +302,7 @@
       "errors": []
     },
     {
-      "file": "powerbi/project/uk-online-retail-sales-analysis.Report/definition/pages/e2e71b2b39b7e00b93de/visuals/b7f03dd49cd6692b1d55/visual.json",
+      "file": "powerbi/uk-online-retail-sales-analysis.Report/definition/pages/e2e71b2b39b7e00b93de/visuals/b7f03dd49cd6692b1d55/visual.json",
       "parsed": true,
       "schema_validated": true,
       "exact_declared_schema": false,
@@ -320,7 +312,7 @@
       "errors": []
     },
     {
-      "file": "powerbi/project/uk-online-retail-sales-analysis.Report/definition/pages/e2e71b2b39b7e00b93de/visuals/c1e7baf0796e55151039/visual.json",
+      "file": "powerbi/uk-online-retail-sales-analysis.Report/definition/pages/e2e71b2b39b7e00b93de/visuals/c1e7baf0796e55151039/visual.json",
       "parsed": true,
       "schema_validated": true,
       "exact_declared_schema": false,
@@ -330,7 +322,7 @@
       "errors": []
     },
     {
-      "file": "powerbi/project/uk-online-retail-sales-analysis.Report/definition/pages/e2e71b2b39b7e00b93de/visuals/c6a83e50232cca065cd5/visual.json",
+      "file": "powerbi/uk-online-retail-sales-analysis.Report/definition/pages/e2e71b2b39b7e00b93de/visuals/c6a83e50232cca065cd5/visual.json",
       "parsed": true,
       "schema_validated": true,
       "exact_declared_schema": false,
@@ -340,7 +332,7 @@
       "errors": []
     },
     {
-      "file": "powerbi/project/uk-online-retail-sales-analysis.Report/definition/pages/e2e71b2b39b7e00b93de/visuals/dd400a8a673caa8ed6a7/visual.json",
+      "file": "powerbi/uk-online-retail-sales-analysis.Report/definition/pages/e2e71b2b39b7e00b93de/visuals/dd400a8a673caa8ed6a7/visual.json",
       "parsed": true,
       "schema_validated": true,
       "exact_declared_schema": false,
@@ -350,7 +342,7 @@
       "errors": []
     },
     {
-      "file": "powerbi/project/uk-online-retail-sales-analysis.Report/definition/pages/e2e71b2b39b7e00b93de/visuals/e062531a409aa34d2575/visual.json",
+      "file": "powerbi/uk-online-retail-sales-analysis.Report/definition/pages/e2e71b2b39b7e00b93de/visuals/e062531a409aa34d2575/visual.json",
       "parsed": true,
       "schema_validated": true,
       "exact_declared_schema": false,
@@ -360,7 +352,7 @@
       "errors": []
     },
     {
-      "file": "powerbi/project/uk-online-retail-sales-analysis.Report/definition/pages/e2e71b2b39b7e00b93de/visuals/eb470f7e84ed9703a8d8/visual.json",
+      "file": "powerbi/uk-online-retail-sales-analysis.Report/definition/pages/e2e71b2b39b7e00b93de/visuals/eb470f7e84ed9703a8d8/visual.json",
       "parsed": true,
       "schema_validated": true,
       "exact_declared_schema": false,
@@ -370,7 +362,7 @@
       "errors": []
     },
     {
-      "file": "powerbi/project/uk-online-retail-sales-analysis.Report/definition/pages/e2e71b2b39b7e00b93de/visuals/f416263b317d0044c051/visual.json",
+      "file": "powerbi/uk-online-retail-sales-analysis.Report/definition/pages/e2e71b2b39b7e00b93de/visuals/f416263b317d0044c051/visual.json",
       "parsed": true,
       "schema_validated": true,
       "exact_declared_schema": false,
@@ -380,7 +372,7 @@
       "errors": []
     },
     {
-      "file": "powerbi/project/uk-online-retail-sales-analysis.Report/definition/pages/e2e71b2b39b7e00b93de/visuals/fe3958954c94c6c880eb/visual.json",
+      "file": "powerbi/uk-online-retail-sales-analysis.Report/definition/pages/e2e71b2b39b7e00b93de/visuals/fe3958954c94c6c880eb/visual.json",
       "parsed": true,
       "schema_validated": true,
       "exact_declared_schema": false,
@@ -390,7 +382,7 @@
       "errors": []
     },
     {
-      "file": "powerbi/project/uk-online-retail-sales-analysis.Report/definition/pages/e2e71b2b39b7e00b93de/visuals/retail_filter_scope/visual.json",
+      "file": "powerbi/uk-online-retail-sales-analysis.Report/definition/pages/e2e71b2b39b7e00b93de/visuals/retail_filter_scope/visual.json",
       "parsed": true,
       "schema_validated": true,
       "exact_declared_schema": false,
@@ -400,7 +392,7 @@
       "errors": []
     },
     {
-      "file": "powerbi/project/uk-online-retail-sales-analysis.Report/definition/pages/e2e71b2b39b7e00b93de/visuals/retail_financial_bridge/visual.json",
+      "file": "powerbi/uk-online-retail-sales-analysis.Report/definition/pages/e2e71b2b39b7e00b93de/visuals/retail_financial_bridge/visual.json",
       "parsed": true,
       "schema_validated": true,
       "exact_declared_schema": false,
@@ -410,7 +402,7 @@
       "errors": []
     },
     {
-      "file": "powerbi/project/uk-online-retail-sales-analysis.Report/definition/pages/e2e71b2b39b7e00b93de/visuals/retail_sales_definition/visual.json",
+      "file": "powerbi/uk-online-retail-sales-analysis.Report/definition/pages/e2e71b2b39b7e00b93de/visuals/retail_sales_definition/visual.json",
       "parsed": true,
       "schema_validated": true,
       "exact_declared_schema": false,
@@ -420,7 +412,7 @@
       "errors": []
     },
     {
-      "file": "powerbi/project/uk-online-retail-sales-analysis.Report/definition/pages/pages.json",
+      "file": "powerbi/uk-online-retail-sales-analysis.Report/definition/pages/pages.json",
       "parsed": true,
       "schema_validated": true,
       "exact_declared_schema": true,
@@ -428,7 +420,7 @@
       "errors": []
     },
     {
-      "file": "powerbi/project/uk-online-retail-sales-analysis.Report/definition/report.json",
+      "file": "powerbi/uk-online-retail-sales-analysis.Report/definition/report.json",
       "parsed": true,
       "schema_validated": true,
       "exact_declared_schema": true,
@@ -436,7 +428,7 @@
       "errors": []
     },
     {
-      "file": "powerbi/project/uk-online-retail-sales-analysis.Report/definition/version.json",
+      "file": "powerbi/uk-online-retail-sales-analysis.Report/definition/version.json",
       "parsed": true,
       "schema_validated": true,
       "exact_declared_schema": true,
@@ -444,7 +436,7 @@
       "errors": []
     },
     {
-      "file": "powerbi/project/uk-online-retail-sales-analysis.Report/definition.pbir",
+      "file": "powerbi/uk-online-retail-sales-analysis.Report/definition.pbir",
       "parsed": true,
       "schema_validated": true,
       "exact_declared_schema": true,
@@ -452,17 +444,17 @@
       "errors": []
     },
     {
-      "file": "powerbi/project/uk-online-retail-sales-analysis.Report/StaticResources/SharedResources/BaseThemes/CY26SU02.json",
+      "file": "powerbi/uk-online-retail-sales-analysis.Report/StaticResources/SharedResources/BaseThemes/CY26SU02.json",
       "parsed": true,
       "schema_validated": false
     },
     {
-      "file": "powerbi/project/uk-online-retail-sales-analysis.Report/StaticResources/SharedResources/BuiltInThemes/AccessibleOrchid.json",
+      "file": "powerbi/uk-online-retail-sales-analysis.Report/StaticResources/SharedResources/BuiltInThemes/AccessibleOrchid.json",
       "parsed": true,
       "schema_validated": false
     },
     {
-      "file": "powerbi/project/uk-online-retail-sales-analysis.SemanticModel/.platform",
+      "file": "powerbi/uk-online-retail-sales-analysis.SemanticModel/.platform",
       "parsed": true,
       "schema_validated": true,
       "exact_declared_schema": true,
@@ -470,7 +462,7 @@
       "errors": []
     },
     {
-      "file": "powerbi/project/uk-online-retail-sales-analysis.SemanticModel/definition.pbism",
+      "file": "powerbi/uk-online-retail-sales-analysis.SemanticModel/definition.pbism",
       "parsed": true,
       "schema_validated": true,
       "exact_declared_schema": true,
@@ -478,17 +470,20 @@
       "errors": []
     },
     {
-      "file": "powerbi/project/uk-online-retail-sales-analysis.SemanticModel/diagramLayout.json",
+      "file": "powerbi/uk-online-retail-sales-analysis.SemanticModel/diagramLayout.json",
       "parsed": true,
       "schema_validated": false
+    },
+    {
+      "file": "uk-online-retail-sales-analysis.pbip",
+      "parsed": true,
+      "schema_validated": true,
+      "exact_declared_schema": true,
+      "schema": "https://developer.microsoft.com/json-schemas/fabric/pbip/pbipProperties/1.0.0/schema.json",
+      "errors": []
     }
   ],
   "schemas": {
-    "https://developer.microsoft.com/json-schemas/fabric/pbip/pbipProperties/1.0.0/schema.json": {
-      "sha256": "757c88ccf4e42f7cca9e46efae6f7bdc999c6f7d91f4f3964d9bd4fb31ba3056",
-      "cache": "ceaec1e19ff71f742c33369bc9fdae507b8112017246004c9d0e125e4fdc1904.json",
-      "retrieved_from": "https://developer.microsoft.com/json-schemas/fabric/pbip/pbipProperties/1.0.0/schema.json"
-    },
     "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json": {
       "sha256": "18846fb5f71f1db2421ed86d727f9df7b76081c7175cfb00e52ff4699732cc83",
       "cache": "f82466b90b564efbe2a71d1916e8628acaf80a293a2f1e102955b95590ff3fcb.json",
@@ -558,6 +553,11 @@
       "sha256": "e31a2811463f240e15eebc5ea149216e47a3e4e9799eed3249a8ab7044db80d3",
       "cache": "4e00ed342fd7963f9f68d31f5c6b5c65b5f297cd7c970c3df6c8f9f59a3aa272.json",
       "retrieved_from": "https://developer.microsoft.com/json-schemas/fabric/item/semanticModel/definitionProperties/1.0.0/schema.json"
+    },
+    "https://developer.microsoft.com/json-schemas/fabric/pbip/pbipProperties/1.0.0/schema.json": {
+      "sha256": "757c88ccf4e42f7cca9e46efae6f7bdc999c6f7d91f4f3964d9bd4fb31ba3056",
+      "cache": "ceaec1e19ff71f742c33369bc9fdae507b8112017246004c9d0e125e4fdc1904.json",
+      "retrieved_from": "https://developer.microsoft.com/json-schemas/fabric/pbip/pbipProperties/1.0.0/schema.json"
     }
   }
 }

@@ -1,5 +1,7 @@
 # Fase 2 — Power Query, modelo y reproducción
 
+Actualización posterior a la fase inicial: el proyecto está consolidado en el PBIP de la raíz. Se completaron refresh M y contraste de 17 medidas DAX en 15 contextos en Desktop 2.158.1304.0. La comprobación de AOV respeta Currency de cuatro decimales y los recuentos vacíos respetan BLANK; las fórmulas se conservan. [Aceptación y evidencias actuales](DESKTOP_ACCEPTANCE.md). Las referencias a pruebas nativas pendientes del resto de este informe describen el cierre inicial de la fase.
+
 Estado: implementado y contrastado con la fuente; parser oficial TMDL satisfactorio. La actualización de consultas M y la carga real en Desktop quedan pendientes.
 
 ## Origen configurable
