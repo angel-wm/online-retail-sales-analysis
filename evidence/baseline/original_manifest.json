@@ -1,0 +1,317 @@
+[
+  {
+    "path": "Formulas de las medidas.txt",
+    "bytes": 5195,
+    "sha256": "b40b320c735436af8e6dcbc87e2572f060ceb4f42ab060c8e40757b2e9994a56"
+  },
+  {
+    "path": "json file.json",
+    "bytes": 115,
+    "sha256": "1f76883529f1e0c5df07fe4ddf003bb3324b113c4e29ec4817bfdb636c7a3ead"
+  },
+  {
+    "path": "product-customer-insights.png.png",
+    "bytes": 120999,
+    "sha256": "f83ec5e0414a86e22c696569ff761bdb4107ec20d8e10069c8256cd540ffed16"
+  },
+  {
+    "path": "sales-overview.png",
+    "bytes": 149592,
+    "sha256": "1011c4ecc62232576b77c9077e0928653060bc93855c744a4fb82a698e47391a"
+  },
+  {
+    "path": "uk-online-retail-sales-analysis -1-2.pdf",
+    "bytes": 613200,
+    "sha256": "bf0fc08f4047dcab33093896015b4ab81a87d9bc577ea1ceac0e8603d982c323"
+  },
+  {
+    "path": "uk-online-retail-sales-analysis.pbip",
+    "bytes": 310,
+    "sha256": "f91f48e24cbabcaf8628b90be6403e3d1b775eb8e0442edda0e7f79a17c4426b"
+  },
+  {
+    "path": "uk-online-retail-sales-analysis.pbix",
+    "bytes": 4302979,
+    "sha256": "859372bb30acd96e56c055d97e23a704ebe3ab47b09f1980e4d7a67767a4f5e1"
+  },
+  {
+    "path": "online+retail\\Online Retail.xlsx",
+    "bytes": 23715344,
+    "sha256": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d"
+  },
+  {
+    "path": "uk-online-retail-sales-analysis.Report\\.platform",
+    "bytes": 325,
+    "sha256": "e6d3c9d6a505bfd027f39318a31142a38b00e13fcd4cbafc58ef43bdb907ecb2"
+  },
+  {
+    "path": "uk-online-retail-sales-analysis.Report\\definition.pbir",
+    "bytes": 265,
+    "sha256": "ed0a758eb9046832939c766e0fca3c231b297388583c7671ad58ab6eb10e4495"
+  },
+  {
+    "path": "uk-online-retail-sales-analysis.SemanticModel\\.platform",
+    "bytes": 332,
+    "sha256": "d240fea97026cf24dd4c710296ceba1e62c994bf55f6c093f6c3469eca731a9d"
+  },
+  {
+    "path": "uk-online-retail-sales-analysis.SemanticModel\\definition.pbism",
+    "bytes": 170,
+    "sha256": "73a1ae4c89d7488f553788adc772a04c805d1c9e0d7333e2b2b5476aad8e5a5f"
+  },
+  {
+    "path": "uk-online-retail-sales-analysis.SemanticModel\\diagramLayout.json",
+    "bytes": 1146,
+    "sha256": "2dfe3f4d2f4d6d5fbe7779292d488ee3e49571f675ea8f5ff4b3ec4f5882abba"
+  },
+  {
+    "path": "uk-online-retail-sales-analysis.Report\\.pbi\\localSettings.json",
+    "bytes": 2040,
+    "sha256": "483692779a5d30aaa0a6de2e4eea1e7b7d2269ceccdf1e438c2ff3f142274179"
+  },
+  {
+    "path": "uk-online-retail-sales-analysis.Report\\definition\\report.json",
+    "bytes": 1786,
+    "sha256": "de592515237550444ac296e4fd9dbdce45ab06869489d238665b3beb3b110bc1"
+  },
+  {
+    "path": "uk-online-retail-sales-analysis.Report\\definition\\version.json",
+    "bytes": 152,
+    "sha256": "c8bdd966a85f1eaab4312d2096b6d7b508243e4d7bc5a4d25af3cfcb1056a4e7"
+  },
+  {
+    "path": "uk-online-retail-sales-analysis.Report\\definition\\pages\\pages.json",
+    "bytes": 253,
+    "sha256": "2ae2ac6d2b083cfc15d151af01ec8d5981e66f6abb50e14f2bad70f4d0306b8e"
+  },
+  {
+    "path": "uk-online-retail-sales-analysis.Report\\definition\\pages\\9ce4074e277290a594b7\\page.json",
+    "bytes": 1129,
+    "sha256": "395f73ce444cb2732bc37fb4295bfd12df38e56f380139fd502c68d7e9541b8d"
+  },
+  {
+    "path": "uk-online-retail-sales-analysis.Report\\definition\\pages\\e2e71b2b39b7e00b93de\\page.json",
+    "bytes": 1116,
+    "sha256": "62baf1fc95463979b796a63bad5c5be35288934e733ff948c22232dcd4168c2b"
+  },
+  {
+    "path": "uk-online-retail-sales-analysis.Report\\definition\\pages\\9ce4074e277290a594b7\\visuals\\00c6198092a372ab0910\\visual.json",
+    "bytes": 2482,
+    "sha256": "e7f5feb5c95be99876bd9f2c27489837f353b21d35782b11d4967bb5c832c924"
+  },
+  {
+    "path": "uk-online-retail-sales-analysis.Report\\definition\\pages\\9ce4074e277290a594b7\\visuals\\0483efcc26aa02cd5527\\visual.json",
+    "bytes": 2703,
+    "sha256": "e5b7829b7b8cf31bb6ea6629ccb0f320082cecf3668d718070183ec0a7ada5ff"
+  },
+  {
+    "path": "uk-online-retail-sales-analysis.Report\\definition\\pages\\9ce4074e277290a594b7\\visuals\\0b519c8ca5250d606ea0\\visual.json",
+    "bytes": 4022,
+    "sha256": "d79a167597cae473ce011b24fe82711cd4fb70b81c7199aaa93d2f7a5fd7893e"
+  },
+  {
+    "path": "uk-online-retail-sales-analysis.Report\\definition\\pages\\9ce4074e277290a594b7\\visuals\\1ce1ac3b318881b82400\\visual.json",
+    "bytes": 2037,
+    "sha256": "dc5876fd95e294ca5258d5742e7490af86809923e29f7108052b2e5bdede32a8"
+  },
+  {
+    "path": "uk-online-retail-sales-analysis.Report\\definition\\pages\\9ce4074e277290a594b7\\visuals\\326efa6cd15edb5615ca\\visual.json",
+    "bytes": 16709,
+    "sha256": "39922b6755e7852d48ec27fe1fa86618f015d92f7c231e15ce453d04a17b639f"
+  },
+  {
+    "path": "uk-online-retail-sales-analysis.Report\\definition\\pages\\9ce4074e277290a594b7\\visuals\\488130f83c29980e808d\\visual.json",
+    "bytes": 2365,
+    "sha256": "bd42852ae0fb1b3adef2ae3e3e365ed26da775673c148c05c18bab993b1ad631"
+  },
+  {
+    "path": "uk-online-retail-sales-analysis.Report\\definition\\pages\\9ce4074e277290a594b7\\visuals\\4945712e83cd21b9868e\\visual.json",
+    "bytes": 4542,
+    "sha256": "5a16b6a9cca85aa25f9168d6cf20e3f665256988e5b080243774defa136fa6ea"
+  },
+  {
+    "path": "uk-online-retail-sales-analysis.Report\\definition\\pages\\9ce4074e277290a594b7\\visuals\\5a6dfdeab84eec858701\\visual.json",
+    "bytes": 5211,
+    "sha256": "557fb48f5a2a5dbca80088434998cdbcead74bc2d79cda6aadc45c7a8e9887d1"
+  },
+  {
+    "path": "uk-online-retail-sales-analysis.Report\\definition\\pages\\9ce4074e277290a594b7\\visuals\\5d94eeb50cdd08a9dc2d\\visual.json",
+    "bytes": 2445,
+    "sha256": "bd2ab201c9c0ba9fddde581df71e092749c3be05acec744fe4ef87a75526eac0"
+  },
+  {
+    "path": "uk-online-retail-sales-analysis.Report\\definition\\pages\\9ce4074e277290a594b7\\visuals\\8659739282b008532eee\\visual.json",
+    "bytes": 10445,
+    "sha256": "1ed0eea6079ed4b0b4999737d7a06d4349af822368a9833edc3edaeb06f8c41f"
+  },
+  {
+    "path": "uk-online-retail-sales-analysis.Report\\definition\\pages\\9ce4074e277290a594b7\\visuals\\a13243354215609ec4c0\\visual.json",
+    "bytes": 3854,
+    "sha256": "a927b99ea80f2d72a08b57b68310d02ed72cd16862a6d152d8550f564f6ce5f2"
+  },
+  {
+    "path": "uk-online-retail-sales-analysis.Report\\definition\\pages\\9ce4074e277290a594b7\\visuals\\bfd4fc73192936bc42c7\\visual.json",
+    "bytes": 13309,
+    "sha256": "86c21e76da10c931f0882c222912fde0c5e1f7a92c7c09382b733b6b795bb7e0"
+  },
+  {
+    "path": "uk-online-retail-sales-analysis.Report\\definition\\pages\\9ce4074e277290a594b7\\visuals\\fc81c2d8bc82287d528b\\visual.json",
+    "bytes": 10319,
+    "sha256": "bd7809362aeb58e940e3e50de9fe5b12a43ccdeb65877d6e5807cd32d897fdfb"
+  },
+  {
+    "path": "uk-online-retail-sales-analysis.Report\\definition\\pages\\e2e71b2b39b7e00b93de\\visuals\\0d26f07ae3e59165a455\\visual.json",
+    "bytes": 4707,
+    "sha256": "b488d78e1d7416558567bce6291cee27d768551f1d66b2faf46b0107972b51e8"
+  },
+  {
+    "path": "uk-online-retail-sales-analysis.Report\\definition\\pages\\e2e71b2b39b7e00b93de\\visuals\\0d43bab4e45532bcc190\\visual.json",
+    "bytes": 4632,
+    "sha256": "a90168d44a0bd35e077c571a845f60f844cc17ec69d437b53168b8f5044caf3e"
+  },
+  {
+    "path": "uk-online-retail-sales-analysis.Report\\definition\\pages\\e2e71b2b39b7e00b93de\\visuals\\103453003bcd8ca655ca\\visual.json",
+    "bytes": 8049,
+    "sha256": "cf546d661ad908ec4f658250dcb741a03e5ce9a48745bafd1a4e50e10143a5e8"
+  },
+  {
+    "path": "uk-online-retail-sales-analysis.Report\\definition\\pages\\e2e71b2b39b7e00b93de\\visuals\\17704764da05a4761017\\visual.json",
+    "bytes": 3984,
+    "sha256": "208b5fe2438426dde3f031ba258f8d77a5703e843c08b1c8e54fb257eb944ada"
+  },
+  {
+    "path": "uk-online-retail-sales-analysis.Report\\definition\\pages\\e2e71b2b39b7e00b93de\\visuals\\1efd5c26d1b097445d63\\visual.json",
+    "bytes": 4631,
+    "sha256": "aeeab8d955b896d31c0905a4db870d05dee71c594b454bc23f826f5dc289af90"
+  },
+  {
+    "path": "uk-online-retail-sales-analysis.Report\\definition\\pages\\e2e71b2b39b7e00b93de\\visuals\\3774ff8807dbaa3ca5ce\\visual.json",
+    "bytes": 5213,
+    "sha256": "09c26c7b20fb8607b0683ee17983e562edc3e424a7451f02bf68c59b59f8dd9e"
+  },
+  {
+    "path": "uk-online-retail-sales-analysis.Report\\definition\\pages\\e2e71b2b39b7e00b93de\\visuals\\49a95c32ed08401404c0\\visual.json",
+    "bytes": 2367,
+    "sha256": "dd215fcda8883ddb423fc2bcc72f9ce5be646c8a00fc2b7f33624ff0a8a7c674"
+  },
+  {
+    "path": "uk-online-retail-sales-analysis.Report\\definition\\pages\\e2e71b2b39b7e00b93de\\visuals\\5aa06803ebeac0c1cbba\\visual.json",
+    "bytes": 2449,
+    "sha256": "8730a57a61394a536474aef1499a955570e2249d04c3b725023520e98d03141a"
+  },
+  {
+    "path": "uk-online-retail-sales-analysis.Report\\definition\\pages\\e2e71b2b39b7e00b93de\\visuals\\5f1c21068041053e9103\\visual.json",
+    "bytes": 5078,
+    "sha256": "cece96ff1e668de143fdb6c237ca67d579634782141308a0f071f0459014d737"
+  },
+  {
+    "path": "uk-online-retail-sales-analysis.Report\\definition\\pages\\e2e71b2b39b7e00b93de\\visuals\\866c411e4dac10cc1484\\visual.json",
+    "bytes": 4545,
+    "sha256": "d3244c0e8ac4b5395a63d607600a6a68f63e464e1a415044c908286ac2b8500f"
+  },
+  {
+    "path": "uk-online-retail-sales-analysis.Report\\definition\\pages\\e2e71b2b39b7e00b93de\\visuals\\b7f03dd49cd6692b1d55\\visual.json",
+    "bytes": 4513,
+    "sha256": "246c9603168a57419e96f53cc4709ef1d9bb9c732f32cb7e8154bc75f9ae73ac"
+  },
+  {
+    "path": "uk-online-retail-sales-analysis.Report\\definition\\pages\\e2e71b2b39b7e00b93de\\visuals\\c1e7baf0796e55151039\\visual.json",
+    "bytes": 8187,
+    "sha256": "ea2f4916b17cbbfca0eb883d54e222df717718752163a2fac17d3be16ce074f9"
+  },
+  {
+    "path": "uk-online-retail-sales-analysis.Report\\definition\\pages\\e2e71b2b39b7e00b93de\\visuals\\c6a83e50232cca065cd5\\visual.json",
+    "bytes": 4501,
+    "sha256": "ce03abd6c7c9ffb6cb6984f18f5ecb4cb56590ffe66e7e2c9ce45ae8ff58d8ef"
+  },
+  {
+    "path": "uk-online-retail-sales-analysis.Report\\definition\\pages\\e2e71b2b39b7e00b93de\\visuals\\dd400a8a673caa8ed6a7\\visual.json",
+    "bytes": 7421,
+    "sha256": "9add41ca85926bc6ad1ee1b6cb90a2c1306a81cc4f54b8e03f30324af347f9a5"
+  },
+  {
+    "path": "uk-online-retail-sales-analysis.Report\\definition\\pages\\e2e71b2b39b7e00b93de\\visuals\\e062531a409aa34d2575\\visual.json",
+    "bytes": 3852,
+    "sha256": "84b57a3c27eb083ec08b1661268f8d0057ad08d82a9d1a1629590c35071c59d7"
+  },
+  {
+    "path": "uk-online-retail-sales-analysis.Report\\definition\\pages\\e2e71b2b39b7e00b93de\\visuals\\eb470f7e84ed9703a8d8\\visual.json",
+    "bytes": 2466,
+    "sha256": "12d562d416385677f459c1473b643faf3a15c54bb71bb6bd19e0d9d017f31aaa"
+  },
+  {
+    "path": "uk-online-retail-sales-analysis.Report\\definition\\pages\\e2e71b2b39b7e00b93de\\visuals\\f416263b317d0044c051\\visual.json",
+    "bytes": 2024,
+    "sha256": "d7dbdfe6f27c5fe059114a246916b2e7994603d3485526c342aca4a56aa353a7"
+  },
+  {
+    "path": "uk-online-retail-sales-analysis.Report\\definition\\pages\\e2e71b2b39b7e00b93de\\visuals\\fe3958954c94c6c880eb\\visual.json",
+    "bytes": 2707,
+    "sha256": "e9279cb17851ee931a37f0437aced1a2218f214aa7848369d6e33f8aeab35769"
+  },
+  {
+    "path": "uk-online-retail-sales-analysis.Report\\StaticResources\\SharedResources\\BaseThemes\\CY26SU02.json",
+    "bytes": 19330,
+    "sha256": "fbf2085330b17e8bcae893438d18f92eb62e7fc0e99e5c786b6a810acaca6a1d"
+  },
+  {
+    "path": "uk-online-retail-sales-analysis.Report\\StaticResources\\SharedResources\\BuiltInThemes\\AccessibleOrchid.json",
+    "bytes": 569,
+    "sha256": "da3411894eda9d15247fe23ec4a631fa66c99bd56caad12d15b1a36024843d57"
+  },
+  {
+    "path": "uk-online-retail-sales-analysis.SemanticModel\\.pbi\\cache.abf",
+    "bytes": 4285901,
+    "sha256": "f9c99e8384a059d5d5146dd33931e6b01eeb99df2b1030a551ef25b365d20a28"
+  },
+  {
+    "path": "uk-online-retail-sales-analysis.SemanticModel\\.pbi\\editorSettings.json",
+    "bytes": 317,
+    "sha256": "993662478760e2bcbc0184d6260711ae0b7cdb3867354581e7fd56609ca6ec97"
+  },
+  {
+    "path": "uk-online-retail-sales-analysis.SemanticModel\\.pbi\\localSettings.json",
+    "bytes": 573,
+    "sha256": "f898e01e0e1ac1d02603c0f4858b23d15404d68ed808e2952ba4b98687751087"
+  },
+  {
+    "path": "uk-online-retail-sales-analysis.SemanticModel\\definition\\database.tmdl",
+    "bytes": 39,
+    "sha256": "822c914b643bca32bb20abd8a762df8204a1b9ef02acc2bc7348727f6699cb96"
+  },
+  {
+    "path": "uk-online-retail-sales-analysis.SemanticModel\\definition\\model.tmdl",
+    "bytes": 515,
+    "sha256": "dc9343b0b9290433c1f7149e617c24bc8d8b30ef685cc87d4599a654de54cf40"
+  },
+  {
+    "path": "uk-online-retail-sales-analysis.SemanticModel\\definition\\relationships.tmdl",
+    "bytes": 321,
+    "sha256": "0ec7b16e0c834bca5336a3bec53120fab861b3078acbe08e1b7e3c1e7948c4a2"
+  },
+  {
+    "path": "uk-online-retail-sales-analysis.SemanticModel\\definition\\cultures\\en-US.tmdl",
+    "bytes": 152687,
+    "sha256": "ad9e03a525f9750ebe6618560c044f0ea73c55ad46f5b218cad1c4542cc53b16"
+  },
+  {
+    "path": "uk-online-retail-sales-analysis.SemanticModel\\definition\\tables\\Calendar.tmdl",
+    "bytes": 2744,
+    "sha256": "e076571f590874906ccd779bec6649eacb2e247147cd66d88c712bf3f045da17"
+  },
+  {
+    "path": "uk-online-retail-sales-analysis.SemanticModel\\definition\\tables\\DateTableTemplate_0d4fcce8-da58-4559-a0a7-b0c6e2eb4b9c.tmdl",
+    "bytes": 2746,
+    "sha256": "5e314ba48b81901fa81ede4c3dbde9e2a00cf09837fea076f5e20b75fd3fa712"
+  },
+  {
+    "path": "uk-online-retail-sales-analysis.SemanticModel\\definition\\tables\\LocalDateTable_7ed12bcd-d2a7-41a7-9452-cf3af0f2044c.tmdl",
+    "bytes": 2783,
+    "sha256": "47eed6658777b5537d2d8e654924115717c94469aaf7d68d05a23c946a2d43c3"
+  },
+  {
+    "path": "uk-online-retail-sales-analysis.SemanticModel\\definition\\tables\\Online Retail.tmdl",
+    "bytes": 13254,
+    "sha256": "1c8ccf87f2f395399f9ce6e43a9e74b767161de9aff3f49747a7d960dd8341c2"
+  }
+]

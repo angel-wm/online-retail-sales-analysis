@@ -1,0 +1,8 @@
+**/.pbi/
+**/bin/
+**/obj/
+**/__pycache__/
+.cache/
+.tools/
+*.pyc
+

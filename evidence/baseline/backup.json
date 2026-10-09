@@ -1,0 +1,7 @@
+{
+  "archive": "../backups/original-recovered-project.zip",
+  "sha256": "aa84688a6700e8136af1c1eee5d34af4e284248a6885dba671eeef778229acab",
+  "original_files": 63,
+  "all_archive_members_hash_verified": true,
+  "remote_main_commit": "83d0e32e56e1ae539151ab383099565c3571ef2c"
+}

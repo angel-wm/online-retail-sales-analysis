@@ -1,0 +1,14 @@
+{
+  "checked": [
+    "Main Sales",
+    "Total Sales",
+    "Returns Amount",
+    "Return Value"
+  ],
+  "independent_paths": [
+    "openpyxl/pandas/Decimal",
+    "lxml/direct XLSX XML/integer cents"
+  ],
+  "match": true,
+  "dax_engine_executed": false
+}

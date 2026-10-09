@@ -1,0 +1,355 @@
+table 'Online Retail'
+	lineageTag: fe13836e-d070-4207-a37c-407e3ad8b915
+
+	measure 'Total Sales' = ROUND(SUM('Online Retail'[Sales_Amount]), 2)
+		formatString: \$#,0;(\$#,0);\$#,0
+		displayFolder: Measures
+		lineageTag: 2fcebc02-37b7-4677-ab3e-306ff9a07932
+
+	measure 'Main Sales' =
+			
+			ROUND(
+			    CALCULATE(
+			        [Total Sales], 'Online Retail'[Include_In_Main_Analysis] = TRUE()
+			    ),
+			    2
+			)
+		formatString: \$#,0;(\$#,0);\$#,0
+		displayFolder: Measures
+		lineageTag: 5366af5b-86d7-451a-bc14-ae98684b0b62
+
+	measure 'Returns Amount' =
+			
+			ABS(
+			    CALCULATE(
+			        [Total Sales], 'Online Retail'[Is_Negative_Qty] = TRUE()
+			    )
+			)
+		displayFolder: Measures
+		lineageTag: f0bcc5e3-8614-47af-b20a-80e7c4d27224
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Net Sales' = ROUND([Main Sales] - [Returns Amount], 2)
+		formatString: \$#,0;(\$#,0);\$#,0
+		displayFolder: Measures
+		lineageTag: ed3737bf-d45c-4ee7-bdb4-6679b9272a1e
+
+	measure Orders =
+			
+			CALCULATE(
+			    DISTINCTCOUNT('Online Retail'[Invoice_ID]),
+			    'Online Retail'[Include_In_Main_Analysis]
+			)
+		formatString: 0
+		displayFolder: Measures
+		lineageTag: 6a940080-57fe-4c27-9257-b4d5d5aaea92
+
+	measure 'Unique Customers' =
+			
+			CALCULATE(
+			    DISTINCTCOUNT('Online Retail'[Customer_ID]),
+			    'Online Retail'[Include_In_Main_Analysis] = TRUE(),
+			    NOT(ISBLANK('Online Retail'[Customer_ID]))
+			)
+		formatString: 0
+		displayFolder: Measures
+		lineageTag: e4d73298-4cd5-468b-afc2-7694dd8630bc
+
+	measure 'Average Order Value' = MROUND(DIVIDE([Net Sales], [Orders]), 2)
+		formatString: \$#,0;(\$#,0);\$#,0
+		displayFolder: Measures
+		lineageTag: 5b94000b-8315-4e95-aa93-faabe723a1b3
+
+	measure 'Return rate' = ROUND(DIVIDE([Returns Amount], [Main Sales]), 2)
+		formatString: 0.0%;-0.0%;0.0%
+		displayFolder: Measures
+		lineageTag: 93f39c05-23cb-48cd-90df-1dfb7295b4df
+
+	measure 'Units Sold' =
+			
+			CALCULATE(
+			    SUM('Online Retail'[Quantity]),
+			    'Online Retail'[Include_In_Main_Analysis] = TRUE()
+			)
+		formatString: 0
+		displayFolder: Measures
+		lineageTag: 2fc54b72-e322-48ad-bd46-03f45c382f5f
+
+	measure 'Cancelled Orders' =
+			
+			CALCULATE(
+			    DISTINCTCOUNT('Online Retail'[Invoice_ID]),
+			    'Online Retail'[Is_Cancelled]  = TRUE()
+			)
+		formatString: 0
+		displayFolder: Measures
+		lineageTag: b91ab1b2-87b7-40a8-b843-8589533f4083
+
+	measure 'Zero Price Records' =
+			
+			CALCULATE(
+			    COUNTROWS('Online Retail'),
+			    'Online Retail'[Is_Zero_Price] = TRUE()
+			)
+		formatString: 0
+		displayFolder: Measures
+		lineageTag: 2e876fe8-b36c-4359-a210-c15e5910190e
+
+	measure 'Return Value' =
+			
+			CALCULATE(
+			    SUMX(
+			        'Online Retail',
+			        ABS('Online Retail'[Sales_Amount])
+			    ),
+			    'Online Retail'[Is_Negative_Qty] = TRUE(),
+			    'Online Retail'[Line_Type] = "Product"
+			)
+		displayFolder: Measures
+		lineageTag: f3674507-6efc-4af5-82d9-abd0c17c2b4b
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Invoice_ID
+		dataType: string
+		lineageTag: 01dbd32b-3c46-40e8-8270-3f36b2529fe1
+		summarizeBy: none
+		sourceColumn: Invoice_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Stock_Code
+		dataType: string
+		lineageTag: ea5414f1-47f5-4594-9633-b2e89ef3c857
+		summarizeBy: none
+		sourceColumn: Stock_Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column Product_Name
+		dataType: string
+		lineageTag: 78a1c48c-585e-4299-b860-ecaf5d3f3cfe
+		summarizeBy: none
+		sourceColumn: Product_Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column Quantity
+		dataType: int64
+		formatString: 0
+		lineageTag: b0641412-14d1-4e4f-8004-e848b2a3ea62
+		summarizeBy: sum
+		sourceColumn: Quantity
+
+		annotation SummarizationSetBy = Automatic
+
+	column Invoice_Date
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 2531ed91-a506-43cc-bbc6-674ab6b1064d
+		summarizeBy: none
+		sourceColumn: Invoice_Date
+
+		variation Variación
+			isDefault
+			relationship: d5f7a6b2-aeee-4d8f-8ee7-bd76c4cb7803
+			defaultHierarchy: LocalDateTable_7ed12bcd-d2a7-41a7-9452-cf3af0f2044c.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column Unit_Price
+		dataType: double
+		lineageTag: d9e38773-0cd3-4bb8-8f7a-08050e5c544f
+		summarizeBy: sum
+		sourceColumn: Unit_Price
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Customer_ID
+		dataType: string
+		lineageTag: b58664d4-49b0-4d9c-90c8-9fd4ae3697d6
+		summarizeBy: none
+		sourceColumn: Customer_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Country
+		dataType: string
+		lineageTag: 7d383096-55d1-4653-b6f4-eb4aa5208d2d
+		summarizeBy: none
+		sourceColumn: Country
+
+		annotation SummarizationSetBy = Automatic
+
+	column Line_Type
+		dataType: string
+		lineageTag: 23ce3c7d-3f81-4d15-ac2c-23816c0b54b6
+		summarizeBy: none
+		sourceColumn: Line_Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column Invoice_Day
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: 60ac7190-5748-402a-9e89-010cfc89d67b
+		summarizeBy: none
+		sourceColumn: Invoice_Day
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Record_Flag
+		dataType: string
+		lineageTag: c0752f01-0113-46f5-9a8c-70c34e93e3d7
+		summarizeBy: none
+		sourceColumn: Record_Flag
+
+		annotation SummarizationSetBy = Automatic
+
+	column Is_Cancelled
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 54e75457-ef81-43cb-8fe8-e2ff20d511e3
+		summarizeBy: none
+		sourceColumn: Is_Cancelled
+
+		annotation SummarizationSetBy = Automatic
+
+	column Is_Negative_Qty
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 3d01a6f1-bb3f-4e34-8907-7135470d2d1a
+		summarizeBy: none
+		sourceColumn: Is_Negative_Qty
+
+		annotation SummarizationSetBy = Automatic
+
+	column Is_Zero_Price
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: df581c9f-75e9-4822-a0dc-4d130a1c9208
+		summarizeBy: none
+		sourceColumn: Is_Zero_Price
+
+		annotation SummarizationSetBy = Automatic
+
+	column Sales_Amount
+		dataType: double
+		lineageTag: a01a5b65-bcd1-41f7-bc0d-b06179be95de
+		summarizeBy: sum
+		sourceColumn: Sales_Amount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Include_In_Main_Analysis
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: f0ab06ae-eaf9-4fd0-82f1-ed4beffd4969
+		summarizeBy: none
+		sourceColumn: Include_In_Main_Analysis
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Online Retail' = m
+		mode: import
+		source =
+				let
+				    Origen = Excel.Workbook(File.Contents("C:\Users\angel\Documents\Courses\DA\proyecto_personal\online+retail\Online Retail.xlsx"), null, true),
+				    #"Online Retail_Sheet" = Origen{[Item="Online Retail",Kind="Sheet"]}[Data],
+				    #"Encabezados promovidos" = Table.PromoteHeaders(#"Online Retail_Sheet", [PromoteAllScalars=true]),
+				    #"Tipo cambiado" = Table.TransformColumnTypes(#"Encabezados promovidos",{{"InvoiceNo", type any}, {"StockCode", type any}, {"Description", type text}, {"Quantity", Int64.Type}, {"InvoiceDate", type datetime}, {"UnitPrice", type number}, {"CustomerID", Int64.Type}, {"Country", type text}}),
+				    #"Columnas con nombre cambiado" = Table.RenameColumns(#"Tipo cambiado",{{"InvoiceNo", "Invoice_ID"}, {"StockCode", "Stock_Code"}, {"Description", "Product_Name"}, {"InvoiceDate", "Invoice_Date"}, {"UnitPrice", "Unit_Price"}, {"CustomerID", "Customer_ID"}}),
+				    #"Tipo cambiado1" = Table.TransformColumnTypes(#"Columnas con nombre cambiado",{{"Invoice_ID", type text}, {"Stock_Code", type text}, {"Customer_ID", type text}}),
+				    #"Filas filtradas" = Table.SelectRows(#"Tipo cambiado1", each ([Product_Name] <> null)),
+				    #"Personalizada agregada" = Table.AddColumn(#"Filas filtradas", "Line_Type", each let
+				    code = Text.Upper(Text.Trim(Text.From([Stock_Code]))),
+				    name = Text.Upper(Text.Trim(Text.From([Product_Name])))
+				in
+				    if Text.StartsWith(code, "GIFT_") or Text.Contains(name, "GIFT VOUCHER") then "Gift Voucher"
+				    else if List.Contains({"M","S","POST","AMAZON FEE","BANK CHARGES","D","DOT","C2","B","CRUK"}, code)
+				         or name = "EBAY"
+				    then "Adjustment"
+				    else "Product"),
+				    #"Columna duplicada" = Table.DuplicateColumn(#"Personalizada agregada", "Invoice_Date", "Invoice_Date - Copia"),
+				    #"Tipo cambiado2" = Table.TransformColumnTypes(#"Columna duplicada",{{"Invoice_Date - Copia", type date}}),
+				    #"Columnas con nombre cambiado1" = Table.RenameColumns(#"Tipo cambiado2",{{"Invoice_Date - Copia", "Invoice_Day"}}),
+				    #"Columnas reordenadas" = Table.ReorderColumns(#"Columnas con nombre cambiado1",{"Invoice_ID", "Stock_Code", "Line_Type", "Product_Name", "Quantity", "Invoice_Date", "Invoice_Day", "Unit_Price", "Customer_ID", "Country"}),
+				    #"Personalizada agregada1" = Table.AddColumn(#"Columnas reordenadas", "Record_Flag", each let
+				    pname = if [Product_Name] = null then "" else Text.Upper(Text.Trim(Text.From([Product_Name]))),
+				    custid = if [Customer_ID] = null then "" else Text.Upper(Text.Trim(Text.From([Customer_ID]))),
+				    uprice = try Number.From([Unit_Price]) otherwise null,
+				
+				    hasCustomer = custid <> "",
+				
+				    isManualReview =
+				        Text.StartsWith(pname, "*") and not hasCustomer,
+				
+				    isOperationalNonProduct =
+				        not hasCustomer and
+				        (
+				            Text.Contains(pname, "?") or
+				            Text.Contains(pname, "MISSING") or
+				            Text.Contains(pname, "LOST") or
+				            Text.Contains(pname, "DAMAGE") or
+				            Text.Contains(pname, "DISPLAY") or
+				            Text.Contains(pname, "SOLD AS SETS")
+				        ) and
+				        (uprice = null or uprice = 0)
+				
+				in
+				    if isManualReview then "Manual / Review"
+				    else if isOperationalNonProduct then "Operational / Non-Product"
+				    else "Normal"),
+				    #"Tipo cambiado3" = Table.TransformColumnTypes(#"Personalizada agregada1",{{"Record_Flag", type text}, {"Line_Type", type text}}),
+				    #"Personalizada agregada2" = Table.AddColumn(#"Tipo cambiado3", "Is_Cancelled", each let
+				    inv = if [Invoice_ID] = null then "" else Text.Upper(Text.Trim(Text.From([Invoice_ID])))
+				in
+				    Text.StartsWith(inv, "C")),
+				    #"Personalizada agregada3" = Table.AddColumn(#"Personalizada agregada2", "Is_Negative_Qty", each let
+				    qty = try Number.From([Quantity]) otherwise null
+				in
+				    if qty = null then false
+				    else qty < 0),
+				    #"Personalizada agregada4" = Table.AddColumn(#"Personalizada agregada3", "Is_ZeroPrice", each let
+				    price = try Number.From([Unit_Price]) otherwise null
+				in
+				    if price = null then false
+				    else price = 0),
+				    #"Personalizada agregada5" = Table.AddColumn(#"Personalizada agregada4", "Sales_Amount", each let
+				    qty = try Number.From([Quantity]) otherwise null,
+				    price = try Number.From([Unit_Price]) otherwise null
+				in
+				    if qty = null or price = null then null
+				    else Number.Round(qty * price, 2)),
+				    #"Tipo cambiado6" = Table.TransformColumnTypes(#"Personalizada agregada5",{{"Is_Cancelled", type text}, {"Is_Negative_Qty", type text}, {"Is_ZeroPrice", type text}, {"Sales_Amount", type number}}),
+				    #"Filas filtradas1" = Table.SelectRows(#"Tipo cambiado6", each true),
+				    #"Tipo cambiado4" = Table.TransformColumnTypes(#"Filas filtradas1",{{"Is_Cancelled", type text}, {"Is_Negative_Qty", type text}, {"Is_ZeroPrice", type text}, {"Sales_Amount", type number}}),
+				    #"Columnas con nombre cambiado2" = Table.RenameColumns(#"Tipo cambiado4",{{"Is_ZeroPrice", "Is_Zero_Price"}}),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Columnas con nombre cambiado2",{{"Is_Cancelled", type logical}, {"Is_Negative_Qty", type logical}, {"Is_Zero_Price", type logical}}),
+				    #"Added Custom" = Table.AddColumn(#"Changed Type", "Include_In_Main_Analysis", each let
+				    line = if [Line_Type] = null then "" else Text.Upper(Text.Trim(Text.From([Line_Type]))),
+				    flag = if [Record_Flag] = null then "" else Text.Upper(Text.Trim(Text.From([Record_Flag]))),
+				    cancelled = if [Is_Cancelled] = null then false else [Is_Cancelled],
+				    negativeQty = if [Is_Negative_Qty] = null then false else [Is_Negative_Qty],
+				    zeroprice = if [Is_Zero_Price] = null then false else [Is_Zero_Price]
+				in
+				    line = "PRODUCT"
+				    and flag = "NORMAL"
+				    and cancelled = false
+				    and negativeQty = false
+				    and zeroprice = false),
+				    #"Changed Type1" = Table.TransformColumnTypes(#"Added Custom",{{"Include_In_Main_Analysis", type logical}})
+				in
+				    #"Changed Type1"
+
+	annotation PBI_NavigationStepName = Navegación
+
+	annotation PBI_ResultType = Table
+

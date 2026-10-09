@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "uk-online-retail-sales-analysis"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "ffbbfd99-d208-4e77-8692-3d936476f2b9"
+  }
+}

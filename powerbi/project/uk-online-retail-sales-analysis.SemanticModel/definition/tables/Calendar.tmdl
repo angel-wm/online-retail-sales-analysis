@@ -1,0 +1,103 @@
+table Calendar
+	lineageTag: 4d0187f3-636f-4725-8c7d-9a069b739575
+	dataCategory: Time
+
+	column Date
+		isKey
+		formatString: Short Date
+		lineageTag: 48c958ef-e2cb-4a95-b673-e8ab3a524a43
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Date]
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Year = YEAR('Calendar'[Date])
+		formatString: 0
+		lineageTag: 2d961391-73f2-417d-8ba7-b82d03c4a137
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column Month# = MONTH('Calendar'[Date])
+		formatString: 0
+		lineageTag: 4df0d189-0399-4e00-b1f1-1e04c881f2c8
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column Month = FORMAT('Calendar'[Date], "MMMM")
+		lineageTag: ec61a74b-4592-4d0c-aea4-a0acd2bfb2de
+		summarizeBy: none
+		sortByColumn: Month#
+
+		annotation SummarizationSetBy = Automatic
+
+	column Month_short = FORMAT('Calendar'[Date], "MMM")
+		lineageTag: 72bec5b4-7a9c-4a13-b71f-facd7f8cfd1b
+		summarizeBy: none
+		sortByColumn: Month#
+
+		annotation SummarizationSetBy = Automatic
+
+	column Trimester = "T" & FORMAT('Calendar'[Date], "Q")
+		lineageTag: 388620e2-5e7f-4822-9c4c-9c99bbb5885e
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column Day = DAY('Calendar'[Date])
+		formatString: 0
+		lineageTag: dbc5060f-1c38-4fbb-9de8-cc635a12a6ab
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column Weekday# = WEEKDAY('Calendar'[Date],2)
+		formatString: 0
+		lineageTag: 0b0bcd21-b9df-4f7f-95a1-8008a8b0c7df
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column Weekday = FORMAT('Calendar'[Date], "dddd")
+		lineageTag: 88dee884-531b-4581-a10d-0b2f8929ff7e
+		summarizeBy: none
+		sortByColumn: Weekday#
+
+		annotation SummarizationSetBy = Automatic
+
+	column Year_Month = FORMAT('Calendar'[Date], "YYYY-MM")
+		lineageTag: cd8b612f-f37d-40eb-a39d-5bb4492a38d6
+		summarizeBy: none
+		sortByColumn: YearMonthSort
+
+		annotation SummarizationSetBy = Automatic
+
+	column YearMonthSort = 'Calendar'[Year] * 100 + 'Calendar'[Month#]
+		dataType: int64
+		formatString: 0
+		lineageTag: 42287c09-9c82-4a4f-aadf-07cc9fb29afc
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column YearMonth_Label = FORMAT('Calendar'[Date], "MMM yyyy")
+		lineageTag: 391def5b-cf7b-46ee-840c-2a31e83d503a
+		summarizeBy: none
+		sortByColumn: YearMonthSort
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Calendar = calculated
+		mode: import
+		source =
+				CALENDAR(
+				    MIN('Online Retail'[invoice_day]),
+				    MAX('Online Retail'[invoice_day])
+				)
+
+	annotation PBI_Id = 4bc68ffc06b1436e8979bd37282e3563
+
