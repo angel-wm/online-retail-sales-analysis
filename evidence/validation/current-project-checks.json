@@ -7,42 +7,92 @@
       "id": "0b519c8ca5250d606ea0",
       "font_color": "#52667B",
       "background": "#FFFFFF",
-      "contrast_ratio": 5.923
+      "position": {
+        "x": 32,
+        "y": 232,
+        "z": 2000,
+        "height": 88,
+        "width": 144,
+        "tabOrder": 1000
+      },
+      "mode": "'Dropdown'"
     },
     {
       "page": "Product & Customer Insights",
       "id": "4945712e83cd21b9868e",
       "font_color": "#FFFFFF",
       "background": "#2A4A6B",
-      "contrast_ratio": 9.169
+      "position": {
+        "x": 32,
+        "y": 56,
+        "z": 1000,
+        "height": 160,
+        "width": 144,
+        "tabOrder": 500
+      },
+      "mode": "'Basic'",
+      "responsive": "true"
     },
     {
       "page": "Product & Customer Insights",
       "id": "a13243354215609ec4c0",
       "font_color": "#52667B",
       "background": "#FFFFFF",
-      "contrast_ratio": 5.923
+      "position": {
+        "x": 32,
+        "y": 336,
+        "z": 3000,
+        "height": 88,
+        "width": 144,
+        "tabOrder": 1100
+      },
+      "mode": "'Dropdown'"
     },
     {
       "page": "Sales Overview",
       "id": "17704764da05a4761017",
       "font_color": "#52667B",
       "background": "#FFFFFF",
-      "contrast_ratio": 5.923
+      "position": {
+        "x": 32,
+        "y": 232,
+        "z": 4000,
+        "height": 88,
+        "width": 144,
+        "tabOrder": 1200
+      },
+      "mode": "'Dropdown'"
     },
     {
       "page": "Sales Overview",
       "id": "866c411e4dac10cc1484",
       "font_color": "#FFFFFF",
       "background": "#2A4A6B",
-      "contrast_ratio": 9.169
+      "position": {
+        "x": 32,
+        "y": 56,
+        "z": 3000,
+        "height": 160,
+        "width": 144,
+        "tabOrder": 500
+      },
+      "mode": "'Basic'",
+      "responsive": "true"
     },
     {
       "page": "Sales Overview",
       "id": "e062531a409aa34d2575",
       "font_color": "#52667B",
       "background": "#FFFFFF",
-      "contrast_ratio": 5.923
+      "position": {
+        "x": 32,
+        "y": 336,
+        "z": 5000,
+        "height": 88,
+        "width": 144,
+        "tabOrder": 1500
+      },
+      "mode": "'Dropdown'"
     }
   ],
   "product_rankings": [
@@ -50,43 +100,180 @@
       "page": "Product & Customer Insights",
       "position": {
         "x": 32,
-        "y": 504,
+        "y": 600,
         "z": 11000,
-        "height": 320,
-        "width": 904,
+        "height": 312,
+        "width": 720,
         "tabOrder": 1400
       },
-      "word_wrap": true,
-      "maximum_axis_percent": "50D"
+      "axis_size_property": "maxMarginFactor",
+      "maximum_axis_percent": "55L",
+      "minimum_category_size": "18D"
     },
     {
       "page": "Sales Overview",
       "position": {
         "x": 32,
-        "y": 508,
+        "y": 584,
         "z": 12000,
-        "height": 316,
-        "width": 904,
+        "height": 304,
+        "width": 720,
         "tabOrder": 1800
       },
-      "word_wrap": true,
-      "maximum_axis_percent": "50D"
+      "axis_size_property": "maxMarginFactor",
+      "maximum_axis_percent": "55L",
+      "minimum_category_size": "18D"
     }
   ],
   "scatter": {
+    "position": {
+      "x": 768,
+      "y": 600,
+      "z": 12000,
+      "height": 312,
+      "width": 558,
+      "tabOrder": 1500
+    },
     "zoom_sliders": false,
     "point_name_labels": false,
-    "full_product_name_in_tooltip": true,
-    "position": {
-      "x": 952,
-      "y": 504,
-      "z": 12000,
-      "height": 320,
-      "width": 374,
-      "tabOrder": 1500
-    }
+    "full_product_name_in_tooltip": true
   },
-  "source_file_path_configured": "C:\\Users\\angel\\Documents\\Proyectos\\online-retail-sales-analysis\\data\\raw\\Online Retail.xlsx",
+  "cards": [
+    {
+      "page": "Product & Customer Insights",
+      "id": "retail_identified_share",
+      "position": {
+        "x": 768,
+        "y": 104,
+        "z": 8000,
+        "height": 120,
+        "width": 558,
+        "tabOrder": 700
+      },
+      "fit_to_space": "true",
+      "label_visible": "true"
+    },
+    {
+      "page": "Product & Customer Insights",
+      "id": "retail_unknown_net",
+      "position": {
+        "x": 200,
+        "y": 104,
+        "z": 8000,
+        "height": 120,
+        "width": 552,
+        "tabOrder": 600
+      },
+      "fit_to_space": "true",
+      "label_visible": "true"
+    },
+    {
+      "page": "Sales Overview",
+      "id": "0d43bab4e45532bcc190",
+      "position": {
+        "x": 654,
+        "y": 104,
+        "z": 7000,
+        "height": 104,
+        "width": 218,
+        "tabOrder": 800
+      },
+      "fit_to_space": "true",
+      "label_visible": "true"
+    },
+    {
+      "page": "Sales Overview",
+      "id": "1efd5c26d1b097445d63",
+      "position": {
+        "x": 1108,
+        "y": 104,
+        "z": 9000,
+        "height": 104,
+        "width": 218,
+        "tabOrder": 1000
+      },
+      "fit_to_space": "true",
+      "label_visible": "true"
+    },
+    {
+      "page": "Sales Overview",
+      "id": "b7f03dd49cd6692b1d55",
+      "position": {
+        "x": 881,
+        "y": 104,
+        "z": 8000,
+        "height": 104,
+        "width": 218,
+        "tabOrder": 900
+      },
+      "fit_to_space": "true",
+      "label_visible": "true"
+    },
+    {
+      "page": "Sales Overview",
+      "id": "c6a83e50232cca065cd5",
+      "position": {
+        "x": 427,
+        "y": 104,
+        "z": 6000,
+        "height": 104,
+        "width": 218,
+        "tabOrder": 700
+      },
+      "fit_to_space": "true",
+      "label_visible": "true"
+    },
+    {
+      "page": "Sales Overview",
+      "id": "dd400a8a673caa8ed6a7",
+      "position": {
+        "x": 200,
+        "y": 104,
+        "z": 2000,
+        "height": 104,
+        "width": 218,
+        "tabOrder": 600
+      },
+      "fit_to_space": "true",
+      "label_visible": "true"
+    }
+  ],
+  "active_visual_count": 33,
+  "latest_country_layout": {
+    "width": 558,
+    "height": 344,
+    "y": 224,
+    "minimum_category_size": 18
+  },
   "source_sha256": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
-  "remote_main_verified": "83d0e32e56e1ae539151ab383099565c3571ef2c"
+  "remote_live_check_in_this_revision": false,
+  "authoritative_revision_receipt": "presentation-revision.json",
+  "country_rankings": [
+    {
+      "page": "Sales Overview",
+      "position": {
+        "x": 768,
+        "y": 224,
+        "z": 11000,
+        "height": 344,
+        "width": 558,
+        "tabOrder": 1400
+      },
+      "user_confirmed_no_scroll": true
+    },
+    {
+      "page": "Product & Customer Insights",
+      "position": {
+        "x": 768,
+        "y": 240,
+        "z": 10000,
+        "height": 344,
+        "width": 558,
+        "tabOrder": 900
+      },
+      "user_confirmed_no_scroll": false,
+      "human_observation": "Pending after latest adjustment"
+    }
+  ],
+  "checked_utc": "2026-10-09T04:23:28.813763+00:00"
 }

@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.13.0/schema.json",
   "name": "bfd4fc73192936bc42c7",
   "position": {
-    "x": 952,
-    "y": 504,
+    "x": 768,
+    "y": 600,
     "z": 12000,
-    "height": 320,
-    "width": 374,
+    "height": 312,
+    "width": 558,
     "tabOrder": 1500
   },
   "visual": {
@@ -28,6 +28,7 @@
               },
               "queryRef": "DimProduct.Product_Label",
               "nativeQueryRef": "Product",
+              "active": true,
               "displayName": "Product"
             }
           ]
@@ -46,7 +47,8 @@
                 }
               },
               "queryRef": "Online Retail.Orders",
-              "nativeQueryRef": "Orders"
+              "nativeQueryRef": "Orders",
+              "displayName": "Sale invoices"
             }
           ]
         },
@@ -109,8 +111,8 @@
                 }
               },
               "queryRef": "Online Retail.Main Sales",
-              "nativeQueryRef": "Gross merchandise (Â£)",
-              "displayName": "Gross merchandise (Â£)"
+              "nativeQueryRef": "Gross merchandise",
+              "displayName": "Gross merchandise"
             },
             {
               "field": {
@@ -124,8 +126,8 @@
                 }
               },
               "queryRef": "Online Retail.Returns Amount",
-              "nativeQueryRef": "Cancellations / reversals (Â£)",
-              "displayName": "Cancellations / reversals (Â£)"
+              "nativeQueryRef": "Cancellations / reversals",
+              "displayName": "Reversals"
             },
             {
               "field": {
@@ -139,8 +141,8 @@
                 }
               },
               "queryRef": "Online Retail.Net Sales",
-              "nativeQueryRef": "Net merchandise (Â£)",
-              "displayName": "Net merchandise (Â£)"
+              "nativeQueryRef": "Net merchandise",
+              "displayName": "Net merchandise"
             },
             {
               "field": {
@@ -169,7 +171,7 @@
                 }
               },
               "queryRef": "Online Retail.Orders",
-              "nativeQueryRef": "Sale invoices",
+              "nativeQueryRef": "Orders",
               "displayName": "Sale invoices"
             },
             {
@@ -218,8 +220,9 @@
                 }
               },
               "queryRef": "Online Retail.Main Sales",
-              "nativeQueryRef": "Gross merchandise (Â£)",
-              "displayName": "Gross merchandise (Â£)"
+              "nativeQueryRef": "Gross merchandise",
+              "active": true,
+              "displayName": "Gross merchandise"
             }
           ]
         },
@@ -237,8 +240,8 @@
                 }
               },
               "queryRef": "Online Retail.Returns Amount",
-              "nativeQueryRef": "Reversals (Â£)",
-              "displayName": "Reversals (Â£)"
+              "nativeQueryRef": "Cancellations / reversals",
+              "displayName": "Reversals"
             }
           ]
         }
@@ -277,7 +280,7 @@
             "titleText": {
               "expr": {
                 "Literal": {
-                  "Value": "'Gross (Â£)'"
+                  "Value": "'Gross'"
                 }
               }
             },
@@ -332,7 +335,7 @@
             "titleText": {
               "expr": {
                 "Literal": {
-                  "Value": "'Reversals (Â£)'"
+                  "Value": "'Reversals'"
                 }
               }
             }
@@ -397,40 +400,6 @@
             }
           }
         }
-      ],
-      "labels": [
-        {
-          "properties": {
-            "fontSize": {
-              "expr": {
-                "Literal": {
-                  "Value": "9D"
-                }
-              }
-            },
-            "labelPrecision": {
-              "expr": {
-                "Literal": {
-                  "Value": "1L"
-                }
-              }
-            },
-            "labelDisplayUnits": {
-              "expr": {
-                "Literal": {
-                  "Value": "1000D"
-                }
-              }
-            },
-            "show": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
-                }
-              }
-            }
-          }
-        }
       ]
     },
     "visualContainerObjects": {
@@ -440,7 +409,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Gross sales vs reversals (Â£)'"
+                  "Value": "'Gross sales vs reversals'"
                 }
               }
             },
@@ -473,6 +442,13 @@
               "expr": {
                 "Literal": {
                   "Value": "true"
+                }
+              }
+            },
+            "titleWrap": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
                 }
               }
             }
@@ -593,7 +569,7 @@
             "altText": {
               "expr": {
                 "Literal": {
-                  "Value": "'Gross sales vs reversals (Â£)'"
+                  "Value": "'Gross sales vs reversals'"
                 }
               }
             }

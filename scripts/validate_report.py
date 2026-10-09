@@ -76,6 +76,8 @@ for pagefile in sorted((REPORT / "definition/pages").glob("*/page.json")):
     visuals = [json.loads(f.read_text(encoding="utf-8")) for f in sorted(pagefile.parent.glob("visuals/*/visual.json"))]
     ids = {j["name"] for j in visuals}
     require(len(ids) == len(visuals), f"Duplicate visual ID: {page['displayName']}")
+    removed_support = {"retail_filter_scope", "retail_financial_bridge", "retail_sales_definition", "retail_insights_limitations"}
+    require(not (ids & removed_support), "An explanatory object removed by the user is still present")
     present.update((pagefile.parent.name, identity) for identity in ids)
     require(len({j["position"]["tabOrder"] for j in visuals}) == len(visuals), "Duplicate tab order")
     meaningful = [j for j in visuals if j["visual"]["visualType"] != "shape"]
@@ -117,7 +119,7 @@ for pagefile in sorted((REPORT / "definition/pages").glob("*/page.json")):
         for target in slicers:
             require(actual.get((source["name"], target["name"])) == "NoFilter", "Chart changed slicer list")
     pages.append({"page": page["displayName"], "visuals": len(visuals), "width": page["width"], "height": page["height"], "interaction_pairs": len(pairs), "container_overlaps_excluding_background_shapes": 0})
-require(len(pages) == 2 and len(present) == 38, "Expected two pages / 38 visuals")
+require(len(pages) == 2 and len(present) == 33, "Expected two pages / 33 visuals after five requested removals")
 require(original <= present, "Original visual removed")
 report_definition = json.loads((REPORT / "definition/report.json").read_text(encoding="utf-8"))
 for package in report_definition.get("resourcePackages", []):

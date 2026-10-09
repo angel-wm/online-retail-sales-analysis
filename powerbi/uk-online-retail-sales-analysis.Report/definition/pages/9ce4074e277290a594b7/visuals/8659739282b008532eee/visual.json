@@ -3,9 +3,9 @@
   "name": "8659739282b008532eee",
   "position": {
     "x": 200,
-    "y": 172,
+    "y": 240,
     "z": 9000,
-    "height": 312,
+    "height": 344,
     "width": 552,
     "tabOrder": 800
   },
@@ -32,25 +32,6 @@
             }
           ]
         },
-        "Y": {
-          "projections": [
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "Online Retail"
-                    }
-                  },
-                  "Property": "Net Sales"
-                }
-              },
-              "queryRef": "Online Retail.Net Sales",
-              "nativeQueryRef": "Net Sales",
-              "format": "£#,0.00;(£#,0.00);£0.00"
-            }
-          ]
-        },
         "Tooltips": {
           "projections": [
             {
@@ -65,8 +46,8 @@
                 }
               },
               "queryRef": "Online Retail.Main Sales",
-              "nativeQueryRef": "Gross merchandise (£)",
-              "displayName": "Gross merchandise (£)"
+              "nativeQueryRef": "Gross merchandise",
+              "displayName": "Gross merchandise"
             },
             {
               "field": {
@@ -80,8 +61,8 @@
                 }
               },
               "queryRef": "Online Retail.Returns Amount",
-              "nativeQueryRef": "Cancellations / reversals (£)",
-              "displayName": "Cancellations / reversals (£)"
+              "nativeQueryRef": "Cancellations / reversals",
+              "displayName": "Cancellations / reversals"
             },
             {
               "field": {
@@ -95,8 +76,8 @@
                 }
               },
               "queryRef": "Online Retail.Net Sales",
-              "nativeQueryRef": "Net merchandise (£)",
-              "displayName": "Net merchandise (£)"
+              "nativeQueryRef": "Net Sales",
+              "displayName": "Net merchandise"
             },
             {
               "field": {
@@ -157,6 +138,25 @@
               "queryRef": "Online Retail.Units Reversed",
               "nativeQueryRef": "Reversed units",
               "displayName": "Reversed units"
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Online Retail"
+                    }
+                  },
+                  "Property": "Net Sales"
+                }
+              },
+              "queryRef": "Online Retail.Net Sales",
+              "nativeQueryRef": "Net Sales",
+              "displayName": "Net merchandise"
             }
           ]
         }
@@ -250,6 +250,20 @@
                   "Value": "10D"
                 }
               }
+            },
+            "preferredCategoryWidth": {
+              "expr": {
+                "Literal": {
+                  "Value": "18D"
+                }
+              }
+            },
+            "innerPadding": {
+              "expr": {
+                "Literal": {
+                  "Value": "10L"
+                }
+              }
             }
           }
         }
@@ -287,6 +301,19 @@
             }
           }
         }
+      ],
+      "zoom": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
       ]
     },
     "visualContainerObjects": {
@@ -296,7 +323,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Top 10 known customers by net sales (£)'"
+                  "Value": "'Top 10 known customers by net sales'"
                 }
               }
             },
@@ -329,6 +356,13 @@
               "expr": {
                 "Literal": {
                   "Value": "true"
+                }
+              }
+            },
+            "titleWrap": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
                 }
               }
             }
@@ -410,7 +444,7 @@
             "altText": {
               "expr": {
                 "Literal": {
-                  "Value": "'Top 10 known customers by net sales (£)'"
+                  "Value": "'Top 10 known customers by net sales'"
                 }
               }
             }

@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.13.0/schema.json",
   "name": "5f1c21068041053e9103",
   "position": {
-    "x": 952,
-    "y": 216,
+    "x": 768,
+    "y": 224,
     "z": 11000,
-    "height": 284,
-    "width": 374,
+    "height": 344,
+    "width": 558,
     "tabOrder": 1400
   },
   "visual": {
@@ -32,25 +32,6 @@
             }
           ]
         },
-        "Y": {
-          "projections": [
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "Online Retail"
-                    }
-                  },
-                  "Property": "Net Sales"
-                }
-              },
-              "queryRef": "Online Retail.Net Sales",
-              "nativeQueryRef": "Net merchandise (£)",
-              "displayName": "Net merchandise (£)"
-            }
-          ]
-        },
         "Tooltips": {
           "projections": [
             {
@@ -65,8 +46,8 @@
                 }
               },
               "queryRef": "Online Retail.Main Sales",
-              "nativeQueryRef": "Gross merchandise (£)",
-              "displayName": "Gross merchandise (£)"
+              "nativeQueryRef": "Gross merchandise",
+              "displayName": "Gross merchandise"
             },
             {
               "field": {
@@ -80,8 +61,8 @@
                 }
               },
               "queryRef": "Online Retail.Returns Amount",
-              "nativeQueryRef": "Cancellations / reversals (£)",
-              "displayName": "Cancellations / reversals (£)"
+              "nativeQueryRef": "Cancellations / reversals",
+              "displayName": "Cancellations / reversals"
             },
             {
               "field": {
@@ -95,8 +76,8 @@
                 }
               },
               "queryRef": "Online Retail.Net Sales",
-              "nativeQueryRef": "Net merchandise (£)",
-              "displayName": "Net merchandise (£)"
+              "nativeQueryRef": "Net merchandise",
+              "displayName": "Net merchandise"
             },
             {
               "field": {
@@ -157,6 +138,25 @@
               "queryRef": "Online Retail.Units Reversed",
               "nativeQueryRef": "Reversed units",
               "displayName": "Reversed units"
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Online Retail"
+                    }
+                  },
+                  "Property": "Net Sales"
+                }
+              },
+              "queryRef": "Online Retail.Net Sales",
+              "nativeQueryRef": "Net merchandise",
+              "displayName": "Net merchandise"
             }
           ]
         }
@@ -231,10 +231,17 @@
                 }
               }
             },
-            "maxSize": {
+            "preferredCategoryWidth": {
               "expr": {
                 "Literal": {
-                  "Value": "38D"
+                  "Value": "18D"
+                }
+              }
+            },
+            "innerPadding": {
+              "expr": {
+                "Literal": {
+                  "Value": "10L"
                 }
               }
             }
@@ -286,6 +293,19 @@
             }
           }
         }
+      ],
+      "zoom": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
       ]
     },
     "visualContainerObjects": {
@@ -320,7 +340,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Top 10 countries by net sales (£)'"
+                  "Value": "'Top 10 countries by net sales'"
                 }
               }
             },
@@ -328,6 +348,13 @@
               "expr": {
                 "Literal": {
                   "Value": "true"
+                }
+              }
+            },
+            "titleWrap": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
                 }
               }
             }
@@ -409,7 +436,7 @@
             "altText": {
               "expr": {
                 "Literal": {
-                  "Value": "'Top 10 countries by net sales (£)'"
+                  "Value": "'Top 10 countries by net sales'"
                 }
               }
             }

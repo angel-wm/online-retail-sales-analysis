@@ -1,137 +1,59 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.13.0/schema.json",
-  "name": "fe3958954c94c6c880eb",
-  "position": {
-    "x": 16,
-    "y": 0,
-    "z": 1000,
-    "height": 488,
-    "width": 176,
-    "tabOrder": 0
-  },
-  "visual": {
-    "visualType": "shape",
-    "objects": {
-      "shape": [
-        {
-          "properties": {
-            "tileShape": {
-              "expr": {
-                "Literal": {
-                  "Value": "'rectangleRounded'"
-                }
-              }
-            },
-            "rectangleRoundedCurve": {
-              "expr": {
-                "Literal": {
-                  "Value": "12L"
-                }
-              }
-            }
-          }
-        }
-      ],
-      "rotation": [
-        {
-          "properties": {
-            "shapeAngle": {
-              "expr": {
-                "Literal": {
-                  "Value": "0L"
-                }
-              }
-            }
-          }
-        }
-      ],
-      "fill": [
-        {
-          "properties": {
-            "fillColor": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "Literal": {
-                      "Value": "'#1F3A5F'"
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "selector": {
-            "id": "default"
-          }
-        }
-      ],
-      "outline": [
-        {
-          "properties": {
-            "show": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
-                }
-              }
-            }
-          }
-        }
-      ],
-      "shadow": [
-        {
-          "properties": {
-            "show": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
-            }
-          }
-        }
-      ]
+  "status": "PASS",
+  "model_semantics_equal_to_previous_TOM_parse": true,
+  "chart_titles_changed_only_by_removing_currency_suffix": [
+    {
+      "visual": "326efa6cd15edb5615ca",
+      "before": "'Top 10 products by reversal value (\u00c2\u00a3)'",
+      "after": "'Top 10 products by reversal value'"
     },
-    "visualContainerObjects": {
-      "background": [
-        {
-          "properties": {
-            "show": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
-                }
-              }
-            },
-            "color": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "Literal": {
-                      "Value": "'#1F3A5F'"
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }
-      ],
-      "dropShadow": [
-        {
-          "properties": {
-            "show": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
-                }
-              }
-            }
-          }
-        }
-      ]
+    {
+      "visual": "8659739282b008532eee",
+      "before": "'Top 10 known customers by net sales (\u00a3)'",
+      "after": "'Top 10 known customers by net sales'"
     },
-    "drillFilterOtherVisuals": true
-  },
-  "howCreated": "InsertVisualButton"
+    {
+      "visual": "bfd4fc73192936bc42c7",
+      "before": "'Gross sales vs reversals (\u00c2\u00a3)'",
+      "after": "'Gross sales vs reversals'"
+    },
+    {
+      "visual": "fc81c2d8bc82287d528b",
+      "before": "'Top 10 countries by reversal value (\u00a3)'",
+      "after": "'Top 10 countries by reversal value'"
+    },
+    {
+      "visual": "0d26f07ae3e59165a455",
+      "before": "'Sale invoices by month'",
+      "after": "'Sale invoices by month'"
+    },
+    {
+      "visual": "103453003bcd8ca655ca",
+      "before": "'Top 10 products by net merchandise sales (\u00c2\u00a3)'",
+      "after": "'Top 10 products by net merchandise sales'"
+    },
+    {
+      "visual": "5f1c21068041053e9103",
+      "before": "'Top 10 countries by net sales (\u00a3)'",
+      "after": "'Top 10 countries by net sales'"
+    },
+    {
+      "visual": "c1e7baf0796e55151039",
+      "before": "'Net merchandise sales by month (\u00a3)'",
+      "after": "'Net merchandise sales by month'"
+    }
+  ],
+  "currency_conversion_performed": false,
+  "desktop_visual_rendered": false,
+  "backup_sha256": "57e59cc201b7f746786d30f2bc6edfb4e5e3720f4b09db9fb35330c0596351aa",
+  "second_native_save_preserved_before_final_edits": true,
+  "semantic_model_files_byte_equal_to_second_desktop_backup": 16,
+  "native_save_changed_only_cache_settings_and_linguistic_metadata": true,
+  "first_desktop_backup_comparison_before_native_test": 16,
+  "model_semantics_equal_after_second_native_save": true,
+  "latest_desktop_save_backup_sha256": "7f6674bf1eabd51bf803cd0488a21f95bf9500dafdf24211cf7e644ed93307a3",
+  "semantic_model_files_byte_equal_to_latest_desktop_backup": 16,
+  "all_retained_visual_queries_and_properties_equal_after_latest_adjustment": 33,
+  "all_retained_visual_filters_equal_after_latest_adjustment": 33,
+  "first_page_visual_positions_equal_to_latest_desktop_backup": true
 }

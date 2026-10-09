@@ -1,0 +1,1469 @@
+{
+  "scope": "Existing root PBIP / report presentation only",
+  "desktop_rendered": false,
+  "backup": "backups/desktop-saved-before-visual-revision.zip",
+  "deleted_objects": [
+    {
+      "page": "e2e71b2b39b7e00b93de",
+      "visual": "retail_filter_scope"
+    },
+    {
+      "page": "e2e71b2b39b7e00b93de",
+      "visual": "retail_financial_bridge"
+    },
+    {
+      "page": "e2e71b2b39b7e00b93de",
+      "visual": "retail_sales_definition"
+    },
+    {
+      "page": "9ce4074e277290a594b7",
+      "visual": "retail_filter_scope"
+    },
+    {
+      "page": "9ce4074e277290a594b7",
+      "visual": "retail_insights_limitations"
+    }
+  ],
+  "changed_visuals": [
+    {
+      "page": "e2e71b2b39b7e00b93de",
+      "visual": "0d26f07ae3e59165a455",
+      "before": {
+        "x": 952,
+        "y": 508,
+        "z": 13000,
+        "height": 316,
+        "width": 374,
+        "tabOrder": 1900
+      },
+      "after": {
+        "x": 768,
+        "y": 544,
+        "z": 13000,
+        "height": 344,
+        "width": 558,
+        "tabOrder": 1900
+      }
+    },
+    {
+      "page": "e2e71b2b39b7e00b93de",
+      "visual": "0d43bab4e45532bcc190",
+      "before": {
+        "x": 654,
+        "y": 88,
+        "z": 7000,
+        "height": 96,
+        "width": 218,
+        "tabOrder": 800
+      },
+      "after": {
+        "x": 654,
+        "y": 112,
+        "z": 7000,
+        "height": 120,
+        "width": 218,
+        "tabOrder": 800
+      }
+    },
+    {
+      "page": "e2e71b2b39b7e00b93de",
+      "visual": "103453003bcd8ca655ca",
+      "before": {
+        "x": 32,
+        "y": 508,
+        "z": 12000,
+        "height": 316,
+        "width": 904,
+        "tabOrder": 1800
+      },
+      "after": {
+        "x": 32,
+        "y": 544,
+        "z": 12000,
+        "height": 344,
+        "width": 720,
+        "tabOrder": 1800
+      }
+    },
+    {
+      "page": "e2e71b2b39b7e00b93de",
+      "visual": "17704764da05a4761017",
+      "before": {
+        "x": 32,
+        "y": 176,
+        "z": 4000,
+        "height": 80,
+        "width": 144,
+        "tabOrder": 1200
+      },
+      "after": {
+        "x": 32,
+        "y": 232,
+        "z": 4000,
+        "height": 88,
+        "width": 144,
+        "tabOrder": 1200
+      }
+    },
+    {
+      "page": "e2e71b2b39b7e00b93de",
+      "visual": "1efd5c26d1b097445d63",
+      "before": {
+        "x": 1108,
+        "y": 88,
+        "z": 9000,
+        "height": 96,
+        "width": 218,
+        "tabOrder": 1000
+      },
+      "after": {
+        "x": 1108,
+        "y": 112,
+        "z": 9000,
+        "height": 120,
+        "width": 218,
+        "tabOrder": 1000
+      }
+    },
+    {
+      "page": "e2e71b2b39b7e00b93de",
+      "visual": "3774ff8807dbaa3ca5ce",
+      "before": {
+        "x": 32,
+        "y": 368,
+        "z": 18000,
+        "height": 32,
+        "width": 144,
+        "tabOrder": 1600
+      },
+      "after": {
+        "x": 32,
+        "y": 440,
+        "z": 18000,
+        "height": 36,
+        "width": 144,
+        "tabOrder": 1600
+      }
+    },
+    {
+      "page": "e2e71b2b39b7e00b93de",
+      "visual": "49a95c32ed08401404c0",
+      "before": {
+        "x": 200,
+        "y": 0,
+        "z": 14000,
+        "height": 88,
+        "width": 1126,
+        "tabOrder": 100
+      },
+      "after": {
+        "x": 200,
+        "y": 0,
+        "z": 14000,
+        "height": 96,
+        "width": 1126,
+        "tabOrder": 100
+      }
+    },
+    {
+      "page": "e2e71b2b39b7e00b93de",
+      "visual": "5aa06803ebeac0c1cbba",
+      "before": {
+        "x": 215,
+        "y": 10,
+        "z": 15000,
+        "height": 35,
+        "width": 1095,
+        "tabOrder": 200
+      },
+      "after": {
+        "x": 215,
+        "y": 8,
+        "z": 15000,
+        "height": 54,
+        "width": 1095,
+        "tabOrder": 200
+      }
+    },
+    {
+      "page": "e2e71b2b39b7e00b93de",
+      "visual": "5f1c21068041053e9103",
+      "before": {
+        "x": 952,
+        "y": 216,
+        "z": 11000,
+        "height": 284,
+        "width": 374,
+        "tabOrder": 1400
+      },
+      "after": {
+        "x": 768,
+        "y": 248,
+        "z": 11000,
+        "height": 280,
+        "width": 558,
+        "tabOrder": 1400
+      }
+    },
+    {
+      "page": "e2e71b2b39b7e00b93de",
+      "visual": "866c411e4dac10cc1484",
+      "before": {
+        "x": 32,
+        "y": 48,
+        "z": 3000,
+        "height": 112,
+        "width": 144,
+        "tabOrder": 500
+      },
+      "after": {
+        "x": 32,
+        "y": 56,
+        "z": 3000,
+        "height": 160,
+        "width": 144,
+        "tabOrder": 500
+      }
+    },
+    {
+      "page": "e2e71b2b39b7e00b93de",
+      "visual": "b7f03dd49cd6692b1d55",
+      "before": {
+        "x": 881,
+        "y": 88,
+        "z": 8000,
+        "height": 96,
+        "width": 218,
+        "tabOrder": 900
+      },
+      "after": {
+        "x": 881,
+        "y": 112,
+        "z": 8000,
+        "height": 120,
+        "width": 218,
+        "tabOrder": 900
+      }
+    },
+    {
+      "page": "e2e71b2b39b7e00b93de",
+      "visual": "c1e7baf0796e55151039",
+      "before": {
+        "x": 200,
+        "y": 216,
+        "z": 10000,
+        "height": 284,
+        "width": 736,
+        "tabOrder": 1300
+      },
+      "after": {
+        "x": 200,
+        "y": 248,
+        "z": 10000,
+        "height": 280,
+        "width": 552,
+        "tabOrder": 1300
+      }
+    },
+    {
+      "page": "e2e71b2b39b7e00b93de",
+      "visual": "c6a83e50232cca065cd5",
+      "before": {
+        "x": 427,
+        "y": 88,
+        "z": 6000,
+        "height": 96,
+        "width": 218,
+        "tabOrder": 700
+      },
+      "after": {
+        "x": 427,
+        "y": 112,
+        "z": 6000,
+        "height": 120,
+        "width": 218,
+        "tabOrder": 700
+      }
+    },
+    {
+      "page": "e2e71b2b39b7e00b93de",
+      "visual": "dd400a8a673caa8ed6a7",
+      "before": {
+        "x": 200,
+        "y": 88,
+        "z": 2000,
+        "height": 96,
+        "width": 218,
+        "tabOrder": 600
+      },
+      "after": {
+        "x": 200,
+        "y": 112,
+        "z": 2000,
+        "height": 120,
+        "width": 218,
+        "tabOrder": 600
+      }
+    },
+    {
+      "page": "e2e71b2b39b7e00b93de",
+      "visual": "e062531a409aa34d2575",
+      "before": {
+        "x": 32,
+        "y": 272,
+        "z": 5000,
+        "height": 80,
+        "width": 144,
+        "tabOrder": 1500
+      },
+      "after": {
+        "x": 32,
+        "y": 336,
+        "z": 5000,
+        "height": 88,
+        "width": 144,
+        "tabOrder": 1500
+      }
+    },
+    {
+      "page": "e2e71b2b39b7e00b93de",
+      "visual": "eb470f7e84ed9703a8d8",
+      "before": {
+        "x": 215,
+        "y": 50,
+        "z": 16000,
+        "height": 26,
+        "width": 1095,
+        "tabOrder": 400
+      },
+      "after": {
+        "x": 215,
+        "y": 64,
+        "z": 16000,
+        "height": 26,
+        "width": 1095,
+        "tabOrder": 400
+      }
+    },
+    {
+      "page": "e2e71b2b39b7e00b93de",
+      "visual": "f416263b317d0044c051",
+      "before": {
+        "x": 16,
+        "y": 8,
+        "z": 17000,
+        "height": 32,
+        "width": 176,
+        "tabOrder": 300
+      },
+      "after": {
+        "x": 16,
+        "y": 8,
+        "z": 17000,
+        "height": 40,
+        "width": 176,
+        "tabOrder": 300
+      }
+    },
+    {
+      "page": "9ce4074e277290a594b7",
+      "visual": "00c6198092a372ab0910",
+      "before": {
+        "x": 215,
+        "y": 50,
+        "z": 6000,
+        "height": 26,
+        "width": 1095,
+        "tabOrder": 400
+      },
+      "after": {
+        "x": 215,
+        "y": 64,
+        "z": 6000,
+        "height": 26,
+        "width": 1095,
+        "tabOrder": 400
+      }
+    },
+    {
+      "page": "9ce4074e277290a594b7",
+      "visual": "0b519c8ca5250d606ea0",
+      "before": {
+        "x": 32,
+        "y": 176,
+        "z": 2000,
+        "height": 80,
+        "width": 144,
+        "tabOrder": 1000
+      },
+      "after": {
+        "x": 32,
+        "y": 232,
+        "z": 2000,
+        "height": 88,
+        "width": 144,
+        "tabOrder": 1000
+      }
+    },
+    {
+      "page": "9ce4074e277290a594b7",
+      "visual": "1ce1ac3b318881b82400",
+      "before": {
+        "x": 16,
+        "y": 8,
+        "z": 7000,
+        "height": 32,
+        "width": 176,
+        "tabOrder": 300
+      },
+      "after": {
+        "x": 16,
+        "y": 8,
+        "z": 7000,
+        "height": 40,
+        "width": 176,
+        "tabOrder": 300
+      }
+    },
+    {
+      "page": "9ce4074e277290a594b7",
+      "visual": "326efa6cd15edb5615ca",
+      "before": {
+        "x": 32,
+        "y": 504,
+        "z": 11000,
+        "height": 320,
+        "width": 904,
+        "tabOrder": 1400
+      },
+      "after": {
+        "x": 32,
+        "y": 544,
+        "z": 11000,
+        "height": 344,
+        "width": 720,
+        "tabOrder": 1400
+      }
+    },
+    {
+      "page": "9ce4074e277290a594b7",
+      "visual": "488130f83c29980e808d",
+      "before": {
+        "x": 200,
+        "y": 0,
+        "z": 4000,
+        "height": 88,
+        "width": 1126,
+        "tabOrder": 100
+      },
+      "after": {
+        "x": 200,
+        "y": 0,
+        "z": 4000,
+        "height": 96,
+        "width": 1126,
+        "tabOrder": 100
+      }
+    },
+    {
+      "page": "9ce4074e277290a594b7",
+      "visual": "4945712e83cd21b9868e",
+      "before": {
+        "x": 32,
+        "y": 48,
+        "z": 1000,
+        "height": 112,
+        "width": 144,
+        "tabOrder": 500
+      },
+      "after": {
+        "x": 32,
+        "y": 56,
+        "z": 1000,
+        "height": 160,
+        "width": 144,
+        "tabOrder": 500
+      }
+    },
+    {
+      "page": "9ce4074e277290a594b7",
+      "visual": "5a6dfdeab84eec858701",
+      "before": {
+        "x": 32,
+        "y": 368,
+        "z": 8000,
+        "height": 32,
+        "width": 144,
+        "tabOrder": 1200
+      },
+      "after": {
+        "x": 32,
+        "y": 440,
+        "z": 8000,
+        "height": 36,
+        "width": 144,
+        "tabOrder": 1200
+      }
+    },
+    {
+      "page": "9ce4074e277290a594b7",
+      "visual": "5d94eeb50cdd08a9dc2d",
+      "before": {
+        "x": 215,
+        "y": 10,
+        "z": 5000,
+        "height": 35,
+        "width": 1095,
+        "tabOrder": 200
+      },
+      "after": {
+        "x": 215,
+        "y": 8,
+        "z": 5000,
+        "height": 54,
+        "width": 1095,
+        "tabOrder": 200
+      }
+    },
+    {
+      "page": "9ce4074e277290a594b7",
+      "visual": "8659739282b008532eee",
+      "before": {
+        "x": 200,
+        "y": 172,
+        "z": 9000,
+        "height": 312,
+        "width": 552,
+        "tabOrder": 800
+      },
+      "after": {
+        "x": 200,
+        "y": 248,
+        "z": 9000,
+        "height": 280,
+        "width": 552,
+        "tabOrder": 800
+      }
+    },
+    {
+      "page": "9ce4074e277290a594b7",
+      "visual": "a13243354215609ec4c0",
+      "before": {
+        "x": 32,
+        "y": 272,
+        "z": 3000,
+        "height": 80,
+        "width": 144,
+        "tabOrder": 1100
+      },
+      "after": {
+        "x": 32,
+        "y": 336,
+        "z": 3000,
+        "height": 88,
+        "width": 144,
+        "tabOrder": 1100
+      }
+    },
+    {
+      "page": "9ce4074e277290a594b7",
+      "visual": "bfd4fc73192936bc42c7",
+      "before": {
+        "x": 952,
+        "y": 504,
+        "z": 12000,
+        "height": 320,
+        "width": 374,
+        "tabOrder": 1500
+      },
+      "after": {
+        "x": 768,
+        "y": 544,
+        "z": 12000,
+        "height": 344,
+        "width": 558,
+        "tabOrder": 1500
+      }
+    },
+    {
+      "page": "9ce4074e277290a594b7",
+      "visual": "fc81c2d8bc82287d528b",
+      "before": {
+        "x": 768,
+        "y": 172,
+        "z": 10000,
+        "height": 312,
+        "width": 558,
+        "tabOrder": 900
+      },
+      "after": {
+        "x": 768,
+        "y": 248,
+        "z": 10000,
+        "height": 280,
+        "width": 558,
+        "tabOrder": 900
+      }
+    },
+    {
+      "page": "9ce4074e277290a594b7",
+      "visual": "retail_identified_share",
+      "before": {
+        "x": 768,
+        "y": 96,
+        "z": 8000,
+        "height": 64,
+        "width": 558,
+        "tabOrder": 700
+      },
+      "after": {
+        "x": 768,
+        "y": 112,
+        "z": 8000,
+        "height": 120,
+        "width": 558,
+        "tabOrder": 700
+      }
+    },
+    {
+      "page": "9ce4074e277290a594b7",
+      "visual": "retail_unknown_net",
+      "before": {
+        "x": 200,
+        "y": 96,
+        "z": 8000,
+        "height": 64,
+        "width": 552,
+        "tabOrder": 600
+      },
+      "after": {
+        "x": 200,
+        "y": 112,
+        "z": 8000,
+        "height": 120,
+        "width": 552,
+        "tabOrder": 600
+      }
+    }
+  ],
+  "semantic_model_unchanged_from_desktop_saved_state": true,
+  "requested_active_visual_count_after_removal": 33,
+  "source_currency": "GBP",
+  "currency_conversion_performed": false,
+  "native_property_reference": "https://github.com/microsoft/powerbi-desktop-samples/blob/main/Report%20Theme%20JSON%20Schema/reportThemeSchema-2.157.json",
+  "final_refinements_after_desktop_feedback": [
+    {
+      "page": "9ce4074e277290a594b7",
+      "visual": "4945712e83cd21b9868e",
+      "before": {
+        "x": 32,
+        "y": 56,
+        "z": 1000,
+        "height": 160,
+        "width": 144,
+        "tabOrder": 500
+      },
+      "after": {
+        "x": 32,
+        "y": 56,
+        "z": 1000,
+        "height": 160,
+        "width": 144,
+        "tabOrder": 500
+      }
+    },
+    {
+      "page": "9ce4074e277290a594b7",
+      "visual": "8659739282b008532eee",
+      "before": {
+        "x": 200,
+        "y": 248,
+        "z": 9000,
+        "height": 280,
+        "width": 552,
+        "tabOrder": 800
+      },
+      "after": {
+        "x": 200,
+        "y": 248,
+        "z": 9000,
+        "height": 280,
+        "width": 552,
+        "tabOrder": 800
+      }
+    },
+    {
+      "page": "9ce4074e277290a594b7",
+      "visual": "fc81c2d8bc82287d528b",
+      "before": {
+        "x": 768,
+        "y": 248,
+        "z": 10000,
+        "height": 280,
+        "width": 558,
+        "tabOrder": 900
+      },
+      "after": {
+        "x": 768,
+        "y": 248,
+        "z": 10000,
+        "height": 280,
+        "width": 558,
+        "tabOrder": 900
+      }
+    },
+    {
+      "page": "e2e71b2b39b7e00b93de",
+      "visual": "0d26f07ae3e59165a455",
+      "before": {
+        "x": 768,
+        "y": 544,
+        "z": 13000,
+        "height": 344,
+        "width": 558,
+        "tabOrder": 1900
+      },
+      "after": {
+        "x": 768,
+        "y": 584,
+        "z": 13000,
+        "height": 304,
+        "width": 558,
+        "tabOrder": 1900
+      }
+    },
+    {
+      "page": "e2e71b2b39b7e00b93de",
+      "visual": "0d43bab4e45532bcc190",
+      "before": {
+        "x": 654,
+        "y": 112,
+        "z": 7000,
+        "height": 120,
+        "width": 218,
+        "tabOrder": 800
+      },
+      "after": {
+        "x": 654,
+        "y": 104,
+        "z": 7000,
+        "height": 104,
+        "width": 218,
+        "tabOrder": 800
+      }
+    },
+    {
+      "page": "e2e71b2b39b7e00b93de",
+      "visual": "103453003bcd8ca655ca",
+      "before": {
+        "x": 32,
+        "y": 544,
+        "z": 12000,
+        "height": 344,
+        "width": 720,
+        "tabOrder": 1800
+      },
+      "after": {
+        "x": 32,
+        "y": 584,
+        "z": 12000,
+        "height": 304,
+        "width": 720,
+        "tabOrder": 1800
+      }
+    },
+    {
+      "page": "e2e71b2b39b7e00b93de",
+      "visual": "1efd5c26d1b097445d63",
+      "before": {
+        "x": 1108,
+        "y": 112,
+        "z": 9000,
+        "height": 120,
+        "width": 218,
+        "tabOrder": 1000
+      },
+      "after": {
+        "x": 1108,
+        "y": 104,
+        "z": 9000,
+        "height": 104,
+        "width": 218,
+        "tabOrder": 1000
+      }
+    },
+    {
+      "page": "e2e71b2b39b7e00b93de",
+      "visual": "5f1c21068041053e9103",
+      "before": {
+        "x": 768,
+        "y": 248,
+        "z": 11000,
+        "height": 280,
+        "width": 558,
+        "tabOrder": 1400
+      },
+      "after": {
+        "x": 768,
+        "y": 224,
+        "z": 11000,
+        "height": 344,
+        "width": 558,
+        "tabOrder": 1400
+      }
+    },
+    {
+      "page": "e2e71b2b39b7e00b93de",
+      "visual": "866c411e4dac10cc1484",
+      "before": {
+        "x": 32,
+        "y": 56,
+        "z": 3000,
+        "height": 160,
+        "width": 144,
+        "tabOrder": 500
+      },
+      "after": {
+        "x": 32,
+        "y": 56,
+        "z": 3000,
+        "height": 160,
+        "width": 144,
+        "tabOrder": 500
+      }
+    },
+    {
+      "page": "e2e71b2b39b7e00b93de",
+      "visual": "b7f03dd49cd6692b1d55",
+      "before": {
+        "x": 881,
+        "y": 112,
+        "z": 8000,
+        "height": 120,
+        "width": 218,
+        "tabOrder": 900
+      },
+      "after": {
+        "x": 881,
+        "y": 104,
+        "z": 8000,
+        "height": 104,
+        "width": 218,
+        "tabOrder": 900
+      }
+    },
+    {
+      "page": "e2e71b2b39b7e00b93de",
+      "visual": "c1e7baf0796e55151039",
+      "before": {
+        "x": 200,
+        "y": 248,
+        "z": 10000,
+        "height": 280,
+        "width": 552,
+        "tabOrder": 1300
+      },
+      "after": {
+        "x": 200,
+        "y": 224,
+        "z": 10000,
+        "height": 344,
+        "width": 552,
+        "tabOrder": 1300
+      }
+    },
+    {
+      "page": "e2e71b2b39b7e00b93de",
+      "visual": "c6a83e50232cca065cd5",
+      "before": {
+        "x": 427,
+        "y": 112,
+        "z": 6000,
+        "height": 120,
+        "width": 218,
+        "tabOrder": 700
+      },
+      "after": {
+        "x": 427,
+        "y": 104,
+        "z": 6000,
+        "height": 104,
+        "width": 218,
+        "tabOrder": 700
+      }
+    },
+    {
+      "page": "e2e71b2b39b7e00b93de",
+      "visual": "dd400a8a673caa8ed6a7",
+      "before": {
+        "x": 200,
+        "y": 112,
+        "z": 2000,
+        "height": 120,
+        "width": 218,
+        "tabOrder": 600
+      },
+      "after": {
+        "x": 200,
+        "y": 104,
+        "z": 2000,
+        "height": 104,
+        "width": 218,
+        "tabOrder": 600
+      }
+    }
+  ],
+  "year_tile_configuration": {
+    "mode": "Basic",
+    "orientation": "Horizontal (1)",
+    "responsive": true,
+    "container_height": 160,
+    "reason": "Responsive Basic/Horizontal enables native TabularSlicerLayout and chunks both years into rows."
+  },
+  "country_scroll_correction": {
+    "height_before": 280,
+    "height_after": 344,
+    "minimum_category_size": 18,
+    "first_page_KPI_y": 104,
+    "first_page_KPI_height": 104,
+    "month_and_country_chart_y": 224
+  },
+  "second_desktop_save_backup": {
+    "path": "backups\\desktop-test-save-before-final-layout.zip",
+    "sha256": "cbff17845cbcd065cbf7995f188c42d33da531fecaf07480451754b7a59744cf",
+    "files": 60
+  },
+  "semantic_model_unchanged_from_second_desktop_saved_state": true,
+  "second_page_country_scroll_refinement": [
+    {
+      "page": "9ce4074e277290a594b7",
+      "visual": "retail_unknown_net",
+      "before": {
+        "x": 200,
+        "y": 112,
+        "z": 8000,
+        "height": 120,
+        "width": 552,
+        "tabOrder": 600
+      },
+      "after": {
+        "x": 200,
+        "y": 104,
+        "z": 8000,
+        "height": 120,
+        "width": 552,
+        "tabOrder": 600
+      }
+    },
+    {
+      "page": "9ce4074e277290a594b7",
+      "visual": "retail_identified_share",
+      "before": {
+        "x": 768,
+        "y": 112,
+        "z": 8000,
+        "height": 120,
+        "width": 558,
+        "tabOrder": 700
+      },
+      "after": {
+        "x": 768,
+        "y": 104,
+        "z": 8000,
+        "height": 120,
+        "width": 558,
+        "tabOrder": 700
+      }
+    },
+    {
+      "page": "9ce4074e277290a594b7",
+      "visual": "8659739282b008532eee",
+      "before": {
+        "x": 200,
+        "y": 248,
+        "z": 9000,
+        "height": 280,
+        "width": 552,
+        "tabOrder": 800
+      },
+      "after": {
+        "x": 200,
+        "y": 240,
+        "z": 9000,
+        "height": 344,
+        "width": 552,
+        "tabOrder": 800
+      }
+    },
+    {
+      "page": "9ce4074e277290a594b7",
+      "visual": "fc81c2d8bc82287d528b",
+      "before": {
+        "x": 768,
+        "y": 248,
+        "z": 10000,
+        "height": 280,
+        "width": 558,
+        "tabOrder": 900
+      },
+      "after": {
+        "x": 768,
+        "y": 240,
+        "z": 10000,
+        "height": 344,
+        "width": 558,
+        "tabOrder": 900
+      }
+    },
+    {
+      "page": "9ce4074e277290a594b7",
+      "visual": "326efa6cd15edb5615ca",
+      "before": {
+        "x": 32,
+        "y": 544,
+        "z": 11000,
+        "height": 344,
+        "width": 720,
+        "tabOrder": 1400
+      },
+      "after": {
+        "x": 32,
+        "y": 600,
+        "z": 11000,
+        "height": 312,
+        "width": 720,
+        "tabOrder": 1400
+      }
+    },
+    {
+      "page": "9ce4074e277290a594b7",
+      "visual": "bfd4fc73192936bc42c7",
+      "before": {
+        "x": 768,
+        "y": 544,
+        "z": 12000,
+        "height": 344,
+        "width": 558,
+        "tabOrder": 1500
+      },
+      "after": {
+        "x": 768,
+        "y": 600,
+        "z": 12000,
+        "height": 312,
+        "width": 558,
+        "tabOrder": 1500
+      }
+    }
+  ],
+  "latest_desktop_save_backup": {
+    "path": "backups/desktop-save-before-second-country-adjustment.zip",
+    "sha256": "7f6674bf1eabd51bf803cd0488a21f95bf9500dafdf24211cf7e644ed93307a3",
+    "files": 60
+  },
+  "model_files_byte_equal_after_second_page_adjustment": 16,
+  "user_visual_feedback": {
+    "year_tiles_both_visible_and_stacked": true,
+    "sales_overview_country_ranking_without_scrollbar": true,
+    "insights_country_ranking_before_adjustment_had_scrollbar": true,
+    "insights_country_ranking_after_adjustment": "pending user observation"
+  },
+  "current_final_positions": [
+    {
+      "page": "9ce4074e277290a594b7",
+      "visual": "00c6198092a372ab0910",
+      "position": {
+        "x": 215,
+        "y": 64,
+        "z": 6000,
+        "height": 26,
+        "width": 1095,
+        "tabOrder": 400
+      }
+    },
+    {
+      "page": "9ce4074e277290a594b7",
+      "visual": "0483efcc26aa02cd5527",
+      "position": {
+        "x": 16,
+        "y": 0,
+        "z": 0,
+        "height": 488,
+        "width": 176,
+        "tabOrder": 0
+      }
+    },
+    {
+      "page": "9ce4074e277290a594b7",
+      "visual": "0b519c8ca5250d606ea0",
+      "position": {
+        "x": 32,
+        "y": 232,
+        "z": 2000,
+        "height": 88,
+        "width": 144,
+        "tabOrder": 1000
+      }
+    },
+    {
+      "page": "9ce4074e277290a594b7",
+      "visual": "1ce1ac3b318881b82400",
+      "position": {
+        "x": 16,
+        "y": 8,
+        "z": 7000,
+        "height": 40,
+        "width": 176,
+        "tabOrder": 300
+      }
+    },
+    {
+      "page": "9ce4074e277290a594b7",
+      "visual": "326efa6cd15edb5615ca",
+      "position": {
+        "x": 32,
+        "y": 600,
+        "z": 11000,
+        "height": 312,
+        "width": 720,
+        "tabOrder": 1400
+      }
+    },
+    {
+      "page": "9ce4074e277290a594b7",
+      "visual": "488130f83c29980e808d",
+      "position": {
+        "x": 200,
+        "y": 0,
+        "z": 4000,
+        "height": 96,
+        "width": 1126,
+        "tabOrder": 100
+      }
+    },
+    {
+      "page": "9ce4074e277290a594b7",
+      "visual": "4945712e83cd21b9868e",
+      "position": {
+        "x": 32,
+        "y": 56,
+        "z": 1000,
+        "height": 160,
+        "width": 144,
+        "tabOrder": 500
+      }
+    },
+    {
+      "page": "9ce4074e277290a594b7",
+      "visual": "5a6dfdeab84eec858701",
+      "position": {
+        "x": 32,
+        "y": 440,
+        "z": 8000,
+        "height": 36,
+        "width": 144,
+        "tabOrder": 1200
+      }
+    },
+    {
+      "page": "9ce4074e277290a594b7",
+      "visual": "5d94eeb50cdd08a9dc2d",
+      "position": {
+        "x": 215,
+        "y": 8,
+        "z": 5000,
+        "height": 54,
+        "width": 1095,
+        "tabOrder": 200
+      }
+    },
+    {
+      "page": "9ce4074e277290a594b7",
+      "visual": "8659739282b008532eee",
+      "position": {
+        "x": 200,
+        "y": 240,
+        "z": 9000,
+        "height": 344,
+        "width": 552,
+        "tabOrder": 800
+      }
+    },
+    {
+      "page": "9ce4074e277290a594b7",
+      "visual": "a13243354215609ec4c0",
+      "position": {
+        "x": 32,
+        "y": 336,
+        "z": 3000,
+        "height": 88,
+        "width": 144,
+        "tabOrder": 1100
+      }
+    },
+    {
+      "page": "9ce4074e277290a594b7",
+      "visual": "bfd4fc73192936bc42c7",
+      "position": {
+        "x": 768,
+        "y": 600,
+        "z": 12000,
+        "height": 312,
+        "width": 558,
+        "tabOrder": 1500
+      }
+    },
+    {
+      "page": "9ce4074e277290a594b7",
+      "visual": "fc81c2d8bc82287d528b",
+      "position": {
+        "x": 768,
+        "y": 240,
+        "z": 10000,
+        "height": 344,
+        "width": 558,
+        "tabOrder": 900
+      }
+    },
+    {
+      "page": "9ce4074e277290a594b7",
+      "visual": "retail_identified_share",
+      "position": {
+        "x": 768,
+        "y": 104,
+        "z": 8000,
+        "height": 120,
+        "width": 558,
+        "tabOrder": 700
+      }
+    },
+    {
+      "page": "9ce4074e277290a594b7",
+      "visual": "retail_unknown_net",
+      "position": {
+        "x": 200,
+        "y": 104,
+        "z": 8000,
+        "height": 120,
+        "width": 552,
+        "tabOrder": 600
+      }
+    },
+    {
+      "page": "e2e71b2b39b7e00b93de",
+      "visual": "0d26f07ae3e59165a455",
+      "position": {
+        "x": 768,
+        "y": 584,
+        "z": 13000,
+        "height": 304,
+        "width": 558,
+        "tabOrder": 1900
+      }
+    },
+    {
+      "page": "e2e71b2b39b7e00b93de",
+      "visual": "0d43bab4e45532bcc190",
+      "position": {
+        "x": 654,
+        "y": 104,
+        "z": 7000,
+        "height": 104,
+        "width": 218,
+        "tabOrder": 800
+      }
+    },
+    {
+      "page": "e2e71b2b39b7e00b93de",
+      "visual": "103453003bcd8ca655ca",
+      "position": {
+        "x": 32,
+        "y": 584,
+        "z": 12000,
+        "height": 304,
+        "width": 720,
+        "tabOrder": 1800
+      }
+    },
+    {
+      "page": "e2e71b2b39b7e00b93de",
+      "visual": "17704764da05a4761017",
+      "position": {
+        "x": 32,
+        "y": 232,
+        "z": 4000,
+        "height": 88,
+        "width": 144,
+        "tabOrder": 1200
+      }
+    },
+    {
+      "page": "e2e71b2b39b7e00b93de",
+      "visual": "1efd5c26d1b097445d63",
+      "position": {
+        "x": 1108,
+        "y": 104,
+        "z": 9000,
+        "height": 104,
+        "width": 218,
+        "tabOrder": 1000
+      }
+    },
+    {
+      "page": "e2e71b2b39b7e00b93de",
+      "visual": "3774ff8807dbaa3ca5ce",
+      "position": {
+        "x": 32,
+        "y": 440,
+        "z": 18000,
+        "height": 36,
+        "width": 144,
+        "tabOrder": 1600
+      }
+    },
+    {
+      "page": "e2e71b2b39b7e00b93de",
+      "visual": "49a95c32ed08401404c0",
+      "position": {
+        "x": 200,
+        "y": 0,
+        "z": 14000,
+        "height": 96,
+        "width": 1126,
+        "tabOrder": 100
+      }
+    },
+    {
+      "page": "e2e71b2b39b7e00b93de",
+      "visual": "5aa06803ebeac0c1cbba",
+      "position": {
+        "x": 215,
+        "y": 8,
+        "z": 15000,
+        "height": 54,
+        "width": 1095,
+        "tabOrder": 200
+      }
+    },
+    {
+      "page": "e2e71b2b39b7e00b93de",
+      "visual": "5f1c21068041053e9103",
+      "position": {
+        "x": 768,
+        "y": 224,
+        "z": 11000,
+        "height": 344,
+        "width": 558,
+        "tabOrder": 1400
+      }
+    },
+    {
+      "page": "e2e71b2b39b7e00b93de",
+      "visual": "866c411e4dac10cc1484",
+      "position": {
+        "x": 32,
+        "y": 56,
+        "z": 3000,
+        "height": 160,
+        "width": 144,
+        "tabOrder": 500
+      }
+    },
+    {
+      "page": "e2e71b2b39b7e00b93de",
+      "visual": "b7f03dd49cd6692b1d55",
+      "position": {
+        "x": 881,
+        "y": 104,
+        "z": 8000,
+        "height": 104,
+        "width": 218,
+        "tabOrder": 900
+      }
+    },
+    {
+      "page": "e2e71b2b39b7e00b93de",
+      "visual": "c1e7baf0796e55151039",
+      "position": {
+        "x": 200,
+        "y": 224,
+        "z": 10000,
+        "height": 344,
+        "width": 552,
+        "tabOrder": 1300
+      }
+    },
+    {
+      "page": "e2e71b2b39b7e00b93de",
+      "visual": "c6a83e50232cca065cd5",
+      "position": {
+        "x": 427,
+        "y": 104,
+        "z": 6000,
+        "height": 104,
+        "width": 218,
+        "tabOrder": 700
+      }
+    },
+    {
+      "page": "e2e71b2b39b7e00b93de",
+      "visual": "dd400a8a673caa8ed6a7",
+      "position": {
+        "x": 200,
+        "y": 104,
+        "z": 2000,
+        "height": 104,
+        "width": 218,
+        "tabOrder": 600
+      }
+    },
+    {
+      "page": "e2e71b2b39b7e00b93de",
+      "visual": "e062531a409aa34d2575",
+      "position": {
+        "x": 32,
+        "y": 336,
+        "z": 5000,
+        "height": 88,
+        "width": 144,
+        "tabOrder": 1500
+      }
+    },
+    {
+      "page": "e2e71b2b39b7e00b93de",
+      "visual": "eb470f7e84ed9703a8d8",
+      "position": {
+        "x": 215,
+        "y": 64,
+        "z": 16000,
+        "height": 26,
+        "width": 1095,
+        "tabOrder": 400
+      }
+    },
+    {
+      "page": "e2e71b2b39b7e00b93de",
+      "visual": "f416263b317d0044c051",
+      "position": {
+        "x": 16,
+        "y": 8,
+        "z": 17000,
+        "height": 40,
+        "width": 176,
+        "tabOrder": 300
+      }
+    },
+    {
+      "page": "e2e71b2b39b7e00b93de",
+      "visual": "fe3958954c94c6c880eb",
+      "position": {
+        "x": 16,
+        "y": 0,
+        "z": 1000,
+        "height": 488,
+        "width": 176,
+        "tabOrder": 0
+      }
+    }
+  ]
+}

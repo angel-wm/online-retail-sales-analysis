@@ -3,10 +3,10 @@
   "name": "103453003bcd8ca655ca",
   "position": {
     "x": 32,
-    "y": 508,
+    "y": 584,
     "z": 12000,
-    "height": 316,
-    "width": 904,
+    "height": 304,
+    "width": 720,
     "tabOrder": 1800
   },
   "visual": {
@@ -28,26 +28,8 @@
               },
               "queryRef": "DimProduct.Product_Label",
               "nativeQueryRef": "Stock code and product",
+              "active": true,
               "displayName": "Stock code and product"
-            }
-          ]
-        },
-        "Y": {
-          "projections": [
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "Online Retail"
-                    }
-                  },
-                  "Property": "Net Sales"
-                }
-              },
-              "queryRef": "Online Retail.Net Sales",
-              "nativeQueryRef": "Net Sales",
-              "format": "Â£#,0.00;(Â£#,0.00);Â£0.00"
             }
           ]
         },
@@ -110,8 +92,8 @@
                 }
               },
               "queryRef": "Online Retail.Main Sales",
-              "nativeQueryRef": "Gross merchandise (Â£)",
-              "displayName": "Gross merchandise (Â£)"
+              "nativeQueryRef": "Gross merchandise",
+              "displayName": "Gross merchandise"
             },
             {
               "field": {
@@ -125,8 +107,8 @@
                 }
               },
               "queryRef": "Online Retail.Returns Amount",
-              "nativeQueryRef": "Cancellations / reversals (Â£)",
-              "displayName": "Cancellations / reversals (Â£)"
+              "nativeQueryRef": "Cancellations / reversals",
+              "displayName": "Cancellations / reversals"
             },
             {
               "field": {
@@ -140,8 +122,8 @@
                 }
               },
               "queryRef": "Online Retail.Net Sales",
-              "nativeQueryRef": "Net merchandise (Â£)",
-              "displayName": "Net merchandise (Â£)"
+              "nativeQueryRef": "Net Sales",
+              "displayName": "Net merchandise"
             },
             {
               "field": {
@@ -202,6 +184,25 @@
               "queryRef": "Online Retail.Units Reversed",
               "nativeQueryRef": "Reversed units",
               "displayName": "Reversed units"
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Online Retail"
+                    }
+                  },
+                  "Property": "Net Sales"
+                }
+              },
+              "queryRef": "Online Retail.Net Sales",
+              "nativeQueryRef": "Net Sales",
+              "displayName": "Net merchandise"
             }
           ]
         }
@@ -277,24 +278,24 @@
                 }
               }
             },
-            "maxSize": {
-              "expr": {
-                "Literal": {
-                  "Value": "50D"
-                }
-              }
-            },
-            "wordWrap": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
-            },
             "innerPadding": {
               "expr": {
                 "Literal": {
-                  "Value": "10D"
+                  "Value": "10L"
+                }
+              }
+            },
+            "maxMarginFactor": {
+              "expr": {
+                "Literal": {
+                  "Value": "55L"
+                }
+              }
+            },
+            "preferredCategoryWidth": {
+              "expr": {
+                "Literal": {
+                  "Value": "18D"
                 }
               }
             }
@@ -346,6 +347,19 @@
             }
           }
         }
+      ],
+      "zoom": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
       ]
     },
     "visualContainerObjects": {
@@ -355,7 +369,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Top 10 products by net merchandise sales (Â£)'"
+                  "Value": "'Top 10 products by net merchandise sales'"
                 }
               }
             },
@@ -388,6 +402,13 @@
               "expr": {
                 "Literal": {
                   "Value": "true"
+                }
+              }
+            },
+            "titleWrap": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
                 }
               }
             }
@@ -469,7 +490,7 @@
             "altText": {
               "expr": {
                 "Literal": {
-                  "Value": "'Top 10 products by net merchandise sales (Â£)'"
+                  "Value": "'Top 10 products by net merchandise sales'"
                 }
               }
             }

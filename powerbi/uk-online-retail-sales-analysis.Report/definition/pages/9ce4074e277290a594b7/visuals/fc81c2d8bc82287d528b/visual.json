@@ -3,9 +3,9 @@
   "name": "fc81c2d8bc82287d528b",
   "position": {
     "x": 768,
-    "y": 172,
+    "y": 240,
     "z": 10000,
-    "height": 312,
+    "height": 344,
     "width": 558,
     "tabOrder": 900
   },
@@ -64,8 +64,8 @@
                 }
               },
               "queryRef": "Online Retail.Main Sales",
-              "nativeQueryRef": "Gross merchandise (£)",
-              "displayName": "Gross merchandise (£)"
+              "nativeQueryRef": "Gross merchandise",
+              "displayName": "Gross merchandise"
             },
             {
               "field": {
@@ -79,8 +79,8 @@
                 }
               },
               "queryRef": "Online Retail.Returns Amount",
-              "nativeQueryRef": "Cancellations / reversals (£)",
-              "displayName": "Cancellations / reversals (£)"
+              "nativeQueryRef": "Cancellations / reversals",
+              "displayName": "Cancellations / reversals"
             },
             {
               "field": {
@@ -94,8 +94,8 @@
                 }
               },
               "queryRef": "Online Retail.Net Sales",
-              "nativeQueryRef": "Net merchandise (£)",
-              "displayName": "Net merchandise (£)"
+              "nativeQueryRef": "Net merchandise",
+              "displayName": "Net merchandise"
             },
             {
               "field": {
@@ -194,6 +194,20 @@
               "expr": {
                 "Literal": {
                   "Value": "10D"
+                }
+              }
+            },
+            "preferredCategoryWidth": {
+              "expr": {
+                "Literal": {
+                  "Value": "18D"
+                }
+              }
+            },
+            "innerPadding": {
+              "expr": {
+                "Literal": {
+                  "Value": "10L"
                 }
               }
             }
@@ -332,7 +346,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Top 10 countries by reversal value (£)'"
+                  "Value": "'Top 10 countries by reversal value'"
                 }
               }
             },
@@ -365,6 +379,13 @@
               "expr": {
                 "Literal": {
                   "Value": "true"
+                }
+              }
+            },
+            "titleWrap": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
                 }
               }
             }
@@ -446,7 +467,7 @@
             "altText": {
               "expr": {
                 "Literal": {
-                  "Value": "'Top 10 countries by reversal value (£)'"
+                  "Value": "'Top 10 countries by reversal value'"
                 }
               }
             }

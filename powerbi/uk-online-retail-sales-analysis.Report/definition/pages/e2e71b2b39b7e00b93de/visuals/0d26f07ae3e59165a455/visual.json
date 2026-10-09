@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.13.0/schema.json",
   "name": "0d26f07ae3e59165a455",
   "position": {
-    "x": 952,
-    "y": 508,
+    "x": 768,
+    "y": 584,
     "z": 13000,
-    "height": 316,
-    "width": 374,
+    "height": 304,
+    "width": 558,
     "tabOrder": 1900
   },
   "visual": {
@@ -64,8 +64,8 @@
                 }
               },
               "queryRef": "Online Retail.Average Order Value",
-              "nativeQueryRef": "Net value / sale invoice (£)",
-              "displayName": "Net value / sale invoice (£)"
+              "nativeQueryRef": "Net value / sale invoice",
+              "displayName": "Net value / sale invoice"
             },
             {
               "field": {
@@ -79,8 +79,8 @@
                 }
               },
               "queryRef": "Online Retail.Net Sales",
-              "nativeQueryRef": "Net merchandise (£)",
-              "displayName": "Net merchandise (£)"
+              "nativeQueryRef": "Net merchandise",
+              "displayName": "Net merchandise"
             }
           ]
         }
@@ -205,6 +205,19 @@
             }
           }
         }
+      ],
+      "zoom": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
       ]
     },
     "visualContainerObjects": {
@@ -247,6 +260,13 @@
               "expr": {
                 "Literal": {
                   "Value": "true"
+                }
+              }
+            },
+            "titleWrap": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
                 }
               }
             }

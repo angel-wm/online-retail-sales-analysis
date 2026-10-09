@@ -1,0 +1,114 @@
+{
+  "status": "PASS_MONTHLY_SOURCE_NATIVE_AND_CHART_BINDING",
+  "source_receipt": "evidence/validation/monthly-source-check.json",
+  "source_receipt_sha256": "903e2528dfa02f7b22c24158e33af451ae25f4d0a41c44816cfb4e0ccdf21c30",
+  "native_receipt": "evidence/validation/desktop-monthly-check.json",
+  "native_receipt_sha256": "b519c69c82721aeb2060f9be62da1b206a59ae58b2ef43910213a2e3ad112e4b",
+  "source_sha256": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+  "months_compared": 13,
+  "fields_compared_per_month": 9,
+  "monetary_comparison": "Exact integer-penny source and native fixed-decimal results",
+  "differences": [],
+  "chart_measure": {
+    "Expression": {
+      "SourceRef": {
+        "Entity": "Online Retail"
+      }
+    },
+    "Property": "Net Sales"
+  },
+  "chart_category": {
+    "Expression": {
+      "SourceRef": {
+        "Entity": "Calendar"
+      }
+    },
+    "Property": "YearMonth_Label"
+  },
+  "chart_sort": {
+    "sort": [
+      {
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Calendar"
+              }
+            },
+            "Property": "YearMonth_Label"
+          }
+        },
+        "direction": "Ascending"
+      }
+    ]
+  },
+  "category_sort_by_column": "YearMonthSort",
+  "chart_filter_config": {},
+  "month_axis_has_no_missing_months": true,
+  "november_2011": {
+    "month": "2011-11",
+    "gross_gbp": 1457745.53,
+    "reversals_gbp": 25010.54,
+    "net_gbp": 1432734.99,
+    "orders": 2751,
+    "loaded_rows": 84636,
+    "first_invoice": "2011-11-01T08:16:00",
+    "last_invoice": "2011-11-30T17:42:00",
+    "covered_calendar_days": 30,
+    "full_month_days": 30,
+    "transaction_days": 26,
+    "complete_calendar_month": true,
+    "calendar_days_in_dataset": 30
+  },
+  "december_2011": {
+    "month": "2011-12",
+    "gross_gbp": 615493.27,
+    "reversals_gbp": 174126.76,
+    "net_gbp": 441366.51,
+    "orders": 816,
+    "loaded_rows": 25510,
+    "first_invoice": "2011-12-01T08:12:00",
+    "last_invoice": "2011-12-09T12:50:00",
+    "covered_calendar_days": 9,
+    "full_month_days": 31,
+    "transaction_days": 8,
+    "complete_calendar_month": false,
+    "calendar_days_in_dataset": 9
+  },
+  "unadjusted_total_change_percent": -69.19412779888903,
+  "equal_calendar_day_span_from_excel": {
+    "november_1_to_9_net_gbp": 435185.39,
+    "december_1_to_9_net_gbp": 441366.51,
+    "change_percent": 1.4203417996178525,
+    "limitation": "Both include the dates 1 through 9. December stops at 12:50 on the 9th. This is descriptive, without seasonal adjustment or extrapolation."
+  },
+  "largest_december_sale_and_reversal_pair": [
+    {
+      "Invoice_ID": "581483",
+      "Stock_Code": "23843",
+      "Description": "PAPER CRAFT , LITTLE BIRDIE",
+      "Quantity": 80995,
+      "UnitPrice": 2.08,
+      "InvoiceDate": "2011-12-09 09:15:00",
+      "Amount_Cents": 16846960,
+      "Include_In_Main_Analysis": true,
+      "Is_Merchandise_Reversal": false
+    },
+    {
+      "Invoice_ID": "C581484",
+      "Stock_Code": "23843",
+      "Description": "PAPER CRAFT , LITTLE BIRDIE",
+      "Quantity": -80995,
+      "UnitPrice": 2.08,
+      "InvoiceDate": "2011-12-09 09:27:00",
+      "Amount_Cents": -16846960,
+      "Include_In_Main_Analysis": false,
+      "Is_Merchandise_Reversal": true
+    }
+  ],
+  "pair_combined_net_cents": 0,
+  "interpretation": "December 2011 ends on the 9th, whereas November contains all 30 calendar days. The monthly chart correctly shows the partial December total. A full-month performance collapse is not supported by these totals. The large matched sale/reversal contributes equally to gross and reversals and has no combined net effect.",
+  "data_or_measures_changed_for_this_investigation": false,
+  "projection_or_missing_date_zero_fill_applied": false,
+  "checked_utc": "2026-10-09T04:20:11.479278+00:00"
+}

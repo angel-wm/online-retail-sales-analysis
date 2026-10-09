@@ -3,10 +3,10 @@
   "name": "326efa6cd15edb5615ca",
   "position": {
     "x": 32,
-    "y": 504,
+    "y": 600,
     "z": 11000,
-    "height": 320,
-    "width": 904,
+    "height": 312,
+    "width": 720,
     "tabOrder": 1400
   },
   "visual": {
@@ -28,6 +28,7 @@
               },
               "queryRef": "DimProduct.Product_Label",
               "nativeQueryRef": "Stock code and product",
+              "active": true,
               "displayName": "Stock code and product"
             }
           ]
@@ -91,8 +92,8 @@
                 }
               },
               "queryRef": "Online Retail.Main Sales",
-              "nativeQueryRef": "Gross merchandise (Â£)",
-              "displayName": "Gross merchandise (Â£)"
+              "nativeQueryRef": "Gross merchandise",
+              "displayName": "Gross merchandise"
             },
             {
               "field": {
@@ -106,8 +107,8 @@
                 }
               },
               "queryRef": "Online Retail.Returns Amount",
-              "nativeQueryRef": "Cancellations / reversals (Â£)",
-              "displayName": "Cancellations / reversals (Â£)"
+              "nativeQueryRef": "Cancellations / reversals",
+              "displayName": "Cancellations / reversals"
             },
             {
               "field": {
@@ -121,8 +122,8 @@
                 }
               },
               "queryRef": "Online Retail.Net Sales",
-              "nativeQueryRef": "Net merchandise (Â£)",
-              "displayName": "Net merchandise (Â£)"
+              "nativeQueryRef": "Net merchandise",
+              "displayName": "Net merchandise"
             },
             {
               "field": {
@@ -241,24 +242,24 @@
                 }
               }
             },
-            "maxSize": {
-              "expr": {
-                "Literal": {
-                  "Value": "50D"
-                }
-              }
-            },
-            "wordWrap": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
-            },
             "innerPadding": {
               "expr": {
                 "Literal": {
-                  "Value": "10D"
+                  "Value": "10L"
+                }
+              }
+            },
+            "maxMarginFactor": {
+              "expr": {
+                "Literal": {
+                  "Value": "55L"
+                }
+              }
+            },
+            "preferredCategoryWidth": {
+              "expr": {
+                "Literal": {
+                  "Value": "18D"
                 }
               }
             }
@@ -397,7 +398,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Top 10 products by reversal value (Â£)'"
+                  "Value": "'Top 10 products by reversal value'"
                 }
               }
             },
@@ -430,6 +431,13 @@
               "expr": {
                 "Literal": {
                   "Value": "true"
+                }
+              }
+            },
+            "titleWrap": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
                 }
               }
             }
@@ -511,7 +519,7 @@
             "altText": {
               "expr": {
                 "Literal": {
-                  "Value": "'Top 10 products by reversal value (Â£)'"
+                  "Value": "'Top 10 products by reversal value'"
                 }
               }
             }

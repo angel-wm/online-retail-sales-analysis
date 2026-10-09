@@ -1,0 +1,443 @@
+{
+  "startedUtc": "2026-10-09T03:49:46.2876954Z",
+  "connectionScope": "Power BI Desktop local engine only",
+  "reportRenderingOrInteractionsTested": false,
+  "pbixExported": false,
+  "nativeModelLoaded": true,
+  "tables": [
+    {
+      "name": "Online Retail",
+      "partitions": [
+        {
+          "name": "Online Retail",
+          "state": "Ready"
+        }
+      ],
+      "columns": 19,
+      "measures": 17
+    },
+    {
+      "name": "DateTableTemplate_0d4fcce8-da58-4559-a0a7-b0c6e2eb4b9c",
+      "partitions": [
+        {
+          "name": "DateTableTemplate_0d4fcce8-da58-4559-a0a7-b0c6e2eb4b9c",
+          "state": "Ready"
+        }
+      ],
+      "columns": 8,
+      "measures": 0
+    },
+    {
+      "name": "LocalDateTable_7ed12bcd-d2a7-41a7-9452-cf3af0f2044c",
+      "partitions": [
+        {
+          "name": "LocalDateTable_7ed12bcd-d2a7-41a7-9452-cf3af0f2044c",
+          "state": "Ready"
+        }
+      ],
+      "columns": 8,
+      "measures": 0
+    },
+    {
+      "name": "Calendar",
+      "partitions": [
+        {
+          "name": "Calendar",
+          "state": "Ready"
+        }
+      ],
+      "columns": 13,
+      "measures": 0
+    },
+    {
+      "name": "DimProduct",
+      "partitions": [
+        {
+          "name": "DimProduct",
+          "state": "Ready"
+        }
+      ],
+      "columns": 5,
+      "measures": 0
+    }
+  ],
+  "sourceFilePath": "\u0022C:\\Users\\angel\\Documents\\Proyectos\\online-retail-sales-analysis\\data\\raw\\Online Retail.xlsx\u0022 meta [IsParameterQuery=true, Type=\u0022Text\u0022, IsParameterQueryRequired=true]",
+  "measureDataTypes": {
+    "Total Sales": "Decimal",
+    "Main Sales": "Decimal",
+    "Returns Amount": "Decimal",
+    "Net Sales": "Decimal",
+    "Orders": "Int64",
+    "Unique Customers": "Int64",
+    "Average Order Value": "Decimal",
+    "Return rate": "Double",
+    "Units Sold": "Int64",
+    "Cancelled Orders": "Int64",
+    "Zero Price Records": "Int64",
+    "Return Value": "Decimal",
+    "Administrative Adjustments": "Decimal",
+    "Other Movements": "Decimal",
+    "Units Reversed": "Int64",
+    "Unidentified Net Sales": "Decimal",
+    "Identified Sales Share": "Double"
+  },
+  "comparisonPolicy": "Currency measures are compared at the native fixed-decimal scale of four digits; other numeric measures retain source precision. BLANK is distinct from zero.",
+  "nativeRefreshRequested": false,
+  "rowCounts": {
+    "fact": 540455,
+    "product": 3848,
+    "calendar": 374
+  },
+  "nativeDaxExecuted": true,
+  "scenarios": [
+    {
+      "context": "All",
+      "query": "EVALUATE ROW(\u0022Total Sales\u0022, [Total Sales], \u0022Main Sales\u0022, [Main Sales], \u0022Returns Amount\u0022, [Returns Amount], \u0022Net Sales\u0022, [Net Sales], \u0022Orders\u0022, [Orders], \u0022Unique Customers\u0022, [Unique Customers], \u0022Average Order Value\u0022, [Average Order Value], \u0022Return rate\u0022, [Return rate], \u0022Units Sold\u0022, [Units Sold], \u0022Cancelled Orders\u0022, [Cancelled Orders], \u0022Zero Price Records\u0022, [Zero Price Records], \u0022Return Value\u0022, [Return Value], \u0022Administrative Adjustments\u0022, [Administrative Adjustments], \u0022Other Movements\u0022, [Other Movements], \u0022Units Reversed\u0022, [Units Reversed], \u0022Unidentified Net Sales\u0022, [Unidentified Net Sales], \u0022Identified Sales Share\u0022, [Identified Sales Share])",
+      "nativeValues": {
+        "Total Sales": 9747747.93,
+        "Main Sales": 10271315.81,
+        "Returns Amount": 478724.18,
+        "Net Sales": 9792591.63,
+        "Orders": 19773,
+        "Unique Customers": 4334,
+        "Average Order Value": 495.2507,
+        "Return rate": 0.046607872725899564,
+        "Units Sold": 5577099,
+        "Cancelled Orders": 3422,
+        "Zero Price Records": 1061,
+        "Return Value": 478724.18,
+        "Administrative Adjustments": -45646.76,
+        "Other Movements": 803.06,
+        "Units Reversed": 272030,
+        "Unidentified Net Sales": 1505928.31,
+        "Identified Sales Share": 0.8529643924949086
+      }
+    },
+    {
+      "context": "Year 2010",
+      "query": "EVALUATE CALCULATETABLE(ROW(\u0022Total Sales\u0022, [Total Sales], \u0022Main Sales\u0022, [Main Sales], \u0022Returns Amount\u0022, [Returns Amount], \u0022Net Sales\u0022, [Net Sales], \u0022Orders\u0022, [Orders], \u0022Unique Customers\u0022, [Unique Customers], \u0022Average Order Value\u0022, [Average Order Value], \u0022Return rate\u0022, [Return rate], \u0022Units Sold\u0022, [Units Sold], \u0022Cancelled Orders\u0022, [Cancelled Orders], \u0022Zero Price Records\u0022, [Zero Price Records], \u0022Return Value\u0022, [Return Value], \u0022Administrative Adjustments\u0022, [Administrative Adjustments], \u0022Other Movements\u0022, [Other Movements], \u0022Units Reversed\u0022, [Units Reversed], \u0022Unidentified Net Sales\u0022, [Unidentified Net Sales], \u0022Identified Sales Share\u0022, [Identified Sales Share]), \u0027Calendar\u0027[Year] = 2010)",
+      "nativeValues": {
+        "Total Sales": 748957.02,
+        "Main Sales": 777897.85,
+        "Returns Amount": 17607.86,
+        "Net Sales": 760289.99,
+        "Orders": 1550,
+        "Unique Customers": 884,
+        "Average Order Value": 490.5097,
+        "Return rate": 0.022635182755679297,
+        "Units Sold": 358746,
+        "Cancelled Orders": 301,
+        "Zero Price Records": 148,
+        "Return Value": 17607.86,
+        "Administrative Adjustments": -11443.48,
+        "Other Movements": 110.51,
+        "Units Reversed": 16009,
+        "Unidentified Net Sales": 210164.91,
+        "Identified Sales Share": 0.7295183037207263
+      }
+    },
+    {
+      "context": "Year 2011",
+      "query": "EVALUATE CALCULATETABLE(ROW(\u0022Total Sales\u0022, [Total Sales], \u0022Main Sales\u0022, [Main Sales], \u0022Returns Amount\u0022, [Returns Amount], \u0022Net Sales\u0022, [Net Sales], \u0022Orders\u0022, [Orders], \u0022Unique Customers\u0022, [Unique Customers], \u0022Average Order Value\u0022, [Average Order Value], \u0022Return rate\u0022, [Return rate], \u0022Units Sold\u0022, [Units Sold], \u0022Cancelled Orders\u0022, [Cancelled Orders], \u0022Zero Price Records\u0022, [Zero Price Records], \u0022Return Value\u0022, [Return Value], \u0022Administrative Adjustments\u0022, [Administrative Adjustments], \u0022Other Movements\u0022, [Other Movements], \u0022Units Reversed\u0022, [Units Reversed], \u0022Unidentified Net Sales\u0022, [Unidentified Net Sales], \u0022Identified Sales Share\u0022, [Identified Sales Share]), \u0027Calendar\u0027[Year] = 2011)",
+      "nativeValues": {
+        "Total Sales": 8998790.91,
+        "Main Sales": 9493417.96,
+        "Returns Amount": 461116.32,
+        "Net Sales": 9032301.64,
+        "Orders": 18223,
+        "Unique Customers": 4214,
+        "Average Order Value": 495.6539,
+        "Return rate": 0.048572213078881446,
+        "Units Sold": 5218353,
+        "Cancelled Orders": 3121,
+        "Zero Price Records": 913,
+        "Return Value": 461116.32,
+        "Administrative Adjustments": -34203.28,
+        "Other Movements": 692.55,
+        "Units Reversed": 256021,
+        "Unidentified Net Sales": 1295763.4,
+        "Identified Sales Share": 0.8630796584036631
+      }
+    },
+    {
+      "context": "Netherlands",
+      "query": "EVALUATE CALCULATETABLE(ROW(\u0022Total Sales\u0022, [Total Sales], \u0022Main Sales\u0022, [Main Sales], \u0022Returns Amount\u0022, [Returns Amount], \u0022Net Sales\u0022, [Net Sales], \u0022Orders\u0022, [Orders], \u0022Unique Customers\u0022, [Unique Customers], \u0022Average Order Value\u0022, [Average Order Value], \u0022Return rate\u0022, [Return rate], \u0022Units Sold\u0022, [Units Sold], \u0022Cancelled Orders\u0022, [Cancelled Orders], \u0022Zero Price Records\u0022, [Zero Price Records], \u0022Return Value\u0022, [Return Value], \u0022Administrative Adjustments\u0022, [Administrative Adjustments], \u0022Other Movements\u0022, [Other Movements], \u0022Units Reversed\u0022, [Units Reversed], \u0022Unidentified Net Sales\u0022, [Unidentified Net Sales], \u0022Identified Sales Share\u0022, [Identified Sales Share]), \u0027Online Retail\u0027[Country] = \u0022Netherlands\u0022)",
+      "nativeValues": {
+        "Total Sales": 284661.54,
+        "Main Sales": 283889.34,
+        "Returns Amount": 409.8,
+        "Net Sales": 283479.54,
+        "Orders": 93,
+        "Unique Customers": 9,
+        "Average Order Value": 3048.1671,
+        "Return rate": 0.0014435202110794298,
+        "Units Sold": 200258,
+        "Cancelled Orders": 3,
+        "Zero Price Records": 4,
+        "Return Value": 409.8,
+        "Administrative Adjustments": 1182,
+        "Other Movements": 0,
+        "Units Reversed": 324,
+        "Unidentified Net Sales": null,
+        "Identified Sales Share": 1
+      }
+    },
+    {
+      "context": "Germany",
+      "query": "EVALUATE CALCULATETABLE(ROW(\u0022Total Sales\u0022, [Total Sales], \u0022Main Sales\u0022, [Main Sales], \u0022Returns Amount\u0022, [Returns Amount], \u0022Net Sales\u0022, [Net Sales], \u0022Orders\u0022, [Orders], \u0022Unique Customers\u0022, [Unique Customers], \u0022Average Order Value\u0022, [Average Order Value], \u0022Return rate\u0022, [Return rate], \u0022Units Sold\u0022, [Units Sold], \u0022Cancelled Orders\u0022, [Cancelled Orders], \u0022Zero Price Records\u0022, [Zero Price Records], \u0022Return Value\u0022, [Return Value], \u0022Administrative Adjustments\u0022, [Administrative Adjustments], \u0022Other Movements\u0022, [Other Movements], \u0022Units Reversed\u0022, [Units Reversed], \u0022Unidentified Net Sales\u0022, [Unidentified Net Sales], \u0022Identified Sales Share\u0022, [Identified Sales Share]), \u0027Online Retail\u0027[Country] = \u0022Germany\u0022)",
+      "nativeValues": {
+        "Total Sales": 221698.21,
+        "Main Sales": 205569.89,
+        "Returns Amount": 4761.49,
+        "Net Sales": 200808.4,
+        "Orders": 443,
+        "Unique Customers": 94,
+        "Average Order Value": 453.2921,
+        "Return rate": 0.02316239017299664,
+        "Units Sold": 118139,
+        "Cancelled Orders": 135,
+        "Zero Price Records": 2,
+        "Return Value": 4761.49,
+        "Administrative Adjustments": 20889.81,
+        "Other Movements": 0,
+        "Units Reversed": 1798,
+        "Unidentified Net Sales": null,
+        "Identified Sales Share": 1
+      }
+    },
+    {
+      "context": "United Kingdom",
+      "query": "EVALUATE CALCULATETABLE(ROW(\u0022Total Sales\u0022, [Total Sales], \u0022Main Sales\u0022, [Main Sales], \u0022Returns Amount\u0022, [Returns Amount], \u0022Net Sales\u0022, [Net Sales], \u0022Orders\u0022, [Orders], \u0022Unique Customers\u0022, [Unique Customers], \u0022Average Order Value\u0022, [Average Order Value], \u0022Return rate\u0022, [Return rate], \u0022Units Sold\u0022, [Units Sold], \u0022Cancelled Orders\u0022, [Cancelled Orders], \u0022Zero Price Records\u0022, [Zero Price Records], \u0022Return Value\u0022, [Return Value], \u0022Administrative Adjustments\u0022, [Administrative Adjustments], \u0022Other Movements\u0022, [Other Movements], \u0022Units Reversed\u0022, [Units Reversed], \u0022Unidentified Net Sales\u0022, [Unidentified Net Sales], \u0022Identified Sales Share\u0022, [Identified Sales Share]), \u0027Online Retail\u0027[Country] = \u0022United Kingdom\u0022)",
+      "nativeValues": {
+        "Total Sales": 8187806.36,
+        "Main Sales": 8747444.41,
+        "Returns Amount": 445843.38,
+        "Net Sales": 8301601.03,
+        "Orders": 17901,
+        "Unique Customers": 3916,
+        "Average Order Value": 463.7507,
+        "Return rate": 0.05096841535686878,
+        "Units Sold": 4654354,
+        "Cancelled Orders": 3029,
+        "Zero Price Records": 1043,
+        "Return Value": 445843.38,
+        "Administrative Adjustments": -114597.73,
+        "Other Movements": 803.06,
+        "Units Reversed": 258099,
+        "Unidentified Net Sales": 1478698.21,
+        "Identified Sales Share": 0.8306268539064657
+      }
+    },
+    {
+      "context": "Adjustment",
+      "query": "EVALUATE CALCULATETABLE(ROW(\u0022Total Sales\u0022, [Total Sales], \u0022Main Sales\u0022, [Main Sales], \u0022Returns Amount\u0022, [Returns Amount], \u0022Net Sales\u0022, [Net Sales], \u0022Orders\u0022, [Orders], \u0022Unique Customers\u0022, [Unique Customers], \u0022Average Order Value\u0022, [Average Order Value], \u0022Return rate\u0022, [Return rate], \u0022Units Sold\u0022, [Units Sold], \u0022Cancelled Orders\u0022, [Cancelled Orders], \u0022Zero Price Records\u0022, [Zero Price Records], \u0022Return Value\u0022, [Return Value], \u0022Administrative Adjustments\u0022, [Administrative Adjustments], \u0022Other Movements\u0022, [Other Movements], \u0022Units Reversed\u0022, [Units Reversed], \u0022Unidentified Net Sales\u0022, [Unidentified Net Sales], \u0022Identified Sales Share\u0022, [Identified Sales Share]), \u0027Online Retail\u0027[Line_Type] = \u0022Adjustment\u0022)",
+      "nativeValues": {
+        "Total Sales": -45646.76,
+        "Main Sales": null,
+        "Returns Amount": null,
+        "Net Sales": null,
+        "Orders": null,
+        "Unique Customers": null,
+        "Average Order Value": null,
+        "Return rate": null,
+        "Units Sold": null,
+        "Cancelled Orders": null,
+        "Zero Price Records": 13,
+        "Return Value": null,
+        "Administrative Adjustments": -45646.76,
+        "Other Movements": null,
+        "Units Reversed": null,
+        "Unidentified Net Sales": null,
+        "Identified Sales Share": null
+      }
+    },
+    {
+      "context": "Gift Voucher",
+      "query": "EVALUATE CALCULATETABLE(ROW(\u0022Total Sales\u0022, [Total Sales], \u0022Main Sales\u0022, [Main Sales], \u0022Returns Amount\u0022, [Returns Amount], \u0022Net Sales\u0022, [Net Sales], \u0022Orders\u0022, [Orders], \u0022Unique Customers\u0022, [Unique Customers], \u0022Average Order Value\u0022, [Average Order Value], \u0022Return rate\u0022, [Return rate], \u0022Units Sold\u0022, [Units Sold], \u0022Cancelled Orders\u0022, [Cancelled Orders], \u0022Zero Price Records\u0022, [Zero Price Records], \u0022Return Value\u0022, [Return Value], \u0022Administrative Adjustments\u0022, [Administrative Adjustments], \u0022Other Movements\u0022, [Other Movements], \u0022Units Reversed\u0022, [Units Reversed], \u0022Unidentified Net Sales\u0022, [Unidentified Net Sales], \u0022Identified Sales Share\u0022, [Identified Sales Share]), \u0027Online Retail\u0027[Line_Type] = \u0022Gift Voucher\u0022)",
+      "nativeValues": {
+        "Total Sales": 769.14,
+        "Main Sales": null,
+        "Returns Amount": null,
+        "Net Sales": null,
+        "Orders": null,
+        "Unique Customers": null,
+        "Average Order Value": null,
+        "Return rate": null,
+        "Units Sold": null,
+        "Cancelled Orders": null,
+        "Zero Price Records": 1,
+        "Return Value": null,
+        "Administrative Adjustments": null,
+        "Other Movements": 769.14,
+        "Units Reversed": null,
+        "Unidentified Net Sales": null,
+        "Identified Sales Share": null
+      }
+    },
+    {
+      "context": "Product",
+      "query": "EVALUATE CALCULATETABLE(ROW(\u0022Total Sales\u0022, [Total Sales], \u0022Main Sales\u0022, [Main Sales], \u0022Returns Amount\u0022, [Returns Amount], \u0022Net Sales\u0022, [Net Sales], \u0022Orders\u0022, [Orders], \u0022Unique Customers\u0022, [Unique Customers], \u0022Average Order Value\u0022, [Average Order Value], \u0022Return rate\u0022, [Return rate], \u0022Units Sold\u0022, [Units Sold], \u0022Cancelled Orders\u0022, [Cancelled Orders], \u0022Zero Price Records\u0022, [Zero Price Records], \u0022Return Value\u0022, [Return Value], \u0022Administrative Adjustments\u0022, [Administrative Adjustments], \u0022Other Movements\u0022, [Other Movements], \u0022Units Reversed\u0022, [Units Reversed], \u0022Unidentified Net Sales\u0022, [Unidentified Net Sales], \u0022Identified Sales Share\u0022, [Identified Sales Share]), \u0027Online Retail\u0027[Line_Type] = \u0022Product\u0022)",
+      "nativeValues": {
+        "Total Sales": 9792625.55,
+        "Main Sales": 10271315.81,
+        "Returns Amount": 478724.18,
+        "Net Sales": 9792591.63,
+        "Orders": 19773,
+        "Unique Customers": 4334,
+        "Average Order Value": 495.2507,
+        "Return rate": 0.046607872725899564,
+        "Units Sold": 5577099,
+        "Cancelled Orders": 3422,
+        "Zero Price Records": 1047,
+        "Return Value": 478724.18,
+        "Administrative Adjustments": null,
+        "Other Movements": 33.92,
+        "Units Reversed": 272030,
+        "Unidentified Net Sales": 1505928.31,
+        "Identified Sales Share": 0.8529643924949086
+      }
+    },
+    {
+      "context": "Customer 12347",
+      "query": "EVALUATE CALCULATETABLE(ROW(\u0022Total Sales\u0022, [Total Sales], \u0022Main Sales\u0022, [Main Sales], \u0022Returns Amount\u0022, [Returns Amount], \u0022Net Sales\u0022, [Net Sales], \u0022Orders\u0022, [Orders], \u0022Unique Customers\u0022, [Unique Customers], \u0022Average Order Value\u0022, [Average Order Value], \u0022Return rate\u0022, [Return rate], \u0022Units Sold\u0022, [Units Sold], \u0022Cancelled Orders\u0022, [Cancelled Orders], \u0022Zero Price Records\u0022, [Zero Price Records], \u0022Return Value\u0022, [Return Value], \u0022Administrative Adjustments\u0022, [Administrative Adjustments], \u0022Other Movements\u0022, [Other Movements], \u0022Units Reversed\u0022, [Units Reversed], \u0022Unidentified Net Sales\u0022, [Unidentified Net Sales], \u0022Identified Sales Share\u0022, [Identified Sales Share]), \u0027Online Retail\u0027[Customer_ID] = \u002212347\u0022)",
+      "nativeValues": {
+        "Total Sales": 4310,
+        "Main Sales": 4310,
+        "Returns Amount": null,
+        "Net Sales": 4310,
+        "Orders": 7,
+        "Unique Customers": 1,
+        "Average Order Value": 615.7143,
+        "Return rate": null,
+        "Units Sold": 2458,
+        "Cancelled Orders": null,
+        "Zero Price Records": null,
+        "Return Value": null,
+        "Administrative Adjustments": null,
+        "Other Movements": null,
+        "Units Reversed": null,
+        "Unidentified Net Sales": null,
+        "Identified Sales Share": 1
+      }
+    },
+    {
+      "context": "Unknown customer",
+      "query": "EVALUATE CALCULATETABLE(ROW(\u0022Total Sales\u0022, [Total Sales], \u0022Main Sales\u0022, [Main Sales], \u0022Returns Amount\u0022, [Returns Amount], \u0022Net Sales\u0022, [Net Sales], \u0022Orders\u0022, [Orders], \u0022Unique Customers\u0022, [Unique Customers], \u0022Average Order Value\u0022, [Average Order Value], \u0022Return rate\u0022, [Return rate], \u0022Units Sold\u0022, [Units Sold], \u0022Cancelled Orders\u0022, [Cancelled Orders], \u0022Zero Price Records\u0022, [Zero Price Records], \u0022Return Value\u0022, [Return Value], \u0022Administrative Adjustments\u0022, [Administrative Adjustments], \u0022Other Movements\u0022, [Other Movements], \u0022Units Reversed\u0022, [Units Reversed], \u0022Unidentified Net Sales\u0022, [Unidentified Net Sales], \u0022Identified Sales Share\u0022, [Identified Sales Share]), \u0027Online Retail\u0027[Customer_ID] = BLANK())",
+      "nativeValues": {
+        "Total Sales": 1447682.12,
+        "Main Sales": 1510249.16,
+        "Returns Amount": 4320.85,
+        "Net Sales": 1505928.31,
+        "Orders": 1371,
+        "Unique Customers": null,
+        "Average Order Value": 1098.416,
+        "Return rate": 0.00286101797931144,
+        "Units Sold": 419742,
+        "Cancelled Orders": 39,
+        "Zero Price Records": 1021,
+        "Return Value": 4320.85,
+        "Administrative Adjustments": -59049.25,
+        "Other Movements": 803.06,
+        "Units Reversed": 2546,
+        "Unidentified Net Sales": 1505928.31,
+        "Identified Sales Share": null
+      }
+    },
+    {
+      "context": "Reversal invoice C581484",
+      "query": "EVALUATE CALCULATETABLE(ROW(\u0022Total Sales\u0022, [Total Sales], \u0022Main Sales\u0022, [Main Sales], \u0022Returns Amount\u0022, [Returns Amount], \u0022Net Sales\u0022, [Net Sales], \u0022Orders\u0022, [Orders], \u0022Unique Customers\u0022, [Unique Customers], \u0022Average Order Value\u0022, [Average Order Value], \u0022Return rate\u0022, [Return rate], \u0022Units Sold\u0022, [Units Sold], \u0022Cancelled Orders\u0022, [Cancelled Orders], \u0022Zero Price Records\u0022, [Zero Price Records], \u0022Return Value\u0022, [Return Value], \u0022Administrative Adjustments\u0022, [Administrative Adjustments], \u0022Other Movements\u0022, [Other Movements], \u0022Units Reversed\u0022, [Units Reversed], \u0022Unidentified Net Sales\u0022, [Unidentified Net Sales], \u0022Identified Sales Share\u0022, [Identified Sales Share]), \u0027Online Retail\u0027[Invoice_ID] = \u0022C581484\u0022)",
+      "nativeValues": {
+        "Total Sales": -168469.6,
+        "Main Sales": null,
+        "Returns Amount": 168469.6,
+        "Net Sales": -168469.6,
+        "Orders": null,
+        "Unique Customers": null,
+        "Average Order Value": null,
+        "Return rate": null,
+        "Units Sold": null,
+        "Cancelled Orders": 1,
+        "Zero Price Records": null,
+        "Return Value": 168469.6,
+        "Administrative Adjustments": null,
+        "Other Movements": null,
+        "Units Reversed": 80995,
+        "Unidentified Net Sales": null,
+        "Identified Sales Share": null
+      }
+    },
+    {
+      "context": "Stock 23843",
+      "query": "EVALUATE CALCULATETABLE(ROW(\u0022Total Sales\u0022, [Total Sales], \u0022Main Sales\u0022, [Main Sales], \u0022Returns Amount\u0022, [Returns Amount], \u0022Net Sales\u0022, [Net Sales], \u0022Orders\u0022, [Orders], \u0022Unique Customers\u0022, [Unique Customers], \u0022Average Order Value\u0022, [Average Order Value], \u0022Return rate\u0022, [Return rate], \u0022Units Sold\u0022, [Units Sold], \u0022Cancelled Orders\u0022, [Cancelled Orders], \u0022Zero Price Records\u0022, [Zero Price Records], \u0022Return Value\u0022, [Return Value], \u0022Administrative Adjustments\u0022, [Administrative Adjustments], \u0022Other Movements\u0022, [Other Movements], \u0022Units Reversed\u0022, [Units Reversed], \u0022Unidentified Net Sales\u0022, [Unidentified Net Sales], \u0022Identified Sales Share\u0022, [Identified Sales Share]), \u0027DimProduct\u0027[Stock_Code] = \u002223843\u0022)",
+      "nativeValues": {
+        "Total Sales": 0,
+        "Main Sales": 168469.6,
+        "Returns Amount": 168469.6,
+        "Net Sales": 0,
+        "Orders": 1,
+        "Unique Customers": 1,
+        "Average Order Value": 0,
+        "Return rate": 1,
+        "Units Sold": 80995,
+        "Cancelled Orders": 1,
+        "Zero Price Records": null,
+        "Return Value": 168469.6,
+        "Administrative Adjustments": null,
+        "Other Movements": null,
+        "Units Reversed": 80995,
+        "Unidentified Net Sales": null,
+        "Identified Sales Share": 1
+      }
+    },
+    {
+      "context": "Stock 85123A",
+      "query": "EVALUATE CALCULATETABLE(ROW(\u0022Total Sales\u0022, [Total Sales], \u0022Main Sales\u0022, [Main Sales], \u0022Returns Amount\u0022, [Returns Amount], \u0022Net Sales\u0022, [Net Sales], \u0022Orders\u0022, [Orders], \u0022Unique Customers\u0022, [Unique Customers], \u0022Average Order Value\u0022, [Average Order Value], \u0022Return rate\u0022, [Return rate], \u0022Units Sold\u0022, [Units Sold], \u0022Cancelled Orders\u0022, [Cancelled Orders], \u0022Zero Price Records\u0022, [Zero Price Records], \u0022Return Value\u0022, [Return Value], \u0022Administrative Adjustments\u0022, [Administrative Adjustments], \u0022Other Movements\u0022, [Other Movements], \u0022Units Reversed\u0022, [Units Reversed], \u0022Unidentified Net Sales\u0022, [Unidentified Net Sales], \u0022Identified Sales Share\u0022, [Identified Sales Share]), \u0027DimProduct\u0027[Stock_Code] = \u002285123A\u0022)",
+      "nativeValues": {
+        "Total Sales": 99846.98,
+        "Main Sales": 106471.28,
+        "Returns Amount": 6624.3,
+        "Net Sales": 99846.98,
+        "Orders": 2265,
+        "Unique Customers": 856,
+        "Average Order Value": 44.0826,
+        "Return rate": 0.062216778083254,
+        "Units Sold": 37952,
+        "Cancelled Orders": 42,
+        "Zero Price Records": 6,
+        "Return Value": 6624.3,
+        "Administrative Adjustments": null,
+        "Other Movements": 0,
+        "Units Reversed": 2578,
+        "Unidentified Net Sales": 5867.78,
+        "Identified Sales Share": 0.9448886122154256
+      }
+    },
+    {
+      "context": "Empty",
+      "query": "EVALUATE CALCULATETABLE(ROW(\u0022Total Sales\u0022, [Total Sales], \u0022Main Sales\u0022, [Main Sales], \u0022Returns Amount\u0022, [Returns Amount], \u0022Net Sales\u0022, [Net Sales], \u0022Orders\u0022, [Orders], \u0022Unique Customers\u0022, [Unique Customers], \u0022Average Order Value\u0022, [Average Order Value], \u0022Return rate\u0022, [Return rate], \u0022Units Sold\u0022, [Units Sold], \u0022Cancelled Orders\u0022, [Cancelled Orders], \u0022Zero Price Records\u0022, [Zero Price Records], \u0022Return Value\u0022, [Return Value], \u0022Administrative Adjustments\u0022, [Administrative Adjustments], \u0022Other Movements\u0022, [Other Movements], \u0022Units Reversed\u0022, [Units Reversed], \u0022Unidentified Net Sales\u0022, [Unidentified Net Sales], \u0022Identified Sales Share\u0022, [Identified Sales Share]), FILTER(\u0027Online Retail\u0027, FALSE()))",
+      "nativeValues": {
+        "Total Sales": null,
+        "Main Sales": null,
+        "Returns Amount": null,
+        "Net Sales": null,
+        "Orders": null,
+        "Unique Customers": null,
+        "Average Order Value": null,
+        "Return rate": null,
+        "Units Sold": null,
+        "Cancelled Orders": null,
+        "Zero Price Records": null,
+        "Return Value": null,
+        "Administrative Adjustments": null,
+        "Other Movements": null,
+        "Units Reversed": null,
+        "Unidentified Net Sales": null,
+        "Identified Sales Share": null
+      }
+    }
+  ],
+  "differences": [],
+  "desktopCacheSavedByThisTool": false,
+  "status": "PASS_NATIVE_DAX_ON_LOADED_MODEL",
+  "finishedUtc": "2026-10-09T03:49:49.0927135Z"
+}

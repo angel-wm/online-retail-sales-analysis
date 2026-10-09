@@ -66,6 +66,15 @@ def run(output):
                     validation_instance = obj
                     result["exact_declared_schema"] = True
                 except HTTPError as error:
+                    if error.code == 404 and ".pbi" in path.relative_to(PROJECT).parts:
+                        # Desktop's private local/cache settings are not authored
+                        # report definitions. Parse them, but do not invent or
+                        # downgrade an unpublished local settings schema.
+                        result.update(exact_declared_schema=False, declared_schema_http_status=404,
+                                      unavailable_local_schema=True,
+                                      reason="Desktop local settings schema is not published")
+                        results.append(result)
+                        continue
                     if error.code != 404 or url not in KNOWN_UNPUBLISHED:
                         raise
                     compatible = KNOWN_UNPUBLISHED[url]
@@ -81,7 +90,7 @@ def run(output):
             results.append(result)
     errors = [r for r in results if r.get("errors")]
     partial = any(r.get("exact_declared_schema") is False for r in results)
-    result = {"status": "FAIL" if errors else "PARTIAL" if partial else "PASS", "json_files": len(results), "schema_validated_files": sum(r["schema_validated"] for r in results), "exact_schema_files": sum(r.get("exact_declared_schema") is True for r in results), "compatibility_schema_files": sum(r.get("exact_declared_schema") is False for r in results), "project_schema_versions_unchanged": True, "desktop_rendered": False, "files": results, "schemas": used}
+    result = {"status": "FAIL" if errors else "PARTIAL" if partial else "PASS", "json_files": len(results), "schema_validated_files": sum(r["schema_validated"] for r in results), "exact_schema_files": sum(r.get("exact_declared_schema") is True for r in results), "compatibility_schema_files": sum("compatibility_schema" in r for r in results), "unavailable_local_schema_files": sum(r.get("unavailable_local_schema", False) for r in results), "project_schema_versions_unchanged": True, "desktop_rendered": False, "files": results, "schemas": used}
     target = REPO / output
     target.parent.mkdir(parents=True, exist_ok=True)
     target.write_text(json.dumps(result, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")

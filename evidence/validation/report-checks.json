@@ -4,7 +4,7 @@
   "pages": [
     {
       "page": "Product & Customer Insights",
-      "visuals": 17,
+      "visuals": 15,
       "width": 1336,
       "height": 920,
       "interaction_pairs": 50,
@@ -12,19 +12,19 @@
     },
     {
       "page": "Sales Overview",
-      "visuals": 21,
+      "visuals": 18,
       "width": 1336,
       "height": 920,
-      "interaction_pairs": 78,
+      "interaction_pairs": 71,
       "container_overlaps_excluding_background_shapes": 0
     }
   ],
   "original_visuals_retained": 31,
-  "new_visuals": 7,
+  "new_visuals": 2,
   "references_checked": {
     "column_references": 45,
-    "measure_references": 90,
-    "source_entities": 116
+    "measure_references": 85,
+    "source_entities": 111
   },
   "measure_dependency_graph": {
     "Total Sales": [],

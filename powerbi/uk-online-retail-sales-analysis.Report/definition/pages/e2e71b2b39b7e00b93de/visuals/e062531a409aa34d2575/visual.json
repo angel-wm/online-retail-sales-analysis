@@ -3,9 +3,9 @@
   "name": "e062531a409aa34d2575",
   "position": {
     "x": 32,
-    "y": 272,
+    "y": 336,
     "z": 5000,
-    "height": 80,
+    "height": 88,
     "width": 144,
     "tabOrder": 1500
   },
@@ -192,7 +192,7 @@
             "altText": {
               "expr": {
                 "Literal": {
-                  "Value": "'Filter by Line Type. Selectors sync across both pages.'"
+                  "Value": "'Filter by Line Type'"
                 }
               }
             }

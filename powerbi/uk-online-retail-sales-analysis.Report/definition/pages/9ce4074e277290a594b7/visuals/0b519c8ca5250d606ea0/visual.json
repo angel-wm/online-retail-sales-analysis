@@ -3,9 +3,9 @@
   "name": "0b519c8ca5250d606ea0",
   "position": {
     "x": 32,
-    "y": 176,
+    "y": 232,
     "z": 2000,
-    "height": 80,
+    "height": 88,
     "width": 144,
     "tabOrder": 1000
   },
@@ -199,7 +199,7 @@
             "altText": {
               "expr": {
                 "Literal": {
-                  "Value": "'Filter by Country. Selectors sync across both pages.'"
+                  "Value": "'Filter by Country'"
                 }
               }
             }

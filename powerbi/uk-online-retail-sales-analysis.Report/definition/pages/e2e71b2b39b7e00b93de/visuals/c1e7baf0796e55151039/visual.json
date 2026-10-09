@@ -3,10 +3,10 @@
   "name": "c1e7baf0796e55151039",
   "position": {
     "x": 200,
-    "y": 216,
+    "y": 224,
     "z": 10000,
-    "height": 284,
-    "width": 736,
+    "height": 344,
+    "width": 552,
     "tabOrder": 1300
   },
   "visual": {
@@ -32,25 +32,6 @@
             }
           ]
         },
-        "Y": {
-          "projections": [
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "Online Retail"
-                    }
-                  },
-                  "Property": "Net Sales"
-                }
-              },
-              "queryRef": "Online Retail.Net Sales",
-              "nativeQueryRef": "Net Sales",
-              "format": "£#,0.00;(£#,0.00);£0.00"
-            }
-          ]
-        },
         "Tooltips": {
           "projections": [
             {
@@ -65,8 +46,8 @@
                 }
               },
               "queryRef": "Online Retail.Main Sales",
-              "nativeQueryRef": "Gross merchandise (£)",
-              "displayName": "Gross merchandise (£)"
+              "nativeQueryRef": "Gross merchandise",
+              "displayName": "Gross merchandise"
             },
             {
               "field": {
@@ -80,8 +61,8 @@
                 }
               },
               "queryRef": "Online Retail.Returns Amount",
-              "nativeQueryRef": "Cancellations / reversals (£)",
-              "displayName": "Cancellations / reversals (£)"
+              "nativeQueryRef": "Cancellations / reversals",
+              "displayName": "Cancellations / reversals"
             },
             {
               "field": {
@@ -95,8 +76,8 @@
                 }
               },
               "queryRef": "Online Retail.Net Sales",
-              "nativeQueryRef": "Net merchandise (£)",
-              "displayName": "Net merchandise (£)"
+              "nativeQueryRef": "Net Sales",
+              "displayName": "Net merchandise"
             },
             {
               "field": {
@@ -170,8 +151,27 @@
                 }
               },
               "queryRef": "Online Retail.Average Order Value",
-              "nativeQueryRef": "Net value / sale invoice (£)",
-              "displayName": "Net value / sale invoice (£)"
+              "nativeQueryRef": "Net value / sale invoice",
+              "displayName": "Net value / sale invoice"
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Online Retail"
+                    }
+                  },
+                  "Property": "Net Sales"
+                }
+              },
+              "queryRef": "Online Retail.Net Sales",
+              "nativeQueryRef": "Net Sales",
+              "displayName": "Net merchandise"
             }
           ]
         }
@@ -396,7 +396,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Net merchandise sales by month (£)'"
+                  "Value": "'Net merchandise sales by month'"
                 }
               }
             },
@@ -429,6 +429,13 @@
               "expr": {
                 "Literal": {
                   "Value": "true"
+                }
+              }
+            },
+            "titleWrap": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
                 }
               }
             }
@@ -536,7 +543,7 @@
             "altText": {
               "expr": {
                 "Literal": {
-                  "Value": "'Net merchandise sales by month (£)'"
+                  "Value": "'Net merchandise sales by month'"
                 }
               }
             }

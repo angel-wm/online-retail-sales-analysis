@@ -3,6 +3,69 @@ using Microsoft.AnalysisServices.AdomdClient;
 using System.Text.Json;
 
 internal static class NativeCheck {
+    public static int RunMonthly(string[] args) {
+        var output = Path.GetFullPath(args[2]);
+        var receipt = new Dictionary<string, object?> {
+            ["startedUtc"] = DateTime.UtcNow,
+            ["connectionScope"] = "Power BI Desktop local engine only",
+            ["population"] = "All loaded dates, countries and line types, without additional report selections",
+            ["nativeRefreshRequested"] = false,
+            ["modelModified"] = false,
+            ["reportRenderingOrInteractionsTested"] = false
+        };
+        try {
+            if (args.Length != 3)
+                throw new ArgumentException("Usage: TmdlCheck --monthly <local port> <output json>");
+            var port = ushort.Parse(args[1]);
+            if (port == 0) throw new ArgumentException("Invalid local port");
+            using var server = new Server();
+            server.Connect($"Data Source=localhost:{port};Timeout=300");
+            var db = server.Databases.Cast<Database>().Single(d => d.Model?.Tables.Contains("Online Retail") == true && d.Model.Tables.Contains("DimProduct"));
+            receipt["sourceFilePath"] = db.Model.Expressions["SourceFilePath"].Expression;
+            receipt["categorySortByColumn"] = db.Model.Tables["Calendar"].Columns["YearMonth_Label"].SortByColumn?.Name;
+            using var connection = new AdomdConnection($"Data Source=localhost:{port};Initial Catalog={db.ID}");
+            connection.Open();
+            const string query = """
+                EVALUATE
+                SUMMARIZECOLUMNS(
+                    'Calendar'[YearMonthSort],
+                    'Calendar'[YearMonth_Label],
+                    "GrossGBP", [Main Sales],
+                    "ReversalsGBP", [Returns Amount],
+                    "NetGBP", [Net Sales],
+                    "Orders", [Orders],
+                    "FactRows", COUNTROWS('Online Retail'),
+                    "FirstInvoice", MIN('Online Retail'[Invoice_Date]),
+                    "LastInvoice", MAX('Online Retail'[Invoice_Date]),
+                    "CalendarDays", COUNTROWS('Calendar'),
+                    "TransactionDays", DISTINCTCOUNT('Online Retail'[Invoice_Day])
+                )
+                ORDER BY 'Calendar'[YearMonthSort]
+                """;
+            using var command = connection.CreateCommand();
+            command.CommandTimeout = 120;
+            command.CommandText = query;
+            using var reader = command.ExecuteReader();
+            var monthly = new List<Dictionary<string, object?>>();
+            while (reader.Read())
+                monthly.Add(Enumerable.Range(0, reader.FieldCount).ToDictionary(i => reader.GetName(i), i => reader.IsDBNull(i) ? null : reader.GetValue(i)));
+            if (monthly.Count != 13) throw new InvalidOperationException($"Expected 13 source months; obtained {monthly.Count}");
+            receipt["query"] = query;
+            receipt["monthly"] = monthly;
+            receipt["nativeDaxExecuted"] = true;
+            receipt["status"] = "PASS_NATIVE_MONTHLY_QUERY";
+        } catch (Exception exception) {
+            receipt["status"] = "FAIL_OR_INCOMPLETE_NATIVE_MONTHLY_QUERY";
+            receipt["error"] = exception.ToString();
+        }
+        receipt["finishedUtc"] = DateTime.UtcNow;
+        Directory.CreateDirectory(Path.GetDirectoryName(output)!);
+        File.WriteAllText(output, System.Text.Json.JsonSerializer.Serialize(receipt, new JsonSerializerOptions { WriteIndented = true }) + "\n");
+        Console.WriteLine($"Native monthly check: {receipt["status"]}. Receipt: {output}");
+        if (receipt.TryGetValue("error", out var error)) Console.WriteLine(error);
+        return receipt["status"]!.ToString()!.StartsWith("PASS") ? 0 : 1;
+    }
+
     public static int Run(string[] args) {
         var output = Path.GetFullPath(args[2]);
         var receipt = new Dictionary<string, object?> {

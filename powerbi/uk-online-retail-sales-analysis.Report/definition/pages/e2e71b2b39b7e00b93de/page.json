@@ -90,11 +90,6 @@
       "type": "DataFilter"
     },
     {
-      "source": "0d26f07ae3e59165a455",
-      "target": "retail_financial_bridge",
-      "type": "DataFilter"
-    },
-    {
       "source": "103453003bcd8ca655ca",
       "target": "0d26f07ae3e59165a455",
       "type": "DataFilter"
@@ -132,11 +127,6 @@
     {
       "source": "103453003bcd8ca655ca",
       "target": "dd400a8a673caa8ed6a7",
-      "type": "DataFilter"
-    },
-    {
-      "source": "103453003bcd8ca655ca",
-      "target": "retail_financial_bridge",
       "type": "DataFilter"
     },
     {
@@ -180,11 +170,6 @@
       "type": "DataFilter"
     },
     {
-      "source": "5f1c21068041053e9103",
-      "target": "retail_financial_bridge",
-      "type": "DataFilter"
-    },
-    {
       "source": "c1e7baf0796e55151039",
       "target": "0d26f07ae3e59165a455",
       "type": "DataFilter"
@@ -222,11 +207,6 @@
     {
       "source": "c1e7baf0796e55151039",
       "target": "dd400a8a673caa8ed6a7",
-      "type": "DataFilter"
-    },
-    {
-      "source": "c1e7baf0796e55151039",
-      "target": "retail_financial_bridge",
       "type": "DataFilter"
     },
     {
@@ -275,11 +255,6 @@
       "type": "DataFilter"
     },
     {
-      "source": "17704764da05a4761017",
-      "target": "retail_financial_bridge",
-      "type": "DataFilter"
-    },
-    {
       "source": "866c411e4dac10cc1484",
       "target": "0d26f07ae3e59165a455",
       "type": "DataFilter"
@@ -325,11 +300,6 @@
       "type": "DataFilter"
     },
     {
-      "source": "866c411e4dac10cc1484",
-      "target": "retail_financial_bridge",
-      "type": "DataFilter"
-    },
-    {
       "source": "e062531a409aa34d2575",
       "target": "0d26f07ae3e59165a455",
       "type": "DataFilter"
@@ -372,11 +342,6 @@
     {
       "source": "e062531a409aa34d2575",
       "target": "dd400a8a673caa8ed6a7",
-      "type": "DataFilter"
-    },
-    {
-      "source": "e062531a409aa34d2575",
-      "target": "retail_financial_bridge",
       "type": "DataFilter"
     },
     {

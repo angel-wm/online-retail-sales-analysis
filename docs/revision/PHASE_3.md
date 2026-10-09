@@ -1,5 +1,7 @@
 # Fase 3 — Dashboard y experiencia visual
 
+Este documento conserva la motivación de la fase inicial. La corrección de presentación solicitada después se describe en [PROJECT_STRUCTURE.md](../PROJECT_STRUCTURE.md): retiró cinco objetos de explicación/conciliación, eliminó sufijos de moneda de títulos y ejes, conservó las dos tarjetas de cobertura y redistribuyó el espacio. El reporte vigente contiene 33 contenedores; los resultados de esquema de la fase inicial son históricos.
+
 Estado: cambios reales aplicados a PBIR y comprobación estática satisfactoria. La aceptación visual e interactiva en Power BI Desktop está pendiente. No se ha producido ni presentado una captura nueva como si fuera un render nativo.
 
 ## Alcance y disposición
