@@ -89,7 +89,32 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#F0F2F5'"
+                      "Value": "'#52667B'"
+                    }
+                  }
+                }
+              }
+            },
+            "fontFamily": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Segoe UI'"
+                }
+              }
+            },
+            "textSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "10D"
+                }
+              }
+            },
+            "background": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#FFFFFF'"
                     }
                   }
                 }
@@ -105,9 +130,8 @@
               "solid": {
                 "color": {
                   "expr": {
-                    "ThemeDataColor": {
-                      "ColorId": 0,
-                      "Percent": 0
+                    "Literal": {
+                      "Value": "'#FFFFFF'"
                     }
                   }
                 }
@@ -116,7 +140,7 @@
             "fontFamily": {
               "expr": {
                 "Literal": {
-                  "Value": "'''Segoe UI'', wf_segoe-ui_normal, helvetica, arial, sans-serif'"
+                  "Value": "'Segoe UI'"
                 }
               }
             },
@@ -175,7 +199,7 @@
             "altText": {
               "expr": {
                 "Literal": {
-                  "Value": "'slicer'"
+                  "Value": "'Filter by Country. Selectors sync across both pages.'"
                 }
               }
             }

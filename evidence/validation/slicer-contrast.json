@@ -1,0 +1,493 @@
+{
+  "base_commit": "8217c7f955e01cc813a5dc60d5c0494fbbd58868",
+  "timestamp_utc": "2026-10-09T01:49:03.860558+00:00",
+  "native_desktop_rendered": false,
+  "changes": [
+    {
+      "file": "powerbi/project/uk-online-retail-sales-analysis.Report/definition/pages/9ce4074e277290a594b7/visuals/0b519c8ca5250d606ea0/visual.json",
+      "page": "Product & Customer Insights",
+      "field": "Country",
+      "style": "Dropdown",
+      "before_items": [
+        {
+          "properties": {
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 2,
+                      "Percent": 0.6
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ],
+      "after_items": [
+        {
+          "properties": {
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#52667B'"
+                    }
+                  }
+                }
+              }
+            },
+            "fontFamily": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Segoe UI'"
+                }
+              }
+            },
+            "textSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "10D"
+                }
+              }
+            },
+            "background": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#FFFFFF'"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ],
+      "foreground": "#52667B",
+      "background": "#FFFFFF",
+      "calculated_value_contrast": 5.923,
+      "query_filters_selection_sync_position_preserved": true
+    },
+    {
+      "file": "powerbi/project/uk-online-retail-sales-analysis.Report/definition/pages/9ce4074e277290a594b7/visuals/1ce1ac3b318881b82400/visual.json",
+      "page": "Product & Customer Insights",
+      "change": "Align Filters heading and increase separation above Year action toolbar",
+      "before_position": {
+        "x": 16,
+        "y": 16,
+        "z": 7000,
+        "height": 48,
+        "width": 175.99999999999997,
+        "tabOrder": 300
+      },
+      "after_position": {
+        "x": 16,
+        "y": 8,
+        "z": 7000,
+        "height": 32,
+        "width": 176,
+        "tabOrder": 300
+      }
+    },
+    {
+      "file": "powerbi/project/uk-online-retail-sales-analysis.Report/definition/pages/9ce4074e277290a594b7/visuals/4945712e83cd21b9868e/visual.json",
+      "page": "Product & Customer Insights",
+      "field": "Year",
+      "style": "Basic",
+      "before_items": [
+        {
+          "properties": {
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 0,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            },
+            "background": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#2A4A6B'"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ],
+      "after_items": [
+        {
+          "properties": {
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#FFFFFF'"
+                    }
+                  }
+                }
+              }
+            },
+            "background": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#2A4A6B'"
+                    }
+                  }
+                }
+              }
+            },
+            "fontFamily": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Segoe UI'"
+                }
+              }
+            },
+            "textSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "10D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "foreground": "#FFFFFF",
+      "background": "#2A4A6B",
+      "calculated_value_contrast": 9.169,
+      "query_filters_selection_sync_position_preserved": true
+    },
+    {
+      "file": "powerbi/project/uk-online-retail-sales-analysis.Report/definition/pages/9ce4074e277290a594b7/visuals/a13243354215609ec4c0/visual.json",
+      "page": "Product & Customer Insights",
+      "field": "Line_Type",
+      "style": "Dropdown",
+      "before_items": [
+        {
+          "properties": {
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 2,
+                      "Percent": 0.6
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ],
+      "after_items": [
+        {
+          "properties": {
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#52667B'"
+                    }
+                  }
+                }
+              }
+            },
+            "fontFamily": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Segoe UI'"
+                }
+              }
+            },
+            "textSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "10D"
+                }
+              }
+            },
+            "background": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#FFFFFF'"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ],
+      "foreground": "#52667B",
+      "background": "#FFFFFF",
+      "calculated_value_contrast": 5.923,
+      "query_filters_selection_sync_position_preserved": true
+    },
+    {
+      "file": "powerbi/project/uk-online-retail-sales-analysis.Report/definition/pages/e2e71b2b39b7e00b93de/visuals/17704764da05a4761017/visual.json",
+      "page": "Sales Overview",
+      "field": "Country",
+      "style": "Dropdown",
+      "before_items": [
+        {
+          "properties": {
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#F0F2F5'"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ],
+      "after_items": [
+        {
+          "properties": {
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#52667B'"
+                    }
+                  }
+                }
+              }
+            },
+            "fontFamily": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Segoe UI'"
+                }
+              }
+            },
+            "textSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "10D"
+                }
+              }
+            },
+            "background": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#FFFFFF'"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ],
+      "foreground": "#52667B",
+      "background": "#FFFFFF",
+      "calculated_value_contrast": 5.923,
+      "query_filters_selection_sync_position_preserved": true
+    },
+    {
+      "file": "powerbi/project/uk-online-retail-sales-analysis.Report/definition/pages/e2e71b2b39b7e00b93de/visuals/866c411e4dac10cc1484/visual.json",
+      "page": "Sales Overview",
+      "field": "Year",
+      "style": "Basic",
+      "before_items": [
+        {
+          "properties": {
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 0,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            },
+            "background": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#2A4A6B'"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ],
+      "after_items": [
+        {
+          "properties": {
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#FFFFFF'"
+                    }
+                  }
+                }
+              }
+            },
+            "background": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#2A4A6B'"
+                    }
+                  }
+                }
+              }
+            },
+            "fontFamily": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Segoe UI'"
+                }
+              }
+            },
+            "textSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "10D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "foreground": "#FFFFFF",
+      "background": "#2A4A6B",
+      "calculated_value_contrast": 9.169,
+      "query_filters_selection_sync_position_preserved": true
+    },
+    {
+      "file": "powerbi/project/uk-online-retail-sales-analysis.Report/definition/pages/e2e71b2b39b7e00b93de/visuals/e062531a409aa34d2575/visual.json",
+      "page": "Sales Overview",
+      "field": "Line_Type",
+      "style": "Dropdown",
+      "before_items": [
+        {
+          "properties": {
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 0,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ],
+      "after_items": [
+        {
+          "properties": {
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#52667B'"
+                    }
+                  }
+                }
+              }
+            },
+            "fontFamily": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Segoe UI'"
+                }
+              }
+            },
+            "textSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "10D"
+                }
+              }
+            },
+            "background": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#FFFFFF'"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ],
+      "foreground": "#52667B",
+      "background": "#FFFFFF",
+      "calculated_value_contrast": 5.923,
+      "query_filters_selection_sync_position_preserved": true
+    },
+    {
+      "file": "powerbi/project/uk-online-retail-sales-analysis.Report/definition/pages/e2e71b2b39b7e00b93de/visuals/f416263b317d0044c051/visual.json",
+      "page": "Sales Overview",
+      "change": "Align Filters heading and increase separation above Year action toolbar",
+      "before_position": {
+        "x": 16,
+        "y": 16,
+        "z": 17000,
+        "height": 48,
+        "width": 160,
+        "tabOrder": 300
+      },
+      "after_position": {
+        "x": 16,
+        "y": 8,
+        "z": 17000,
+        "height": 32,
+        "width": 176,
+        "tabOrder": 300
+      }
+    }
+  ],
+  "semantic_model_files_unchanged": 13,
+  "source_excel_sha256": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+  "status": "PASS_SOURCE_SCOPE_AND_PALETTE_CONTRAST"
+}
