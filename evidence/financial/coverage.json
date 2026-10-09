@@ -1,0 +1,43 @@
+{
+  "raw_rows": 541909,
+  "loaded_rows": 540455,
+  "excluded_null_description_rows": 1454,
+  "excluded_null_description_cents": 0,
+  "source_min_date": "2010-12-01 08:26:00",
+  "source_max_date": "2011-12-09 12:50:00",
+  "missing_customer_rows": 135080,
+  "exact_duplicate_excess": 5268,
+  "rows_kept_including_repetitions": true,
+  "gross_unidentified_sales_gbp": 1510249.16,
+  "merchandise_reversal_invoices_without_C": 0,
+  "positive_cancelled_product_value_cents": 0,
+  "product_reversal_excluded_by_flag_cents": 0,
+  "product_codes_multiple_eligible_names": 212,
+  "movement_classes": [
+    {
+      "Movement_Type": "Administrative adjustment",
+      "rows": 2911,
+      "cents": -4564676
+    },
+    {
+      "Movement_Type": "Gift voucher movement",
+      "rows": 33,
+      "cents": 76914
+    },
+    {
+      "Movement_Type": "Merchandise cancellation / reversal",
+      "rows": 8704,
+      "cents": -47872418
+    },
+    {
+      "Movement_Type": "Merchandise sale",
+      "rows": 527757,
+      "cents": 1027131581
+    },
+    {
+      "Movement_Type": "Other / excluded movement",
+      "rows": 1050,
+      "cents": 3392
+    }
+  ]
+}

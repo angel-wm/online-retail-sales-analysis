@@ -1,0 +1,137 @@
+{
+  "source_sha256": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+  "population": "All source dates, countries and line types; original null-description exclusion preserved",
+  "dax_or_m_executed": false,
+  "before": {
+    "Total Sales": 9747747.93,
+    "Main Sales": 10285076.9,
+    "Returns Amount": 896812.49,
+    "Return Value": 714005.77,
+    "Net Sales": 9388264.41,
+    "Orders": 19775,
+    "Unique Customers": 4334,
+    "Average Order Value": 474,
+    "Return rate": 0.09,
+    "Units Sold": 5577101,
+    "Cancelled Orders": 3836,
+    "Zero Price Records": 1061,
+    "Administrative Adjustments": 175873.74,
+    "Other Movements": 803.06,
+    "Unidentified Net Sales": 1238539.85
+  },
+  "after": {
+    "Total Sales": 9747747.93,
+    "Main Sales": 10271315.81,
+    "Returns Amount": 478724.18,
+    "Return Value": 478724.18,
+    "Net Sales": 9792591.63,
+    "Orders": 19773,
+    "Unique Customers": 4334,
+    "Average Order Value": 495.2506766803217,
+    "Return rate": 0.046607872725899564,
+    "Units Sold": 5577099,
+    "Cancelled Orders": 3422,
+    "Zero Price Records": 1061,
+    "Administrative Adjustments": -45646.76,
+    "Other Movements": 803.06,
+    "Unidentified Net Sales": 1505928.31
+  },
+  "changes": [
+    {
+      "kpi": "Main Sales",
+      "before": 10285076.9,
+      "after": 10271315.81,
+      "absolute_change": -13761.0899999999,
+      "percentage_change": -0.13379666611923777,
+      "percentage_point_change": null
+    },
+    {
+      "kpi": "Total Sales",
+      "before": 9747747.93,
+      "after": 9747747.93,
+      "absolute_change": 0.0,
+      "percentage_change": 0.0,
+      "percentage_point_change": null
+    },
+    {
+      "kpi": "Returns Amount",
+      "before": 896812.49,
+      "after": 478724.18,
+      "absolute_change": -418088.31,
+      "percentage_change": -46.6193674443584,
+      "percentage_point_change": null
+    },
+    {
+      "kpi": "Return Value",
+      "before": 714005.77,
+      "after": 478724.18,
+      "absolute_change": -235281.59,
+      "percentage_change": -32.952337345957304,
+      "percentage_point_change": null
+    },
+    {
+      "kpi": "Net Sales",
+      "before": 9388264.41,
+      "after": 9792591.63,
+      "absolute_change": 404327.2200000007,
+      "percentage_change": 4.306730214898162,
+      "percentage_point_change": null
+    },
+    {
+      "kpi": "Orders",
+      "before": 19775,
+      "after": 19773,
+      "absolute_change": -2,
+      "percentage_change": -0.010113780025284451,
+      "percentage_point_change": null
+    },
+    {
+      "kpi": "Unique Customers",
+      "before": 4334,
+      "after": 4334,
+      "absolute_change": 0,
+      "percentage_change": 0.0,
+      "percentage_point_change": null
+    },
+    {
+      "kpi": "Units Sold",
+      "before": 5577101,
+      "after": 5577099,
+      "absolute_change": -2,
+      "percentage_change": -3.586092487835526e-05,
+      "percentage_point_change": null
+    },
+    {
+      "kpi": "Cancelled Orders",
+      "before": 3836,
+      "after": 3422,
+      "absolute_change": -414,
+      "percentage_change": -10.792492179353493,
+      "percentage_point_change": null
+    },
+    {
+      "kpi": "Zero Price Records",
+      "before": 1061,
+      "after": 1061,
+      "absolute_change": 0,
+      "percentage_change": 0.0,
+      "percentage_point_change": null
+    },
+    {
+      "kpi": "Average Order Value",
+      "before": 474,
+      "after": 495.2506766803217,
+      "absolute_change": 21.2506766803,
+      "percentage_change": 4.48326512243074,
+      "percentage_point_change": null
+    },
+    {
+      "kpi": "Return rate",
+      "before": 0.09,
+      "after": 0.046607872725899564,
+      "absolute_change": -0.0433921273,
+      "percentage_change": -48.21347474900048,
+      "percentage_point_change": -4.339212727410043
+    }
+  ]
+}

@@ -1,0 +1,87 @@
+{
+  "Total Sales": {
+    "dax": "SUM('Online Retail'[Sales_Amount])",
+    "definition": "Signed total of all loaded movements in the current filter context. Reconciliation measure; GBP.",
+    "format": "£#,0.00;(£#,0.00);£0.00"
+  },
+  "Main Sales": {
+    "dax": "CALCULATE([Total Sales], KEEPFILTERS('Online Retail'[Include_In_Main_Analysis] = TRUE()))",
+    "definition": "Gross eligible merchandise sales. Product, Normal, quantity and price positive, invoice not cancelled; GBP.",
+    "format": "£#,0.00;(£#,0.00);£0.00"
+  },
+  "Returns Amount": {
+    "dax": "-CALCULATE([Total Sales], KEEPFILTERS('Online Retail'[Is_Merchandise_Reversal] = TRUE()))",
+    "definition": "Magnitude of negative eligible merchandise movements, counted once. Cancellation/reversal proxy, not proof of physical returns; GBP.",
+    "format": "£#,0.00;(£#,0.00);£0.00"
+  },
+  "Return Value": {
+    "dax": "[Returns Amount]",
+    "definition": "Compatibility alias for Returns Amount. Same merchandise scope in every visual; GBP.",
+    "format": "£#,0.00;(£#,0.00);£0.00"
+  },
+  "Net Sales": {
+    "dax": "VAR Gross = [Main Sales]\nVAR Reversals = [Returns Amount]\nRETURN\n    IF(ISBLANK(Gross) && ISBLANK(Reversals), BLANK(), COALESCE(Gross, 0) - COALESCE(Reversals, 0))",
+    "definition": "Gross eligible merchandise sales less merchandise cancellations/reversals. Administrative adjustments and other movements excluded; GBP.",
+    "format": "£#,0.00;(£#,0.00);£0.00"
+  },
+  "Orders": {
+    "dax": "CALCULATE(DISTINCTCOUNTNOBLANK('Online Retail'[Invoice_ID]), KEEPFILTERS('Online Retail'[Include_In_Main_Analysis] = TRUE()))",
+    "definition": "Distinct invoices with at least one eligible positive merchandise line. Cancellation invoices excluded. Counts are not additive across products/countries.",
+    "format": "#,0"
+  },
+  "Unique Customers": {
+    "dax": "CALCULATE(DISTINCTCOUNTNOBLANK('Online Retail'[Customer_ID]), KEEPFILTERS('Online Retail'[Include_In_Main_Analysis] = TRUE()))",
+    "definition": "Distinct identified customers with eligible merchandise sales in the current context. Anonymous buyers cannot be counted.",
+    "format": "#,0"
+  },
+  "Average Order Value": {
+    "dax": "DIVIDE([Net Sales], [Orders])",
+    "definition": "Net merchandise value per eligible sale invoice in the selected period. Reversals are dated at posting, not matched to original orders. Not a physical basket average; GBP.",
+    "format": "£#,0.00;(£#,0.00);£0.00"
+  },
+  "Return rate": {
+    "dax": "DIVIDE([Returns Amount], [Main Sales])",
+    "definition": "Merchandise cancellation/reversal amount divided by gross eligible merchandise sales in the selected period. Posting-period value ratio, not physical return probability; blank if denominator absent.",
+    "format": "0.00%;-0.00%;0.00%"
+  },
+  "Units Sold": {
+    "dax": "CALCULATE(SUM('Online Retail'[Quantity]), KEEPFILTERS('Online Retail'[Include_In_Main_Analysis] = TRUE()))",
+    "definition": "Positive eligible merchandise units. Administrative/gift voucher quantities excluded.",
+    "format": "#,0"
+  },
+  "Cancelled Orders": {
+    "dax": "CALCULATE(DISTINCTCOUNTNOBLANK('Online Retail'[Invoice_ID]), KEEPFILTERS('Online Retail'[Is_Merchandise_Reversal] = TRUE()))",
+    "definition": "Distinct invoices containing eligible negative merchandise movements. All such invoices in this source have prefix C; no claim of physical returns or original-order linkage.",
+    "format": "#,0"
+  },
+  "Zero Price Records": {
+    "dax": "CALCULATE(COUNTROWS('Online Retail'), KEEPFILTERS('Online Retail'[Is_Zero_Price] = TRUE()))",
+    "definition": "Loaded lines with zero unit price. Quality diagnostic across all line types, respecting current filters.",
+    "format": "#,0"
+  },
+  "Administrative Adjustments": {
+    "dax": "CALCULATE([Total Sales], KEEPFILTERS('Online Retail'[Line_Type] = \"Adjustment\"))",
+    "definition": "Signed administrative and special-code movements, including commissions, postage, discounts, manual adjustments, samples and bad debt. Not recognized profit or operating expenses; GBP.",
+    "format": "£#,0.00;(£#,0.00);£0.00"
+  },
+  "Other Movements": {
+    "dax": "CALCULATE([Total Sales], KEEPFILTERS('Online Retail'[Movement_Type] IN {\"Gift voucher movement\", \"Other / excluded movement\"}))",
+    "definition": "Signed gift voucher and residual excluded movements. Completes the bridge Net Sales + Administrative Adjustments + Other Movements = Total Sales; GBP.",
+    "format": "£#,0.00;(£#,0.00);£0.00"
+  },
+  "Units Reversed": {
+    "dax": "-CALCULATE(SUM('Online Retail'[Quantity]), KEEPFILTERS('Online Retail'[Is_Merchandise_Reversal] = TRUE()))",
+    "definition": "Magnitude of merchandise units on negative cancellation/reversal lines. Not verified physical returned units.",
+    "format": "#,0"
+  },
+  "Unidentified Net Sales": {
+    "dax": "CALCULATE([Net Sales], KEEPFILTERS(ISBLANK('Online Retail'[Customer_ID])))",
+    "definition": "Net merchandise value where customer ID is blank. Included in commercial totals but not identified-customer rankings; GBP.",
+    "format": "£#,0.00;(£#,0.00);£0.00"
+  },
+  "Identified Sales Share": {
+    "dax": "DIVIDE(CALCULATE([Main Sales], KEEPFILTERS(NOT(ISBLANK('Online Retail'[Customer_ID])))), [Main Sales])",
+    "definition": "Share of gross eligible merchandise sales with a known customer ID in the current context. Financial coverage, not share of all buyers.",
+    "format": "0.00%;-0.00%;0.00%"
+  }
+}

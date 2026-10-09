@@ -1,0 +1,37 @@
+{
+  "status": "PASS",
+  "independent_paths": [
+    "openpyxl + pandas + integer pennies",
+    "lxml XLSX XML + scalar Decimal + integer pennies"
+  ],
+  "engine_executed": false,
+  "checked": {
+    "Total Sales": 9747747.93,
+    "Main Sales": 10271315.81,
+    "Returns Amount": 478724.18,
+    "Return Value": 478724.18,
+    "Net Sales": 9792591.63,
+    "Orders": 19773,
+    "Unique Customers": 4334,
+    "Cancelled Orders": 3422,
+    "Units Sold": 5577099,
+    "Zero Price Records": 1061,
+    "Administrative Adjustments": -45646.76,
+    "Other Movements": 803.06,
+    "Unidentified Net Sales": 1505928.31
+  },
+  "xml_totals": {
+    "raw_rows": 541909,
+    "loaded_rows": 540455,
+    "total_cents": 974774793,
+    "gross_cents": 1027131581,
+    "units_sold": 5577099,
+    "zero_price_rows": 1061,
+    "admin_cents": -4564676,
+    "reversal_cents": 47872418,
+    "units_reversed": 272030,
+    "unidentified_gross_cents": 151024916,
+    "other_cents": 80306,
+    "unidentified_reversal_cents": 432085
+  }
+}

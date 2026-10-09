@@ -1,0 +1,319 @@
+[
+  {
+    "code": "AMAZONFEE",
+    "descriptions": [
+      "AMAZON FEE"
+    ],
+    "classifications": [
+      "Adjustment"
+    ],
+    "rows": 34,
+    "positive_gbp": 13761.09,
+    "negative_gbp": -235281.59
+  },
+  {
+    "code": "B",
+    "descriptions": [
+      "Adjust bad debt"
+    ],
+    "classifications": [
+      "Adjustment"
+    ],
+    "rows": 3,
+    "positive_gbp": 11062.06,
+    "negative_gbp": -22124.12
+  },
+  {
+    "code": "BANK CHARGES",
+    "descriptions": [
+      "Bank Charges"
+    ],
+    "classifications": [
+      "Adjustment"
+    ],
+    "rows": 37,
+    "positive_gbp": 165.0,
+    "negative_gbp": -7340.64
+  },
+  {
+    "code": "C2",
+    "descriptions": [
+      "CARRIAGE"
+    ],
+    "classifications": [
+      "Adjustment"
+    ],
+    "rows": 143,
+    "positive_gbp": 7051.0,
+    "negative_gbp": -65.0
+  },
+  {
+    "code": "CRUK",
+    "descriptions": [
+      "CRUK Commission"
+    ],
+    "classifications": [
+      "Adjustment"
+    ],
+    "rows": 16,
+    "positive_gbp": 0.0,
+    "negative_gbp": -7933.43
+  },
+  {
+    "code": "D",
+    "descriptions": [
+      "Discount"
+    ],
+    "classifications": [
+      "Adjustment"
+    ],
+    "rows": 77,
+    "positive_gbp": 0.0,
+    "negative_gbp": -5696.22
+  },
+  {
+    "code": "DCGS0003",
+    "descriptions": [
+      "BOXED GLASS ASHTRAY",
+      "ebay"
+    ],
+    "classifications": [
+      "Adjustment",
+      "Product"
+    ],
+    "rows": 5,
+    "positive_gbp": 9.94,
+    "negative_gbp": 0.0
+  },
+  {
+    "code": "DCGS0004",
+    "descriptions": [
+      "HAYNES CAMPER SHOULDER BAG"
+    ],
+    "classifications": [
+      "Product"
+    ],
+    "rows": 1,
+    "positive_gbp": 16.63,
+    "negative_gbp": 0.0
+  },
+  {
+    "code": "DCGS0067",
+    "descriptions": [
+      "ebay"
+    ],
+    "classifications": [
+      "Adjustment"
+    ],
+    "rows": 1,
+    "positive_gbp": 0.0,
+    "negative_gbp": 0.0
+  },
+  {
+    "code": "DCGS0068",
+    "descriptions": [
+      "ebay"
+    ],
+    "classifications": [
+      "Adjustment"
+    ],
+    "rows": 1,
+    "positive_gbp": 0.0,
+    "negative_gbp": 0.0
+  },
+  {
+    "code": "DCGS0069",
+    "descriptions": [
+      "OOH LA LA DOGS COLLAR",
+      "ebay"
+    ],
+    "classifications": [
+      "Adjustment",
+      "Product"
+    ],
+    "rows": 2,
+    "positive_gbp": 15.79,
+    "negative_gbp": 0.0
+  },
+  {
+    "code": "DCGS0070",
+    "descriptions": [
+      "CAMOUFLAGE DOG COLLAR"
+    ],
+    "classifications": [
+      "Product"
+    ],
+    "rows": 1,
+    "positive_gbp": 12.72,
+    "negative_gbp": 0.0
+  },
+  {
+    "code": "DCGS0073",
+    "descriptions": [
+      "ebay"
+    ],
+    "classifications": [
+      "Adjustment"
+    ],
+    "rows": 1,
+    "positive_gbp": 0.0,
+    "negative_gbp": 0.0
+  },
+  {
+    "code": "DCGS0076",
+    "descriptions": [
+      "SUNJAR LED NIGHT NIGHT LIGHT"
+    ],
+    "classifications": [
+      "Product"
+    ],
+    "rows": 2,
+    "positive_gbp": 48.39,
+    "negative_gbp": 0.0
+  },
+  {
+    "code": "DCGSSBOY",
+    "descriptions": [
+      "BOYS PARTY BAG"
+    ],
+    "classifications": [
+      "Product"
+    ],
+    "rows": 11,
+    "positive_gbp": 150.55,
+    "negative_gbp": 0.0
+  },
+  {
+    "code": "DCGSSGIRL",
+    "descriptions": [
+      "GIRLS PARTY BAG"
+    ],
+    "classifications": [
+      "Product"
+    ],
+    "rows": 13,
+    "positive_gbp": 144.43,
+    "negative_gbp": 0.0
+  },
+  {
+    "code": "DOT",
+    "descriptions": [
+      "DOTCOM POSTAGE"
+    ],
+    "classifications": [
+      "Adjustment"
+    ],
+    "rows": 709,
+    "positive_gbp": 206248.77,
+    "negative_gbp": -3.29
+  },
+  {
+    "code": "GIFT_0001_10",
+    "descriptions": [
+      "Dotcomgiftshop Gift Voucher £10.00"
+    ],
+    "classifications": [
+      "Gift Voucher"
+    ],
+    "rows": 8,
+    "positive_gbp": 74.97,
+    "negative_gbp": 0.0
+  },
+  {
+    "code": "GIFT_0001_20",
+    "descriptions": [
+      "Dotcomgiftshop Gift Voucher £20.00",
+      "to push order througha s stock was "
+    ],
+    "classifications": [
+      "Gift Voucher"
+    ],
+    "rows": 10,
+    "positive_gbp": 167.05,
+    "negative_gbp": 0.0
+  },
+  {
+    "code": "GIFT_0001_30",
+    "descriptions": [
+      "Dotcomgiftshop Gift Voucher £30.00"
+    ],
+    "classifications": [
+      "Gift Voucher"
+    ],
+    "rows": 7,
+    "positive_gbp": 175.53,
+    "negative_gbp": 0.0
+  },
+  {
+    "code": "GIFT_0001_40",
+    "descriptions": [
+      "Dotcomgiftshop Gift Voucher £40.00"
+    ],
+    "classifications": [
+      "Gift Voucher"
+    ],
+    "rows": 3,
+    "positive_gbp": 100.7,
+    "negative_gbp": 0.0
+  },
+  {
+    "code": "GIFT_0001_50",
+    "descriptions": [
+      "Dotcomgiftshop Gift Voucher £50.00"
+    ],
+    "classifications": [
+      "Gift Voucher"
+    ],
+    "rows": 4,
+    "positive_gbp": 167.56,
+    "negative_gbp": 0.0
+  },
+  {
+    "code": "M",
+    "descriptions": [
+      "Manual"
+    ],
+    "classifications": [
+      "Adjustment"
+    ],
+    "rows": 572,
+    "positive_gbp": 78112.82,
+    "negative_gbp": -146784.46
+  },
+  {
+    "code": "PADS",
+    "descriptions": [
+      "PADS TO MATCH ALL CUSHIONS"
+    ],
+    "classifications": [
+      "Product"
+    ],
+    "rows": 4,
+    "positive_gbp": 0.0,
+    "negative_gbp": 0.0
+  },
+  {
+    "code": "POST",
+    "descriptions": [
+      "POSTAGE"
+    ],
+    "classifications": [
+      "Adjustment"
+    ],
+    "rows": 1252,
+    "positive_gbp": 78101.88,
+    "negative_gbp": -11871.24
+  },
+  {
+    "code": "S",
+    "descriptions": [
+      "SAMPLES"
+    ],
+    "classifications": [
+      "Adjustment"
+    ],
+    "rows": 63,
+    "positive_gbp": 63.05,
+    "negative_gbp": -3112.44
+  }
+]

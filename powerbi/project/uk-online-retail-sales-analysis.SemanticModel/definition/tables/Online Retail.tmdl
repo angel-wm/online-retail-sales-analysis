@@ -1,115 +1,126 @@
 table 'Online Retail'
 	lineageTag: fe13836e-d070-4207-a37c-407e3ad8b915
 
-	measure 'Total Sales' = ROUND(SUM('Online Retail'[Sales_Amount]), 2)
-		formatString: \$#,0;(\$#,0);\$#,0
+	/// Signed total of all loaded movements in the current filter context. Reconciliation measure; GBP.
+	measure 'Total Sales' =
+			SUM('Online Retail'[Sales_Amount])
+		formatString: £#,0.00;(£#,0.00);£0.00
 		displayFolder: Measures
 		lineageTag: 2fcebc02-37b7-4677-ab3e-306ff9a07932
 
+	/// Gross eligible merchandise sales. Product, Normal, quantity and price positive, invoice not cancelled; GBP.
 	measure 'Main Sales' =
-			
-			ROUND(
-			    CALCULATE(
-			        [Total Sales], 'Online Retail'[Include_In_Main_Analysis] = TRUE()
-			    ),
-			    2
-			)
-		formatString: \$#,0;(\$#,0);\$#,0
+			CALCULATE([Total Sales], KEEPFILTERS('Online Retail'[Include_In_Main_Analysis] = TRUE()))
+		formatString: £#,0.00;(£#,0.00);£0.00
 		displayFolder: Measures
 		lineageTag: 5366af5b-86d7-451a-bc14-ae98684b0b62
 
+	/// Magnitude of negative eligible merchandise movements, counted once. Cancellation/reversal proxy, not proof of physical returns; GBP.
 	measure 'Returns Amount' =
-			
-			ABS(
-			    CALCULATE(
-			        [Total Sales], 'Online Retail'[Is_Negative_Qty] = TRUE()
-			    )
-			)
+			-CALCULATE([Total Sales], KEEPFILTERS('Online Retail'[Is_Merchandise_Reversal] = TRUE()))
+		formatString: £#,0.00;(£#,0.00);£0.00
 		displayFolder: Measures
 		lineageTag: f0bcc5e3-8614-47af-b20a-80e7c4d27224
 
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
-	measure 'Net Sales' = ROUND([Main Sales] - [Returns Amount], 2)
-		formatString: \$#,0;(\$#,0);\$#,0
+	/// Gross eligible merchandise sales less merchandise cancellations/reversals. Administrative adjustments and other movements excluded; GBP.
+	measure 'Net Sales' =
+			VAR Gross = [Main Sales]
+			VAR Reversals = [Returns Amount]
+			RETURN
+			    IF(ISBLANK(Gross) && ISBLANK(Reversals), BLANK(), COALESCE(Gross, 0) - COALESCE(Reversals, 0))
+		formatString: £#,0.00;(£#,0.00);£0.00
 		displayFolder: Measures
 		lineageTag: ed3737bf-d45c-4ee7-bdb4-6679b9272a1e
 
+	/// Distinct invoices with at least one eligible positive merchandise line. Cancellation invoices excluded. Counts are not additive across products/countries.
 	measure Orders =
-			
-			CALCULATE(
-			    DISTINCTCOUNT('Online Retail'[Invoice_ID]),
-			    'Online Retail'[Include_In_Main_Analysis]
-			)
-		formatString: 0
+			CALCULATE(DISTINCTCOUNTNOBLANK('Online Retail'[Invoice_ID]), KEEPFILTERS('Online Retail'[Include_In_Main_Analysis] = TRUE()))
+		formatString: #,0
 		displayFolder: Measures
 		lineageTag: 6a940080-57fe-4c27-9257-b4d5d5aaea92
 
+	/// Distinct identified customers with eligible merchandise sales in the current context. Anonymous buyers cannot be counted.
 	measure 'Unique Customers' =
-			
-			CALCULATE(
-			    DISTINCTCOUNT('Online Retail'[Customer_ID]),
-			    'Online Retail'[Include_In_Main_Analysis] = TRUE(),
-			    NOT(ISBLANK('Online Retail'[Customer_ID]))
-			)
-		formatString: 0
+			CALCULATE(DISTINCTCOUNTNOBLANK('Online Retail'[Customer_ID]), KEEPFILTERS('Online Retail'[Include_In_Main_Analysis] = TRUE()))
+		formatString: #,0
 		displayFolder: Measures
 		lineageTag: e4d73298-4cd5-468b-afc2-7694dd8630bc
 
-	measure 'Average Order Value' = MROUND(DIVIDE([Net Sales], [Orders]), 2)
-		formatString: \$#,0;(\$#,0);\$#,0
+	/// Net merchandise value per eligible sale invoice in the selected period. Reversals are dated at posting, not matched to original orders. Not a physical basket average; GBP.
+	measure 'Average Order Value' =
+			DIVIDE([Net Sales], [Orders])
+		formatString: £#,0.00;(£#,0.00);£0.00
 		displayFolder: Measures
 		lineageTag: 5b94000b-8315-4e95-aa93-faabe723a1b3
 
-	measure 'Return rate' = ROUND(DIVIDE([Returns Amount], [Main Sales]), 2)
-		formatString: 0.0%;-0.0%;0.0%
+	/// Merchandise cancellation/reversal amount divided by gross eligible merchandise sales in the selected period. Posting-period value ratio, not physical return probability; blank if denominator absent.
+	measure 'Return rate' =
+			DIVIDE([Returns Amount], [Main Sales])
+		formatString: 0.00%;-0.00%;0.00%
 		displayFolder: Measures
 		lineageTag: 93f39c05-23cb-48cd-90df-1dfb7295b4df
 
+	/// Positive eligible merchandise units. Administrative/gift voucher quantities excluded.
 	measure 'Units Sold' =
-			
-			CALCULATE(
-			    SUM('Online Retail'[Quantity]),
-			    'Online Retail'[Include_In_Main_Analysis] = TRUE()
-			)
-		formatString: 0
+			CALCULATE(SUM('Online Retail'[Quantity]), KEEPFILTERS('Online Retail'[Include_In_Main_Analysis] = TRUE()))
+		formatString: #,0
 		displayFolder: Measures
 		lineageTag: 2fc54b72-e322-48ad-bd46-03f45c382f5f
 
+	/// Distinct invoices containing eligible negative merchandise movements. All such invoices in this source have prefix C; no claim of physical returns or original-order linkage.
 	measure 'Cancelled Orders' =
-			
-			CALCULATE(
-			    DISTINCTCOUNT('Online Retail'[Invoice_ID]),
-			    'Online Retail'[Is_Cancelled]  = TRUE()
-			)
-		formatString: 0
+			CALCULATE(DISTINCTCOUNTNOBLANK('Online Retail'[Invoice_ID]), KEEPFILTERS('Online Retail'[Is_Merchandise_Reversal] = TRUE()))
+		formatString: #,0
 		displayFolder: Measures
 		lineageTag: b91ab1b2-87b7-40a8-b843-8589533f4083
 
+	/// Loaded lines with zero unit price. Quality diagnostic across all line types, respecting current filters.
 	measure 'Zero Price Records' =
-			
-			CALCULATE(
-			    COUNTROWS('Online Retail'),
-			    'Online Retail'[Is_Zero_Price] = TRUE()
-			)
-		formatString: 0
+			CALCULATE(COUNTROWS('Online Retail'), KEEPFILTERS('Online Retail'[Is_Zero_Price] = TRUE()))
+		formatString: #,0
 		displayFolder: Measures
 		lineageTag: 2e876fe8-b36c-4359-a210-c15e5910190e
 
 	measure 'Return Value' =
-			
-			CALCULATE(
-			    SUMX(
-			        'Online Retail',
-			        ABS('Online Retail'[Sales_Amount])
-			    ),
-			    'Online Retail'[Is_Negative_Qty] = TRUE(),
-			    'Online Retail'[Line_Type] = "Product"
-			)
+			[Returns Amount]
+		formatString: £#,0.00;(£#,0.00);£0.00
 		displayFolder: Measures
 		lineageTag: f3674507-6efc-4af5-82d9-abd0c17c2b4b
 
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
+	/// Signed administrative and special-code movements, including commissions, postage, discounts, manual adjustments, samples and bad debt. Not recognized profit or operating expenses; GBP.
+	measure 'Administrative Adjustments' =
+			CALCULATE([Total Sales], KEEPFILTERS('Online Retail'[Line_Type] = "Adjustment"))
+		formatString: £#,0.00;(£#,0.00);£0.00
+		displayFolder: Measures
+		lineageTag: 60df62c8-7f25-5a9c-bbcb-a62e354793d7
+
+	/// Signed gift voucher and residual excluded movements. Completes the bridge Net Sales + Administrative Adjustments + Other Movements = Total Sales; GBP.
+	measure 'Other Movements' =
+			CALCULATE([Total Sales], KEEPFILTERS('Online Retail'[Movement_Type] IN {"Gift voucher movement", "Other / excluded movement"}))
+		formatString: £#,0.00;(£#,0.00);£0.00
+		displayFolder: Measures
+		lineageTag: b4f6b6c9-48ff-5ab0-87e2-b9f1c7a7bf8e
+
+	/// Magnitude of merchandise units on negative cancellation/reversal lines. Not verified physical returned units.
+	measure 'Units Reversed' =
+			-CALCULATE(SUM('Online Retail'[Quantity]), KEEPFILTERS('Online Retail'[Is_Merchandise_Reversal] = TRUE()))
+		formatString: #,0
+		displayFolder: Measures
+		lineageTag: bb93544f-0d62-55c5-80f9-2bbef0cdbda6
+
+	/// Net merchandise value where customer ID is blank. Included in commercial totals but not identified-customer rankings; GBP.
+	measure 'Unidentified Net Sales' =
+			CALCULATE([Net Sales], KEEPFILTERS(ISBLANK('Online Retail'[Customer_ID])))
+		formatString: £#,0.00;(£#,0.00);£0.00
+		displayFolder: Measures
+		lineageTag: 0e092013-6877-53ee-892e-4b3f8f6eaf17
+
+	/// Share of gross eligible merchandise sales with a known customer ID in the current context. Financial coverage, not share of all buyers.
+	measure 'Identified Sales Share' =
+			DIVIDE(CALCULATE([Main Sales], KEEPFILTERS(NOT(ISBLANK('Online Retail'[Customer_ID])))), [Main Sales])
+		formatString: 0.00%;-0.00%;0.00%
+		displayFolder: Measures
+		lineageTag: 3f512b08-ba03-57fd-9e6a-9e0c99ec5419
 
 	column Invoice_ID
 		dataType: string
@@ -257,6 +268,18 @@ table 'Online Retail'
 
 		annotation SummarizationSetBy = Automatic
 
+	column Is_Merchandise_Reversal
+		dataType: boolean
+		lineageTag: d21d402c-2580-5f91-b3e0-7f1314554d8c
+		summarizeBy: none
+		sourceColumn: Is_Merchandise_Reversal
+
+	column Movement_Type
+		dataType: string
+		lineageTag: 0504447a-47f4-5650-b22f-6798cd818a9a
+		summarizeBy: none
+		sourceColumn: Movement_Type
+
 	partition 'Online Retail' = m
 		mode: import
 		source =
@@ -273,7 +296,7 @@ table 'Online Retail'
 				    name = Text.Upper(Text.Trim(Text.From([Product_Name])))
 				in
 				    if Text.StartsWith(code, "GIFT_") or Text.Contains(name, "GIFT VOUCHER") then "Gift Voucher"
-				    else if List.Contains({"M","S","POST","AMAZON FEE","BANK CHARGES","D","DOT","C2","B","CRUK"}, code)
+				    else if List.Contains({"M","S","POST","AMAZONFEE","AMAZON FEE","BANK CHARGES","D","DOT","C2","B","CRUK"}, code)
 				         or name = "EBAY"
 				    then "Adjustment"
 				    else "Product"),
@@ -285,12 +308,12 @@ table 'Online Retail'
 				    pname = if [Product_Name] = null then "" else Text.Upper(Text.Trim(Text.From([Product_Name]))),
 				    custid = if [Customer_ID] = null then "" else Text.Upper(Text.Trim(Text.From([Customer_ID]))),
 				    uprice = try Number.From([Unit_Price]) otherwise null,
-				
+
 				    hasCustomer = custid <> "",
-				
+
 				    isManualReview =
 				        Text.StartsWith(pname, "*") and not hasCustomer,
-				
+
 				    isOperationalNonProduct =
 				        not hasCustomer and
 				        (
@@ -302,7 +325,7 @@ table 'Online Retail'
 				            Text.Contains(pname, "SOLD AS SETS")
 				        ) and
 				        (uprice = null or uprice = 0)
-				
+
 				in
 				    if isManualReview then "Manual / Review"
 				    else if isOperationalNonProduct then "Operational / Non-Product"
@@ -343,13 +366,14 @@ table 'Online Retail'
 				    line = "PRODUCT"
 				    and flag = "NORMAL"
 				    and cancelled = false
-				    and negativeQty = false
-				    and zeroprice = false),
-				    #"Changed Type1" = Table.TransformColumnTypes(#"Added Custom",{{"Include_In_Main_Analysis", type logical}})
+				    and [Quantity] > 0
+				    and [Unit_Price] > 0),
+				    #"Changed Type1" = Table.TransformColumnTypes(#"Added Custom",{{"Include_In_Main_Analysis", type logical}}),
+				    #"Merchandise reversals" = Table.AddColumn(#"Changed Type1", "Is_Merchandise_Reversal", each [Line_Type] = "Product" and [Record_Flag] = "Normal" and [Quantity] < 0 and [Unit_Price] > 0, type logical),
+				    #"Movement classification" = Table.AddColumn(#"Merchandise reversals", "Movement_Type", each if [Include_In_Main_Analysis] then "Merchandise sale" else if [Is_Merchandise_Reversal] then "Merchandise cancellation / reversal" else if [Line_Type] = "Adjustment" then "Administrative adjustment" else if [Line_Type] = "Gift Voucher" then "Gift voucher movement" else "Other / excluded movement", type text)
 				in
-				    #"Changed Type1"
+				    #"Movement classification"
 
 	annotation PBI_NavigationStepName = Navegación
 
 	annotation PBI_ResultType = Table
-
