@@ -1,0 +1,62 @@
+// Native acceptance queries. Prepared, NOT executed in this environment.
+// Run each EVALUATE separately if the Desktop query view displays one result at a time.
+// Query-view execution validates measures; it does not validate report interactions.
+EVALUATE
+ROW(
+    "Total Sales", [Total Sales],
+    "Main Sales", [Main Sales],
+    "Returns Amount", [Returns Amount],
+    "Return Value", [Return Value],
+    "Net Sales", [Net Sales],
+    "Orders", [Orders],
+    "Unique Customers", [Unique Customers],
+    "Average Order Value", [Average Order Value],
+    "Return rate", [Return rate],
+    "Units Sold", [Units Sold],
+    "Cancelled Orders", [Cancelled Orders],
+    "Zero Price Records", [Zero Price Records],
+    "Administrative Adjustments", [Administrative Adjustments],
+    "Other Movements", [Other Movements],
+    "Units Reversed", [Units Reversed],
+    "Unidentified Net Sales", [Unidentified Net Sales],
+    "Identified Sales Share", [Identified Sales Share]
+)
+
+EVALUATE
+SUMMARIZECOLUMNS(
+    'Calendar'[Year],
+    "Gross", [Main Sales], "Reversals", [Returns Amount], "Net", [Net Sales],
+    "Orders", [Orders], "Known customers", [Unique Customers],
+    "Net value / sale invoice", [Average Order Value], "Reversal value / gross", [Return rate]
+)
+ORDER BY 'Calendar'[Year]
+
+EVALUATE
+CALCULATETABLE(
+    ROW("Gross", [Main Sales], "Reversals", [Returns Amount], "Net", [Net Sales], "Orders", [Orders], "Known customers", [Unique Customers]),
+    'Online Retail'[Country] = "Netherlands"
+)
+
+EVALUATE
+CALCULATETABLE(
+    ROW("Gross", [Main Sales], "Reversals", [Returns Amount], "Net", [Net Sales], "Administrative", [Administrative Adjustments], "Other", [Other Movements], "All movements", [Total Sales]),
+    'Online Retail'[Line_Type] = "Adjustment"
+)
+
+EVALUATE
+CALCULATETABLE(
+    ROW("Gross", [Main Sales], "Reversals", [Returns Amount], "Net", [Net Sales], "Orders", [Orders], "Net value / sale invoice", [Average Order Value], "Reversal value / gross", [Return rate]),
+    'Online Retail'[Invoice_ID] = "C581484"
+)
+
+EVALUATE
+CALCULATETABLE(
+    ROW("Net", [Net Sales], "Known customers", [Unique Customers], "Unidentified net", [Unidentified Net Sales], "Known gross share", [Identified Sales Share]),
+    ISBLANK('Online Retail'[Customer_ID])
+)
+
+EVALUATE
+CALCULATETABLE(
+    ROW("Gross", [Main Sales], "Reversals", [Returns Amount], "Net", [Net Sales], "Orders", [Orders], "Net value / sale invoice", [Average Order Value], "Reversal value / gross", [Return rate]),
+    FILTER(ALL('Online Retail'), FALSE())
+)

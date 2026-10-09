@@ -1,0 +1,16 @@
+{
+  "status": "PASS",
+  "original_files_sha256_preserved": 63,
+  "backup_zip_members_verified": 63,
+  "backup": "C:\\Users\\angel\\Documents\\Proyectos\\online-retail-sales-analysis\\backups\\original-recovered-project.zip",
+  "backup_sha256": "aa84688a6700e8136af1c1eee5d34af4e284248a6885dba671eeef778229acab",
+  "excel_original_and_versioned_match": true,
+  "source_sha256": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+  "branch": "codex/retail-dashboard-corrections",
+  "main_local_and_tracking_unchanged": "83d0e32e56e1ae539151ab383099565c3571ef2c",
+  "remote_live_checked_separately": true,
+  "placeholder_original_bytes_preserved": 2,
+  "root_original_and_existing_public_docs_unchanged": true,
+  "new_pbix_exported": false,
+  "power_bi_service_published": false
+}

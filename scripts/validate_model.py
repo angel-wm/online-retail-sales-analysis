@@ -32,7 +32,8 @@ def run():
     assert len(dates) == 374 and dates.is_unique
     assert fact.InvoiceDate.dt.normalize().isin(dates).all()
     expected = json.loads((REPO / "evidence/financial/measure_definitions.json").read_text(encoding="utf-8"))
-    tom = json.loads((REPO / "evidence/validation/phase2-tom.json").read_text(encoding="utf-8"))
+    final_tom = REPO / "evidence/validation/final-tom.json"
+    tom = json.loads((final_tom if final_tom.exists() else REPO / "evidence/validation/phase2-tom.json").read_text(encoding="utf-8"))
     parsed_fact = next(t for t in tom["tables"] if t["name"] == "Online Retail")
     assert {m["name"] for m in parsed_fact["measures"]} == set(expected)
     for measure in parsed_fact["measures"]:
@@ -56,8 +57,23 @@ def run():
         if not reversals_exist:
             for key in ["Returns Amount", "Return Value", "Cancelled Orders"]:
                 values[key] = None
+            values["Return rate"] = None
         if not sales_exist and not reversals_exist:
             values["Net Sales"] = None
+        reversed_units = selected.loc[selected.Is_Merchandise_Reversal, "Quantity"]
+        values["Units Reversed"] = -int(reversed_units.sum()) if len(reversed_units) else None
+        known_sales = selected.loc[selected.Include_In_Main_Analysis & selected.Customer_ID.ne("")]
+        values["Identified Sales Share"] = int(known_sales.Amount_Cents.sum()) / int(selected.loc[selected.Include_In_Main_Analysis, "Amount_Cents"].sum()) if sales_exist and len(known_sales) else None
+        if selected.loc[selected.Customer_ID.eq("") & (selected.Include_In_Main_Analysis | selected.Is_Merchandise_Reversal)].empty:
+            values["Unidentified Net Sales"] = None
+        if not selected.Line_Type.eq("Adjustment").any():
+            values["Administrative Adjustments"] = None
+        if not selected.Movement_Type.isin(["Gift voucher movement", "Other / excluded movement"]).any():
+            values["Other Movements"] = None
+        if not selected.Is_Zero_Price.any():
+            values["Zero Price Records"] = None
+        if selected.empty:
+            values["Total Sales"] = None
         scenarios.append({"context": label, "expected_from_source": values, "native_engine_tested": False})
     out = REPO / "evidence/validation/model-checks.json"
     out.write_text(json.dumps({"status": "PASS", "source_sha256": digest, "native_engine_executed": False, "fact_rows": len(fact), "dimension_rows": len(dim), "join_rows": len(joined), "orphan_product_rows": 0, "product_key_unique": True, "product_labels_unique": True, "codes_with_multiple_loaded_names": variants, "eligible_codes_multiple_names": 212, "calendar_days": len(dates), "orphan_date_rows": 0, "phase1_values_preserved": after, "compiled_tom_measures_match_financial_contract": True, "scenarios": scenarios}, indent=2) + "\n", encoding="utf-8")

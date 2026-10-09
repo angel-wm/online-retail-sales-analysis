@@ -48,7 +48,9 @@
         "Zero Price Records": 1061,
         "Administrative Adjustments": -45646.76,
         "Other Movements": 803.06,
-        "Unidentified Net Sales": 1505928.31
+        "Unidentified Net Sales": 1505928.31,
+        "Units Reversed": 272030,
+        "Identified Sales Share": 0.8529643924949086
       },
       "native_engine_tested": false
     },
@@ -69,7 +71,9 @@
         "Zero Price Records": 148,
         "Administrative Adjustments": -11443.48,
         "Other Movements": 110.51,
-        "Unidentified Net Sales": 210164.91
+        "Unidentified Net Sales": 210164.91,
+        "Units Reversed": 16009,
+        "Identified Sales Share": 0.7295183037207263
       },
       "native_engine_tested": false
     },
@@ -90,7 +94,9 @@
         "Zero Price Records": 913,
         "Administrative Adjustments": -34203.28,
         "Other Movements": 692.55,
-        "Unidentified Net Sales": 1295763.4
+        "Unidentified Net Sales": 1295763.4,
+        "Units Reversed": 256021,
+        "Identified Sales Share": 0.8630796584036631
       },
       "native_engine_tested": false
     },
@@ -111,7 +117,9 @@
         "Zero Price Records": 4,
         "Administrative Adjustments": 1182.0,
         "Other Movements": 0.0,
-        "Unidentified Net Sales": 0.0
+        "Unidentified Net Sales": null,
+        "Units Reversed": 324,
+        "Identified Sales Share": 1.0
       },
       "native_engine_tested": false
     },
@@ -132,7 +140,9 @@
         "Zero Price Records": 2,
         "Administrative Adjustments": 20889.81,
         "Other Movements": 0.0,
-        "Unidentified Net Sales": 0.0
+        "Unidentified Net Sales": null,
+        "Units Reversed": 1798,
+        "Identified Sales Share": 1.0
       },
       "native_engine_tested": false
     },
@@ -153,7 +163,9 @@
         "Zero Price Records": 1043,
         "Administrative Adjustments": -114597.73,
         "Other Movements": 803.06,
-        "Unidentified Net Sales": 1478698.21
+        "Unidentified Net Sales": 1478698.21,
+        "Units Reversed": 258099,
+        "Identified Sales Share": 0.8306268539064657
       },
       "native_engine_tested": false
     },
@@ -173,8 +185,10 @@
         "Cancelled Orders": null,
         "Zero Price Records": 13,
         "Administrative Adjustments": -45646.76,
-        "Other Movements": 0.0,
-        "Unidentified Net Sales": 0.0
+        "Other Movements": null,
+        "Unidentified Net Sales": null,
+        "Units Reversed": null,
+        "Identified Sales Share": null
       },
       "native_engine_tested": false
     },
@@ -193,9 +207,11 @@
         "Units Sold": null,
         "Cancelled Orders": null,
         "Zero Price Records": 1,
-        "Administrative Adjustments": 0.0,
+        "Administrative Adjustments": null,
         "Other Movements": 769.14,
-        "Unidentified Net Sales": 0.0
+        "Unidentified Net Sales": null,
+        "Units Reversed": null,
+        "Identified Sales Share": null
       },
       "native_engine_tested": false
     },
@@ -214,9 +230,11 @@
         "Units Sold": 5577099,
         "Cancelled Orders": 3422,
         "Zero Price Records": 1047,
-        "Administrative Adjustments": 0.0,
+        "Administrative Adjustments": null,
         "Other Movements": 33.92,
-        "Unidentified Net Sales": 1505928.31
+        "Unidentified Net Sales": 1505928.31,
+        "Units Reversed": 272030,
+        "Identified Sales Share": 0.8529643924949086
       },
       "native_engine_tested": false
     },
@@ -231,13 +249,15 @@
         "Orders": 7,
         "Unique Customers": 1,
         "Average Order Value": 615.7142857142857,
-        "Return rate": 0.0,
+        "Return rate": null,
         "Units Sold": 2458,
         "Cancelled Orders": null,
-        "Zero Price Records": 0,
-        "Administrative Adjustments": 0.0,
-        "Other Movements": 0.0,
-        "Unidentified Net Sales": 0.0
+        "Zero Price Records": null,
+        "Administrative Adjustments": null,
+        "Other Movements": null,
+        "Unidentified Net Sales": null,
+        "Units Reversed": null,
+        "Identified Sales Share": 1.0
       },
       "native_engine_tested": false
     },
@@ -258,7 +278,9 @@
         "Zero Price Records": 1021,
         "Administrative Adjustments": -59049.25,
         "Other Movements": 803.06,
-        "Unidentified Net Sales": 1505928.31
+        "Unidentified Net Sales": 1505928.31,
+        "Units Reversed": 2546,
+        "Identified Sales Share": null
       },
       "native_engine_tested": false
     },
@@ -276,10 +298,12 @@
         "Return rate": null,
         "Units Sold": null,
         "Cancelled Orders": 1,
-        "Zero Price Records": 0,
-        "Administrative Adjustments": 0.0,
-        "Other Movements": 0.0,
-        "Unidentified Net Sales": 0.0
+        "Zero Price Records": null,
+        "Administrative Adjustments": null,
+        "Other Movements": null,
+        "Unidentified Net Sales": null,
+        "Units Reversed": 80995,
+        "Identified Sales Share": null
       },
       "native_engine_tested": false
     },
@@ -297,10 +321,12 @@
         "Return rate": 1.0,
         "Units Sold": 80995,
         "Cancelled Orders": 1,
-        "Zero Price Records": 0,
-        "Administrative Adjustments": 0.0,
-        "Other Movements": 0.0,
-        "Unidentified Net Sales": 0.0
+        "Zero Price Records": null,
+        "Administrative Adjustments": null,
+        "Other Movements": null,
+        "Unidentified Net Sales": null,
+        "Units Reversed": 80995,
+        "Identified Sales Share": 1.0
       },
       "native_engine_tested": false
     },
@@ -319,16 +345,18 @@
         "Units Sold": 37952,
         "Cancelled Orders": 42,
         "Zero Price Records": 6,
-        "Administrative Adjustments": 0.0,
+        "Administrative Adjustments": null,
         "Other Movements": 0.0,
-        "Unidentified Net Sales": 5867.78
+        "Unidentified Net Sales": 5867.78,
+        "Units Reversed": 2578,
+        "Identified Sales Share": 0.9448886122154256
       },
       "native_engine_tested": false
     },
     {
       "context": "Empty",
       "expected_from_source": {
-        "Total Sales": 0.0,
+        "Total Sales": null,
         "Main Sales": null,
         "Returns Amount": null,
         "Return Value": null,
@@ -339,10 +367,12 @@
         "Return rate": null,
         "Units Sold": null,
         "Cancelled Orders": null,
-        "Zero Price Records": 0,
-        "Administrative Adjustments": 0.0,
-        "Other Movements": 0.0,
-        "Unidentified Net Sales": 0.0
+        "Zero Price Records": null,
+        "Administrative Adjustments": null,
+        "Other Movements": null,
+        "Unidentified Net Sales": null,
+        "Units Reversed": null,
+        "Identified Sales Share": null
       },
       "native_engine_tested": false
     }
