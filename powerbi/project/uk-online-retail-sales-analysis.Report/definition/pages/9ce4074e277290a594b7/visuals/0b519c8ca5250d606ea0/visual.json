@@ -3,7 +3,7 @@
   "name": "0b519c8ca5250d606ea0",
   "position": {
     "x": 32,
-    "y": 192,
+    "y": 208,
     "z": 2000,
     "height": 96,
     "width": 144,
@@ -139,7 +139,7 @@
             "show": {
               "expr": {
                 "Literal": {
-                  "Value": "true"
+                  "Value": "false"
                 }
               }
             }
@@ -169,8 +169,26 @@
             }
           }
         }
+      ],
+      "general": [
+        {
+          "properties": {
+            "altText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'slicer'"
+                }
+              }
+            }
+          }
+        }
       ]
     },
-    "drillFilterOtherVisuals": true
+    "drillFilterOtherVisuals": true,
+    "syncGroup": {
+      "groupName": "Retail_Country",
+      "fieldChanges": true,
+      "filterChanges": true
+    }
   }
 }

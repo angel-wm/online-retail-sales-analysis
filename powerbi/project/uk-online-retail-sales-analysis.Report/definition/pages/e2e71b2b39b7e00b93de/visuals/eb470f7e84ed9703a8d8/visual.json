@@ -5,9 +5,9 @@
     "x": 215,
     "y": 50,
     "z": 16000,
-    "height": 31,
-    "width": 900,
-    "tabOrder": 15000
+    "height": 26,
+    "width": 1095,
+    "tabOrder": 400
   },
   "visual": {
     "visualType": "textbox",
@@ -19,11 +19,11 @@
               {
                 "textRuns": [
                   {
-                    "value": "Sales, orders, customers and returns overview",
+                    "value": "Merchandise in GBP. 2010: December only. December 2011: through 9 December.",
                     "textStyle": {
-                      "fontWeight": "bold",
-                      "fontSize": "11pt",
-                      "color": "#ffffff"
+                      "fontFamily": "Segoe UI",
+                      "fontSize": "10pt",
+                      "color": "#FFFFFF"
                     }
                   }
                 ]

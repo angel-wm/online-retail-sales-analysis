@@ -2,12 +2,12 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.13.0/schema.json",
   "name": "fc81c2d8bc82287d528b",
   "position": {
-    "x": 772,
-    "y": 96,
+    "x": 768,
+    "y": 172,
     "z": 10000,
-    "height": 320,
-    "width": 548,
-    "tabOrder": 10000
+    "height": 312,
+    "width": 558,
+    "tabOrder": 900
   },
   "visual": {
     "visualType": "clusteredBarChart",
@@ -45,8 +45,117 @@
                   "Property": "Return Value"
                 }
               },
-              "queryRef": "Calendar.Return Value",
+              "queryRef": "Online Retail.Return Value",
               "nativeQueryRef": "Return Value"
+            }
+          ]
+        },
+        "Tooltips": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Online Retail"
+                    }
+                  },
+                  "Property": "Main Sales"
+                }
+              },
+              "queryRef": "Online Retail.Main Sales",
+              "nativeQueryRef": "Gross merchandise (£)",
+              "displayName": "Gross merchandise (£)"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Online Retail"
+                    }
+                  },
+                  "Property": "Returns Amount"
+                }
+              },
+              "queryRef": "Online Retail.Returns Amount",
+              "nativeQueryRef": "Cancellations / reversals (£)",
+              "displayName": "Cancellations / reversals (£)"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Online Retail"
+                    }
+                  },
+                  "Property": "Net Sales"
+                }
+              },
+              "queryRef": "Online Retail.Net Sales",
+              "nativeQueryRef": "Net merchandise (£)",
+              "displayName": "Net merchandise (£)"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Online Retail"
+                    }
+                  },
+                  "Property": "Return rate"
+                }
+              },
+              "queryRef": "Online Retail.Return rate",
+              "nativeQueryRef": "Reversal value / gross",
+              "displayName": "Reversal value / gross"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Online Retail"
+                    }
+                  },
+                  "Property": "Orders"
+                }
+              },
+              "queryRef": "Online Retail.Orders",
+              "nativeQueryRef": "Sale invoices",
+              "displayName": "Sale invoices"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Online Retail"
+                    }
+                  },
+                  "Property": "Cancelled Orders"
+                }
+              },
+              "queryRef": "Online Retail.Cancelled Orders",
+              "nativeQueryRef": "Reversal invoices",
+              "displayName": "Reversal invoices"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Online Retail"
+                    }
+                  },
+                  "Property": "Units Reversed"
+                }
+              },
+              "queryRef": "Online Retail.Units Reversed",
+              "nativeQueryRef": "Reversed units",
+              "displayName": "Reversed units"
             }
           ]
         }
@@ -78,6 +187,13 @@
               "expr": {
                 "Literal": {
                   "Value": "false"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "10D"
                 }
               }
             }
@@ -126,6 +242,13 @@
                   }
                 }
               }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "10D"
+                }
+              }
             }
           }
         }
@@ -152,6 +275,17 @@
                   "Value": "false"
                 }
               }
+            },
+            "defaultColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#B4533F'"
+                    }
+                  }
+                }
+              }
             }
           }
         }
@@ -163,6 +297,27 @@
               "expr": {
                 "Literal": {
                   "Value": "true"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "9D"
+                }
+              }
+            },
+            "labelPrecision": {
+              "expr": {
+                "Literal": {
+                  "Value": "1L"
+                }
+              }
+            },
+            "labelDisplayUnits": {
+              "expr": {
+                "Literal": {
+                  "Value": "1000D"
                 }
               }
             }
@@ -177,21 +332,21 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Returned Value by Country'"
+                  "Value": "'Top 10 countries by reversal value (£)'"
                 }
               }
             },
             "fontFamily": {
               "expr": {
                 "Literal": {
-                  "Value": "'''Segoe UI Semibold'', wf_segoe-ui_semibold, helvetica, arial, sans-serif'"
+                  "Value": "'Segoe UI Semibold'"
                 }
               }
             },
             "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "13D"
+                  "Value": "12D"
                 }
               }
             },
@@ -205,6 +360,13 @@
                   }
                 }
               }
+            },
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
             }
           }
         }
@@ -215,7 +377,7 @@
             "show": {
               "expr": {
                 "Literal": {
-                  "Value": "true"
+                  "Value": "false"
                 }
               }
             }
@@ -228,7 +390,7 @@
             "show": {
               "expr": {
                 "Literal": {
-                  "Value": "true"
+                  "Value": "false"
                 }
               }
             },
@@ -253,6 +415,43 @@
             }
           }
         }
+      ],
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#FFFFFF'"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ],
+      "general": [
+        {
+          "properties": {
+            "altText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Top 10 countries by reversal value (£)'"
+                }
+              }
+            }
+          }
+        }
       ]
     },
     "drillFilterOtherVisuals": true
@@ -260,7 +459,7 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "d613eafe628b8adde09a",
+        "name": "cae144ec44ef588593e6",
         "field": {
           "Column": {
             "Expression": {
@@ -311,7 +510,7 @@
                                 "Source": "o"
                               }
                             },
-                            "Property": "Return Value"
+                            "Property": "Returns Amount"
                           }
                         }
                       }
@@ -347,59 +546,6 @@
                   "Table": {
                     "SourceRef": {
                       "Source": "subquery"
-                    }
-                  }
-                }
-              }
-            }
-          ]
-        }
-      },
-      {
-        "name": "4582864cdf89ea03d6af",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Online Retail"
-              }
-            },
-            "Property": "Return Value"
-          }
-        },
-        "type": "Advanced",
-        "filter": {
-          "Version": 2,
-          "From": [
-            {
-              "Name": "c",
-              "Entity": "Calendar",
-              "Type": 0
-            },
-            {
-              "Name": "o",
-              "Entity": "Online Retail",
-              "Type": 0
-            }
-          ],
-          "Where": [
-            {
-              "Condition": {
-                "Comparison": {
-                  "ComparisonKind": 1,
-                  "Left": {
-                    "Measure": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Source": "o"
-                        }
-                      },
-                      "Property": "Return Value"
-                    }
-                  },
-                  "Right": {
-                    "Literal": {
-                      "Value": "1000L"
                     }
                   }
                 }

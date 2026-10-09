@@ -1,0 +1,73 @@
+{
+  "status": "PASS",
+  "native_engine_or_render_executed": false,
+  "pages": [
+    {
+      "page": "Product & Customer Insights",
+      "visuals": 17,
+      "width": 1336,
+      "height": 920,
+      "interaction_pairs": 50,
+      "container_overlaps_excluding_background_shapes": 0
+    },
+    {
+      "page": "Sales Overview",
+      "visuals": 21,
+      "width": 1336,
+      "height": 920,
+      "interaction_pairs": 78,
+      "container_overlaps_excluding_background_shapes": 0
+    }
+  ],
+  "original_visuals_retained": 31,
+  "new_visuals": 7,
+  "references_checked": {
+    "column_references": 45,
+    "measure_references": 90,
+    "source_entities": 116
+  },
+  "measure_dependency_graph": {
+    "Total Sales": [],
+    "Main Sales": [
+      "Total Sales"
+    ],
+    "Returns Amount": [
+      "Total Sales"
+    ],
+    "Net Sales": [
+      "Main Sales",
+      "Returns Amount"
+    ],
+    "Orders": [],
+    "Unique Customers": [],
+    "Average Order Value": [
+      "Net Sales",
+      "Orders"
+    ],
+    "Return rate": [
+      "Returns Amount",
+      "Main Sales"
+    ],
+    "Units Sold": [],
+    "Cancelled Orders": [],
+    "Zero Price Records": [],
+    "Return Value": [
+      "Returns Amount"
+    ],
+    "Administrative Adjustments": [
+      "Total Sales"
+    ],
+    "Other Movements": [
+      "Total Sales"
+    ],
+    "Units Reversed": [],
+    "Unidentified Net Sales": [
+      "Net Sales"
+    ],
+    "Identified Sales Share": [
+      "Main Sales",
+      "Main Sales"
+    ]
+  },
+  "errors": []
+}

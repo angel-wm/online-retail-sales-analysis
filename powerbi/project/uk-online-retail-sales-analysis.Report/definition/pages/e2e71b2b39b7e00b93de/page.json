@@ -3,7 +3,7 @@
   "name": "e2e71b2b39b7e00b93de",
   "displayName": "Sales Overview",
   "displayOption": "FitToPage",
-  "height": 768,
+  "height": 920,
   "width": 1336,
   "objects": {
     "background": [
@@ -47,5 +47,397 @@
         }
       }
     ]
-  }
+  },
+  "visualInteractions": [
+    {
+      "source": "0d26f07ae3e59165a455",
+      "target": "0d43bab4e45532bcc190",
+      "type": "DataFilter"
+    },
+    {
+      "source": "0d26f07ae3e59165a455",
+      "target": "103453003bcd8ca655ca",
+      "type": "DataFilter"
+    },
+    {
+      "source": "0d26f07ae3e59165a455",
+      "target": "1efd5c26d1b097445d63",
+      "type": "DataFilter"
+    },
+    {
+      "source": "0d26f07ae3e59165a455",
+      "target": "5f1c21068041053e9103",
+      "type": "DataFilter"
+    },
+    {
+      "source": "0d26f07ae3e59165a455",
+      "target": "b7f03dd49cd6692b1d55",
+      "type": "DataFilter"
+    },
+    {
+      "source": "0d26f07ae3e59165a455",
+      "target": "c1e7baf0796e55151039",
+      "type": "DataFilter"
+    },
+    {
+      "source": "0d26f07ae3e59165a455",
+      "target": "c6a83e50232cca065cd5",
+      "type": "DataFilter"
+    },
+    {
+      "source": "0d26f07ae3e59165a455",
+      "target": "dd400a8a673caa8ed6a7",
+      "type": "DataFilter"
+    },
+    {
+      "source": "0d26f07ae3e59165a455",
+      "target": "retail_financial_bridge",
+      "type": "DataFilter"
+    },
+    {
+      "source": "103453003bcd8ca655ca",
+      "target": "0d26f07ae3e59165a455",
+      "type": "DataFilter"
+    },
+    {
+      "source": "103453003bcd8ca655ca",
+      "target": "0d43bab4e45532bcc190",
+      "type": "DataFilter"
+    },
+    {
+      "source": "103453003bcd8ca655ca",
+      "target": "1efd5c26d1b097445d63",
+      "type": "DataFilter"
+    },
+    {
+      "source": "103453003bcd8ca655ca",
+      "target": "5f1c21068041053e9103",
+      "type": "DataFilter"
+    },
+    {
+      "source": "103453003bcd8ca655ca",
+      "target": "b7f03dd49cd6692b1d55",
+      "type": "DataFilter"
+    },
+    {
+      "source": "103453003bcd8ca655ca",
+      "target": "c1e7baf0796e55151039",
+      "type": "DataFilter"
+    },
+    {
+      "source": "103453003bcd8ca655ca",
+      "target": "c6a83e50232cca065cd5",
+      "type": "DataFilter"
+    },
+    {
+      "source": "103453003bcd8ca655ca",
+      "target": "dd400a8a673caa8ed6a7",
+      "type": "DataFilter"
+    },
+    {
+      "source": "103453003bcd8ca655ca",
+      "target": "retail_financial_bridge",
+      "type": "DataFilter"
+    },
+    {
+      "source": "5f1c21068041053e9103",
+      "target": "0d26f07ae3e59165a455",
+      "type": "DataFilter"
+    },
+    {
+      "source": "5f1c21068041053e9103",
+      "target": "0d43bab4e45532bcc190",
+      "type": "DataFilter"
+    },
+    {
+      "source": "5f1c21068041053e9103",
+      "target": "103453003bcd8ca655ca",
+      "type": "DataFilter"
+    },
+    {
+      "source": "5f1c21068041053e9103",
+      "target": "1efd5c26d1b097445d63",
+      "type": "DataFilter"
+    },
+    {
+      "source": "5f1c21068041053e9103",
+      "target": "b7f03dd49cd6692b1d55",
+      "type": "DataFilter"
+    },
+    {
+      "source": "5f1c21068041053e9103",
+      "target": "c1e7baf0796e55151039",
+      "type": "DataFilter"
+    },
+    {
+      "source": "5f1c21068041053e9103",
+      "target": "c6a83e50232cca065cd5",
+      "type": "DataFilter"
+    },
+    {
+      "source": "5f1c21068041053e9103",
+      "target": "dd400a8a673caa8ed6a7",
+      "type": "DataFilter"
+    },
+    {
+      "source": "5f1c21068041053e9103",
+      "target": "retail_financial_bridge",
+      "type": "DataFilter"
+    },
+    {
+      "source": "c1e7baf0796e55151039",
+      "target": "0d26f07ae3e59165a455",
+      "type": "DataFilter"
+    },
+    {
+      "source": "c1e7baf0796e55151039",
+      "target": "0d43bab4e45532bcc190",
+      "type": "DataFilter"
+    },
+    {
+      "source": "c1e7baf0796e55151039",
+      "target": "103453003bcd8ca655ca",
+      "type": "DataFilter"
+    },
+    {
+      "source": "c1e7baf0796e55151039",
+      "target": "1efd5c26d1b097445d63",
+      "type": "DataFilter"
+    },
+    {
+      "source": "c1e7baf0796e55151039",
+      "target": "5f1c21068041053e9103",
+      "type": "DataFilter"
+    },
+    {
+      "source": "c1e7baf0796e55151039",
+      "target": "b7f03dd49cd6692b1d55",
+      "type": "DataFilter"
+    },
+    {
+      "source": "c1e7baf0796e55151039",
+      "target": "c6a83e50232cca065cd5",
+      "type": "DataFilter"
+    },
+    {
+      "source": "c1e7baf0796e55151039",
+      "target": "dd400a8a673caa8ed6a7",
+      "type": "DataFilter"
+    },
+    {
+      "source": "c1e7baf0796e55151039",
+      "target": "retail_financial_bridge",
+      "type": "DataFilter"
+    },
+    {
+      "source": "17704764da05a4761017",
+      "target": "0d26f07ae3e59165a455",
+      "type": "DataFilter"
+    },
+    {
+      "source": "17704764da05a4761017",
+      "target": "0d43bab4e45532bcc190",
+      "type": "DataFilter"
+    },
+    {
+      "source": "17704764da05a4761017",
+      "target": "103453003bcd8ca655ca",
+      "type": "DataFilter"
+    },
+    {
+      "source": "17704764da05a4761017",
+      "target": "1efd5c26d1b097445d63",
+      "type": "DataFilter"
+    },
+    {
+      "source": "17704764da05a4761017",
+      "target": "5f1c21068041053e9103",
+      "type": "DataFilter"
+    },
+    {
+      "source": "17704764da05a4761017",
+      "target": "b7f03dd49cd6692b1d55",
+      "type": "DataFilter"
+    },
+    {
+      "source": "17704764da05a4761017",
+      "target": "c1e7baf0796e55151039",
+      "type": "DataFilter"
+    },
+    {
+      "source": "17704764da05a4761017",
+      "target": "c6a83e50232cca065cd5",
+      "type": "DataFilter"
+    },
+    {
+      "source": "17704764da05a4761017",
+      "target": "dd400a8a673caa8ed6a7",
+      "type": "DataFilter"
+    },
+    {
+      "source": "17704764da05a4761017",
+      "target": "retail_financial_bridge",
+      "type": "DataFilter"
+    },
+    {
+      "source": "866c411e4dac10cc1484",
+      "target": "0d26f07ae3e59165a455",
+      "type": "DataFilter"
+    },
+    {
+      "source": "866c411e4dac10cc1484",
+      "target": "0d43bab4e45532bcc190",
+      "type": "DataFilter"
+    },
+    {
+      "source": "866c411e4dac10cc1484",
+      "target": "103453003bcd8ca655ca",
+      "type": "DataFilter"
+    },
+    {
+      "source": "866c411e4dac10cc1484",
+      "target": "1efd5c26d1b097445d63",
+      "type": "DataFilter"
+    },
+    {
+      "source": "866c411e4dac10cc1484",
+      "target": "5f1c21068041053e9103",
+      "type": "DataFilter"
+    },
+    {
+      "source": "866c411e4dac10cc1484",
+      "target": "b7f03dd49cd6692b1d55",
+      "type": "DataFilter"
+    },
+    {
+      "source": "866c411e4dac10cc1484",
+      "target": "c1e7baf0796e55151039",
+      "type": "DataFilter"
+    },
+    {
+      "source": "866c411e4dac10cc1484",
+      "target": "c6a83e50232cca065cd5",
+      "type": "DataFilter"
+    },
+    {
+      "source": "866c411e4dac10cc1484",
+      "target": "dd400a8a673caa8ed6a7",
+      "type": "DataFilter"
+    },
+    {
+      "source": "866c411e4dac10cc1484",
+      "target": "retail_financial_bridge",
+      "type": "DataFilter"
+    },
+    {
+      "source": "e062531a409aa34d2575",
+      "target": "0d26f07ae3e59165a455",
+      "type": "DataFilter"
+    },
+    {
+      "source": "e062531a409aa34d2575",
+      "target": "0d43bab4e45532bcc190",
+      "type": "DataFilter"
+    },
+    {
+      "source": "e062531a409aa34d2575",
+      "target": "103453003bcd8ca655ca",
+      "type": "DataFilter"
+    },
+    {
+      "source": "e062531a409aa34d2575",
+      "target": "1efd5c26d1b097445d63",
+      "type": "DataFilter"
+    },
+    {
+      "source": "e062531a409aa34d2575",
+      "target": "5f1c21068041053e9103",
+      "type": "DataFilter"
+    },
+    {
+      "source": "e062531a409aa34d2575",
+      "target": "b7f03dd49cd6692b1d55",
+      "type": "DataFilter"
+    },
+    {
+      "source": "e062531a409aa34d2575",
+      "target": "c1e7baf0796e55151039",
+      "type": "DataFilter"
+    },
+    {
+      "source": "e062531a409aa34d2575",
+      "target": "c6a83e50232cca065cd5",
+      "type": "DataFilter"
+    },
+    {
+      "source": "e062531a409aa34d2575",
+      "target": "dd400a8a673caa8ed6a7",
+      "type": "DataFilter"
+    },
+    {
+      "source": "e062531a409aa34d2575",
+      "target": "retail_financial_bridge",
+      "type": "DataFilter"
+    },
+    {
+      "source": "0d26f07ae3e59165a455",
+      "target": "17704764da05a4761017",
+      "type": "NoFilter"
+    },
+    {
+      "source": "0d26f07ae3e59165a455",
+      "target": "866c411e4dac10cc1484",
+      "type": "NoFilter"
+    },
+    {
+      "source": "0d26f07ae3e59165a455",
+      "target": "e062531a409aa34d2575",
+      "type": "NoFilter"
+    },
+    {
+      "source": "103453003bcd8ca655ca",
+      "target": "17704764da05a4761017",
+      "type": "NoFilter"
+    },
+    {
+      "source": "103453003bcd8ca655ca",
+      "target": "866c411e4dac10cc1484",
+      "type": "NoFilter"
+    },
+    {
+      "source": "103453003bcd8ca655ca",
+      "target": "e062531a409aa34d2575",
+      "type": "NoFilter"
+    },
+    {
+      "source": "5f1c21068041053e9103",
+      "target": "17704764da05a4761017",
+      "type": "NoFilter"
+    },
+    {
+      "source": "5f1c21068041053e9103",
+      "target": "866c411e4dac10cc1484",
+      "type": "NoFilter"
+    },
+    {
+      "source": "5f1c21068041053e9103",
+      "target": "e062531a409aa34d2575",
+      "type": "NoFilter"
+    },
+    {
+      "source": "c1e7baf0796e55151039",
+      "target": "17704764da05a4761017",
+      "type": "NoFilter"
+    },
+    {
+      "source": "c1e7baf0796e55151039",
+      "target": "866c411e4dac10cc1484",
+      "type": "NoFilter"
+    },
+    {
+      "source": "c1e7baf0796e55151039",
+      "target": "e062531a409aa34d2575",
+      "type": "NoFilter"
+    }
+  ]
 }

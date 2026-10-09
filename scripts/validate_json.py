@@ -15,6 +15,7 @@ PROJECT = REPO / "powerbi/project"
 CACHE = REPO / ".tools/schemas"
 CACHE.mkdir(parents=True, exist_ok=True)
 used = {}
+unavailable = {}
 KNOWN_UNPUBLISHED = {
     "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.13.0/schema.json": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
     "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/report/3.3.0/schema.json": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/report/3.2.0/schema.json",
@@ -22,6 +23,8 @@ KNOWN_UNPUBLISHED = {
 
 def fetch(url):
     url = url.split("#")[0]
+    if url in unavailable:
+        raise HTTPError(url, unavailable[url], "Schema unavailable in this validation run", None, None)
     if urlparse(url).hostname != "developer.microsoft.com":
         raise ValueError(f"Unexpected schema host: {url}")
     path = CACHE / (hashlib.sha256(url.encode()).hexdigest() + ".json")
@@ -38,8 +41,12 @@ def fetch(url):
                 retrieved_from = url.replace("/schema.embedded.json", "/schema-embedded.json")
             else:
                 retrieved_from = "https://raw.githubusercontent.com/microsoft/json-schemas/main" + urlparse(url).path.removeprefix("/json-schemas")
-            with urlopen(retrieved_from, timeout=30) as response:
-                content = json.load(response)
+            try:
+                with urlopen(retrieved_from, timeout=30) as response:
+                    content = json.load(response)
+            except HTTPError as fallback_error:
+                unavailable[url] = fallback_error.code
+                raise
         path.write_text(json.dumps(content, ensure_ascii=False), encoding="utf-8")
         path.with_suffix(".source.txt").write_text(retrieved_from, encoding="utf-8")
     source_file = path.with_suffix(".source.txt")

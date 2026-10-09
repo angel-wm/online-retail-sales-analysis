@@ -5,9 +5,9 @@
     "x": 881,
     "y": 88,
     "z": 8000,
-    "height": 100,
+    "height": 96,
     "width": 218,
-    "tabOrder": 6000
+    "tabOrder": 900
   },
   "visual": {
     "visualType": "cardVisual",
@@ -27,9 +27,9 @@
                 }
               },
               "queryRef": "Online Retail.Average Order Value",
-              "nativeQueryRef": "Avg. Order Value",
-              "displayName": "Avg. Order Value",
-              "format": "\"£\"#,0.###############;-\"£\"#,0.###############;\"£\"#,0.###############"
+              "nativeQueryRef": "Net value / sale invoice",
+              "displayName": "Net value / sale invoice",
+              "format": "£#,0.00;(£#,0.00);£0.00"
             }
           ]
         }
@@ -92,7 +92,7 @@
             "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "24D"
+                  "Value": "23D"
                 }
               }
             },
@@ -104,6 +104,20 @@
                       "Value": "'#1F3A5F'"
                     }
                   }
+                }
+              }
+            },
+            "labelDisplayUnits": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            },
+            "decimalPlaces": {
+              "expr": {
+                "Literal": {
+                  "Value": "2L"
                 }
               }
             }
@@ -119,7 +133,7 @@
             "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "11D"
+                  "Value": "10D"
                 }
               }
             },
@@ -148,7 +162,7 @@
             "show": {
               "expr": {
                 "Literal": {
-                  "Value": "true"
+                  "Value": "false"
                 }
               }
             }
@@ -161,7 +175,7 @@
             "show": {
               "expr": {
                 "Literal": {
-                  "Value": "true"
+                  "Value": "false"
                 }
               }
             },
@@ -181,6 +195,43 @@
               "expr": {
                 "Literal": {
                   "Value": "8D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#FFFFFF'"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ],
+      "general": [
+        {
+          "properties": {
+            "altText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'cardVisual'"
                 }
               }
             }

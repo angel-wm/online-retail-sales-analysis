@@ -5,9 +5,9 @@
     "x": 200,
     "y": 88,
     "z": 2000,
-    "height": 100,
+    "height": 96,
     "width": 218,
-    "tabOrder": 0
+    "tabOrder": 600
   },
   "visual": {
     "visualType": "cardVisual",
@@ -23,12 +23,12 @@
                       "Entity": "Online Retail"
                     }
                   },
-                  "Property": "Main Sales"
+                  "Property": "Net Sales"
                 }
               },
-              "queryRef": "Online Retail.Main Sales",
-              "nativeQueryRef": "Total Sales",
-              "displayName": "Total Sales"
+              "queryRef": "Online Retail.Net Sales",
+              "nativeQueryRef": "Net merchandise sales",
+              "displayName": "Net merchandise sales"
             }
           ]
         }
@@ -43,7 +43,7 @@
                     "Entity": "Online Retail"
                   }
                 },
-                "Property": "Main Sales"
+                "Property": "Net Sales"
               }
             },
             "direction": "Descending"
@@ -164,6 +164,20 @@
                   "Value": "23D"
                 }
               }
+            },
+            "labelDisplayUnits": {
+              "expr": {
+                "Literal": {
+                  "Value": "1000000D"
+                }
+              }
+            },
+            "decimalPlaces": {
+              "expr": {
+                "Literal": {
+                  "Value": "2L"
+                }
+              }
             }
           },
           "selector": {
@@ -175,7 +189,7 @@
             "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "24D"
+                  "Value": "23D"
                 }
               }
             },
@@ -189,10 +203,24 @@
                   }
                 }
               }
+            },
+            "labelDisplayUnits": {
+              "expr": {
+                "Literal": {
+                  "Value": "1000000D"
+                }
+              }
+            },
+            "decimalPlaces": {
+              "expr": {
+                "Literal": {
+                  "Value": "2L"
+                }
+              }
             }
           },
           "selector": {
-            "metadata": "Online Retail.Main Sales"
+            "metadata": "Online Retail.Net Sales"
           }
         }
       ],
@@ -234,7 +262,7 @@
             "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "11D"
+                  "Value": "10D"
                 }
               }
             },
@@ -251,7 +279,7 @@
             }
           },
           "selector": {
-            "metadata": "Online Retail.Main Sales"
+            "metadata": "Online Retail.Net Sales"
           }
         }
       ]
@@ -289,7 +317,7 @@
             "show": {
               "expr": {
                 "Literal": {
-                  "Value": "true"
+                  "Value": "false"
                 }
               }
             }
@@ -302,7 +330,7 @@
             "show": {
               "expr": {
                 "Literal": {
-                  "Value": "true"
+                  "Value": "false"
                 }
               }
             },
@@ -322,6 +350,43 @@
               "expr": {
                 "Literal": {
                   "Value": "8D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#FFFFFF'"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ],
+      "general": [
+        {
+          "properties": {
+            "altText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'cardVisual'"
                 }
               }
             }

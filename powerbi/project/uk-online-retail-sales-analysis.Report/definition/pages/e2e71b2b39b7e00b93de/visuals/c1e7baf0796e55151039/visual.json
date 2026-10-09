@@ -3,11 +3,11 @@
   "name": "c1e7baf0796e55151039",
   "position": {
     "x": 200,
-    "y": 198,
+    "y": 216,
     "z": 10000,
-    "height": 275,
-    "width": 740,
-    "tabOrder": 8000
+    "height": 284,
+    "width": 736,
+    "tabOrder": 1300
   },
   "visual": {
     "visualType": "lineChart",
@@ -47,7 +47,131 @@
               },
               "queryRef": "Online Retail.Net Sales",
               "nativeQueryRef": "Net Sales",
-              "format": "\"£\"#,0.###############;-\"£\"#,0.###############;\"£\"#,0.###############"
+              "format": "£#,0.00;(£#,0.00);£0.00"
+            }
+          ]
+        },
+        "Tooltips": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Online Retail"
+                    }
+                  },
+                  "Property": "Main Sales"
+                }
+              },
+              "queryRef": "Online Retail.Main Sales",
+              "nativeQueryRef": "Gross merchandise (£)",
+              "displayName": "Gross merchandise (£)"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Online Retail"
+                    }
+                  },
+                  "Property": "Returns Amount"
+                }
+              },
+              "queryRef": "Online Retail.Returns Amount",
+              "nativeQueryRef": "Cancellations / reversals (£)",
+              "displayName": "Cancellations / reversals (£)"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Online Retail"
+                    }
+                  },
+                  "Property": "Net Sales"
+                }
+              },
+              "queryRef": "Online Retail.Net Sales",
+              "nativeQueryRef": "Net merchandise (£)",
+              "displayName": "Net merchandise (£)"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Online Retail"
+                    }
+                  },
+                  "Property": "Return rate"
+                }
+              },
+              "queryRef": "Online Retail.Return rate",
+              "nativeQueryRef": "Reversal value / gross",
+              "displayName": "Reversal value / gross"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Online Retail"
+                    }
+                  },
+                  "Property": "Orders"
+                }
+              },
+              "queryRef": "Online Retail.Orders",
+              "nativeQueryRef": "Sale invoices",
+              "displayName": "Sale invoices"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Online Retail"
+                    }
+                  },
+                  "Property": "Cancelled Orders"
+                }
+              },
+              "queryRef": "Online Retail.Cancelled Orders",
+              "nativeQueryRef": "Reversal invoices",
+              "displayName": "Reversal invoices"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Online Retail"
+                    }
+                  },
+                  "Property": "Units Reversed"
+                }
+              },
+              "queryRef": "Online Retail.Units Reversed",
+              "nativeQueryRef": "Reversed units",
+              "displayName": "Reversed units"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Online Retail"
+                    }
+                  },
+                  "Property": "Average Order Value"
+                }
+              },
+              "queryRef": "Online Retail.Average Order Value",
+              "nativeQueryRef": "Net value / sale invoice (£)",
+              "displayName": "Net value / sale invoice (£)"
             }
           ]
         }
@@ -117,7 +241,14 @@
             "labelPrecision": {
               "expr": {
                 "Literal": {
-                  "Value": "0L"
+                  "Value": "1L"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "10D"
                 }
               }
             }
@@ -130,14 +261,14 @@
             "lineChartType": {
               "expr": {
                 "Literal": {
-                  "Value": "'smooth'"
+                  "Value": "'straight'"
                 }
               }
             },
             "areaShow": {
               "expr": {
                 "Literal": {
-                  "Value": "true"
+                  "Value": "false"
                 }
               }
             },
@@ -170,7 +301,7 @@
             "strokeWidth": {
               "expr": {
                 "Literal": {
-                  "Value": "4D"
+                  "Value": "3D"
                 }
               }
             }
@@ -184,6 +315,13 @@
               "expr": {
                 "Literal": {
                   "Value": "false"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "10D"
                 }
               }
             }
@@ -222,7 +360,28 @@
             "show": {
               "expr": {
                 "Literal": {
-                  "Value": "true"
+                  "Value": "false"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "9D"
+                }
+              }
+            },
+            "labelPrecision": {
+              "expr": {
+                "Literal": {
+                  "Value": "1L"
+                }
+              }
+            },
+            "labelDisplayUnits": {
+              "expr": {
+                "Literal": {
+                  "Value": "1000D"
                 }
               }
             }
@@ -237,21 +396,21 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Net Sales Over Time'"
+                  "Value": "'Net merchandise sales by month (£)'"
                 }
               }
             },
             "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "13D"
+                  "Value": "12D"
                 }
               }
             },
             "fontFamily": {
               "expr": {
                 "Literal": {
-                  "Value": "'''Segoe UI Semibold'', wf_segoe-ui_semibold, helvetica, arial, sans-serif'"
+                  "Value": "'Segoe UI Semibold'"
                 }
               }
             },
@@ -263,6 +422,13 @@
                       "Value": "'#1F3A5F'"
                     }
                   }
+                }
+              }
+            },
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
                 }
               }
             }
@@ -301,7 +467,7 @@
             "show": {
               "expr": {
                 "Literal": {
-                  "Value": "true"
+                  "Value": "false"
                 }
               }
             }
@@ -314,7 +480,7 @@
             "show": {
               "expr": {
                 "Literal": {
-                  "Value": "true"
+                  "Value": "false"
                 }
               }
             },
@@ -334,6 +500,43 @@
                       "Percent": -0.1
                     }
                   }
+                }
+              }
+            }
+          }
+        }
+      ],
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#FFFFFF'"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ],
+      "general": [
+        {
+          "properties": {
+            "altText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Net merchandise sales by month (£)'"
                 }
               }
             }

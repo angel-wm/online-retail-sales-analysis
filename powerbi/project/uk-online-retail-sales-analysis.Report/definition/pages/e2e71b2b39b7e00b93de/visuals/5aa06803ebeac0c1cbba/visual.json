@@ -3,11 +3,11 @@
   "name": "5aa06803ebeac0c1cbba",
   "position": {
     "x": 215,
-    "y": 14,
+    "y": 10,
     "z": 15000,
-    "height": 46,
-    "width": 900,
-    "tabOrder": 14000
+    "height": 35,
+    "width": 1095,
+    "tabOrder": 200
   },
   "visual": {
     "visualType": "textbox",
@@ -21,9 +21,9 @@
                   {
                     "value": "Online Retail Sales Dashboard",
                     "textStyle": {
-                      "fontFamily": "Segoe UI Semibold",
+                      "fontFamily": "Segoe UI",
                       "fontSize": "20pt",
-                      "color": "#ffffff"
+                      "color": "#FFFFFF"
                     }
                   }
                 ]

@@ -3,11 +3,11 @@
   "name": "5d94eeb50cdd08a9dc2d",
   "position": {
     "x": 215,
-    "y": 14,
+    "y": 10,
     "z": 5000,
-    "height": 46,
-    "width": 900,
-    "tabOrder": 5000
+    "height": 35,
+    "width": 1095,
+    "tabOrder": 200
   },
   "visual": {
     "visualType": "textbox",
@@ -21,9 +21,9 @@
                   {
                     "value": "Product & Customer Insights",
                     "textStyle": {
-                      "fontFamily": "Segoe UI Semibold",
+                      "fontFamily": "Segoe UI",
                       "fontSize": "20pt",
-                      "color": "#ffffff"
+                      "color": "#FFFFFF"
                     }
                   }
                 ]

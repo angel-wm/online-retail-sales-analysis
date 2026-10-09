@@ -3,11 +3,11 @@
   "name": "a13243354215609ec4c0",
   "position": {
     "x": 32,
-    "y": 304,
+    "y": 320,
     "z": 3000,
     "height": 96,
     "width": 144,
-    "tabOrder": 2000
+    "tabOrder": 1100
   },
   "visual": {
     "visualType": "slicer",
@@ -132,7 +132,7 @@
             "show": {
               "expr": {
                 "Literal": {
-                  "Value": "true"
+                  "Value": "false"
                 }
               }
             }
@@ -162,8 +162,26 @@
             }
           }
         }
+      ],
+      "general": [
+        {
+          "properties": {
+            "altText": {
+              "expr": {
+                "Literal": {
+                  "Value": "''"
+                }
+              }
+            }
+          }
+        }
       ]
     },
-    "drillFilterOtherVisuals": true
+    "drillFilterOtherVisuals": true,
+    "syncGroup": {
+      "groupName": "Retail_Line_Type",
+      "fieldChanges": true,
+      "filterChanges": true
+    }
   }
 }

@@ -2,12 +2,12 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.13.0/schema.json",
   "name": "326efa6cd15edb5615ca",
   "position": {
-    "x": 208,
-    "y": 432,
+    "x": 200,
+    "y": 504,
     "z": 11000,
     "height": 320,
-    "width": 548,
-    "tabOrder": 11000
+    "width": 736,
+    "tabOrder": 1400
   },
   "visual": {
     "visualType": "clusteredBarChart",
@@ -20,15 +20,15 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Online Retail"
+                      "Entity": "DimProduct"
                     }
                   },
-                  "Property": "Product_Name"
+                  "Property": "Product_Label"
                 }
               },
-              "queryRef": "Online Retail.Product_Name",
-              "nativeQueryRef": "Product_Name",
-              "active": true
+              "queryRef": "DimProduct.Product_Label",
+              "nativeQueryRef": "Stock code and product",
+              "displayName": "Stock code and product"
             }
           ]
         },
@@ -36,22 +36,48 @@
           "projections": [
             {
               "field": {
-                "Aggregation": {
+                "Column": {
                   "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "Online Retail"
-                        }
-                      },
-                      "Property": "Quantity"
+                    "SourceRef": {
+                      "Entity": "DimProduct"
                     }
                   },
-                  "Function": 0
+                  "Property": "Stock_Code"
                 }
               },
-              "queryRef": "Sum(Online Retail.Quantity)",
-              "nativeQueryRef": "Sum of Quantity"
+              "queryRef": "DimProduct.Stock_Code",
+              "nativeQueryRef": "Stock code",
+              "displayName": "Stock code"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "DimProduct"
+                    }
+                  },
+                  "Property": "Product_Name"
+                }
+              },
+              "queryRef": "DimProduct.Product_Name",
+              "nativeQueryRef": "Full representative name",
+              "displayName": "Full representative name"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "DimProduct"
+                    }
+                  },
+                  "Property": "Description_Variants"
+                }
+              },
+              "queryRef": "DimProduct.Description_Variants",
+              "nativeQueryRef": "Source name variants",
+              "displayName": "Source name variants"
             },
             {
               "field": {
@@ -61,11 +87,27 @@
                       "Entity": "Online Retail"
                     }
                   },
-                  "Property": "Orders"
+                  "Property": "Main Sales"
                 }
               },
-              "queryRef": "Online Retail.Orders",
-              "nativeQueryRef": "Orders"
+              "queryRef": "Online Retail.Main Sales",
+              "nativeQueryRef": "Gross merchandise (£)",
+              "displayName": "Gross merchandise (£)"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Online Retail"
+                    }
+                  },
+                  "Property": "Returns Amount"
+                }
+              },
+              "queryRef": "Online Retail.Returns Amount",
+              "nativeQueryRef": "Cancellations / reversals (£)",
+              "displayName": "Cancellations / reversals (£)"
             },
             {
               "field": {
@@ -79,7 +121,68 @@
                 }
               },
               "queryRef": "Online Retail.Net Sales",
-              "nativeQueryRef": "Net Sales"
+              "nativeQueryRef": "Net merchandise (£)",
+              "displayName": "Net merchandise (£)"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Online Retail"
+                    }
+                  },
+                  "Property": "Return rate"
+                }
+              },
+              "queryRef": "Online Retail.Return rate",
+              "nativeQueryRef": "Reversal value / gross",
+              "displayName": "Reversal value / gross"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Online Retail"
+                    }
+                  },
+                  "Property": "Orders"
+                }
+              },
+              "queryRef": "Online Retail.Orders",
+              "nativeQueryRef": "Sale invoices",
+              "displayName": "Sale invoices"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Online Retail"
+                    }
+                  },
+                  "Property": "Cancelled Orders"
+                }
+              },
+              "queryRef": "Online Retail.Cancelled Orders",
+              "nativeQueryRef": "Reversal invoices",
+              "displayName": "Reversal invoices"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Online Retail"
+                    }
+                  },
+                  "Property": "Units Reversed"
+                }
+              },
+              "queryRef": "Online Retail.Units Reversed",
+              "nativeQueryRef": "Reversed units",
+              "displayName": "Reversed units"
             }
           ]
         },
@@ -96,7 +199,7 @@
                   "Property": "Return Value"
                 }
               },
-              "queryRef": "Calendar.Return Value",
+              "queryRef": "Online Retail.Return Value",
               "nativeQueryRef": "Return Value"
             }
           ]
@@ -128,6 +231,34 @@
               "expr": {
                 "Literal": {
                   "Value": "false"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "10D"
+                }
+              }
+            },
+            "maxSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "50D"
+                }
+              }
+            },
+            "wordWrap": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "innerPadding": {
+              "expr": {
+                "Literal": {
+                  "Value": "10D"
                 }
               }
             }
@@ -162,6 +293,27 @@
                   }
                 }
               }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "10D"
+                }
+              }
+            },
+            "labelPrecision": {
+              "expr": {
+                "Literal": {
+                  "Value": "0L"
+                }
+              }
+            },
+            "labelDisplayUnits": {
+              "expr": {
+                "Literal": {
+                  "Value": "1000D"
+                }
+              }
             }
           }
         }
@@ -188,6 +340,17 @@
                   "Value": "false"
                 }
               }
+            },
+            "defaultColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#B4533F'"
+                    }
+                  }
+                }
+              }
             }
           }
         }
@@ -199,6 +362,27 @@
               "expr": {
                 "Literal": {
                   "Value": "true"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "9D"
+                }
+              }
+            },
+            "labelPrecision": {
+              "expr": {
+                "Literal": {
+                  "Value": "1L"
+                }
+              }
+            },
+            "labelDisplayUnits": {
+              "expr": {
+                "Literal": {
+                  "Value": "1000D"
                 }
               }
             }
@@ -213,21 +397,21 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Top Returned Products by Value'"
+                  "Value": "'Top 10 products by reversal value (£)'"
                 }
               }
             },
             "fontFamily": {
               "expr": {
                 "Literal": {
-                  "Value": "'''Segoe UI Semibold'', wf_segoe-ui_semibold, helvetica, arial, sans-serif'"
+                  "Value": "'Segoe UI Semibold'"
                 }
               }
             },
             "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "13D"
+                  "Value": "12D"
                 }
               }
             },
@@ -241,6 +425,13 @@
                   }
                 }
               }
+            },
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
             }
           }
         }
@@ -251,7 +442,7 @@
             "show": {
               "expr": {
                 "Literal": {
-                  "Value": "true"
+                  "Value": "false"
                 }
               }
             }
@@ -264,7 +455,7 @@
             "show": {
               "expr": {
                 "Literal": {
-                  "Value": "true"
+                  "Value": "false"
                 }
               }
             },
@@ -289,6 +480,43 @@
             }
           }
         }
+      ],
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#FFFFFF'"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ],
+      "general": [
+        {
+          "properties": {
+            "altText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Top 10 products by reversal value (£)'"
+                }
+              }
+            }
+          }
+        }
       ]
     },
     "drillFilterOtherVisuals": true
@@ -296,220 +524,15 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "20a98d094ba1c1106c20",
+        "name": "0638aaba13fb526d8bd5",
         "field": {
           "Column": {
             "Expression": {
               "SourceRef": {
-                "Entity": "Online Retail"
+                "Entity": "DimProduct"
               }
             },
-            "Property": "Product_Name"
-          }
-        },
-        "type": "Categorical",
-        "filter": {
-          "Version": 2,
-          "From": [
-            {
-              "Name": "o",
-              "Entity": "Online Retail",
-              "Type": 0
-            }
-          ],
-          "Where": [
-            {
-              "Condition": {
-                "Not": {
-                  "Expression": {
-                    "In": {
-                      "Expressions": [
-                        {
-                          "Column": {
-                            "Expression": {
-                              "SourceRef": {
-                                "Source": "o"
-                              }
-                            },
-                            "Property": "Product_Name"
-                          }
-                        }
-                      ],
-                      "Values": [
-                        [
-                          {
-                            "Literal": {
-                              "Value": "'amazon'"
-                            }
-                          }
-                        ],
-                        [
-                          {
-                            "Literal": {
-                              "Value": "'amazon adjust'"
-                            }
-                          }
-                        ],
-                        [
-                          {
-                            "Literal": {
-                              "Value": "'Amazon Adjustment'"
-                            }
-                          }
-                        ],
-                        [
-                          {
-                            "Literal": {
-                              "Value": "'AMAZON FEE'"
-                            }
-                          }
-                        ],
-                        [
-                          {
-                            "Literal": {
-                              "Value": "'amazon sales'"
-                            }
-                          }
-                        ],
-                        [
-                          {
-                            "Literal": {
-                              "Value": "'Amazon sold sets'"
-                            }
-                          }
-                        ],
-                        [
-                          {
-                            "Literal": {
-                              "Value": "'?'"
-                            }
-                          }
-                        ],
-                        [
-                          {
-                            "Literal": {
-                              "Value": "'? sold as sets?'"
-                            }
-                          }
-                        ],
-                        [
-                          {
-                            "Literal": {
-                              "Value": "'??'"
-                            }
-                          }
-                        ],
-                        [
-                          {
-                            "Literal": {
-                              "Value": "'?? missing'"
-                            }
-                          }
-                        ],
-                        [
-                          {
-                            "Literal": {
-                              "Value": "'???'"
-                            }
-                          }
-                        ],
-                        [
-                          {
-                            "Literal": {
-                              "Value": "'????damages????'"
-                            }
-                          }
-                        ],
-                        [
-                          {
-                            "Literal": {
-                              "Value": "'????missing'"
-                            }
-                          }
-                        ],
-                        [
-                          {
-                            "Literal": {
-                              "Value": "'???lost'"
-                            }
-                          }
-                        ],
-                        [
-                          {
-                            "Literal": {
-                              "Value": "'???missing'"
-                            }
-                          }
-                        ],
-                        [
-                          {
-                            "Literal": {
-                              "Value": "'?lost'"
-                            }
-                          }
-                        ],
-                        [
-                          {
-                            "Literal": {
-                              "Value": "'?missing'"
-                            }
-                          }
-                        ],
-                        [
-                          {
-                            "Literal": {
-                              "Value": "'?sold as sets?'"
-                            }
-                          }
-                        ],
-                        [
-                          {
-                            "Literal": {
-                              "Value": "'?display?'"
-                            }
-                          }
-                        ],
-                        [
-                          {
-                            "Literal": {
-                              "Value": "'sold as set on dotcom and amazon'"
-                            }
-                          }
-                        ]
-                      ]
-                    }
-                  }
-                }
-              }
-            }
-          ]
-        },
-        "objects": {
-          "general": [
-            {
-              "properties": {
-                "isInvertedSelectionMode": {
-                  "expr": {
-                    "Literal": {
-                      "Value": "true"
-                    }
-                  }
-                }
-              }
-            }
-          ]
-        }
-      },
-      {
-        "name": "7506b1f0b14706e222e2",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Online Retail"
-              }
-            },
-            "Property": "Product_Name"
+            "Property": "Product_Label"
           }
         },
         "type": "TopN",
@@ -524,6 +547,11 @@
                     "Version": 2,
                     "From": [
                       {
+                        "Name": "d",
+                        "Entity": "DimProduct",
+                        "Type": 0
+                      },
+                      {
                         "Name": "o",
                         "Entity": "Online Retail",
                         "Type": 0
@@ -534,10 +562,10 @@
                         "Column": {
                           "Expression": {
                             "SourceRef": {
-                              "Source": "o"
+                              "Source": "d"
                             }
                           },
-                          "Property": "Product_Name"
+                          "Property": "Product_Label"
                         },
                         "Name": "field"
                       }
@@ -552,7 +580,7 @@
                                 "Source": "o"
                               }
                             },
-                            "Property": "Return Value"
+                            "Property": "Returns Amount"
                           }
                         }
                       }
@@ -562,6 +590,11 @@
                 }
               },
               "Type": 2
+            },
+            {
+              "Name": "d",
+              "Entity": "DimProduct",
+              "Type": 0
             },
             {
               "Name": "o",
@@ -578,10 +611,10 @@
                       "Column": {
                         "Expression": {
                           "SourceRef": {
-                            "Source": "o"
+                            "Source": "d"
                           }
                         },
-                        "Property": "Product_Name"
+                        "Property": "Product_Label"
                       }
                     }
                   ],
@@ -594,8 +627,7 @@
               }
             }
           ]
-        },
-        "howCreated": "User"
+        }
       }
     ]
   }

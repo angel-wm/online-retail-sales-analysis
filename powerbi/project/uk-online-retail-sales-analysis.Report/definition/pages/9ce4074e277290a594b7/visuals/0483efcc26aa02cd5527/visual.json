@@ -5,9 +5,9 @@
     "x": 16,
     "y": 0,
     "z": 0,
-    "height": 768,
-    "width": 175.99999999999997,
-    "tabOrder": 3000
+    "height": 920,
+    "width": 176,
+    "tabOrder": 0
   },
   "visual": {
     "visualType": "shape",
@@ -111,6 +111,19 @@
                       "Value": "'#1F3A5F'"
                     }
                   }
+                }
+              }
+            }
+          }
+        }
+      ],
+      "dropShadow": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
                 }
               }
             }

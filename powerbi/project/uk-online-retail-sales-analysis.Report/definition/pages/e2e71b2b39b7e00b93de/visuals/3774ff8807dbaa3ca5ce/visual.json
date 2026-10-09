@@ -3,11 +3,11 @@
   "name": "3774ff8807dbaa3ca5ce",
   "position": {
     "x": 32,
-    "y": 430,
+    "y": 432,
     "z": 18000,
-    "height": 32,
+    "height": 34,
     "width": 144,
-    "tabOrder": 17000
+    "tabOrder": 1600
   },
   "visual": {
     "visualType": "actionButton",
@@ -48,6 +48,20 @@
                   "Value": "true"
                 }
               }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Clear selectors'"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "10D"
+                }
+              }
             }
           }
         },
@@ -56,7 +70,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Clear all filters'"
+                  "Value": "'Clear selectors'"
                 }
               }
             },
@@ -89,7 +103,7 @@
             "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "12D"
+                  "Value": "10D"
                 }
               }
             }
@@ -220,7 +234,20 @@
             "show": {
               "expr": {
                 "Literal": {
-                  "Value": "true"
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "general": [
+        {
+          "properties": {
+            "altText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Clear all filters'"
                 }
               }
             }

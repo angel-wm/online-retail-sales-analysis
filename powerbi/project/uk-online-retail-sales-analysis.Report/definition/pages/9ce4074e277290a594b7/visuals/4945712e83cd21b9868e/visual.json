@@ -3,11 +3,11 @@
   "name": "4945712e83cd21b9868e",
   "position": {
     "x": 32,
-    "y": 48,
+    "y": 64,
     "z": 1000,
     "height": 128,
     "width": 144,
-    "tabOrder": 0
+    "tabOrder": 500
   },
   "visual": {
     "visualType": "slicer",
@@ -150,7 +150,7 @@
             "show": {
               "expr": {
                 "Literal": {
-                  "Value": "true"
+                  "Value": "false"
                 }
               }
             }
@@ -193,8 +193,26 @@
             }
           }
         }
+      ],
+      "general": [
+        {
+          "properties": {
+            "altText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'slicer'"
+                }
+              }
+            }
+          }
+        }
       ]
     },
-    "drillFilterOtherVisuals": true
+    "drillFilterOtherVisuals": true,
+    "syncGroup": {
+      "groupName": "Retail_Year",
+      "fieldChanges": true,
+      "filterChanges": true
+    }
   }
 }

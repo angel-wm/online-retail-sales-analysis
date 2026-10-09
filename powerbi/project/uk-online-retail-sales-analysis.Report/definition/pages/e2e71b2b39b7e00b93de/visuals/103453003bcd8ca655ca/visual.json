@@ -2,12 +2,12 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.13.0/schema.json",
   "name": "103453003bcd8ca655ca",
   "position": {
-    "x": 32,
-    "y": 480,
+    "x": 200,
+    "y": 508,
     "z": 12000,
-    "height": 272,
-    "width": 912,
-    "tabOrder": 10000
+    "height": 316,
+    "width": 736,
+    "tabOrder": 1800
   },
   "visual": {
     "visualType": "clusteredBarChart",
@@ -20,15 +20,15 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Online Retail"
+                      "Entity": "DimProduct"
                     }
                   },
-                  "Property": "Product_Name"
+                  "Property": "Product_Label"
                 }
               },
-              "queryRef": "Online Retail.Product_Name",
-              "nativeQueryRef": "Product_Name",
-              "active": true
+              "queryRef": "DimProduct.Product_Label",
+              "nativeQueryRef": "Stock code and product",
+              "displayName": "Stock code and product"
             }
           ]
         },
@@ -47,7 +47,161 @@
               },
               "queryRef": "Online Retail.Net Sales",
               "nativeQueryRef": "Net Sales",
-              "format": "\"£\"#,0.###############;-\"£\"#,0.###############;\"£\"#,0.###############"
+              "format": "£#,0.00;(£#,0.00);£0.00"
+            }
+          ]
+        },
+        "Tooltips": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "DimProduct"
+                    }
+                  },
+                  "Property": "Stock_Code"
+                }
+              },
+              "queryRef": "DimProduct.Stock_Code",
+              "nativeQueryRef": "Stock code",
+              "displayName": "Stock code"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "DimProduct"
+                    }
+                  },
+                  "Property": "Product_Name"
+                }
+              },
+              "queryRef": "DimProduct.Product_Name",
+              "nativeQueryRef": "Full representative name",
+              "displayName": "Full representative name"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "DimProduct"
+                    }
+                  },
+                  "Property": "Description_Variants"
+                }
+              },
+              "queryRef": "DimProduct.Description_Variants",
+              "nativeQueryRef": "Source name variants",
+              "displayName": "Source name variants"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Online Retail"
+                    }
+                  },
+                  "Property": "Main Sales"
+                }
+              },
+              "queryRef": "Online Retail.Main Sales",
+              "nativeQueryRef": "Gross merchandise (£)",
+              "displayName": "Gross merchandise (£)"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Online Retail"
+                    }
+                  },
+                  "Property": "Returns Amount"
+                }
+              },
+              "queryRef": "Online Retail.Returns Amount",
+              "nativeQueryRef": "Cancellations / reversals (£)",
+              "displayName": "Cancellations / reversals (£)"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Online Retail"
+                    }
+                  },
+                  "Property": "Net Sales"
+                }
+              },
+              "queryRef": "Online Retail.Net Sales",
+              "nativeQueryRef": "Net merchandise (£)",
+              "displayName": "Net merchandise (£)"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Online Retail"
+                    }
+                  },
+                  "Property": "Return rate"
+                }
+              },
+              "queryRef": "Online Retail.Return rate",
+              "nativeQueryRef": "Reversal value / gross",
+              "displayName": "Reversal value / gross"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Online Retail"
+                    }
+                  },
+                  "Property": "Orders"
+                }
+              },
+              "queryRef": "Online Retail.Orders",
+              "nativeQueryRef": "Sale invoices",
+              "displayName": "Sale invoices"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Online Retail"
+                    }
+                  },
+                  "Property": "Cancelled Orders"
+                }
+              },
+              "queryRef": "Online Retail.Cancelled Orders",
+              "nativeQueryRef": "Reversal invoices",
+              "displayName": "Reversal invoices"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Online Retail"
+                    }
+                  },
+                  "Property": "Units Reversed"
+                }
+              },
+              "queryRef": "Online Retail.Units Reversed",
+              "nativeQueryRef": "Reversed units",
+              "displayName": "Reversed units"
             }
           ]
         }
@@ -81,6 +235,27 @@
                   "Value": "true"
                 }
               }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "9D"
+                }
+              }
+            },
+            "labelPrecision": {
+              "expr": {
+                "Literal": {
+                  "Value": "1L"
+                }
+              }
+            },
+            "labelDisplayUnits": {
+              "expr": {
+                "Literal": {
+                  "Value": "1000D"
+                }
+              }
             }
           }
         }
@@ -92,6 +267,34 @@
               "expr": {
                 "Literal": {
                   "Value": "false"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "10D"
+                }
+              }
+            },
+            "maxSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "50D"
+                }
+              }
+            },
+            "wordWrap": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "innerPadding": {
+              "expr": {
+                "Literal": {
+                  "Value": "10D"
                 }
               }
             }
@@ -119,6 +322,27 @@
                   }
                 }
               }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "10D"
+                }
+              }
+            },
+            "labelPrecision": {
+              "expr": {
+                "Literal": {
+                  "Value": "0L"
+                }
+              }
+            },
+            "labelDisplayUnits": {
+              "expr": {
+                "Literal": {
+                  "Value": "1000D"
+                }
+              }
             }
           }
         }
@@ -131,7 +355,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Top 10 products by Net Sales'"
+                  "Value": "'Top 10 products by net merchandise sales (£)'"
                 }
               }
             },
@@ -149,14 +373,21 @@
             "fontFamily": {
               "expr": {
                 "Literal": {
-                  "Value": "'''Segoe UI Semibold'', wf_segoe-ui_semibold, helvetica, arial, sans-serif'"
+                  "Value": "'Segoe UI Semibold'"
                 }
               }
             },
             "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "13D"
+                  "Value": "12D"
+                }
+              }
+            },
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
                 }
               }
             }
@@ -169,7 +400,7 @@
             "show": {
               "expr": {
                 "Literal": {
-                  "Value": "true"
+                  "Value": "false"
                 }
               }
             }
@@ -182,7 +413,7 @@
             "show": {
               "expr": {
                 "Literal": {
-                  "Value": "true"
+                  "Value": "false"
                 }
               }
             },
@@ -207,6 +438,43 @@
             }
           }
         }
+      ],
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#FFFFFF'"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ],
+      "general": [
+        {
+          "properties": {
+            "altText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Top 10 products by net merchandise sales (£)'"
+                }
+              }
+            }
+          }
+        }
       ]
     },
     "drillFilterOtherVisuals": true
@@ -214,15 +482,15 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "dfdfdcac88a5326cc3cc",
+        "name": "07dec1bb64185b89a294",
         "field": {
           "Column": {
             "Expression": {
               "SourceRef": {
-                "Entity": "Online Retail"
+                "Entity": "DimProduct"
               }
             },
-            "Property": "Product_Name"
+            "Property": "Product_Label"
           }
         },
         "type": "TopN",
@@ -237,6 +505,11 @@
                     "Version": 2,
                     "From": [
                       {
+                        "Name": "d",
+                        "Entity": "DimProduct",
+                        "Type": 0
+                      },
+                      {
                         "Name": "o",
                         "Entity": "Online Retail",
                         "Type": 0
@@ -247,10 +520,10 @@
                         "Column": {
                           "Expression": {
                             "SourceRef": {
-                              "Source": "o"
+                              "Source": "d"
                             }
                           },
-                          "Property": "Product_Name"
+                          "Property": "Product_Label"
                         },
                         "Name": "field"
                       }
@@ -277,6 +550,11 @@
               "Type": 2
             },
             {
+              "Name": "d",
+              "Entity": "DimProduct",
+              "Type": 0
+            },
+            {
               "Name": "o",
               "Entity": "Online Retail",
               "Type": 0
@@ -291,10 +569,10 @@
                       "Column": {
                         "Expression": {
                           "SourceRef": {
-                            "Source": "o"
+                            "Source": "d"
                           }
                         },
-                        "Property": "Product_Name"
+                        "Property": "Product_Label"
                       }
                     }
                   ],
