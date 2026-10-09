@@ -44,11 +44,18 @@
     }
   ],
   "currency_conversion_performed": false,
-  "desktop_visual_rendered": false,
+  "desktop_visual_rendered": true,
   "backup_sha256": "57e59cc201b7f746786d30f2bc6edfb4e5e3720f4b09db9fb35330c0596351aa",
   "second_native_save_preserved_before_final_edits": true,
   "semantic_model_files_byte_equal_to_second_desktop_backup": 16,
   "native_save_changed_only_cache_settings_and_linguistic_metadata": true,
   "first_desktop_backup_comparison_before_native_test": 16,
-  "model_semantics_equal_after_second_native_save": true
+  "model_semantics_equal_after_second_native_save": true,
+  "latest_desktop_save_backup_sha256": "7f6674bf1eabd51bf803cd0488a21f95bf9500dafdf24211cf7e644ed93307a3",
+  "all_retained_visual_queries_and_properties_equal_after_latest_adjustment": 33,
+  "all_retained_visual_filters_equal_after_latest_adjustment": 33,
+  "model_semantics_equal_after_repair_and_native_save": true,
+  "restored_filter_panel_definition_equal_to_native_backup": true,
+  "native_save_and_reopen_verified": true,
+  "native_verification_receipt": "evidence/validation/report-load-repair.json"
 }

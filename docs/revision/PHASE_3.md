@@ -2,7 +2,7 @@
 
 Este documento conserva la motivación de la fase inicial. La corrección de presentación solicitada después se describe en [PROJECT_STRUCTURE.md](../PROJECT_STRUCTURE.md): retiró cinco objetos de explicación/conciliación, eliminó sufijos de moneda de títulos y ejes, conservó las dos tarjetas de cobertura y redistribuyó el espacio. El reporte vigente contiene 33 contenedores; los resultados de esquema de la fase inicial son históricos.
 
-Estado: cambios reales aplicados a PBIR y comprobación estática satisfactoria. La aceptación visual e interactiva en Power BI Desktop está pendiente. No se ha producido ni presentado una captura nueva como si fuera un render nativo.
+Estado actual: cambios reales aplicados a PBIR, comprobación estática satisfactoria y revisión nativa de ambas páginas a ajuste de página. Se comprobaron encabezados/tarjetas completos, diez países sin scroll en ambas páginas y los cuatro desplegables legibles sin hover; el PBIP se guardó, cerró y reabrió con datos y gráficos. [report-load-repair.json](../../evidence/validation/report-load-repair.json) registra también la reparación del visual sobrescrito que impedía cargar el reporte. La aceptación de todas las interacciones, la revisión a 100% y la exportación siguen pendientes. Las secciones siguientes describen la fase inicial; los cinco cuadros explicativos se retiraron posteriormente por petición del usuario.
 
 ## Alcance y disposición
 

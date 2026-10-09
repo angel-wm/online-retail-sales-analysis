@@ -1,6 +1,6 @@
 {
   "scope": "Existing root PBIP / report presentation only",
-  "desktop_rendered": false,
+  "desktop_rendered": true,
   "backup": "backups/desktop-saved-before-visual-revision.zip",
   "deleted_objects": [
     {
@@ -38,9 +38,9 @@
       },
       "after": {
         "x": 768,
-        "y": 544,
+        "y": 584,
         "z": 13000,
-        "height": 344,
+        "height": 304,
         "width": 558,
         "tabOrder": 1900
       }
@@ -58,9 +58,9 @@
       },
       "after": {
         "x": 654,
-        "y": 112,
+        "y": 104,
         "z": 7000,
-        "height": 120,
+        "height": 104,
         "width": 218,
         "tabOrder": 800
       }
@@ -78,9 +78,9 @@
       },
       "after": {
         "x": 32,
-        "y": 544,
+        "y": 584,
         "z": 12000,
-        "height": 344,
+        "height": 304,
         "width": 720,
         "tabOrder": 1800
       }
@@ -118,9 +118,9 @@
       },
       "after": {
         "x": 1108,
-        "y": 112,
+        "y": 104,
         "z": 9000,
-        "height": 120,
+        "height": 104,
         "width": 218,
         "tabOrder": 1000
       }
@@ -198,9 +198,9 @@
       },
       "after": {
         "x": 768,
-        "y": 248,
+        "y": 224,
         "z": 11000,
-        "height": 280,
+        "height": 344,
         "width": 558,
         "tabOrder": 1400
       }
@@ -238,9 +238,9 @@
       },
       "after": {
         "x": 881,
-        "y": 112,
+        "y": 104,
         "z": 8000,
-        "height": 120,
+        "height": 104,
         "width": 218,
         "tabOrder": 900
       }
@@ -258,9 +258,9 @@
       },
       "after": {
         "x": 200,
-        "y": 248,
+        "y": 224,
         "z": 10000,
-        "height": 280,
+        "height": 344,
         "width": 552,
         "tabOrder": 1300
       }
@@ -278,9 +278,9 @@
       },
       "after": {
         "x": 427,
-        "y": 112,
+        "y": 104,
         "z": 6000,
-        "height": 120,
+        "height": 104,
         "width": 218,
         "tabOrder": 700
       }
@@ -298,9 +298,9 @@
       },
       "after": {
         "x": 200,
-        "y": 112,
+        "y": 104,
         "z": 2000,
-        "height": 120,
+        "height": 104,
         "width": 218,
         "tabOrder": 600
       }
@@ -438,9 +438,9 @@
       },
       "after": {
         "x": 32,
-        "y": 544,
+        "y": 600,
         "z": 11000,
-        "height": 344,
+        "height": 312,
         "width": 720,
         "tabOrder": 1400
       }
@@ -538,9 +538,9 @@
       },
       "after": {
         "x": 200,
-        "y": 248,
+        "y": 240,
         "z": 9000,
-        "height": 280,
+        "height": 344,
         "width": 552,
         "tabOrder": 800
       }
@@ -578,9 +578,9 @@
       },
       "after": {
         "x": 768,
-        "y": 544,
+        "y": 600,
         "z": 12000,
-        "height": 344,
+        "height": 312,
         "width": 558,
         "tabOrder": 1500
       }
@@ -598,9 +598,9 @@
       },
       "after": {
         "x": 768,
-        "y": 248,
+        "y": 240,
         "z": 10000,
-        "height": 280,
+        "height": 344,
         "width": 558,
         "tabOrder": 900
       }
@@ -618,7 +618,7 @@
       },
       "after": {
         "x": 768,
-        "y": 112,
+        "y": 104,
         "z": 8000,
         "height": 120,
         "width": 558,
@@ -638,7 +638,7 @@
       },
       "after": {
         "x": 200,
-        "y": 112,
+        "y": 104,
         "z": 8000,
         "height": 120,
         "width": 552,
@@ -1465,5 +1465,40 @@
         "tabOrder": 0
       }
     }
-  ]
+  ],
+  "native_visual_verification_receipt": "evidence/validation/report-load-repair.json",
+  "agent_native_visual_verification": {
+    "date": "2026-10-09",
+    "power_bi_version": "2.158.1304.0 (September 2026)",
+    "observation_method": "Native Desktop screenshots via Computer Use",
+    "page_display_option": "FitToPage",
+    "desktop_zoom_percent": 47,
+    "window_screenshot_logical_pixels": [
+      1706,
+      873
+    ],
+    "both_pages_rendered": true,
+    "both_headers_complete_without_scrollbars": true,
+    "all_five_sales_kpis_complete": true,
+    "both_insights_coverage_cards_complete": true,
+    "both_year_buttons_visible_and_stacked": true,
+    "sales_country_ranking_ten_rows_without_scrollbar": true,
+    "insights_country_ranking_ten_rows_without_scrollbar": true,
+    "insights_customer_ranking_ten_rows_without_scrollbar": true,
+    "insights_product_ranking_ten_rows_visible": true,
+    "scatter_zoom_sliders_absent": true,
+    "country_dropdown_options_visible_without_hover_both_pages": true,
+    "line_type_dropdown_options_visible_without_hover_both_pages": true,
+    "data_filter_selections_changed": false,
+    "saved_via_desktop_ctrl_s": true,
+    "desktop_saved_time_local": "2026-10-09 00:06",
+    "closed_then_reopened_same_root_pbip": true,
+    "both_pages_rendered_after_reopen": true,
+    "final_open_page": "Product & Customer Insights",
+    "temporary_tracing_restored_disabled": true,
+    "full_interaction_acceptance_performed": false,
+    "hundred_percent_zoom_review_performed": false,
+    "new_screenshot_files_exported": false,
+    "new_pbix_exported": false
+  }
 }

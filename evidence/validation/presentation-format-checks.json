@@ -4,7 +4,7 @@
   "reference_schema_sha256": "c74fc80a1262a6127ddddea1722046eeaeb3fbb42789d6cae1f7c83e8f838c09",
   "validated_property_instances": 173,
   "errors": [],
-  "native_render_performed": false,
+  "native_render_performed": true,
   "headings": [
     {
       "page": "Product & Customer Insights",
@@ -98,5 +98,6 @@
     }
   ],
   "visual_format_properties_preserved_from_latest_native_save": 33,
-  "latest_change_affects_only_positions_and_dimensions": true
+  "latest_change_affects_only_positions_and_dimensions": true,
+  "native_render_scope": "Both pages at FitToPage, headings/cards, country rankings, four dropdowns and save/reopen; see report-load-repair.json."
 }

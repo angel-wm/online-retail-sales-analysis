@@ -1,6 +1,7 @@
 """Validate authored report/model references and layout, without rendering Power BI."""
 from pathlib import Path
 import itertools
+import hashlib
 import json
 import re
 
@@ -11,10 +12,35 @@ TOM = json.loads((REPO / "evidence/validation/final-tom.json").read_text(encodin
 TABLES = {t["name"]: {kind: {x["name"] for x in t[key]} for kind, key in [("Column", "columns"), ("Measure", "measures")]} for t in TOM["tables"]}
 ERRORS = []
 COUNTS = {"column_references": 0, "measure_references": 0, "source_entities": 0}
+VISUAL_HASHES = {}
 
 def require(condition, message):
     if not condition:
         ERRORS.append(message)
+
+def load_visual_definition(path):
+    """Reject unrelated JSON before reading visual fields or retaining an old PASS."""
+    location = path.relative_to(REPO).as_posix()
+    raw = path.read_bytes()
+    VISUAL_HASHES[location] = hashlib.sha256(raw).hexdigest()
+    try:
+        value = json.loads(raw)
+    except (ValueError, UnicodeError) as error:
+        require(False, f"{location}: invalid JSON: {error}")
+        return None
+    valid = (
+        isinstance(value, dict)
+        and value.get("name") == path.parent.name
+        and isinstance(value.get("$schema"), str)
+        and "/visualContainer/" in value.get("$schema", "")
+        and isinstance(value.get("visual"), dict)
+        and isinstance(value["visual"].get("visualType"), str)
+        and isinstance(value.get("position"), dict)
+        and all(isinstance(value["position"].get(key), (int, float))
+                for key in ("x", "y", "z", "height", "width", "tabOrder"))
+    )
+    require(valid, f"{location}: expected a visual definition matching its directory, with schema, visualType and numeric position")
+    return value if valid else None
 
 def scan(obj, scope, location):
     if isinstance(obj, list):
@@ -73,7 +99,8 @@ present = set()
 all_sync = []
 for pagefile in sorted((REPORT / "definition/pages").glob("*/page.json")):
     page = json.loads(pagefile.read_text(encoding="utf-8"))
-    visuals = [json.loads(f.read_text(encoding="utf-8")) for f in sorted(pagefile.parent.glob("visuals/*/visual.json"))]
+    visuals = [value for f in sorted(pagefile.parent.glob("visuals/*/visual.json"))
+               if (value := load_visual_definition(f)) is not None]
     ids = {j["name"] for j in visuals}
     require(len(ids) == len(visuals), f"Duplicate visual ID: {page['displayName']}")
     removed_support = {"retail_filter_scope", "retail_financial_bridge", "retail_sales_definition", "retail_insights_limitations"}
@@ -144,7 +171,7 @@ def visit(name, stack):
         visit(child, stack + [name])
 for name in dependencies:
     visit(name, [])
-out = {"status": "FAIL" if ERRORS else "PASS", "native_engine_or_render_executed": False, "pages": pages, "original_visuals_retained": len(original & present), "new_visuals": len(present - original), "references_checked": COUNTS, "measure_dependency_graph": dependencies, "errors": ERRORS}
+out = {"status": "FAIL" if ERRORS else "PASS", "native_engine_or_render_executed": False, "pages": pages, "original_visuals_retained": len(original & present), "new_visuals": len(present - original), "visual_file_sha256": VISUAL_HASHES, "references_checked": COUNTS, "measure_dependency_graph": dependencies, "errors": ERRORS}
 (REPO / "evidence/validation/report-checks.json").write_text(json.dumps(out, indent=2) + "\n", encoding="utf-8")
 print(json.dumps(out, indent=2))
 raise SystemExit(bool(ERRORS))
