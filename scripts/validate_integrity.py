@@ -43,7 +43,17 @@ def run(local_recovery=False):
     with zipfile.ZipFile(export) as archive:
         assert archive.testzip() is None, "Corrupt member in PBIX export"
         members = set(archive.namelist())
-        assert "Report/Layout" in members, f"PBIX has no classic Report/Layout. Package entries: {sorted(members)[:120]}"
+        has_pbir_pages = any(
+            name.startswith("Report/definition/pages/") and name.endswith("/page.json")
+            for name in members
+        )
+        has_pbir_visuals = any(
+            name.startswith("Report/definition/pages/") and name.endswith("/visual.json")
+            for name in members
+        )
+        assert "Report/Layout" in members or (has_pbir_pages and has_pbir_visuals), (
+            "PBIX report layout or PBIR pages/visuals are missing"
+        )
         assert "DataModel" in members or "DataModelSchema" in members, "PBIX semantic model is missing"
     for name in ("LICENSE", "DATA_LICENSE.md"):
         assert (REPO / name).is_file() and (REPO / name).stat().st_size > 0
