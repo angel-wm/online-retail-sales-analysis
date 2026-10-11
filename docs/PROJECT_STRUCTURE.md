@@ -14,6 +14,8 @@ online-retail-sales-analysis/
 ├── .gitignore
 ├── .gitattributes
 ├── requirements-analysis.txt
+├── exports/
+│   └── uk-online-retail-sales-analysis.pbix
 ├── powerbi/
 │   ├── uk-online-retail-sales-analysis.Report/
 │   └── uk-online-retail-sales-analysis.SemanticModel/
@@ -49,6 +51,7 @@ online-retail-sales-analysis/
 | Folder | Purpose |
 | --- | --- |
 | `powerbi/` | Active PBIR report definitions, resources and TMDL semantic model. |
+| `exports/` | Optional single-file Power BI Desktop snapshot; PBIP remains the maintained source. |
 | `data/` | Unchanged source workbook and current field reference. |
 | `docs/` | User procedures, explanations, references and validation scope. |
 | `screenshots/` | The two current report images linked from both README files. |
