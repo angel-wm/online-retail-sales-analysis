@@ -501,7 +501,7 @@
     {
       "name": "SourceFilePath",
       "kind": "M",
-      "expression": "\u0022C:\\Users\\angel\\Documents\\Proyectos\\online-retail-sales-analysis\\data\\raw\\Online Retail.xlsx\u0022 meta [IsParameterQuery=true, Type=\u0022Text\u0022, IsParameterQueryRequired=true]"
+      "expression": "\u0022SET_LOCAL_ONLINE_RETAIL_XLSX_PATH\u0022 meta [IsParameterQuery=true, Type=\u0022Text\u0022, IsParameterQueryRequired=true]"
     }
   ]
 }

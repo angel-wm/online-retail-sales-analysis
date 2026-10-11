@@ -48,8 +48,14 @@ jobs:
       - name: Restore TMDL parser dependencies
         run: dotnet restore scripts/tmdl-check/TmdlCheck.csproj
 
+      - name: Guard against committing a local Excel path
+        run: python scripts/configure_source.py --check-repository
+
       - name: Recalculate source and validate PBIP / TMDL / PBIR
         run: python scripts/run_validation.py --fresh
+
+      - name: Verify versioned PBIX integrity receipt is current
+        run: git diff --exit-code -- evidence/validation/project-integrity.json
 
       - name: Keep diagnostic evidence
         if: always()

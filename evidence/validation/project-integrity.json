@@ -7,6 +7,9 @@
   "active_pbip_count": 1,
   "report_and_model_paths_resolve": true,
   "license_documents_present": true,
+  "pbix_export": "exports/uk-online-retail-sales-analysis.pbix",
+  "pbix_zip_structure_verified": true,
+  "pbix_desktop_open_verified_by_this_check": false,
   "current_screenshots": [
     {
       "path": "screenshots/sales-overview.png",

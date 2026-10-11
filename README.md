@@ -10,9 +10,13 @@ Amounts are in **GBP (£)**, the source currency. The data covers **1 December 2
 
 ## Open and explore
 
+For **quick viewing**, download and open the [PBIX export](exports/uk-online-retail-sales-analysis.pbix) in Power BI Desktop. The included model can be explored immediately; refreshing on another machine requires setting its Excel parameter in Desktop.
+
+For **editable PBIP development**:
+
 1. Clone or download the complete repository, including `powerbi/` and `data/raw/`.
-2. Follow the [setup procedure](docs/SETUP.md) to configure the Excel location and open the root PBIP in Power BI Desktop.
-3. Refresh the model, then explore **Sales Overview** and **Product & Customer Insights**. Year, Country and Line Type selectors are synchronized across pages.
+2. Run `python scripts/configure_source.py` to point the PBIP at this checkout's Excel, then open the root PBIP in Power BI Desktop.
+3. Refresh and explore **Sales Overview** and **Product & Customer Insights**. Year, Country and Line Type selectors are synchronized across pages. Before committing PBIP changes, run `python scripts/configure_source.py --reset` so your local Excel path is not published. See [Setup](docs/SETUP.md).
 
 Power BI Desktop on Windows is required for the interactive report. Python and .NET are only needed for the optional [validation workflow](docs/VALIDATION.md#run-source-and-static-checks).
 
