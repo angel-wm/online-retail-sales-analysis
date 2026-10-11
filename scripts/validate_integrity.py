@@ -37,6 +37,14 @@ def run(local_recovery=False):
     model = (report / definition["datasetReference"]["byPath"]["path"]).resolve(strict=True)
     assert (model / "definition.pbism").is_file()
     assert not list((REPO / "powerbi").rglob("*.pbix")), "An obsolete PBIX is presented as current"
+    export = REPO / "exports/uk-online-retail-sales-analysis.pbix"
+    assert export.is_file() and export.stat().st_size > 100_000, "Missing or placeholder PBIX export"
+    assert zipfile.is_zipfile(export), "PBIX export is not a ZIP package"
+    with zipfile.ZipFile(export) as archive:
+        assert archive.testzip() is None, "Corrupt member in PBIX export"
+        members = set(archive.namelist())
+        assert "Report/Layout" in members, "PBIX report layout is missing"
+        assert "DataModel" in members or "DataModelSchema" in members, "PBIX semantic model is missing"
     for name in ("LICENSE", "DATA_LICENSE.md"):
         assert (REPO / name).is_file() and (REPO / name).stat().st_size > 0
     screenshots = []
@@ -55,6 +63,9 @@ def run(local_recovery=False):
         "active_pbip_count": len(active_projects),
         "report_and_model_paths_resolve": True,
         "license_documents_present": True,
+        "pbix_export": "exports/uk-online-retail-sales-analysis.pbix",
+        "pbix_zip_structure_verified": True,
+        "pbix_desktop_open_verified_by_this_check": False,
         "current_screenshots": screenshots,
         "requires_local_backups_or_git_history": False,
         "native_refresh_render_or_export_executed": False,
