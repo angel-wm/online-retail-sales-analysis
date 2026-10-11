@@ -52,8 +52,12 @@ Run **Refresh** and wait for completion, then clear Year, Country and Line Type.
 
 The source ends on 9 December 2011. The last monthly point contains a shorter period than November. Keep that point and its partial-month annotation; use the [documented period comparison](METRICS.md#period-coverage) when interpreting it.
 
-## Optional PBIX or PDF
+## Open the single-file PBIX export
 
-The maintained deliverable is the PBIP and its item folders. A current PBIX or PDF is not included. To provide a PBIX, open the accepted project in Desktop and use **File > Save as**; verify the exported file opens and matches the report. Microsoft documents the [Desktop conversion workflow](https://learn.microsoft.com/en-us/power-bi/developer/projects/projects-overview#frequently-asked-questions). A local historical PBIX in `backups/` is an earlier snapshot.
+The repository also contains [uk-online-retail-sales-analysis.pbix](../exports/uk-online-retail-sales-analysis.pbix), exported from the corrected report for convenient opening in Power BI Desktop. Download the PBIX directly and open it in Desktop; the PBIP and its item folders remain the maintained, versionable source.
+
+The PBIX is a **snapshot**, not a source of truth for subsequent edits. It may contain a machine-specific Excel source path. To refresh it on another computer, open **Transform data > Edit parameters** (or **Manage Parameters** in Power Query), update `SourceFilePath` to the local `Online Retail.xlsx`, apply changes and refresh. Running `scripts/configure_source.py` edits the PBIP's `expressions.tmdl` and **does not update an independently opened PBIX**.
+
+The automated integrity check verifies that the committed PBIX is a readable ZIP package containing model and report entries; it does not prove Desktop can open it or that its rendered visuals match the PBIP. Before distributing or relying on the export, **open the PBIX in Desktop**, verify the two pages, current metrics and filters, and compare it to the source project. If the PBIP changes, regenerate the PBIX with **File > Save as** and repeat that Desktop acceptance check. A local historical PBIX in `backups/` is an earlier snapshot. A PDF export is not included.
 
 For developer checks, continue to [Validation](VALIDATION.md). For folder purposes, see [Project structure](PROJECT_STRUCTURE.md).

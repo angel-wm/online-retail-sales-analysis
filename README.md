@@ -4,7 +4,7 @@ English | [Español](README.es.md)
 
 A two-page Power BI project for exploring merchandise sales, customer coverage and cancellation/reversal value in the UCI Online Retail dataset. It includes the original Excel source, editable report and model definitions, and reproducible financial checks.
 
-**Start with [opening the project](docs/SETUP.md).** The entry point is [uk-online-retail-sales-analysis.pbip](uk-online-retail-sales-analysis.pbip) in the repository root.
+**Start with [opening the project](docs/SETUP.md).** For source-controlled development, open the [PBIP project](uk-online-retail-sales-analysis.pbip) in the repository root. For a single-file Desktop copy, open the [PBIX export](exports/uk-online-retail-sales-analysis.pbix). The PBIP and its TMDL/PBIR definitions remain the maintained source of truth.
 
 Amounts are in **GBP (£)**, the source currency. The data covers **1 December 2010–9 December 2011**: 2010 contains only December, and December 2011 is incomplete. Negative transactions identify recorded reversals; they do not establish physical returns or customer dissatisfaction.
 

@@ -52,7 +52,7 @@ Without `--fresh`, the source reader can reuse its SHA-256-keyed local cache; th
 | [Model checks](../evidence/validation/model-checks.json) | Reconstructs keys, joins, calendar, financial values and 15 filter contexts; compares measure expressions and formats with the contract. |
 | [Report checks](../evidence/validation/report-checks.json) | Visual identities and types, bounds, references, dependencies, resource paths, Top N and interaction configuration; records all 33 visual hashes. |
 | [JSON schema checks](../evidence/validation/final-json-schema.json) | Checks versioned project JSON against exact or explicitly identified compatibility schemas. Desktop's ignored `.pbi` files are outside this scope. |
-| [Project integrity](../evidence/validation/project-integrity.json) | Source fingerprint and workbook ZIP integrity, one active root PBIP, resolving item paths, license-document presence and current PNG metadata. |
+| [Project integrity](../evidence/validation/project-integrity.json) | Source fingerprint and workbook ZIP integrity, one active root PBIP, resolving item paths, license-document presence, current PNG metadata and the committed PBIX export's ZIP entries. This is not a Power BI Desktop open test. |
 
 The baseline [original manifest](../evidence/baseline/original_manifest.json) identifies the recovered source and original visuals. [Original calculation records](../evidence/baseline/data_reconciliation.json) supply the pre-correction expectations. These inputs remain versioned so another checkout can run the checks without recovery archives.
 
@@ -113,7 +113,7 @@ The report was rendered and saved/reopened, and selected filter cases were exerc
 2. Check every configured chart-to-chart and chart-to-card interaction, page navigation and what selections persist. Confirm the selector lists stay stable when a chart mark is selected.
 3. Check all dynamic Top N populations and tie cases, full product names and tooltip fields under narrow filters, and known-customer exclusion of blanks. Fewer eligible entries can legitimately produce fewer marks.
 4. Review the complete report at 100% zoom and any intended display sizes. Scatter focus mode was checked; that does not cover every visual at 100%.
-5. If PBIX or PDF is included in a future deliverable, export from the accepted project and verify the exported file. Accessibility, mobile layouts, Power BI Service behavior and performance testing have not been established here.
+5. Open the [committed PBIX snapshot](../exports/uk-online-retail-sales-analysis.pbix) separately in Desktop; verify its two pages, refresh behavior, metrics and selected interactions against the maintained PBIP. Regenerate it after any subsequent PBIP changes. No PDF is included. Accessibility, mobile layouts, Power BI Service behavior and performance testing have not been established here.
 
 These limits should travel with any claims about the report. They do not prevent inspecting the PBIP, its current screenshots or the supported numerical checks.
 
@@ -127,4 +127,4 @@ python scripts/validate_integrity.py --local-recovery
 
 This requires the original recovered ZIP, original PBIX snapshot, archived checkout and `consolidation-backup.json` inside `backups/`. It verifies the recovered manifest and archive hashes, then writes `backups/recovery-check.json`. It does not assert a branch name, a remote commit or publication status.
 
-The maintained public deliverable is the PBIP, its item folders, source, documentation, screenshots and retained evidence. A commit/push or a Power BI Service deployment is a separate publication action; it is not performed by any validation command.
+The maintained public source is the PBIP, its item folders, source, documentation, screenshots and retained evidence; `exports/` contains the optional PBIX snapshot. A Power BI Service deployment is a separate publication action; it is not performed by any validation command.
