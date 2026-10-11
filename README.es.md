@@ -10,9 +10,13 @@ Los importes están en **GBP (£)**, la moneda de la fuente. Los datos abarcan d
 
 ## Abrir y explorar
 
-1. Clona o descarga el repositorio completo, incluidas las carpetas `powerbi/` y `data/raw/`.
-2. Sigue el [procedimiento de configuración](docs/SETUP.md) para indicar la ubicación del Excel y abrir el PBIP de la raíz en Power BI Desktop.
-3. Actualiza el modelo y explora **Sales Overview** y **Product & Customer Insights**. Year, Country y Line Type están sincronizados entre páginas.
+Para **consultar el dashboard**, descarga y abre el [PBIX exportado](exports/uk-online-retail-sales-analysis.pbix) en Power BI Desktop. Puedes explorar los datos incluidos; para actualizarlos en otro equipo, debes configurar la ruta del Excel dentro de Desktop.
+
+Para **desarrollar el proyecto PBIP**:
+
+1. Clona o descarga el repositorio completo, incluidas `powerbi/` y `data/raw/`.
+2. Ejecuta `python scripts/configure_source.py` para configurar la ubicación local del Excel y abre el PBIP de la raíz en Power BI Desktop.
+3. Actualiza y explora **Sales Overview** y **Product & Customer Insights**. Los filtros Year, Country y Line Type están sincronizados. Antes de crear un commit, ejecuta `python scripts/configure_source.py --reset` para no publicar tu ruta local. Consulta [Configuración](docs/SETUP.md).
 
 El reporte interactivo requiere Power BI Desktop en Windows. Python y .NET sólo se necesitan para el [procedimiento opcional de validación](docs/VALIDATION.md#run-source-and-static-checks).
 
