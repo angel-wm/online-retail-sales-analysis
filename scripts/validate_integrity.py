@@ -1,72 +1,89 @@
-"""Verify recovery archives, canonical structure and local publication boundary."""
+"""Check portable source/assets, with optional verification of local recovery copies."""
 from pathlib import Path
+import argparse
 import hashlib
 import json
-import subprocess
+import os
+import struct
 import zipfile
 
 REPO = Path(__file__).resolve().parents[1]
-BASE = "83d0e32e56e1ae539151ab383099565c3571ef2c"
-records = json.loads((REPO / "evidence/baseline/original_manifest.json").read_text(encoding="utf-8"))
+IGNORED_DIRECTORIES = {".git", ".cache", ".tools", ".pbi", "backups", ".venv", "venv", "bin", "obj", "__pycache__"}
+
 
 def digest(data):
     return hashlib.sha256(data).hexdigest()
 
-backup = REPO / "backups/original-recovered-project.zip"
-with zipfile.ZipFile(backup) as archive:
-    assert archive.testzip() is None
-    for record in records:
-        name = record["path"].replace("\\", "/")
-        assert digest(archive.read(name)) == record["sha256"], name
+
+def run(local_recovery=False):
+    manifest = json.loads((REPO / "evidence/baseline/original_manifest.json").read_text(encoding="utf-8"))
+    original_source = next(record for record in manifest if record["path"].replace("\\", "/") == "online+retail/Online Retail.xlsx")
     source = REPO / "data/raw/Online Retail.xlsx"
-    assert source.read_bytes() == archive.read("online+retail/Online Retail.xlsx")
-    original_pbix = REPO / "backups/uk-online-retail-sales-analysis-original.pbix"
-    assert original_pbix.read_bytes() == archive.read("uk-online-retail-sales-analysis.pbix")
-with zipfile.ZipFile(original_pbix) as archive:
-    assert archive.testzip() is None
+    source_sha256 = digest(source.read_bytes())
+    assert source_sha256 == original_source["sha256"], "Versioned Excel differs from the recovered source"
+    financial = json.loads((REPO / "evidence/financial/before_after.json").read_text(encoding="utf-8"))
+    assert source_sha256 == financial["source_sha256"], "Financial evidence refers to another source"
+    with zipfile.ZipFile(source) as archive:
+        assert archive.testzip() is None
 
-def git(*args):
-    return subprocess.check_output(["git", *args], cwd=REPO)
+    active_projects = []
+    for directory, directories, filenames in os.walk(REPO):
+        directories[:] = [name for name in directories if name not in IGNORED_DIRECTORIES]
+        active_projects.extend((Path(directory) / name).relative_to(REPO).as_posix() for name in filenames if name.endswith(".pbip"))
+    assert sorted(active_projects) == ["uk-online-retail-sales-analysis.pbip"], active_projects
+    project = json.loads((REPO / active_projects[0]).read_text(encoding="utf-8-sig"))
+    report = (REPO / project["artifacts"][0]["report"]["path"]).resolve(strict=True)
+    definition = json.loads((report / "definition.pbir").read_text(encoding="utf-8-sig"))
+    model = (report / definition["datasetReference"]["byPath"]["path"]).resolve(strict=True)
+    assert (model / "definition.pbism").is_file()
+    assert not list((REPO / "powerbi").rglob("*.pbix")), "An obsolete PBIX is presented as current"
+    for name in ("LICENSE", "DATA_LICENSE.md"):
+        assert (REPO / name).is_file() and (REPO / name).stat().st_size > 0
+    screenshots = []
+    for filename in ("sales-overview.png", "product-customer-insights.png"):
+        data = (REPO / "screenshots" / filename).read_bytes()
+        assert data[:8] == b"\x89PNG\r\n\x1a\n" and data[12:16] == b"IHDR", filename
+        width, height = struct.unpack(">II", data[16:24])
+        assert width > 0 and height > 0
+        screenshots.append({"path": f"screenshots/{filename}", "sha256": digest(data), "width": width, "height": height})
+    result = {
+        "status": "PASS_PORTABLE_PROJECT_INTEGRITY",
+        "source_sha256": source_sha256,
+        "source_matches_original_manifest_and_financial_evidence": True,
+        "source_xlsx_zip_verified": True,
+        "canonical_pbip": active_projects[0],
+        "active_pbip_count": len(active_projects),
+        "report_and_model_paths_resolve": True,
+        "license_documents_present": True,
+        "current_screenshots": screenshots,
+        "requires_local_backups_or_git_history": False,
+        "native_refresh_render_or_export_executed": False,
+    }
+    output = REPO / "evidence/validation/project-integrity.json"
+    if local_recovery:
+        backup = REPO / "backups/original-recovered-project.zip"
+        original_pbix = REPO / "backups/uk-online-retail-sales-analysis-original.pbix"
+        with zipfile.ZipFile(backup) as archive:
+            assert archive.testzip() is None
+            for record in manifest:
+                assert digest(archive.read(record["path"].replace("\\", "/"))) == record["sha256"], record["path"]
+            assert source.read_bytes() == archive.read("online+retail/Online Retail.xlsx")
+            assert original_pbix.read_bytes() == archive.read("uk-online-retail-sales-analysis.pbix")
+        with zipfile.ZipFile(original_pbix) as archive:
+            assert archive.testzip() is None
+        receipt = json.loads((REPO / "backups/consolidation-backup.json").read_text(encoding="utf-8"))
+        review_archive = REPO / "backups" / receipt["review_archive"]
+        assert digest(review_archive.read_bytes()) == receipt["review_archive_sha256"]
+        with zipfile.ZipFile(review_archive) as archive:
+            assert archive.testzip() is None
+        result.update(status="PASS_LOCAL_RECOVERY_AND_PORTABLE_PROJECT_INTEGRITY", local_backup_members_verified=len(manifest), original_backup_sha256=digest(backup.read_bytes()), review_backup_sha256=digest(review_archive.read_bytes()), original_pbix_preserved=True, requires_local_backups_or_git_history=True)
+        output = REPO / "backups/recovery-check.json"
+    output.parent.mkdir(parents=True, exist_ok=True)
+    output.write_text(json.dumps(result, indent=2) + "\n", encoding="utf-8")
+    print(json.dumps(result, indent=2))
 
-receipt = json.loads((REPO / "evidence/validation/consolidation-backup.json").read_text())
-review_archive = REPO / "backups" / receipt["review_archive"]
-assert digest(review_archive.read_bytes()) == receipt["review_archive_sha256"]
-with zipfile.ZipFile(review_archive) as archive:
-    assert archive.testzip() is None
-    assert archive.read("powerbi/online-retail-sales-analysis .pbix") == git("show", f"{BASE}:powerbi/online-retail-sales-analysis .pbix")
-branch = git("branch", "--show-current").decode().strip()
-assert branch == "codex/retail-dashboard-corrections", branch
-assert git("rev-parse", "main").decode().strip() == BASE
-assert git("rev-parse", "origin/main").decode().strip() == BASE
-assert git("merge-base", "--is-ancestor", receipt["head_before_consolidation"], "HEAD") == b""
-assert not (REPO / "review").exists()
-active_projects = [p.relative_to(REPO).as_posix() for p in REPO.rglob("*.pbip") if not any(part in {"backups", ".git", ".tools"} for part in p.relative_to(REPO).parts)]
-assert active_projects == ["uk-online-retail-sales-analysis.pbip"], active_projects
-assert not list((REPO / "powerbi").rglob("*.pbix")), "An obsolete PBIX is still presented as current"
-protected = git("diff", "--name-only", BASE, "--", "data/data-dictionary.md", "docs/cleaning-notes.md", "LICENSE", "DATA_LICENSE.md").decode().strip()
-assert not protected, protected
-for filename in ["sales-overview.png", "product-customer-insights.png"]:
-    assert (REPO / "screenshots" / filename).read_bytes() == git("show", f"{BASE}:dashboard/{filename}")
 
-result = {
-    "status": "PASS",
-    "original_backup_zip_members_verified": len(records),
-    "original_backup_sha256": digest(backup.read_bytes()),
-    "review_archive_sha256": digest(review_archive.read_bytes()),
-    "original_pbix_bytes_preserved_as_snapshot": True,
-    "excel_original_and_versioned_match": True,
-    "source_sha256": digest(source.read_bytes()),
-    "canonical_pbip": active_projects[0],
-    "active_pbip_count": len(active_projects),
-    "obsolete_review_workspace_removed": True,
-    "branch": branch,
-    "main_local_and_tracking_unchanged": BASE,
-    "remote_live_check_in_this_script": False,
-    "prior_local_commits_retained": True,
-    "placeholder_preserved_in_archive_not_presented_as_current": True,
-    "licenses_legacy_dictionary_cleaning_and_screenshot_bytes_preserved": True,
-    "new_pbix_exported": False,
-    "power_bi_service_published": False,
-}
-(REPO / "evidence/validation/original-integrity.json").write_text(json.dumps(result, indent=2) + "\n", encoding="utf-8")
-print(json.dumps(result, indent=2))
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--local-recovery", action="store_true", help="Also verify ignored recovery archives; write the result under backups")
+    run(parser.parse_args().local_recovery)

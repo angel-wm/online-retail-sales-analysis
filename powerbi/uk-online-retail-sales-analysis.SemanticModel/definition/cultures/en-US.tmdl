@@ -243,6 +243,9 @@ cultureInfo en-US
 			        }
 			      },
 			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
 			      "Terms": [
 			        {
 			          "stock code": {
@@ -296,6 +299,9 @@ cultureInfo en-US
 			        }
 			      },
 			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
 			      "Terms": [
 			        {
 			          "product name": {
@@ -337,16 +343,6 @@ cultureInfo en-US
 			        },
 			        {
 			          "product title": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.727
-			          }
-			        },
-			        {
-			          "product label": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
@@ -407,6 +403,16 @@ cultureInfo en-US
 			        },
 			        {
 			          "item name": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        },
+			        {
+			          "merchandise name": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
@@ -1453,6 +1459,9 @@ cultureInfo en-US
 			        }
 			      },
 			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
 			      "Terms": [
 			        {
 			          "record flag": {
@@ -1582,6 +1591,9 @@ cultureInfo en-US
 			        }
 			      },
 			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
 			      "Terms": [
 			        {
 			          "is cancelled": {
@@ -1605,6 +1617,9 @@ cultureInfo en-US
 			        }
 			      },
 			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
 			      "Terms": [
 			        {
 			          "is negative qty": {
@@ -1628,6 +1643,9 @@ cultureInfo en-US
 			        }
 			      },
 			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
 			      "Terms": [
 			        {
 			          "is zero price": {
@@ -1763,6 +1781,9 @@ cultureInfo en-US
 			        }
 			      },
 			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
 			      "Terms": [
 			        {
 			          "sales amount": {
@@ -1879,6 +1900,9 @@ cultureInfo en-US
 			        }
 			      },
 			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
 			      "Terms": [
 			        {
 			          "include in main analysis": {
@@ -2097,7 +2121,7 @@ cultureInfo en-US
 			          }
 			        },
 			        {
-			          "Total Sales": {
+			          "Gross merchandise": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",
@@ -2227,6 +2251,26 @@ cultureInfo en-US
 			            },
 			            "Weight": 0.485
 			          }
+			        },
+			        {
+			          "Cancellations / reversals": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        },
+			        {
+			          "Reversals": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
 			        }
 			      ]
 			    },
@@ -2268,6 +2312,26 @@ cultureInfo en-US
 			              "Agent": "Thesaurus"
 			            },
 			            "Weight": 0.714
+			          }
+			        },
+			        {
+			          "Net merchandise": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        },
+			        {
+			          "Net merchandise sales": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
 			          }
 			        }
 			      ]
@@ -2384,6 +2448,16 @@ cultureInfo en-US
 			              "Agent": "Thesaurus"
 			            },
 			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "Sale invoices": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
 			          }
 			        }
 			      ]
@@ -2506,6 +2580,16 @@ cultureInfo en-US
 			              "Agent": "Thesaurus"
 			            },
 			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "Known customers": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
 			          }
 			        }
 			      ]
@@ -2637,7 +2721,7 @@ cultureInfo en-US
 			          }
 			        },
 			        {
-			          "Avg. Order Value": {
+			          "Net value / sale invoice": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",
@@ -2766,6 +2850,16 @@ cultureInfo en-US
 			              "Agent": "Thesaurus"
 			            },
 			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "Reversal value / gross": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
 			          }
 			        }
 			      ]
@@ -2908,6 +3002,16 @@ cultureInfo en-US
 			              "Agent": "Thesaurus"
 			            },
 			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "Reversal invoices": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
 			          }
 			        }
 			      ]
@@ -3841,7 +3945,7 @@ cultureInfo en-US
 			        }
 			      ]
 			    },
-			    "calendar.return_value": {
+			    "online_retail.return_value": {
 			      "Definition": {
 			        "Binding": {
 			          "ConceptualEntity": "Online Retail",
@@ -3962,42 +4066,1344 @@ cultureInfo en-US
 			          }
 			        }
 			      ]
-			    }
-			  },
-			  "Relationships": {
-			    "online_retail_invoice_date_date_hierarchy_has_online_retail_invoice_date_month": {
-			      "Binding": {
-			        "ConceptualEntity": "Online Retail"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "online_retail.invoice_date.date_hierarchy": {
-			          "Target": {
-			            "Entity": "online_retail.invoice_date.date_hierarchy"
-			          }
-			        },
-			        "online_retail.invoice_date.month": {
-			          "Target": {
-			            "Entity": "online_retail.invoice_date.month"
-			          }
+			    },
+			    "online_retail.is_merchandise_reversal": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Online Retail",
+			          "ConceptualProperty": "Is_Merchandise_Reversal"
 			        }
 			      },
-			      "Phrasings": [
+			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
+			      "Terms": [
 			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "online_retail.invoice_date.date_hierarchy"
+			          "is merchandise reversal": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "Is_Merchandise_Reversal": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "reversal": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "merchandise reversal": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "is merchandise setback": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
 			            },
-			            "Object": {
-			              "Role": "online_retail.invoice_date.month"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "invoice_date_hierarchies_have_invoice_months"
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "is merchandise misfortune": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "is merchandise difficulty": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "merchandise setback": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "merchandise misfortune": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "merchandise difficulty": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "is merchandise hitch": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "is merchandise problem": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "is merchandise reverse": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "is merchandise blow": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
 			        }
 			      ]
 			    },
+			    "online_retail.movement_type": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Online Retail",
+			          "ConceptualProperty": "Movement_Type"
+			        }
+			      },
+			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
+			      "Terms": [
+			        {
+			          "movement type": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "Movement_Type": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "type": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "movement category": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "movement genre": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "movement manner": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "movement variety": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "category": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.736
+			          }
+			        },
+			        {
+			          "genre": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.736
+			          }
+			        },
+			        {
+			          "manner": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.736
+			          }
+			        },
+			        {
+			          "variety": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.736
+			          }
+			        },
+			        {
+			          "movement brand": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        },
+			        {
+			          "movement class": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        }
+			      ]
+			    },
+			    "online_retail.administrative_adjustments": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Online Retail",
+			          "ConceptualProperty": "Administrative Adjustments"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "administrative adjustments": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "adjustments": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "administrative alteration": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "administrative modification": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "administrative regulation": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "administrative correction": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "administrative amendment": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "administrative variation": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "alteration": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "modification": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "regulation": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "correction": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        }
+			      ]
+			    },
+			    "online_retail.other_movements": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Online Retail",
+			          "ConceptualProperty": "Other Movements"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "other movements": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "movements": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "other activity": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "other arrangement": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "other appointment": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "other engagement": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "activity": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "arrangement": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "appointment": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "engagement": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "other action": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "other travel": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        }
+			      ]
+			    },
+			    "online_retail.units_reversed": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Online Retail",
+			          "ConceptualProperty": "Units Reversed"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "units reversed": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "unit reversed": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.833
+			          }
+			        },
+			        {
+			          "Reversed units": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "online_retail.unidentified_net_sales": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Online Retail",
+			          "ConceptualProperty": "Unidentified Net Sales"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "unidentified net sales": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "sales": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "unidentified net sale": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.739
+			          }
+			        },
+			        {
+			          "sale": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.714
+			          }
+			        },
+			        {
+			          "Net sales without customer ID": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "online_retail.identified_sales_share": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Online Retail",
+			          "ConceptualProperty": "Identified Sales Share"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "identified sales share": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "share": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "sales share": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "identified sale share": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        },
+			        {
+			          "sale share": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        },
+			        {
+			          "identified sale part": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "identified sale portion": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "identified sale segment": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "identified sale cut": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "identified sale stake": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "identified sale bit": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "identified sale piece": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "sale part": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "Gross sales with customer ID": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "dim_product": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DimProduct"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "dim product": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "DimProduct": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "product": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "dim artifact": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "artifact": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.736
+			          }
+			        },
+			        {
+			          "dim item": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        },
+			        {
+			          "dim merchandise": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        },
+			        {
+			          "dim produce": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        },
+			        {
+			          "item": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.714
+			          }
+			        },
+			        {
+			          "merchandise": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.714
+			          }
+			        },
+			        {
+			          "produce": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.714
+			          }
+			        }
+			      ]
+			    },
+			    "dim_product.stock_code": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DimProduct",
+			          "ConceptualProperty": "Stock_Code"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "stock code": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "Stock_Code": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "stock id": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "stock key": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        },
+			        {
+			          "inventory code": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        }
+			      ]
+			    },
+			    "dim_product.product_name": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DimProduct",
+			          "ConceptualProperty": "Product_Name"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "product name": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "name": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "Product_Name": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "product": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "artifact": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.736
+			          }
+			        },
+			        {
+			          "product nickname": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        },
+			        {
+			          "product title": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        },
+			        {
+			          "product tag": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        },
+			        {
+			          "item": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.714
+			          }
+			        },
+			        {
+			          "merchandise": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.714
+			          }
+			        },
+			        {
+			          "produce": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.714
+			          }
+			        },
+			        {
+			          "artifact name": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "item name": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        },
+			        {
+			          "merchandise name": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        },
+			        {
+			          "Full representative name": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ],
+			      "NameType": "Name"
+			    },
+			    "dim_product.product_label": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DimProduct",
+			          "ConceptualProperty": "Product_Label"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "product label": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "Product_Label": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "label": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "product sticker": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "sticker": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.736
+			          }
+			        },
+			        {
+			          "product tag": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        },
+			        {
+			          "product decal": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        },
+			        {
+			          "tag": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.714
+			          }
+			        },
+			        {
+			          "decal": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.714
+			          }
+			        },
+			        {
+			          "artifact label": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "product name tag": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.589
+			          }
+			        },
+			        {
+			          "item label": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        },
+			        {
+			          "merchandise label": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        },
+			        {
+			          "Stock code and product": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        },
+			        {
+			          "Product": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "dim_product.description_variant": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DimProduct",
+			          "ConceptualProperty": "Description_Variants"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "description variant": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "Description_Variants": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "variant": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "appearance variant": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "descriptor variant": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "explanation variant": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "specification variant": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "account variant": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        },
+			        {
+			          "overview variant": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        },
+			        {
+			          "report variant": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        },
+			        {
+			          "irregular": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "alternative": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "description variation": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.475
+			          }
+			        },
+			        {
+			          "Source name variants": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    }
+			  },
+			  "Relationships": {
 			    "online_retail_invoice_date_date_hierarchy_has_online_retail_invoice_date_quarter": {
 			      "Binding": {
 			        "ConceptualEntity": "Online Retail"
@@ -4097,6 +5503,52 @@ cultureInfo en-US
 			        }
 			      ]
 			    },
+			    "online_retail_has_dim_product": {
+			      "Binding": {
+			        "ConceptualEntity": "Online Retail"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "online_retail": {
+			          "Target": {
+			            "Entity": "online_retail"
+			          }
+			        },
+			        "dim_product": {
+			          "Target": {
+			            "Entity": "dim_product"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "online_retail"
+			            },
+			            "Object": {
+			              "Role": "dim_product"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "online_retails_have_dim_products"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_product"
+			            },
+			            "Object": {
+			              "Role": "online_retail"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_products_have_online_retails"
+			        }
+			      ]
+			    },
 			    "online_retail_has_calendar": {
 			      "Binding": {
 			        "ConceptualEntity": "Online Retail"
@@ -4143,7 +5595,152 @@ cultureInfo en-US
 			        }
 			      ]
 			    },
-			    "online_retail_has_calendar_return_value": {
+			    "dim_product_has_description_variant": {
+			      "Binding": {
+			        "ConceptualEntity": "DimProduct"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_product": {
+			          "Target": {
+			            "Entity": "dim_product"
+			          }
+			        },
+			        "dim_product.description_variant": {
+			          "Target": {
+			            "Entity": "dim_product.description_variant"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_product"
+			            },
+			            "Object": {
+			              "Role": "dim_product.description_variant"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_products_have_description_variants"
+			        }
+			      ]
+			    },
+			    "dim_product_has_product_label": {
+			      "Binding": {
+			        "ConceptualEntity": "DimProduct"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_product": {
+			          "Target": {
+			            "Entity": "dim_product"
+			          }
+			        },
+			        "dim_product.product_label": {
+			          "Target": {
+			            "Entity": "dim_product.product_label"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_product"
+			            },
+			            "Object": {
+			              "Role": "dim_product.product_label"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_products_have_product_labels"
+			        }
+			      ]
+			    },
+			    "dim_product_has_product_name": {
+			      "Binding": {
+			        "ConceptualEntity": "DimProduct"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_product": {
+			          "Target": {
+			            "Entity": "dim_product"
+			          }
+			        },
+			        "dim_product.product_name": {
+			          "Target": {
+			            "Entity": "dim_product.product_name"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_product"
+			            },
+			            "Object": {
+			              "Role": "dim_product.product_name"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_products_have_product_names"
+			        },
+			        {
+			          "Name": {
+			            "Subject": {
+			              "Role": "dim_product"
+			            },
+			            "Name": {
+			              "Role": "dim_product.product_name"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "product_names_are_names_IDs_of_dim_products"
+			        }
+			      ]
+			    },
+			    "dim_product_has_stock_code": {
+			      "Binding": {
+			        "ConceptualEntity": "DimProduct"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_product": {
+			          "Target": {
+			            "Entity": "dim_product"
+			          }
+			        },
+			        "dim_product.stock_code": {
+			          "Target": {
+			            "Entity": "dim_product.stock_code"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_product"
+			            },
+			            "Object": {
+			              "Role": "dim_product.stock_code"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_products_have_stock_codes"
+			        }
+			      ]
+			    },
+			    "online_retail_has_identified_sales_share": {
 			      "Binding": {
 			        "ConceptualEntity": "Online Retail"
 			      },
@@ -4154,9 +5751,9 @@ cultureInfo en-US
 			            "Entity": "online_retail"
 			          }
 			        },
-			        "calendar.return_value": {
+			        "online_retail.identified_sales_share": {
 			          "Target": {
-			            "Entity": "calendar.return_value"
+			            "Entity": "online_retail.identified_sales_share"
 			          }
 			        }
 			      },
@@ -4167,7 +5764,172 @@ cultureInfo en-US
 			              "Role": "online_retail"
 			            },
 			            "Object": {
-			              "Role": "calendar.return_value"
+			              "Role": "online_retail.identified_sales_share"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "online_retails_have_identified_sales_share"
+			        }
+			      ]
+			    },
+			    "online_retail_has_unidentified_net_sales": {
+			      "Binding": {
+			        "ConceptualEntity": "Online Retail"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "online_retail": {
+			          "Target": {
+			            "Entity": "online_retail"
+			          }
+			        },
+			        "online_retail.unidentified_net_sales": {
+			          "Target": {
+			            "Entity": "online_retail.unidentified_net_sales"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "online_retail"
+			            },
+			            "Object": {
+			              "Role": "online_retail.unidentified_net_sales"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "online_retails_have_unidentified_net_sales"
+			        }
+			      ]
+			    },
+			    "online_retail_has_units_reversed": {
+			      "Binding": {
+			        "ConceptualEntity": "Online Retail"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "online_retail": {
+			          "Target": {
+			            "Entity": "online_retail"
+			          }
+			        },
+			        "online_retail.units_reversed": {
+			          "Target": {
+			            "Entity": "online_retail.units_reversed"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "online_retail"
+			            },
+			            "Object": {
+			              "Role": "online_retail.units_reversed"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "online_retails_have_units_reversed"
+			        }
+			      ]
+			    },
+			    "online_retail_has_other_movements": {
+			      "Binding": {
+			        "ConceptualEntity": "Online Retail"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "online_retail": {
+			          "Target": {
+			            "Entity": "online_retail"
+			          }
+			        },
+			        "online_retail.other_movements": {
+			          "Target": {
+			            "Entity": "online_retail.other_movements"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "online_retail"
+			            },
+			            "Object": {
+			              "Role": "online_retail.other_movements"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "online_retails_have_other_movements"
+			        }
+			      ]
+			    },
+			    "online_retail_has_administrative_adjustments": {
+			      "Binding": {
+			        "ConceptualEntity": "Online Retail"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "online_retail": {
+			          "Target": {
+			            "Entity": "online_retail"
+			          }
+			        },
+			        "online_retail.administrative_adjustments": {
+			          "Target": {
+			            "Entity": "online_retail.administrative_adjustments"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "online_retail"
+			            },
+			            "Object": {
+			              "Role": "online_retail.administrative_adjustments"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "online_retails_have_administrative_adjustments"
+			        }
+			      ]
+			    },
+			    "online_retail_has_return_value": {
+			      "Binding": {
+			        "ConceptualEntity": "Online Retail"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "online_retail": {
+			          "Target": {
+			            "Entity": "online_retail"
+			          }
+			        },
+			        "online_retail.return_value": {
+			          "Target": {
+			            "Entity": "online_retail.return_value"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "online_retail"
+			            },
+			            "Object": {
+			              "Role": "online_retail.return_value"
 			            }
 			          },
 			          "State": "Generated",
@@ -4935,204 +6697,6 @@ cultureInfo en-US
 			        }
 			      ]
 			    },
-			    "online_retail_has_include_in_main_analysis": {
-			      "Binding": {
-			        "ConceptualEntity": "Online Retail"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "online_retail": {
-			          "Target": {
-			            "Entity": "online_retail"
-			          }
-			        },
-			        "online_retail.include_in_main_analysis": {
-			          "Target": {
-			            "Entity": "online_retail.include_in_main_analysis"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "online_retail"
-			            },
-			            "Object": {
-			              "Role": "online_retail.include_in_main_analysis"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "online_retails_have_include_in_main_analysis"
-			        }
-			      ]
-			    },
-			    "online_retail_has_sales_amount": {
-			      "Binding": {
-			        "ConceptualEntity": "Online Retail"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "online_retail": {
-			          "Target": {
-			            "Entity": "online_retail"
-			          }
-			        },
-			        "online_retail.sales_amount": {
-			          "Target": {
-			            "Entity": "online_retail.sales_amount"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "online_retail"
-			            },
-			            "Object": {
-			              "Role": "online_retail.sales_amount"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "online_retails_have_sales_amounts"
-			        }
-			      ]
-			    },
-			    "online_retail_has_is_zero_price": {
-			      "Binding": {
-			        "ConceptualEntity": "Online Retail"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "online_retail": {
-			          "Target": {
-			            "Entity": "online_retail"
-			          }
-			        },
-			        "online_retail.is_zero_price": {
-			          "Target": {
-			            "Entity": "online_retail.is_zero_price"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "online_retail"
-			            },
-			            "Object": {
-			              "Role": "online_retail.is_zero_price"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "online_retails_have_is_zero_prices"
-			        }
-			      ]
-			    },
-			    "online_retail_has_is_negative_qty": {
-			      "Binding": {
-			        "ConceptualEntity": "Online Retail"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "online_retail": {
-			          "Target": {
-			            "Entity": "online_retail"
-			          }
-			        },
-			        "online_retail.is_negative_qty": {
-			          "Target": {
-			            "Entity": "online_retail.is_negative_qty"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "online_retail"
-			            },
-			            "Object": {
-			              "Role": "online_retail.is_negative_qty"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "online_retails_have_is_negative_qties"
-			        }
-			      ]
-			    },
-			    "online_retail_has_is_cancelled": {
-			      "Binding": {
-			        "ConceptualEntity": "Online Retail"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "online_retail": {
-			          "Target": {
-			            "Entity": "online_retail"
-			          }
-			        },
-			        "online_retail.is_cancelled": {
-			          "Target": {
-			            "Entity": "online_retail.is_cancelled"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "online_retail"
-			            },
-			            "Object": {
-			              "Role": "online_retail.is_cancelled"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "online_retails_have_is_cancelled"
-			        }
-			      ]
-			    },
-			    "online_retail_has_record_flag": {
-			      "Binding": {
-			        "ConceptualEntity": "Online Retail"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "online_retail": {
-			          "Target": {
-			            "Entity": "online_retail"
-			          }
-			        },
-			        "online_retail.record_flag": {
-			          "Target": {
-			            "Entity": "online_retail.record_flag"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "online_retail"
-			            },
-			            "Object": {
-			              "Role": "online_retail.record_flag"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "online_retails_have_record_flags"
-			        }
-			      ]
-			    },
 			    "online_retail_has_invoice_day": {
 			      "Binding": {
 			        "ConceptualEntity": "Online Retail"
@@ -5391,72 +6955,6 @@ cultureInfo en-US
 			        }
 			      ]
 			    },
-			    "online_retail_has_product_name": {
-			      "Binding": {
-			        "ConceptualEntity": "Online Retail"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "online_retail": {
-			          "Target": {
-			            "Entity": "online_retail"
-			          }
-			        },
-			        "online_retail.product_name": {
-			          "Target": {
-			            "Entity": "online_retail.product_name"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "online_retail"
-			            },
-			            "Object": {
-			              "Role": "online_retail.product_name"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "online_retails_have_product_names"
-			        }
-			      ]
-			    },
-			    "online_retail_has_stock_code": {
-			      "Binding": {
-			        "ConceptualEntity": "Online Retail"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "online_retail": {
-			          "Target": {
-			            "Entity": "online_retail"
-			          }
-			        },
-			        "online_retail.stock_code": {
-			          "Target": {
-			            "Entity": "online_retail.stock_code"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "online_retail"
-			            },
-			            "Object": {
-			              "Role": "online_retail.stock_code"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "online_retails_have_stock_codes"
-			        }
-			      ]
-			    },
 			    "online_retail_has_invoice_ID": {
 			      "Binding": {
 			        "ConceptualEntity": "Online Retail"
@@ -5619,103 +7117,36 @@ cultureInfo en-US
 			        }
 			      ]
 			    },
-			    "online_retail_is_expensive1": {
+			    "online_retail_invoice_date_date_hierarchy_has_online_retail_invoice_date_month": {
 			      "Binding": {
 			        "ConceptualEntity": "Online Retail"
 			      },
 			      "State": "Generated",
 			      "Roles": {
-			        "online_retail": {
+			        "online_retail.invoice_date.date_hierarchy": {
 			          "Target": {
-			            "Entity": "online_retail"
+			            "Entity": "online_retail.invoice_date.date_hierarchy"
 			          }
 			        },
-			        "online_retail.is_zero_price": {
+			        "online_retail.invoice_date.month": {
 			          "Target": {
-			            "Entity": "online_retail.is_zero_price"
+			            "Entity": "online_retail.invoice_date.month"
 			          }
 			        }
 			      },
-			      "Conditions": [
-			        {
-			          "Target": {
-			            "Role": "online_retail.is_zero_price"
-			          },
-			          "Operator": "Equals",
-			          "Value": {
-			            "Boolean": [
-			              true
-			            ]
-			          }
-			        }
-			      ],
 			      "Phrasings": [
 			        {
-			          "Adjective": {
+			          "Attribute": {
 			            "Subject": {
-			              "Role": "online_retail"
+			              "Role": "online_retail.invoice_date.date_hierarchy"
 			            },
-			            "Adjectives": [
-			              {
-			                "expensive": {
-			                  "State": "Generated"
-			                }
-			              }
-			            ]
+			            "Object": {
+			              "Role": "online_retail.invoice_date.month"
+			            }
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "some_online_retails_are_expensive_online_retails"
-			        }
-			      ]
-			    },
-			    "online_retail_is_cancelled": {
-			      "Binding": {
-			        "ConceptualEntity": "Online Retail"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "online_retail": {
-			          "Target": {
-			            "Entity": "online_retail"
-			          }
-			        },
-			        "online_retail.is_cancelled": {
-			          "Target": {
-			            "Entity": "online_retail.is_cancelled"
-			          }
-			        }
-			      },
-			      "Conditions": [
-			        {
-			          "Target": {
-			            "Role": "online_retail.is_cancelled"
-			          },
-			          "Operator": "Equals",
-			          "Value": {
-			            "Boolean": [
-			              true
-			            ]
-			          }
-			        }
-			      ],
-			      "Phrasings": [
-			        {
-			          "Adjective": {
-			            "Subject": {
-			              "Role": "online_retail"
-			            },
-			            "Adjectives": [
-			              {
-			                "cancelled": {
-			                  "State": "Generated"
-			                }
-			              }
-			            ]
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "some_online_retails_are_cancelled_online_retails"
+			          "ID": "invoice_date_hierarchies_have_invoice_months"
 			        }
 			      ]
 			    },

@@ -18,6 +18,5 @@ ref table LocalDateTable_7ed12bcd-d2a7-41a7-9452-cf3af0f2044c
 ref table Calendar
 ref table DimProduct
 
-ref expression SourceFilePath
-
 ref cultureInfo en-US
+

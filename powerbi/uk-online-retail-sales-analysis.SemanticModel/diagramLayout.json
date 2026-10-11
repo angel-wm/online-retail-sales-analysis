@@ -23,7 +23,7 @@
         },
         {
           "location": {
-            "x": 524.0557491289198,
+            "x": 524.05574912891984,
             "y": 0
           },
           "nodeIndex": "Calendar",
@@ -49,7 +49,7 @@
         }
       ],
       "name": "Todas las tablas",
-      "zoomValue": 88.85448916408669,
+      "zoomValue": 88.854489164086687,
       "pinKeyFieldsToTop": false,
       "showExtraHeaderInfo": false,
       "hideKeyFieldsWhenCollapsed": false,

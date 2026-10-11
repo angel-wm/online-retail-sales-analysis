@@ -49,3 +49,4 @@ table DimProduct
 				    Labels
 
 	annotation PBI_ResultType = Table
+

@@ -1,5 +1,5 @@
 {
-  "startedUtc": "2026-10-09T03:07:02.910456Z",
+  "startedUtc": "2026-10-09T03:49:46.2876954Z",
   "connectionScope": "Power BI Desktop local engine only",
   "reportRenderingOrInteractionsTested": false,
   "pbixExported": false,
@@ -439,5 +439,5 @@
   "differences": [],
   "desktopCacheSavedByThisTool": false,
   "status": "PASS_NATIVE_DAX_ON_LOADED_MODEL",
-  "finishedUtc": "2026-10-09T03:07:03.6071855Z"
+  "finishedUtc": "2026-10-09T03:49:49.0927135Z"
 }

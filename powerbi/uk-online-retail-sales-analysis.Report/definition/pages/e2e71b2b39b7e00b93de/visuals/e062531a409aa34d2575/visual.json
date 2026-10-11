@@ -3,7 +3,7 @@
   "name": "e062531a409aa34d2575",
   "position": {
     "x": 32,
-    "y": 336,
+    "y": 368,
     "z": 5000,
     "height": 88,
     "width": 144,
@@ -200,11 +200,11 @@
         }
       ]
     },
-    "drillFilterOtherVisuals": true,
     "syncGroup": {
       "groupName": "Retail_Line_Type",
       "fieldChanges": true,
       "filterChanges": true
-    }
+    },
+    "drillFilterOtherVisuals": true
   }
 }

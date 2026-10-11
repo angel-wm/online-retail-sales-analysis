@@ -1,0 +1,248 @@
+{
+  "checked_utc": "2026-10-10T23:24:52.855404+00:00",
+  "status": "PASS_SOURCE_AND_NATIVE_SCATTER_RECONCILIATION",
+  "source_sha256": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+  "source_read": "Hash-matched source reconciliation cache; source XLSX hash verified on this run",
+  "currency": "GBP",
+  "raw_rows": 541909,
+  "loaded_rows": 540455,
+  "products_compared": 30,
+  "values_compared": 90,
+  "source_native_differences": [],
+  "source_top30": [
+    {
+      "Stock_Code": "22423",
+      "gross_cents": 17448474,
+      "reversal_cents": 972255,
+      "sale_invoices": 1988
+    },
+    {
+      "Stock_Code": "23843",
+      "gross_cents": 16846960,
+      "reversal_cents": 16846960,
+      "sale_invoices": 1
+    },
+    {
+      "Stock_Code": "85123A",
+      "gross_cents": 10647128,
+      "reversal_cents": 662430,
+      "sale_invoices": 2265
+    },
+    {
+      "Stock_Code": "47566",
+      "gross_cents": 9950433,
+      "reversal_cents": 120135,
+      "sale_invoices": 1685
+    },
+    {
+      "Stock_Code": "85099B",
+      "gross_cents": 9434005,
+      "reversal_cents": 198402,
+      "sale_invoices": 2089
+    },
+    {
+      "Stock_Code": "23166",
+      "gross_cents": 8170092,
+      "reversal_cents": 7747964,
+      "sale_invoices": 247
+    },
+    {
+      "Stock_Code": "23084",
+      "gross_cents": 6696499,
+      "reversal_cents": 20840,
+      "sale_invoices": 994
+    },
+    {
+      "Stock_Code": "22086",
+      "gross_cents": 6495229,
+      "reversal_cents": 116035,
+      "sale_invoices": 1160
+    },
+    {
+      "Stock_Code": "84879",
+      "gross_cents": 5909493,
+      "reversal_cents": 13520,
+      "sale_invoices": 1455
+    },
+    {
+      "Stock_Code": "79321",
+      "gross_cents": 5411776,
+      "reversal_cents": 34970,
+      "sale_invoices": 661
+    },
+    {
+      "Stock_Code": "22502",
+      "gross_cents": 5142662,
+      "reversal_cents": 38525,
+      "sale_invoices": 463
+    },
+    {
+      "Stock_Code": "22197",
+      "gross_cents": 5135402,
+      "reversal_cents": 36655,
+      "sale_invoices": 1392
+    },
+    {
+      "Stock_Code": "23298",
+      "gross_cents": 4318283,
+      "reversal_cents": 48281,
+      "sale_invoices": 1146
+    },
+    {
+      "Stock_Code": "22386",
+      "gross_cents": 4243624,
+      "reversal_cents": 81658,
+      "sale_invoices": 1218
+    },
+    {
+      "Stock_Code": "23203",
+      "gross_cents": 4206778,
+      "reversal_cents": 107640,
+      "sale_invoices": 1231
+    },
+    {
+      "Stock_Code": "21137",
+      "gross_cents": 4065213,
+      "reversal_cents": 5517,
+      "sale_invoices": 375
+    },
+    {
+      "Stock_Code": "23284",
+      "gross_cents": 3816664,
+      "reversal_cents": 160125,
+      "sale_invoices": 728
+    },
+    {
+      "Stock_Code": "22720",
+      "gross_cents": 3815839,
+      "reversal_cents": 74495,
+      "sale_invoices": 1385
+    },
+    {
+      "Stock_Code": "22960",
+      "gross_cents": 3712888,
+      "reversal_cents": 101279,
+      "sale_invoices": 1132
+    },
+    {
+      "Stock_Code": "20725",
+      "gross_cents": 3604201,
+      "reversal_cents": 85470,
+      "sale_invoices": 1565
+    },
+    {
+      "Stock_Code": "82484",
+      "gross_cents": 3603022,
+      "reversal_cents": 17095,
+      "sale_invoices": 685
+    },
+    {
+      "Stock_Code": "22178",
+      "gross_cents": 3318797,
+      "reversal_cents": 63840,
+      "sale_invoices": 1037
+    },
+    {
+      "Stock_Code": "22114",
+      "gross_cents": 3300259,
+      "reversal_cents": 31010,
+      "sale_invoices": 643
+    },
+    {
+      "Stock_Code": "22910",
+      "gross_cents": 3287334,
+      "reversal_cents": 93145,
+      "sale_invoices": 820
+    },
+    {
+      "Stock_Code": "22112",
+      "gross_cents": 3286618,
+      "reversal_cents": 54888,
+      "sale_invoices": 858
+    },
+    {
+      "Stock_Code": "85099F",
+      "gross_cents": 3280253,
+      "reversal_cents": 44849,
+      "sale_invoices": 822
+    },
+    {
+      "Stock_Code": "22469",
+      "gross_cents": 3210780,
+      "reversal_cents": 20795,
+      "sale_invoices": 1201
+    },
+    {
+      "Stock_Code": "23245",
+      "gross_cents": 3117795,
+      "reversal_cents": 42150,
+      "sale_invoices": 873
+    },
+    {
+      "Stock_Code": "21931",
+      "gross_cents": 3077012,
+      "reversal_cents": 60233,
+      "sale_invoices": 1184
+    },
+    {
+      "Stock_Code": "22727",
+      "gross_cents": 3070112,
+      "reversal_cents": 27750,
+      "sale_invoices": 1051
+    }
+  ],
+  "under_10000_gbp": 28,
+  "minimum_reversal_gbp": 55.17,
+  "maximum_reversal_gbp": 168469.6,
+  "all_eligible_reversal_rows_strictly_positive_absolute_pennies": true,
+  "minimum_eligible_reversal_line_gbp": 0.12,
+  "blank_measure_values_not_changed_to_zero": true,
+  "native_receipt": "desktop-scatter-check.json",
+  "report_queries_preserved": true,
+  "report_filters_preserved": true,
+  "all_33_positions_preserved_from_saved_user_state": true,
+  "semantic_model_files": [
+    {
+      "path": "powerbi/uk-online-retail-sales-analysis.SemanticModel/definition/database.tmdl",
+      "bytes_unchanged": true
+    },
+    {
+      "path": "powerbi/uk-online-retail-sales-analysis.SemanticModel/definition/expressions.tmdl",
+      "bytes_unchanged": true
+    },
+    {
+      "path": "powerbi/uk-online-retail-sales-analysis.SemanticModel/definition/model.tmdl",
+      "bytes_unchanged": true
+    },
+    {
+      "path": "powerbi/uk-online-retail-sales-analysis.SemanticModel/definition/relationships.tmdl",
+      "bytes_unchanged": true
+    },
+    {
+      "path": "powerbi/uk-online-retail-sales-analysis.SemanticModel/definition/cultures/en-US.tmdl",
+      "bytes_unchanged": true
+    },
+    {
+      "path": "powerbi/uk-online-retail-sales-analysis.SemanticModel/definition/tables/Calendar.tmdl",
+      "bytes_unchanged": true
+    },
+    {
+      "path": "powerbi/uk-online-retail-sales-analysis.SemanticModel/definition/tables/DateTableTemplate_0d4fcce8-da58-4559-a0a7-b0c6e2eb4b9c.tmdl",
+      "bytes_unchanged": true
+    },
+    {
+      "path": "powerbi/uk-online-retail-sales-analysis.SemanticModel/definition/tables/DimProduct.tmdl",
+      "bytes_unchanged": true
+    },
+    {
+      "path": "powerbi/uk-online-retail-sales-analysis.SemanticModel/definition/tables/LocalDateTable_7ed12bcd-d2a7-41a7-9452-cf3af0f2044c.tmdl",
+      "bytes_unchanged": true
+    },
+    {
+      "path": "powerbi/uk-online-retail-sales-analysis.SemanticModel/definition/tables/Online Retail.tmdl",
+      "bytes_unchanged": true
+    }
+  ],
+  "backup_sha256": "2c241c9c68a4059fe3c19942bb1ca678ec9e0774f1ddb924739a6e633d4946b9",
+  "dax_m_or_source_data_modified": false
+}

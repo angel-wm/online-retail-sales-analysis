@@ -3,6 +3,76 @@ using Microsoft.AnalysisServices.AdomdClient;
 using System.Text.Json;
 
 internal static class NativeCheck {
+    public static int RunScatter(string[] args) {
+        var output = Path.GetFullPath(args[2]);
+        var receipt = new Dictionary<string, object?> {
+            ["startedUtc"] = DateTime.UtcNow,
+            ["connectionScope"] = "Power BI Desktop local engine only",
+            ["population"] = "Top 30 products by gross merchandise sales, all source dates and countries",
+            ["nativeRefreshRequested"] = false,
+            ["modelModified"] = false,
+            ["reportRenderingOrInteractionsTested"] = false
+        };
+        try {
+            if (args.Length != 3)
+                throw new ArgumentException("Usage: TmdlCheck --scatter <local port> <output json>");
+            var port = ushort.Parse(args[1]);
+            if (port == 0) throw new ArgumentException("Invalid local port");
+            using var server = new Server();
+            server.Connect($"Data Source=localhost:{port};Timeout=300");
+            var db = server.Databases.Cast<Database>().Single(d => d.Model?.Tables.Contains("Online Retail") == true && d.Model.Tables.Contains("DimProduct"));
+            receipt["sourceFilePath"] = db.Model.Expressions["SourceFilePath"].Expression;
+            using var connection = new AdomdConnection($"Data Source=localhost:{port};Initial Catalog={db.ID}");
+            connection.Open();
+            const string query = """
+                EVALUATE
+                SELECTCOLUMNS(
+                    TOPN(
+                        30,
+                        SUMMARIZECOLUMNS(
+                            'DimProduct'[Stock_Code],
+                            'DimProduct'[Product_Label],
+                            "GrossGBP", [Main Sales],
+                            "ReversalsGBP", [Returns Amount],
+                            "SaleInvoices", [Orders]
+                        ),
+                        [GrossGBP], DESC,
+                        'DimProduct'[Stock_Code], ASC
+                    ),
+                    "StockCode", 'DimProduct'[Stock_Code],
+                    "Product", 'DimProduct'[Product_Label],
+                    "GrossGBP", [GrossGBP],
+                    "ReversalsGBP", [ReversalsGBP],
+                    "SaleInvoices", [SaleInvoices]
+                )
+                ORDER BY [GrossGBP] DESC, [StockCode]
+                """;
+            using var command = connection.CreateCommand();
+            command.CommandTimeout = 120;
+            command.CommandText = query;
+            using var reader = command.ExecuteReader();
+            var products = new List<Dictionary<string, object?>>();
+            while (reader.Read())
+                products.Add(Enumerable.Range(0, reader.FieldCount).ToDictionary(i => reader.GetName(i).Trim('[', ']'), i => reader.IsDBNull(i) ? null : reader.GetValue(i)));
+            if (products.Count != 30) throw new InvalidOperationException($"Expected 30 products; obtained {products.Count}");
+            if (products.Any(p => p["GrossGBP"] is null || p["ReversalsGBP"] is null || Convert.ToDecimal(p["GrossGBP"]) <= 0 || Convert.ToDecimal(p["ReversalsGBP"]) <= 0))
+                throw new InvalidOperationException("The unfiltered scatter population contains a nonpositive or blank axis value");
+            receipt["query"] = query;
+            receipt["products"] = products;
+            receipt["nativeDaxExecuted"] = true;
+            receipt["status"] = "PASS_NATIVE_SCATTER_QUERY";
+        } catch (Exception exception) {
+            receipt["status"] = "FAIL_OR_INCOMPLETE_NATIVE_SCATTER_QUERY";
+            receipt["error"] = exception.ToString();
+        }
+        receipt["finishedUtc"] = DateTime.UtcNow;
+        Directory.CreateDirectory(Path.GetDirectoryName(output)!);
+        File.WriteAllText(output, System.Text.Json.JsonSerializer.Serialize(receipt, new JsonSerializerOptions { WriteIndented = true }) + "\n");
+        Console.WriteLine($"Native scatter check: {receipt["status"]}. Receipt: {output}");
+        if (receipt.TryGetValue("error", out var error)) Console.WriteLine(error);
+        return receipt["status"]!.ToString()!.StartsWith("PASS") ? 0 : 1;
+    }
+
     public static int RunMonthly(string[] args) {
         var output = Path.GetFullPath(args[2]);
         var receipt = new Dictionary<string, object?> {

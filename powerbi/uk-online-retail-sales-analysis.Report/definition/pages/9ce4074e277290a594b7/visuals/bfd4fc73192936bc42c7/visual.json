@@ -4,7 +4,7 @@
   "position": {
     "x": 768,
     "y": 600,
-    "z": 12000,
+    "z": 14000,
     "height": 312,
     "width": 558,
     "tabOrder": 1500
@@ -328,14 +328,28 @@
             "labelDisplayUnits": {
               "expr": {
                 "Literal": {
-                  "Value": "1000D"
+                  "Value": "1D"
                 }
               }
             },
             "titleText": {
               "expr": {
                 "Literal": {
-                  "Value": "'Reversals'"
+                  "Value": "'Reversals, log scale'"
+                }
+              }
+            },
+            "logAxisScale": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "roundRange": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
                 }
               }
             }

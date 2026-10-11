@@ -3,7 +3,7 @@
   "name": "17704764da05a4761017",
   "position": {
     "x": 32,
-    "y": 232,
+    "y": 256,
     "z": 4000,
     "height": 88,
     "width": 144,
@@ -207,11 +207,11 @@
         }
       ]
     },
-    "drillFilterOtherVisuals": true,
     "syncGroup": {
       "groupName": "Retail_Country",
       "fieldChanges": true,
       "filterChanges": true
-    }
+    },
+    "drillFilterOtherVisuals": true
   }
 }

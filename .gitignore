@@ -1,9 +1,24 @@
+# Power BI Desktop state and loaded-data cache
 **/.pbi/
+
+# Local recovery copies and generated diagnostics
+/backups/
+/.cache/
+/.tools/
+
+# Python and .NET environments and build output
+**/__pycache__/
+*.py[cod]
+/.venv/
+/venv/
 **/bin/
 **/obj/
-**/__pycache__/
-.cache/
-.tools/
-*.pyc
-backups/
+
+# Local editor and operating-system files
+/.vscode/
+/.idea/
+.DS_Store
+Thumbs.db
+Desktop.ini
+~$*
 

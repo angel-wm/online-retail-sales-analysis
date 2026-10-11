@@ -1,0 +1,225 @@
+{
+  "startedUtc": "2026-10-10T23:23:38.7647824Z",
+  "connectionScope": "Power BI Desktop local engine only",
+  "population": "Top 30 products by gross merchandise sales, all source dates and countries",
+  "nativeRefreshRequested": false,
+  "modelModified": false,
+  "reportRenderingOrInteractionsTested": false,
+  "sourceFilePath": "\u0022C:\\Users\\angel\\Documents\\Proyectos\\online-retail-sales-analysis\\data\\raw\\Online Retail.xlsx\u0022 meta [IsParameterQuery=true, Type=\u0022Text\u0022, IsParameterQueryRequired=true]",
+  "query": "EVALUATE\nSELECTCOLUMNS(\n    TOPN(\n        30,\n        SUMMARIZECOLUMNS(\n            \u0027DimProduct\u0027[Stock_Code],\n            \u0027DimProduct\u0027[Product_Label],\n            \u0022GrossGBP\u0022, [Main Sales],\n            \u0022ReversalsGBP\u0022, [Returns Amount],\n            \u0022SaleInvoices\u0022, [Orders]\n        ),\n        [GrossGBP], DESC,\n        \u0027DimProduct\u0027[Stock_Code], ASC\n    ),\n    \u0022StockCode\u0022, \u0027DimProduct\u0027[Stock_Code],\n    \u0022Product\u0022, \u0027DimProduct\u0027[Product_Label],\n    \u0022GrossGBP\u0022, [GrossGBP],\n    \u0022ReversalsGBP\u0022, [ReversalsGBP],\n    \u0022SaleInvoices\u0022, [SaleInvoices]\n)\nORDER BY [GrossGBP] DESC, [StockCode]",
+  "products": [
+    {
+      "StockCode": "22423",
+      "Product": "22423 \u2014 REGENCY CAKESTAND 3 TIER",
+      "GrossGBP": 174484.74,
+      "ReversalsGBP": 9722.55,
+      "SaleInvoices": 1988
+    },
+    {
+      "StockCode": "23843",
+      "Product": "23843 \u2014 PAPER CRAFT , LITTLE BIRDIE",
+      "GrossGBP": 168469.6,
+      "ReversalsGBP": 168469.6,
+      "SaleInvoices": 1
+    },
+    {
+      "StockCode": "85123A",
+      "Product": "85123A \u2014 WHITE HANGING HEART T-LIGHT HOLDER",
+      "GrossGBP": 106471.28,
+      "ReversalsGBP": 6624.3,
+      "SaleInvoices": 2265
+    },
+    {
+      "StockCode": "47566",
+      "Product": "47566 \u2014 PARTY BUNTING",
+      "GrossGBP": 99504.33,
+      "ReversalsGBP": 1201.35,
+      "SaleInvoices": 1685
+    },
+    {
+      "StockCode": "85099B",
+      "Product": "85099B \u2014 JUMBO BAG RED RETROSPOT",
+      "GrossGBP": 94340.05,
+      "ReversalsGBP": 1984.02,
+      "SaleInvoices": 2089
+    },
+    {
+      "StockCode": "23166",
+      "Product": "23166 \u2014 MEDIUM CERAMIC TOP STORAGE JAR",
+      "GrossGBP": 81700.92,
+      "ReversalsGBP": 77479.64,
+      "SaleInvoices": 247
+    },
+    {
+      "StockCode": "23084",
+      "Product": "23084 \u2014 RABBIT NIGHT LIGHT",
+      "GrossGBP": 66964.99,
+      "ReversalsGBP": 208.4,
+      "SaleInvoices": 994
+    },
+    {
+      "StockCode": "22086",
+      "Product": "22086 \u2014 PAPER CHAIN KIT 50\u0027S CHRISTMAS",
+      "GrossGBP": 64952.29,
+      "ReversalsGBP": 1160.35,
+      "SaleInvoices": 1160
+    },
+    {
+      "StockCode": "84879",
+      "Product": "84879 \u2014 ASSORTED COLOUR BIRD ORNAMENT",
+      "GrossGBP": 59094.93,
+      "ReversalsGBP": 135.2,
+      "SaleInvoices": 1455
+    },
+    {
+      "StockCode": "79321",
+      "Product": "79321 \u2014 CHILLI LIGHTS",
+      "GrossGBP": 54117.76,
+      "ReversalsGBP": 349.7,
+      "SaleInvoices": 661
+    },
+    {
+      "StockCode": "22502",
+      "Product": "22502 \u2014 PICNIC BASKET WICKER SMALL",
+      "GrossGBP": 51426.62,
+      "ReversalsGBP": 385.25,
+      "SaleInvoices": 463
+    },
+    {
+      "StockCode": "22197",
+      "Product": "22197 \u2014 POPCORN HOLDER",
+      "GrossGBP": 51354.02,
+      "ReversalsGBP": 366.55,
+      "SaleInvoices": 1392
+    },
+    {
+      "StockCode": "23298",
+      "Product": "23298 \u2014 SPOTTY BUNTING",
+      "GrossGBP": 43182.83,
+      "ReversalsGBP": 482.81,
+      "SaleInvoices": 1146
+    },
+    {
+      "StockCode": "22386",
+      "Product": "22386 \u2014 JUMBO BAG PINK POLKADOT",
+      "GrossGBP": 42436.24,
+      "ReversalsGBP": 816.58,
+      "SaleInvoices": 1218
+    },
+    {
+      "StockCode": "23203",
+      "Product": "23203 \u2014 JUMBO BAG VINTAGE DOILY",
+      "GrossGBP": 42067.78,
+      "ReversalsGBP": 1076.4,
+      "SaleInvoices": 1231
+    },
+    {
+      "StockCode": "21137",
+      "Product": "21137 \u2014 BLACK RECORD COVER FRAME",
+      "GrossGBP": 40652.13,
+      "ReversalsGBP": 55.17,
+      "SaleInvoices": 375
+    },
+    {
+      "StockCode": "23284",
+      "Product": "23284 \u2014 DOORMAT KEEP CALM AND COME IN",
+      "GrossGBP": 38166.64,
+      "ReversalsGBP": 1601.25,
+      "SaleInvoices": 728
+    },
+    {
+      "StockCode": "22720",
+      "Product": "22720 \u2014 SET OF 3 CAKE TINS PANTRY DESIGN",
+      "GrossGBP": 38158.39,
+      "ReversalsGBP": 744.95,
+      "SaleInvoices": 1385
+    },
+    {
+      "StockCode": "22960",
+      "Product": "22960 \u2014 JAM MAKING SET WITH JARS",
+      "GrossGBP": 37128.88,
+      "ReversalsGBP": 1012.79,
+      "SaleInvoices": 1132
+    },
+    {
+      "StockCode": "20725",
+      "Product": "20725 \u2014 LUNCH BAG RED RETROSPOT",
+      "GrossGBP": 36042.01,
+      "ReversalsGBP": 854.7,
+      "SaleInvoices": 1565
+    },
+    {
+      "StockCode": "82484",
+      "Product": "82484 \u2014 WOOD BLACK BOARD ANT WHITE FINISH",
+      "GrossGBP": 36030.22,
+      "ReversalsGBP": 170.95,
+      "SaleInvoices": 685
+    },
+    {
+      "StockCode": "22178",
+      "Product": "22178 \u2014 VICTORIAN GLASS HANGING T-LIGHT",
+      "GrossGBP": 33187.97,
+      "ReversalsGBP": 638.4,
+      "SaleInvoices": 1037
+    },
+    {
+      "StockCode": "22114",
+      "Product": "22114 \u2014 HOT WATER BOTTLE TEA AND SYMPATHY",
+      "GrossGBP": 33002.59,
+      "ReversalsGBP": 310.1,
+      "SaleInvoices": 643
+    },
+    {
+      "StockCode": "22910",
+      "Product": "22910 \u2014 PAPER CHAIN KIT VINTAGE CHRISTMAS",
+      "GrossGBP": 32873.34,
+      "ReversalsGBP": 931.45,
+      "SaleInvoices": 820
+    },
+    {
+      "StockCode": "22112",
+      "Product": "22112 \u2014 CHOCOLATE HOT WATER BOTTLE",
+      "GrossGBP": 32866.18,
+      "ReversalsGBP": 548.88,
+      "SaleInvoices": 858
+    },
+    {
+      "StockCode": "85099F",
+      "Product": "85099F \u2014 JUMBO BAG STRAWBERRY",
+      "GrossGBP": 32802.53,
+      "ReversalsGBP": 448.49,
+      "SaleInvoices": 822
+    },
+    {
+      "StockCode": "22469",
+      "Product": "22469 \u2014 HEART OF WICKER SMALL",
+      "GrossGBP": 32107.8,
+      "ReversalsGBP": 207.95,
+      "SaleInvoices": 1201
+    },
+    {
+      "StockCode": "23245",
+      "Product": "23245 \u2014 SET OF 3 REGENCY CAKE TINS",
+      "GrossGBP": 31177.95,
+      "ReversalsGBP": 421.5,
+      "SaleInvoices": 873
+    },
+    {
+      "StockCode": "21931",
+      "Product": "21931 \u2014 JUMBO STORAGE BAG SUKI",
+      "GrossGBP": 30770.12,
+      "ReversalsGBP": 602.33,
+      "SaleInvoices": 1184
+    },
+    {
+      "StockCode": "22727",
+      "Product": "22727 \u2014 ALARM CLOCK BAKELIKE RED",
+      "GrossGBP": 30701.12,
+      "ReversalsGBP": 277.5,
+      "SaleInvoices": 1051
+    }
+  ],
+  "nativeDaxExecuted": true,
+  "status": "PASS_NATIVE_SCATTER_QUERY",
+  "finishedUtc": "2026-10-10T23:23:39.27651Z"
+}

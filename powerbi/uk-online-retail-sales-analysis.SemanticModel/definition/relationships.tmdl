@@ -4,17 +4,10 @@ relationship d5f7a6b2-aeee-4d8f-8ee7-bd76c4cb7803
 	toColumn: LocalDateTable_7ed12bcd-d2a7-41a7-9452-cf3af0f2044c.Date
 
 relationship 817c63ef-72e8-d19b-b5ac-8549b2c395b9
-	fromCardinality: many
-	toCardinality: one
-	crossFilteringBehavior: oneDirection
-	isActive: true
 	fromColumn: 'Online Retail'.Invoice_Day
 	toColumn: Calendar.Date
 
 relationship f21839b8-2788-54a1-989a-cb6c008c32bf
-	fromCardinality: many
-	toCardinality: one
-	crossFilteringBehavior: oneDirection
-	isActive: true
 	fromColumn: 'Online Retail'.Stock_Code
 	toColumn: DimProduct.Stock_Code
+

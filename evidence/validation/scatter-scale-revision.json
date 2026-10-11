@@ -1,0 +1,163 @@
+{
+  "checked_utc": "2026-10-10T23:31:17.393100+00:00",
+  "status": "PASS_NATIVE_SAVE_REOPEN_SCATTER_REVISION",
+  "client_local_date": "2026-10-10",
+  "canonical_pbip": "uk-online-retail-sales-analysis.pbip",
+  "backup": "backups/desktop-saved-before-scatter-scale.zip",
+  "authored_report_scope": [
+    "powerbi/uk-online-retail-sales-analysis.Report/definition/pages/9ce4074e277290a594b7/visuals/bfd4fc73192936bc42c7/visual.json",
+    "powerbi/uk-online-retail-sales-analysis.Report/definition/pages/e2e71b2b39b7e00b93de/visuals/c1e7baf0796e55151039/visual.json"
+  ],
+  "scatter": {
+    "before_y_axis": [
+      {
+        "properties": {
+          "showAxisTitle": {
+            "expr": {
+              "Literal": {
+                "Value": "true"
+              }
+            }
+          },
+          "fontSize": {
+            "expr": {
+              "Literal": {
+                "Value": "10D"
+              }
+            }
+          },
+          "labelPrecision": {
+            "expr": {
+              "Literal": {
+                "Value": "0L"
+              }
+            }
+          },
+          "labelDisplayUnits": {
+            "expr": {
+              "Literal": {
+                "Value": "1000D"
+              }
+            }
+          },
+          "titleText": {
+            "expr": {
+              "Literal": {
+                "Value": "'Reversals'"
+              }
+            }
+          }
+        }
+      }
+    ],
+    "after_y_axis": [
+      {
+        "properties": {
+          "showAxisTitle": {
+            "expr": {
+              "Literal": {
+                "Value": "true"
+              }
+            }
+          },
+          "fontSize": {
+            "expr": {
+              "Literal": {
+                "Value": "10D"
+              }
+            }
+          },
+          "labelPrecision": {
+            "expr": {
+              "Literal": {
+                "Value": "0L"
+              }
+            }
+          },
+          "labelDisplayUnits": {
+            "expr": {
+              "Literal": {
+                "Value": "1D"
+              }
+            }
+          },
+          "titleText": {
+            "expr": {
+              "Literal": {
+                "Value": "'Reversals, log scale'"
+              }
+            }
+          },
+          "logAxisScale": {
+            "expr": {
+              "Literal": {
+                "Value": "true"
+              }
+            }
+          },
+          "roundRange": {
+            "expr": {
+              "Literal": {
+                "Value": "true"
+              }
+            }
+          }
+        }
+      }
+    ],
+    "axis_range": "Automatic, with native rounding retained to leave room around marker centers",
+    "manual_axis_bounds": false,
+    "top_n": 30,
+    "outliers_retained": true,
+    "query_filter_and_geometry_preserved": true,
+    "bubble_size_encoding": "Sale invoice count; unchanged",
+    "zoom_slider": false,
+    "blank_axis_values": "Native Show blank values remains Off, as before. BLANK is not substituted with zero.",
+    "source_native_comparisons": 90,
+    "source_native_differences": 0,
+    "native_query_receipt": "desktop-scatter-check.json",
+    "source_comparison_receipt": "scatter-source-check.json"
+  },
+  "monthly_chart": {
+    "measure_and_dates_preserved": true,
+    "subtitle": "Dec 2011: partial month, through 9 Dec",
+    "new_textbox_created": false,
+    "prior_monthly_reconciliation": "monthly-chart-check.json",
+    "monthly_totals_not_projected_smoothed_or_replaced": true
+  },
+  "native_observations": {
+    "desktop_version": "2.158.1304.0",
+    "window_pixels": [
+      1920,
+      1080
+    ],
+    "page_zoom_percent": 64,
+    "all_source_dates_and_countries_rendered": true,
+    "year_2010_filter_rendered": true,
+    "bahrain_filter_rendered": true,
+    "tested_filters_restored_to_all": true,
+    "log_scale_identified_in_y_axis_title": true,
+    "currency_axis_labels_readable_for_tested_views": true,
+    "scatter_focus_mode_rendered": true,
+    "scatter_focus_mode_zoom_percent": 100,
+    "native_save_completed": true,
+    "normal_close_completed": true,
+    "same_root_pbip_reopened": true,
+    "both_pages_and_changed_visuals_rendered_after_reopen": true,
+    "final_open_page": "Product & Customer Insights",
+    "full_interaction_suite_or_export_tested": false
+  },
+  "preservation": {
+    "source_sha256": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+    "all_33_visual_queries_filters_and_positions_unchanged_from_saved_user_state": true,
+    "all_semantic_definition_files_byte_identical_to_saved_user_state": true,
+    "original_backups_and_source_preserved": true,
+    "preexisting_working_tree_changes_preserved": true
+  },
+  "changed_visual_sha256": {
+    "powerbi/uk-online-retail-sales-analysis.Report/definition/pages/9ce4074e277290a594b7/visuals/bfd4fc73192936bc42c7/visual.json": "af95d383ed73f4a5bef68c8d84016551792a5c2e0e7ebb3385290a767e0903d2",
+    "powerbi/uk-online-retail-sales-analysis.Report/definition/pages/e2e71b2b39b7e00b93de/visuals/c1e7baf0796e55151039/visual.json": "b0a60839894847bb99909a3dc402e0b7d3dc2f1bd29b4dc33348ce3331ad6f18"
+  },
+  "schema_receipt": "presentation-json-schema.json",
+  "schema_validation_scope": "No detected schema errors; exact schema coverage remains partial because the current Desktop schemas are not all publicly available."
+}

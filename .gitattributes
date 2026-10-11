@@ -1,2 +1,3 @@
-# Preserve the recovered historical reference exactly, including its spacing.
-docs/archive/original-measures.txt -text -whitespace
+# Keep the terminal blank lines written by Power BI Desktop in TMDL files.
+# Continue checking trailing spaces and spaces before indentation tabs.
+powerbi/**/*.tmdl whitespace=blank-at-eol,space-before-tab,-blank-at-eof

@@ -1,6 +1,11 @@
 using Microsoft.AnalysisServices.Tabular;
 using System.Text.Json;
 
+if (args.Length >= 3 && args[0] == "--scatter") {
+    Environment.ExitCode = NativeCheck.RunScatter(args);
+    return;
+}
+
 if (args.Length >= 3 && args[0] == "--monthly") {
     Environment.ExitCode = NativeCheck.RunMonthly(args);
     return;

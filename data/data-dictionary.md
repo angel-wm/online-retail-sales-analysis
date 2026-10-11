@@ -1,184 +1,124 @@
-# Data Dictionary
+# Data dictionary
 
-This is the **reference for the documented Power BI model**, not a schema extracted from a runnable report. The
-committed `powerbi/online-retail-sales-analysis .pbix` contains only two bytes, so the field types, formulas,
-model relationships, and measure definitions below cannot currently be verified against an openable PBIX. They are
-preserved as the project's recorded model specifications.
+This reference describes the current editable model, verified by its [TMDL parser output](../evidence/validation/final-tom.json). For business meanings and reference totals, use [Metrics](../docs/METRICS.md); for table relationships and product identity, use [Model](../docs/MODEL.md).
 
-For the preparation rationale, read [Data Cleaning Notes](../docs/cleaning-notes.md). For an overview and
-dashboard evidence, return to the [English README](../README.md) or [Spanish README](../README.es.md).
+## Source fields
 
-**Find the relevant reference:** [Calendar fields](#table-calendar) · [Transaction fields](#table-online-retail) ·
-[Classification and inclusion rules](#business-rules-for-calculated-columns) · [Measures](#measures) ·
-[KPI interpretation](#kpi-interpretation-notes)
+The workbook's **Online Retail** sheet contains the following eight fields. The [original workbook](raw/Online%20Retail.xlsx) is preserved without edits; renaming and derived columns occur in Power Query.
 
-## Overview
+| Source field → model field | Meaning |
+| --- | --- |
+| `InvoiceNo` → `Invoice_ID` | Invoice identifier; multiple lines can share one invoice. |
+| `StockCode` → `Stock_Code` | Stock or transaction code. |
+| `Description` → `Product_Name` | Original line description. |
+| `Quantity` → `Quantity` | Signed unit quantity. |
+| `InvoiceDate` → `Invoice_Date` | Original transaction timestamp. |
+| `UnitPrice` → `Unit_Price` | GBP unit price, with original precision. |
+| `CustomerID` → `Customer_ID` | Customer identifier; blank values occur. |
+| `Country` → `Country` | Country recorded on the transaction. |
 
-This Power BI model is built around two main tables:
+## Table: Online Retail
 
-- **Online Retail**: transactional fact table containing invoice, product, customer, quantity, and pricing data.
-- **Calendar**: date dimension table created from the minimum and maximum values of `Online Retail[Invoice_Day]`.
+The fact table holds loaded invoice lines. Stock code and original product name are hidden from the report field list in favor of `DimProduct`; hidden fields remain available for diagnostics and calculations.
 
-The model also includes a set of business measures grouped under a **Measures** display folder.
+| Field | Model type and role |
+| --- | --- |
+| `Invoice_ID` | Text; distinct-invoice key for counts. |
+| `Stock_Code` | Text; trimmed, uppercased relationship key to `DimProduct`. |
+| `Product_Name` | Text; original source description, not replaced by the dimension label. |
+| `Quantity` | Whole number; signed quantity on the line. |
+| `Invoice_Date` | Date/time; original timestamp. |
+| `Invoice_Day` | Date represented as DateTime; date-only key to Calendar. |
+| `Unit_Price` | Decimal number (Double); original price precision. |
+| `Customer_ID` | Text; identifiers are not treated as quantities. |
+| `Country` | Text; country filter and grouping field. |
+| `Sales_Amount` | Fixed decimal (Currency); signed quantity × full-precision price, half-even rounded to two decimals. |
+| `Line_Type` | Text; Product, Gift Voucher or Adjustment. |
+| `Record_Flag` | Text; Normal, Manual / Review or Operational / Non-Product. |
+| `Is_Cancelled` | Boolean; trimmed, uppercased invoice ID begins with `C`. |
+| `Is_Negative_Qty` | Boolean; nonnull quantity is below zero. |
+| `Is_Zero_Price` | Boolean; nonnull unit price equals zero. |
+| `Include_In_Main_Analysis` | Boolean; eligible positive merchandise sale. |
+| `Is_Merchandise_Reversal` | Boolean; eligible negative merchandise movement. |
+| `Movement_Type` | Text; mutually exclusive economic category for reconciliation. |
 
+## Classification rules
 
-## Table: `Calendar`
+### Line type
 
-### Purpose
-Date dimension used for time-based analysis, filtering, sorting, and monthly trend reporting.
+Classification uses trimmed, uppercased stock code and description, in this order:
 
-| Field | Data type | Meaning and business notes |
-| --- | --- | --- |
-| `Date` | Date | Base calendar date. Primary date field of the calendar table. |
-| `Year` | Whole Number | Calendar year extracted from `Date`. Used for yearly aggregation. |
-| `Trimester` | Text | Quarter label in the format `T1`, `T2`, `T3`, `T4`. Built from the quarter number of `Date`. |
-| `Month#` | Whole Number | Numeric month from 1 to 12. Used for chronological sorting. |
-| `Month` | Text | Full month name. Example: January, February. |
-| `Month_short` | Text | Abbreviated month name. Example: Jan, Feb. |
-| `Year_Month` | Text | Year-month key in `YYYY-MM` format. Useful for compact monthly grouping. |
-| `YearMonthSort` | Whole Number | Sort key built as `Year * 100 + Month#`. Ensures correct chronological sorting of month labels. |
-| `YearMonth_Label` | Text | Friendly month-year label in `MMM yyyy` format. Example: Jan 2011. Typically used on chart axes. |
-| `Day` | Whole Number | Day of month extracted from `Date`. Values from 1 to 31. |
-| `Weekday#` | Whole Number | Weekday number with Monday = 1. Useful for weekday ordering. |
-| `Weekday` | Text | Full weekday name. Example: Monday, Tuesday. |
+1. **Gift Voucher:** the code starts with `GIFT_` or the description contains `GIFT VOUCHER`.
+2. **Adjustment:** the code is in the explicit list below, or the normalized description equals `EBAY`.
+3. **Product:** all remaining lines.
 
-### Notes
-- The `Calendar` table is generated using:
-  - `MIN('Online Retail'[Invoice_Day])`
-  - `MAX('Online Retail'[Invoice_Day])`
-- `YearMonth_Label` should be sorted by `YearMonthSort`.
-- `Month` or `Month_short` should be sorted by `Month#`.
+```text
+M, S, POST, AMAZONFEE, AMAZON FEE, BANK CHARGES, D, DOT, C2, B, CRUK
+```
 
+Alphabetic codes alone do not imply administrative activity. Codes such as `PADS`, `DCGS`, `DCGSSBOY` and `DCGSSGIRL` follow the same explicit rules. [special_codes.json](../evidence/financial/special_codes.json) records their source descriptions and classifications.
 
-## Table: `Online Retail`
+### Record flag
 
-### Purpose
-Main transactional table containing retail invoice line records used for sales, orders, customer, and return analysis.
+`Record_Flag` uses the normalized description and whether the customer ID is null or empty, in this order:
 
-| Field | Data type | Meaning and business notes |
-| --- | --- | --- |
-| `Invoice_ID` | Text | Invoice identifier that can appear on multiple transaction lines. Cancelled invoices are identified when the invoice code starts with `C`. |
-| `Invoice_Date` | Date/Time | Original invoice timestamp. Raw transaction date-time field. |
-| `Invoice_Day` | Date | Date-only version of the invoice date. Used to build the `Calendar` table; the relationship configuration cannot be inspected in the committed PBIX. |
-| `Customer_ID` | Text / Whole Number | Customer identifier. Can contain blank values. Distinct customer analysis excludes blanks in the main customer measure. |
-| `Country` | Text | Customer or transaction country. Used for geographic sales and return analysis. |
-| `Stock_Code` | Text | Product or transaction code. Used to classify rows into product, gift voucher, or adjustment. |
-| `Product_Name` | Text | Product description/name. Also used in record classification logic. |
-| `Quantity` | Whole Number | Number of units in the transaction line. Negative values represent return-like rows. |
-| `Unit_Price` | Decimal Number | Unit price of the transaction line. Zero values are flagged separately. |
-| `Sales_Amount` | Decimal Number | Calculated line amount as `Quantity * Unit_Price`. Rounded to 2 decimals. Can be negative for returned items. |
-| `Line_Type` | Text | Business classification of the transaction line. Possible values: `Product`, `Gift Voucher`, `Adjustment`. |
-| `Record_Flag` | Text | Data quality / business rule classification of the row. Possible values: `Normal`, `Manual / Review`, `Operational / Non-Product`. |
-| `Is_Cancelled` | TRUE/FALSE | Indicates whether the invoice was cancelled. `TRUE` when `Invoice_ID` starts with `C`. |
-| `Is_Negative_Qty` | TRUE/FALSE | Flags rows where quantity is negative. Used to identify return-related transactions. |
-| `Is_Zero_Price` | TRUE/FALSE | Flags rows where unit price equals zero. Used for quality checks and exclusion from main analysis. |
-| `Include_In_Main_Analysis` | TRUE/FALSE | Final inclusion flag for core KPIs. Only rows meeting all main-analysis rules are included. |
+1. **Manual / Review:** the description starts with `*` and the customer ID is absent.
+2. **Operational / Non-Product:** the customer ID is absent, unit price is null or zero, and the description contains `?`, `MISSING`, `LOST`, `DAMAGE`, `DISPLAY` or `SOLD AS SETS`.
+3. **Normal:** all remaining lines.
 
+### Eligibility flags
 
-## Business Rules for Calculated Columns
+| Flag | Required conditions |
+| --- | --- |
+| `Include_In_Main_Analysis` | Line type Product; record flag Normal; invoice not cancelled; quantity > 0; unit price > 0. |
+| `Is_Merchandise_Reversal` | Line type Product; record flag Normal; quantity < 0; unit price > 0. |
 
-### `Line_Type`
-Classifies each row into one of three categories:
+The reversal flag uses the signed quantity and price. The cancellation prefix remains a diagnostic; it is not subtracted as a separate second charge. Zero-price and nonnormal lines cannot enter either eligible merchandise population.
 
-- **Gift Voucher**
-  - `Stock_Code` starts with `GIFT_`, or
-  - `Product_Name` contains `GIFT VOUCHER`
+### Movement type
 
-- **Adjustment**
-  - `Stock_Code` is one of: `M`, `S`, `POST`, `AMAZON FEE`, `BANK CHARGES`, `D`, `DOT`, `C2`, `B`, `CRUK`, or
-  - `Product_Name` equals `EBAY`
+The first matching category determines `Movement_Type`:
 
-- **Product**
-  - Any row not classified as Gift Voucher or Adjustment
+| Category | Condition |
+| --- | --- |
+| `Merchandise sale` | Eligible positive merchandise flag is true. |
+| `Merchandise cancellation / reversal` | Eligible reversal flag is true. |
+| `Administrative adjustment` | Line type is Adjustment. |
+| `Gift voucher movement` | Line type is Gift Voucher. |
+| `Other / excluded movement` | Any remaining loaded line. |
 
-### `Record_Flag`
-Classifies records according to data quality / operational patterns:
+## Table: Calendar
 
-- **Manual / Review**
-  - `Product_Name` starts with `*`
-  - and there is no `Customer_ID`
+The calculated date dimension spans the minimum and maximum loaded `Invoice_Day`. Sort keys are part of the current implementation.
 
-- **Operational / Non-Product**
-  - no `Customer_ID`
-  - and `Product_Name` contains operational markers such as:
-    - `?`
-    - `MISSING`
-    - `LOST`
-    - `DAMAGE`
-    - `DISPLAY`
-    - `SOLD AS SETS`
-  - and `Unit_Price` is null or 0
+| Field | Meaning and sorting |
+| --- | --- |
+| `Date` | Date key; one row for every day in the source span. |
+| `Year` | Calendar year, whole number. |
+| `Trimester` | Quarter label `T1`–`T4`. |
+| `Month#` | Month number 1–12. |
+| `Month` | Full month name; sorted by `Month#`. |
+| `Month_short` | Abbreviated month name; sorted by `Month#`. |
+| `Year_Month` | `YYYY-MM` label; sorted by `YearMonthSort`. |
+| `YearMonthSort` | Whole-number key `Year * 100 + Month#`. |
+| `YearMonth_Label` | `MMM yyyy` label; sorted by `YearMonthSort`, used on monthly chart axes. |
+| `Day` | Day of month 1–31. |
+| `Weekday#` | Weekday number, Monday = 1. |
+| `Weekday` | Full weekday name; sorted by `Weekday#`. |
 
-- **Normal**
-  - all other rows
+## Table: DimProduct
 
-### `Include_In_Main_Analysis`
-A row is included in the main business analysis only when all of the following are true:
+| Field | Type and role |
+| --- | --- |
+| `Stock_Code` | Text; unique dimension key. |
+| `Product_Name` | Text; representative normalized source description. |
+| `Product_Label` | Text; stock code and representative description, separated by an em dash. |
+| `Description_Variants` | Whole number; distinct normalized descriptions in loaded lines for that code. |
 
-- `Line_Type = "Product"`
-- `Record_Flag = "Normal"`
-- `Is_Cancelled = FALSE`
-- `Is_Negative_Qty = FALSE`
-- `Is_Zero_Price = FALSE`
-
-This flag is the core filter behind the main sales KPIs.
-
+The label-selection algorithm and its limitations belong in [Product identity](../docs/MODEL.md#product-identity). The dimension covers all loaded stock codes, including codes whose lines are excluded from merchandise KPIs.
 
 ## Measures
 
-### Purpose
-These measures summarize performance for sales, orders, customers, returns, and data quality tracking.
+All 17 measures live on `Online Retail`, under the Measures display folder. The [metric reference](../docs/METRICS.md) defines their commercial scope, counts, ratios, blank behavior and interpretation. [measure_definitions.json](../evidence/financial/measure_definitions.json) contains the exact expression and format contract used by the model validator.
 
-| Measure | Format | Meaning and calculation |
-| --- | --- | --- |
-| `Total Sales` | Currency / Decimal | Total sales amount across all rows. Sum of `Sales_Amount`, rounded to 2 decimals. |
-| `Main Sales` | Currency / Decimal | Sales from valid core business transactions only. `Total Sales` filtered by `Include_In_Main_Analysis = TRUE()`. |
-| `Returns Amount` | Currency / Decimal | Absolute value of returned sales. Absolute value of `Total Sales` for rows with `Is_Negative_Qty = TRUE()`. |
-| `Net Sales` | Currency / Decimal | Main sales minus returns. `Main Sales - Returns Amount`. |
-| `Orders` | Whole Number | Distinct order count for valid business transactions. Distinct count of `Invoice_ID` where `Include_In_Main_Analysis = TRUE()`. |
-| `Cancelled Orders` | Whole Number | Distinct count of cancelled orders. Distinct count of `Invoice_ID` where `Is_Cancelled = TRUE()`. |
-| `Units Sold` | Whole Number | Total quantity sold in the main analysis scope. Sum of `Quantity` where `Include_In_Main_Analysis = TRUE()`. |
-| `Unique Customers` | Whole Number | Distinct customer count in the main analysis scope. Distinct count of non-blank `Customer_ID` where `Include_In_Main_Analysis = TRUE()`. |
-| `Average Order Value` | Currency / Decimal | Average value per valid order. `Net Sales / Orders`, rounded using `MROUND(..., 2)`. |
-| `Return rate` | Percentage | Share of returns relative to main sales. `Returns Amount / Main Sales`, rounded to 2 decimals. |
-| `Return Value` | Currency / Decimal | Absolute value of returned product lines. Sum of absolute `Sales_Amount` where `Is_Negative_Qty = TRUE()` and `Line_Type = "Product"`. |
-| `Zero Price Records` | Whole Number | Count of rows with zero unit price. Count of rows where `Is_Zero_Price = TRUE()`. |
-
-
-## KPI Interpretation Notes
-
-| Metric | Interpretation |
-|---|---|
-| `Main Sales` | Best measure for clean commercial sales analysis because it excludes cancelled, negative, zero-price, non-normal, and non-product rows. |
-| `Net Sales` | More conservative measure of realized sales because it subtracts returns from main sales. |
-| `Orders` | Counts only valid orders included in the main analysis logic. |
-| `Cancelled Orders` | Useful for operational monitoring and order-quality review. |
-| `Return rate` | Indicates how much returned value exists relative to clean sales. |
-| `Zero Price Records` | Data quality signal that helps identify free items, bad records, or unusual operational transactions. |
-
-
-## Recommended Formatting / Modeling Notes
-
-These are documented modeling recommendations; they cannot be verified against the placeholder PBIX.
-
-- Sort `Month` and `Month_short` by `Month#`.
-- Sort `YearMonth_Label` by `YearMonthSort`.
-- Use `Invoice_Day` as the transaction date key for time intelligence.
-- Use `Include_In_Main_Analysis` as the standard filter for executive KPIs.
--  Use `Return Value` or `Returns Amount` for return-focused visuals, depending on whether the analysis is
-  product-only or broader sales-impact oriented.
-
-
-## Naming Notes
-
-This dictionary documents the model using the final field names shown in Power BI:
-
-- `Line_Type`
-- `Record_Flag`
-- `Is_Cancelled`
-- `Is_Negative_Qty`
-- `Is_Zero_Price`
-- `Include_In_Main_Analysis`
-
-These are the final field labels recorded in this dictionary. Editable model formulas and a valid PBIX are not
-versioned here, so current model-view labels cannot be independently verified.
+Monetary measures display GBP with two decimals; unit, invoice, customer and record counts use whole-number formats; the two ratio measures display percentages. Formatting does not change the underlying calculation. Hidden automatic date tables and their preserved relationship are described in [Model](../docs/MODEL.md#main-tables-and-filter-paths).

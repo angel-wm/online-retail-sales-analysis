@@ -4,7 +4,7 @@
   "position": {
     "x": 768,
     "y": 240,
-    "z": 10000,
+    "z": 12000,
     "height": 344,
     "width": 558,
     "tabOrder": 900
@@ -29,24 +29,6 @@
               "queryRef": "Online Retail.Country",
               "nativeQueryRef": "Country",
               "active": true
-            }
-          ]
-        },
-        "Y": {
-          "projections": [
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "Online Retail"
-                    }
-                  },
-                  "Property": "Return Value"
-                }
-              },
-              "queryRef": "Online Retail.Return Value",
-              "nativeQueryRef": "Return Value"
             }
           ]
         },
@@ -156,6 +138,24 @@
               "queryRef": "Online Retail.Units Reversed",
               "nativeQueryRef": "Reversed units",
               "displayName": "Reversed units"
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Online Retail"
+                    }
+                  },
+                  "Property": "Return Value"
+                }
+              },
+              "queryRef": "Online Retail.Return Value",
+              "nativeQueryRef": "Return Value"
             }
           ]
         }
