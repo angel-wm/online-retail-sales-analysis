@@ -56,6 +56,22 @@ Without `--fresh`, the source reader can reuse its SHA-256-keyed local cache; th
 
 The baseline [original manifest](../evidence/baseline/original_manifest.json) identifies the recovered source and original visuals. [Original calculation records](../evidence/baseline/data_reconciliation.json) supply the pre-correction expectations. These inputs remain versioned so another checkout can run the checks without recovery archives.
 
+## Automated checks in GitHub Actions
+
+The [source and static validation workflow](../.github/workflows/source-static-validation.yml) runs on every pull request targeting `main`, push to `main`, and manual `workflow_dispatch`. It uses an Ubuntu runner, Python 3.12, .NET 8, the pinned Python requirements, and the pinned TMDL parser dependencies.
+
+Each run executes:
+
+```text
+python scripts/run_validation.py --fresh
+```
+
+This re-reads the versioned Excel and checks the source reconciliation, independent XLSX XML crosscheck, official TOM/TMDL deserialization, model invariants and filters, report definitions and dependencies, JSON schemas, project integrity, and Git whitespace. No proprietary Desktop cache or local recovery backup is needed. The committed `SourceFilePath` is a machine-local Power Query parameter and **is not used to refresh M in CI**; configure it when opening the project locally.
+
+The workflow fails if a source/static step exits unsuccessfully. It uploads its validation receipts and step logs as a short-lived GitHub Actions artifact (seven days), including when a validation step fails. Some project schema versions use a documented compatibility schema; `PASS_SOURCE_AND_STATIC_CHECKS_WITH_PARTIAL_SCHEMA_COVERAGE` is therefore a successful *partial-coverage* result, not a claim of exact-schema verification.
+
+**CI does not open Power BI Desktop, execute M refresh or DAX against a newly loaded native model, render visuals, test interactive selections, or export PBIX/PDF.** For those checks, use the dated Desktop evidence and the remaining acceptance tasks below.
+
 ## Recorded Desktop checks
 
 The native receipts were recorded in Power BI Desktop **2.158.1304.0**, with engine timestamps in each JSON and visual-test dates as recorded by the observer. They are dated evidence, not a claim that this documentation update reran Desktop tests.
