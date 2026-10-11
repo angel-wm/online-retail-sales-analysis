@@ -39,7 +39,7 @@ This is a deterministic label for grouping, not an authoritative product catalog
 
 The 12 recovered measure names and their lineage tags are preserved, with five additional measures for administrative adjustments, other movements, reversed units and customer coverage. Existing report references therefore continue to use their original measure names. Business meanings and limits have their reference in [Metrics](METRICS.md).
 
-`SourceFilePath` is the sole Excel-location parameter. Its value is a local absolute path; it is not automatically inferred from the PBIP location. Use the [setup procedure](SETUP.md#configure-and-open) on a new machine or after moving the project.
+`SourceFilePath` is the sole Excel-location parameter. The versioned TMDL uses a neutral placeholder, not a machine-specific Excel location. Before refreshing the PBIP, set the local absolute path with `python scripts/configure_source.py` or Power Query Manage Parameters. Restore the neutral placeholder with `--reset` before committing this tracked TMDL file. The path cannot be inferred from the PBIP location by Power Query; see the [setup procedure](SETUP.md#configure-and-open). This configuration does not modify the separate PBIX snapshot.
 
 ## Report pages and rankings
 
