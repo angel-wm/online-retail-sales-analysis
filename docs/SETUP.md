@@ -1,6 +1,6 @@
 # Open the Power BI project
 
-Use this procedure to open the editable report from a new checkout or after moving the project. The single entry point is [uk-online-retail-sales-analysis.pbip](../uk-online-retail-sales-analysis.pbip), in the repository root.
+Use this procedure to open the editable report from a new checkout or after moving the project. The editable project's entry point is [uk-online-retail-sales-analysis.pbip](../uk-online-retail-sales-analysis.pbip), in the repository root; the separate [PBIX export](../exports/uk-online-retail-sales-analysis.pbix) is available for single-file viewing.
 
 ## Prerequisites
 
@@ -19,7 +19,7 @@ Power BI project definitions and the PBIP entry point are described in [Microsof
    python scripts/configure_source.py
    ```
 
-   The helper sets `SourceFilePath` to this checkout's `data/raw/Online Retail.xlsx`. It changes only the parameter in `expressions.tmdl`; it does not edit the workbook. The stored path is machine-specific, so repeat this step after moving or cloning the project.
+   The repository stores the neutral `SET_LOCAL_ONLINE_RETAIL_XLSX_PATH` placeholder instead of a personal Windows path. This helper sets `SourceFilePath` to this checkout's `data/raw/Online Retail.xlsx`; it changes only `expressions.tmdl` and does not edit the workbook. Run it again after moving or cloning the project.
 
 3. Open `uk-online-retail-sales-analysis.pbip` from the repository root.
 4. Select **Refresh** in Desktop and wait for it to finish. Loaded data and Desktop state in `.pbi/` are local and excluded from Git; a new checkout must refresh from the Excel file.
@@ -27,6 +27,20 @@ Power BI project definitions and the PBIP entry point are described in [Microsof
 6. Save in Desktop before closing if you want to retain the local loaded-data cache.
 
 Alternatively, set **SourceFilePath** through Power Query's **Manage Parameters**, choose the local Excel file, then apply the change and refresh. The helper's default source is the versioned workbook; an alternative workbook may change the results.
+
+### Before committing or pushing changes
+
+The helper intentionally changes a **tracked** Power Query parameter to a local absolute path so Desktop can refresh. Keep that path on your machine rather than publishing it. Once Desktop is closed and you have saved the project, restore the neutral repository value:
+
+```powershell
+python scripts/configure_source.py --reset
+python scripts/configure_source.py --check-repository
+git status --short
+```
+
+`--reset` changes **only** the PBIP source parameter; it does not modify the Excel, PBIX or semantic calculations. A new refresh of the PBIP requires running `python scripts/configure_source.py` again. GitHub Actions checks that the committed parameter uses the neutral placeholder. Do not run `--reset` while the project is open in Desktop.
+
+If you prefer to keep your local path temporarily while working, stage only your intended files; never commit the modified `expressions.tmdl` with your machine-specific path.
 
 ## Explore the report
 
