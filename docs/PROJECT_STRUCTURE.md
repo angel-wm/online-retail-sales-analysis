@@ -66,7 +66,7 @@ Screenshots remain in their existing folder and keep their filenames. They are p
 
 `financial/` contains the current source reconciliation, before/after values, monthly and country totals, special-code review, product identity and the measure-expression contract. Its CSV and JSON files support the metric definitions without placing large data tables in the README.
 
-`validation/` contains current source/static results and dated native Desktop checks. [Validation](VALIDATION.md) distinguishes their scope and explains the retained refresh attempt and the schema snapshot associated with a native visual test. Superseded phases and authoring attempts are not part of the maintained documentation.
+`validation/` contains committed source/static snapshots and dated native Desktop checks. For the newest execution, consult the [GitHub Actions run artifacts](https://github.com/angel-wm/online-retail-sales-analysis/actions/workflows/source-static-validation.yml); these are not automatically committed. The current integrity snapshot is checked against a fresh CI run to prevent PBIX-related drift. [Validation](VALIDATION.md) distinguishes test scope and historical records. Superseded phases and authoring attempts are not part of the maintained documentation.
 
 ## Local generated content
 
@@ -78,7 +78,7 @@ Screenshots remain in their existing folder and keep their filenames. They are p
 | `**/.pbi/` | Desktop settings and loaded-model cache. |
 | `**/bin/`, `**/obj/`, `**/__pycache__/` | Rebuildable compilation and Python output. |
 
-These locations remain available locally and are excluded by [.gitignore](../.gitignore). Local virtual environments, editor settings and operating-system temporary files are excluded as well. A fresh clone obtains dependencies and refreshes the model; it does not require another person's caches or recovery copies.
+These locations remain available locally and are excluded by [.gitignore](../.gitignore). Local virtual environments, editor settings and operating-system temporary files are excluded as well. A fresh clone obtains dependencies and refreshes the model after `python scripts/configure_source.py` supplies its local Excel path; the committed TMDL retains a portable placeholder instead of a developer's Windows path. No other person's caches or recovery copies are needed.
 
 The supported checks write concise results to `evidence/validation/` and full diagnostics to `.cache/validation/`. Optional recovery verification writes only under `backups/`.
 
