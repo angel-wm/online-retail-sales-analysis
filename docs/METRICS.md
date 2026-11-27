@@ -1,3 +1,5 @@
+[Ver versión en español](METRICS.es.md)
+
 # Metrics and interpretation
 
 The report distinguishes eligible merchandise activity from administrative and other movements. Amounts are in **GBP (£)**, the original source currency; no currency conversion is applied.

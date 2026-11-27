@@ -1,3 +1,5 @@
+[Ver versión en español](PROJECT_STRUCTURE.es.md)
+
 # Project structure
 
 Open [the PBIX export](../exports/uk-online-retail-sales-analysis.pbix) to explore the report with the included data. For editing, [uk-online-retail-sales-analysis.pbip](../uk-online-retail-sales-analysis.pbip) points to the report under `powerbi/`, which points to the semantic model beside it. Keep these items together when cloning, moving or downloading the project.

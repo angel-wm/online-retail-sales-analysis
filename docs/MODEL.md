@@ -1,3 +1,5 @@
+[Ver versión en español](MODEL.es.md)
+
 # Model and report behavior
 
 The import model joins invoice lines to a date dimension and a stock-code dimension. Its implementation is in the [semantic model definition](../powerbi/uk-online-retail-sales-analysis.SemanticModel/definition/model.tmdl); the [data dictionary](../data/data-dictionary.md) describes individual fields.

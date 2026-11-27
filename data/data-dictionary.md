@@ -1,3 +1,5 @@
+[Ver versión en español](data-dictionary.es.md)
+
 # Data dictionary
 
 This reference describes the current editable model, verified by its [TMDL parser output](../evidence/validation/final-tom.json). For business meanings and reference totals, use [Metrics](../docs/METRICS.md); for table relationships and product identity, use [Model](../docs/MODEL.md).

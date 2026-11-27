@@ -1,3 +1,5 @@
+[Ver versión en español](cleaning-notes.es.md)
+
 # Data preparation and limitations
 
 The model transforms the unchanged [UCI source workbook](../data/raw/Online%20Retail.xlsx) into a merchandise-focused report while retaining administrative and other movements for reconciliation. The implemented Power Query steps are in [Online Retail.tmdl](../powerbi/uk-online-retail-sales-analysis.SemanticModel/definition/tables/Online%20Retail.tmdl).

@@ -1,3 +1,5 @@
+[Ver versión en español](DATA_LICENSE.es.md)
+
 # Dataset License and Attribution
 
 ## Dataset

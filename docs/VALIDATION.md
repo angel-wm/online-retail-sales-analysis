@@ -1,3 +1,5 @@
+[Ver versión en español](VALIDATION.es.md)
+
 # Validation and acceptance scope
 
 Validation separates calculations reconstructed from the Excel source, checks of the project definitions, native engine queries and observation of the rendered report. A passing source or schema check does not establish that Power BI Desktop refreshed, rendered or applied every interaction correctly.

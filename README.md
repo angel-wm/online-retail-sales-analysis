@@ -1,6 +1,8 @@
-English | [Español](README.es.md)
-
 # UK Online Retail Sales Analysis
+
+[Ver versión en español](README.es.md)
+
+[![CI](https://github.com/angel-wm/online-retail-sales-analysis/actions/workflows/source-static-validation.yml/badge.svg)](https://github.com/angel-wm/online-retail-sales-analysis/actions/workflows/source-static-validation.yml)
 
 A two-page Power BI project for exploring merchandise sales, customer coverage and cancellation/reversal value in the UCI Online Retail dataset. It includes an interactive PBIX, the original Excel source, editable report and model definitions, and reproducible financial checks.
 

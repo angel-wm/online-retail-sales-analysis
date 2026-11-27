@@ -1,3 +1,5 @@
+[Ver versión en español](RECONCILIATION.es.md)
+
 # Financial reconciliation
 
 This evidence compares reconstructed original calculations with the current merchandise scope, using the unchanged Excel source, all dates and countries, and no external selection. Amounts are GBP. The reconstruction does not execute DAX or Power Query; native comparisons have a separate record in [Validation](../../docs/VALIDATION.md#recorded-desktop-checks).
