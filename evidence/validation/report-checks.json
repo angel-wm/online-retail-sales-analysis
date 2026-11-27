@@ -4,62 +4,64 @@
   "pages": [
     {
       "page": "Product & Customer Insights",
-      "visuals": 15,
+      "visuals": 16,
       "width": 1336,
       "height": 920,
-      "interaction_pairs": 50,
+      "interaction_pairs": 64,
       "container_overlaps_excluding_background_shapes": 0
     },
     {
       "page": "Sales Overview",
-      "visuals": 18,
+      "visuals": 19,
       "width": 1336,
       "height": 920,
-      "interaction_pairs": 71,
+      "interaction_pairs": 85,
       "container_overlaps_excluding_background_shapes": 0
     }
   ],
   "original_visuals_retained": 31,
-  "new_visuals": 2,
+  "new_visuals": 4,
   "visual_file_sha256": {
-    "powerbi/uk-online-retail-sales-analysis.Report/definition/pages/9ce4074e277290a594b7/visuals/00c6198092a372ab0910/visual.json": "c40d00f30a93793438f950ff000a5949b7c6764fe6367cbd3e651c1afd4c6dca",
+    "powerbi/uk-online-retail-sales-analysis.Report/definition/pages/9ce4074e277290a594b7/visuals/00c6198092a372ab0910/visual.json": "e8c4e9844d6418194b329fce9b0b2413331476d1a9a73d1f14fcbdc03a45f39f",
     "powerbi/uk-online-retail-sales-analysis.Report/definition/pages/9ce4074e277290a594b7/visuals/0483efcc26aa02cd5527/visual.json": "3db60c1396d53afe335b272cd5ef8d0548011d6676ba5d0af57233063f17266d",
-    "powerbi/uk-online-retail-sales-analysis.Report/definition/pages/9ce4074e277290a594b7/visuals/0b519c8ca5250d606ea0/visual.json": "5d5b83e3958ae5c31ac95e1f109d57ea9120f17674e160215fc72d6632ce5506",
+    "powerbi/uk-online-retail-sales-analysis.Report/definition/pages/9ce4074e277290a594b7/visuals/0b519c8ca5250d606ea0/visual.json": "f2c734a9d26313af078093f8e99d47816ad49d485c3e8f346d0490a051160649",
     "powerbi/uk-online-retail-sales-analysis.Report/definition/pages/9ce4074e277290a594b7/visuals/1ce1ac3b318881b82400/visual.json": "cea9f7470a127de072fe7b04b21320baa9b6cf3611228a6d6ff88aa740e46fc7",
-    "powerbi/uk-online-retail-sales-analysis.Report/definition/pages/9ce4074e277290a594b7/visuals/326efa6cd15edb5615ca/visual.json": "c8675097c0fbd814d9a5a05c30db1d9da2f69dcf2e2bffae9a10b9448b9503f3",
+    "powerbi/uk-online-retail-sales-analysis.Report/definition/pages/9ce4074e277290a594b7/visuals/326efa6cd15edb5615ca/visual.json": "5274a9fade22be39f3695e24747c81eef25c24e8642ffb4f8ef64e15b0e160fb",
     "powerbi/uk-online-retail-sales-analysis.Report/definition/pages/9ce4074e277290a594b7/visuals/488130f83c29980e808d/visual.json": "b1ba7d3933eb7594612460cc8b5c8f1e22c9e759f2c1223f73385a892e8e45f7",
     "powerbi/uk-online-retail-sales-analysis.Report/definition/pages/9ce4074e277290a594b7/visuals/4945712e83cd21b9868e/visual.json": "ff6fa7fca400c8d39533a63ffbba45206d531820a7037843ccecd0ee47146266",
-    "powerbi/uk-online-retail-sales-analysis.Report/definition/pages/9ce4074e277290a594b7/visuals/5a6dfdeab84eec858701/visual.json": "92fd50b0176fe05da3e172932765373735ad6621b295c8476aff5f6c2c48ab1d",
+    "powerbi/uk-online-retail-sales-analysis.Report/definition/pages/9ce4074e277290a594b7/visuals/5a6dfdeab84eec858701/visual.json": "44a1c770d6e9fe66b4b26e803691c278a356f325c94e645f4a568d7597dd83be",
     "powerbi/uk-online-retail-sales-analysis.Report/definition/pages/9ce4074e277290a594b7/visuals/5d94eeb50cdd08a9dc2d/visual.json": "7cd7f839ec8460da4b997fd58036996f9d1c7d19d8f4f58bfddfc0db77e81a85",
     "powerbi/uk-online-retail-sales-analysis.Report/definition/pages/9ce4074e277290a594b7/visuals/8659739282b008532eee/visual.json": "7eecba6e12ea3875fb837cf73345f3d138a1ba04ec5f26585beca4ae1e0ce22a",
     "powerbi/uk-online-retail-sales-analysis.Report/definition/pages/9ce4074e277290a594b7/visuals/a13243354215609ec4c0/visual.json": "5fd9438f37c977632b10e623622a0c694f5373b023667bc0faa8f25734093d95",
-    "powerbi/uk-online-retail-sales-analysis.Report/definition/pages/9ce4074e277290a594b7/visuals/bfd4fc73192936bc42c7/visual.json": "af95d383ed73f4a5bef68c8d84016551792a5c2e0e7ebb3385290a767e0903d2",
+    "powerbi/uk-online-retail-sales-analysis.Report/definition/pages/9ce4074e277290a594b7/visuals/bfd4fc73192936bc42c7/visual.json": "3798c79137d7262ee46e5e6842b11586e0e836c9d41dcb942feb9e57db8966a8",
     "powerbi/uk-online-retail-sales-analysis.Report/definition/pages/9ce4074e277290a594b7/visuals/fc81c2d8bc82287d528b/visual.json": "85ccbd0ed9d9ff408c4a67878662fdd025cf3b29dc58ca7ddf669dd36960950d",
     "powerbi/uk-online-retail-sales-analysis.Report/definition/pages/9ce4074e277290a594b7/visuals/retail_identified_share/visual.json": "56ce2b0ae925540202b7d753abb5f8330c2ede0b62473ebcf709123cfde2baab",
+    "powerbi/uk-online-retail-sales-analysis.Report/definition/pages/9ce4074e277290a594b7/visuals/retail_product_reversal_note/visual.json": "c810240d15e05e7c9e88c6a9666edff8838581d76427d90119db30da3535a6a7",
     "powerbi/uk-online-retail-sales-analysis.Report/definition/pages/9ce4074e277290a594b7/visuals/retail_unknown_net/visual.json": "10820705ec78f940f3da2d2ad646276d0bfe68b827e326275261b6b39677a88e",
-    "powerbi/uk-online-retail-sales-analysis.Report/definition/pages/e2e71b2b39b7e00b93de/visuals/0d26f07ae3e59165a455/visual.json": "ab7b492cfda8f11ad5da90ef720ee70baf6c994cf20fb62681059bab5506b3cd",
-    "powerbi/uk-online-retail-sales-analysis.Report/definition/pages/e2e71b2b39b7e00b93de/visuals/0d43bab4e45532bcc190/visual.json": "a7093b0cf33d71d37da74d676f751e5c19f6983ee231a6660ef87045f78a1eff",
-    "powerbi/uk-online-retail-sales-analysis.Report/definition/pages/e2e71b2b39b7e00b93de/visuals/103453003bcd8ca655ca/visual.json": "f4ecc077f04fa543e813388d636ff9a1ab5a54d7a943a6b6621a6704cda07a47",
-    "powerbi/uk-online-retail-sales-analysis.Report/definition/pages/e2e71b2b39b7e00b93de/visuals/17704764da05a4761017/visual.json": "22c3171cd27758b0655ea6829ccf9b09db4c983158a532f99c52d85804e5b752",
-    "powerbi/uk-online-retail-sales-analysis.Report/definition/pages/e2e71b2b39b7e00b93de/visuals/1efd5c26d1b097445d63/visual.json": "0466e543bf72b6c52516b1a2b3c5ee65358f66e3a5e6c757d88cf6a0bd79ff36",
-    "powerbi/uk-online-retail-sales-analysis.Report/definition/pages/e2e71b2b39b7e00b93de/visuals/3774ff8807dbaa3ca5ce/visual.json": "f30dae34725e02849fcd3ade10bf23a44ad792b3672bbf83e978974ea9fce596",
+    "powerbi/uk-online-retail-sales-analysis.Report/definition/pages/e2e71b2b39b7e00b93de/visuals/0d26f07ae3e59165a455/visual.json": "0fe91bf4f1cb000cfa0dbf8547cb2e053941eed5ee0ffee6cca05bb994d285b8",
+    "powerbi/uk-online-retail-sales-analysis.Report/definition/pages/e2e71b2b39b7e00b93de/visuals/0d43bab4e45532bcc190/visual.json": "5ed6df1724d9b3acd06d7a4ccd2e5ce3bc23df1e2de60770ac6b6e2997cad7ad",
+    "powerbi/uk-online-retail-sales-analysis.Report/definition/pages/e2e71b2b39b7e00b93de/visuals/103453003bcd8ca655ca/visual.json": "954c9591a5d45a44a32d4b07e815b318a171b43019251f83dd4888e46fd81a03",
+    "powerbi/uk-online-retail-sales-analysis.Report/definition/pages/e2e71b2b39b7e00b93de/visuals/17704764da05a4761017/visual.json": "90b7ef54641aad7a8f3c6bc1e163f818aec6e032d82621ada5e48c887ee2ee2b",
+    "powerbi/uk-online-retail-sales-analysis.Report/definition/pages/e2e71b2b39b7e00b93de/visuals/1efd5c26d1b097445d63/visual.json": "80ba282b6a8aca554fba6efc554e2b51a7aacff6fbde9c6ebe9511e8210f24eb",
+    "powerbi/uk-online-retail-sales-analysis.Report/definition/pages/e2e71b2b39b7e00b93de/visuals/3774ff8807dbaa3ca5ce/visual.json": "86174b4a8b116bdacf9a41685829e7024eae13f113eaab58d842ee64ddf4d167",
     "powerbi/uk-online-retail-sales-analysis.Report/definition/pages/e2e71b2b39b7e00b93de/visuals/49a95c32ed08401404c0/visual.json": "9b199b371e7611705b8af2f61acdd3670abf453b04ef2d6c762e699f6ec313c8",
     "powerbi/uk-online-retail-sales-analysis.Report/definition/pages/e2e71b2b39b7e00b93de/visuals/5aa06803ebeac0c1cbba/visual.json": "8233c263bbdea403d69a37061d578b40592cfc8b6686584c6cf56fadcd4a244d",
-    "powerbi/uk-online-retail-sales-analysis.Report/definition/pages/e2e71b2b39b7e00b93de/visuals/5f1c21068041053e9103/visual.json": "749b6a5e0dcdf793135b5cc31bb1dbf55b2f680dcf02ef4a746b1079a7d63a5b",
+    "powerbi/uk-online-retail-sales-analysis.Report/definition/pages/e2e71b2b39b7e00b93de/visuals/5f1c21068041053e9103/visual.json": "542939949753bcf09c4f4e2a9af3d75898510a3046bc344ea6e9af31a6c8caf9",
     "powerbi/uk-online-retail-sales-analysis.Report/definition/pages/e2e71b2b39b7e00b93de/visuals/866c411e4dac10cc1484/visual.json": "e7581f3d4ae6fb4fe80eeb8b410852b22769c2fe7a9585448ff84fba7ca19b45",
-    "powerbi/uk-online-retail-sales-analysis.Report/definition/pages/e2e71b2b39b7e00b93de/visuals/b7f03dd49cd6692b1d55/visual.json": "eea69db476740c755826a6a4c61ad6be24849d293e27db85beb8c83c87367476",
-    "powerbi/uk-online-retail-sales-analysis.Report/definition/pages/e2e71b2b39b7e00b93de/visuals/c1e7baf0796e55151039/visual.json": "b0a60839894847bb99909a3dc402e0b7d3dc2f1bd29b4dc33348ce3331ad6f18",
-    "powerbi/uk-online-retail-sales-analysis.Report/definition/pages/e2e71b2b39b7e00b93de/visuals/c6a83e50232cca065cd5/visual.json": "95473cde2a523641c261930fc383331e7281033a04c4f671f1c2706378e134c9",
-    "powerbi/uk-online-retail-sales-analysis.Report/definition/pages/e2e71b2b39b7e00b93de/visuals/dd400a8a673caa8ed6a7/visual.json": "c7805e572c8b8f8cef9d22c9e34c413effe388d62ad4918641521e2f73a6777b",
+    "powerbi/uk-online-retail-sales-analysis.Report/definition/pages/e2e71b2b39b7e00b93de/visuals/b7f03dd49cd6692b1d55/visual.json": "990626509bbf8b2e3a3558546cb0e542da5fa98128da950a36b2a19060b5abf9",
+    "powerbi/uk-online-retail-sales-analysis.Report/definition/pages/e2e71b2b39b7e00b93de/visuals/c1e7baf0796e55151039/visual.json": "343272add57576af027af95bfcf4a5d4d9ade8f362853c32610c02e5f733db36",
+    "powerbi/uk-online-retail-sales-analysis.Report/definition/pages/e2e71b2b39b7e00b93de/visuals/c6a83e50232cca065cd5/visual.json": "49157fbc2c65ab152cbeb4466430e5eacd78fc58fe8bda3a8ad3802e395afc33",
+    "powerbi/uk-online-retail-sales-analysis.Report/definition/pages/e2e71b2b39b7e00b93de/visuals/dd400a8a673caa8ed6a7/visual.json": "8e989c94a0cd2454639b7c3b342994778c13912a9c6015d6e979cd4d5448f5ff",
     "powerbi/uk-online-retail-sales-analysis.Report/definition/pages/e2e71b2b39b7e00b93de/visuals/e062531a409aa34d2575/visual.json": "6ea3a2141fb705625a71673db74e29dc25259b3349e2aeb5d4c8e3d3cd324806",
-    "powerbi/uk-online-retail-sales-analysis.Report/definition/pages/e2e71b2b39b7e00b93de/visuals/eb470f7e84ed9703a8d8/visual.json": "73c696216494499264e4b5e03b4b3f50c4c53918bf78f057b57e655e6a833e2d",
+    "powerbi/uk-online-retail-sales-analysis.Report/definition/pages/e2e71b2b39b7e00b93de/visuals/eb470f7e84ed9703a8d8/visual.json": "b986e48735b8892701644f598cf9c229f4688cd6bffee7e701242bdec2eccaff",
     "powerbi/uk-online-retail-sales-analysis.Report/definition/pages/e2e71b2b39b7e00b93de/visuals/f416263b317d0044c051/visual.json": "ec84ce4ac5ba0288d3960fcb59f81c4ea41434a7b10d947c7be3af36bbd40e0c",
-    "powerbi/uk-online-retail-sales-analysis.Report/definition/pages/e2e71b2b39b7e00b93de/visuals/fe3958954c94c6c880eb/visual.json": "06cc765be05e14b0e98c25dd014da5272f003abdb49c6fbbf82d002361d2dbef"
+    "powerbi/uk-online-retail-sales-analysis.Report/definition/pages/e2e71b2b39b7e00b93de/visuals/fe3958954c94c6c880eb/visual.json": "06cc765be05e14b0e98c25dd014da5272f003abdb49c6fbbf82d002361d2dbef",
+    "powerbi/uk-online-retail-sales-analysis.Report/definition/pages/e2e71b2b39b7e00b93de/visuals/retail_country_sales_note/visual.json": "44b14d7d0e569c32551438a8b3aa9458ac40bd46fc5df1233a77fdc65c814800"
   },
   "references_checked": {
     "column_references": 45,
-    "measure_references": 85,
-    "source_entities": 111
+    "measure_references": 91,
+    "source_entities": 117
   },
   "measure_dependency_graph": {
     "Total Sales": [],
@@ -102,6 +104,22 @@
     "Identified Sales Share": [
       "Main Sales",
       "Main Sales"
+    ],
+    "Report Context": [
+      "Net Sales"
+    ],
+    "Monthly Coverage Note": [],
+    "Country Sales Note": [
+      "Net Sales",
+      "Net Sales"
+    ],
+    "Product Reversal Note": [
+      "Returns Amount",
+      "Returns Amount",
+      "Returns Amount",
+      "Returns Amount",
+      "Returns Amount",
+      "Returns Amount"
     ]
   },
   "errors": []

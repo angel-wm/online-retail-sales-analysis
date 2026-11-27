@@ -367,7 +367,7 @@
             "altText": {
               "expr": {
                 "Literal": {
-                  "Value": "'cardVisual'"
+                  "Value": "'Net value per sale invoice'"
                 }
               }
             }

@@ -562,8 +562,31 @@
             },
             "text": {
               "expr": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Online Retail"
+                    }
+                  },
+                  "Property": "Monthly Coverage Note"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
                 "Literal": {
-                  "Value": "'Dec 2011: partial month, through 9 Dec'"
+                  "Value": "10D"
+                }
+              }
+            },
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#475569'"
+                    }
+                  }
                 }
               }
             }

@@ -1,6 +1,6 @@
 {
-  "started_utc": "2026-10-11T01:38:55.444220+00:00",
-  "finished_utc": "2026-10-11T01:38:56.449742+00:00",
+  "started_utc": "2026-11-27T19:05:10.411903+00:00",
+  "finished_utc": "2026-11-27T19:05:14.790800+00:00",
   "status": "PASS_SOURCE_AND_STATIC_CHECKS_WITH_PARTIAL_SCHEMA_COVERAGE",
   "source_sha256": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
   "source_check_implementation_sha256": {
@@ -9,7 +9,7 @@
     "evidence/baseline/data_reconciliation.json": "223c6e284ef737a02d62809285e43c05e946e2078afd0adcd3bbf8e01258caab"
   },
   "excel_read_fresh": true,
-  "reused_successful_prerequisites": 6,
+  "reused_successful_prerequisites": 5,
   "native_dax_m_refresh_render_interactions_tested": false,
   "local_backups_required": false,
   "detailed_logs_versioned": false,
@@ -22,7 +22,7 @@
         "--fresh"
       ],
       "exit_code": 0,
-      "duration_seconds": 71.359,
+      "duration_seconds": 152.75,
       "local_log": ".cache/validation/01.log"
     },
     {
@@ -31,7 +31,7 @@
         "scripts/crosscheck_xml.py"
       ],
       "exit_code": 0,
-      "duration_seconds": 28.219,
+      "duration_seconds": 102.078,
       "local_log": ".cache/validation/02.log"
     },
     {
@@ -46,7 +46,7 @@
         "evidence/validation/final-tom.json"
       ],
       "exit_code": 0,
-      "duration_seconds": 2.016,
+      "duration_seconds": 7.36,
       "local_log": ".cache/validation/03.log"
     },
     {
@@ -55,7 +55,7 @@
         "scripts/validate_model.py"
       ],
       "exit_code": 0,
-      "duration_seconds": 10.672,
+      "duration_seconds": 28.234,
       "local_log": ".cache/validation/04.log"
     },
     {
@@ -64,7 +64,7 @@
         "scripts/validate_report.py"
       ],
       "exit_code": 0,
-      "duration_seconds": 0.125,
+      "duration_seconds": 0.531,
       "local_log": ".cache/validation/05.log"
     },
     {
@@ -75,7 +75,7 @@
         "evidence/validation/final-json-schema.json"
       ],
       "exit_code": 0,
-      "duration_seconds": 1.891,
+      "duration_seconds": 2.906,
       "local_log": ".cache/validation/06.log"
     },
     {
@@ -84,7 +84,7 @@
         "scripts/validate_integrity.py"
       ],
       "exit_code": 0,
-      "duration_seconds": 0.89,
+      "duration_seconds": 1.282,
       "local_log": ".cache/validation/07.log"
     },
     {
@@ -94,7 +94,7 @@
         "--check"
       ],
       "exit_code": 0,
-      "duration_seconds": 0.11,
+      "duration_seconds": 0.172,
       "local_log": ".cache/validation/08.log"
     }
   ]

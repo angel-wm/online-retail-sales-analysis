@@ -219,6 +219,30 @@
           "expression": "DIVIDE(CALCULATE([Main Sales], KEEPFILTERS(NOT(ISBLANK(\u0027Online Retail\u0027[Customer_ID])))), [Main Sales])",
           "format": "0.00%;-0.00%;0.00%",
           "description": "Share of gross eligible merchandise sales with a known customer ID in the current context. Financial coverage, not share of all buyers."
+        },
+        {
+          "name": "Report Context",
+          "expression": "VAR FirstSelectedDate = MIN(\u0027Calendar\u0027[Date])\nVAR LastSelectedDate = MAX(\u0027Calendar\u0027[Date])\nVAR SelectedPeriodText =\n    IF(\n        ISBLANK(FirstSelectedDate),\n        \u0022No dates in this selection\u0022,\n        \u0022Selected period: \u0022 \u0026 FORMAT(FirstSelectedDate, \u0022d mmm yyyy\u0022, \u0022en-GB\u0022) \u0026 \u0022 to \u0022 \u0026 FORMAT(LastSelectedDate, \u0022d mmm yyyy\u0022, \u0022en-GB\u0022)\n    )\nRETURN\n    IF(\n        ISBLANK([Net Sales]),\n        SelectedPeriodText \u0026 \u0022  |  No eligible merchandise activity for this selection\u0022,\n        SelectedPeriodText\n    )",
+          "format": "",
+          "description": "Calendar date scope under the current selection and a message when no eligible merchandise activity is present."
+        },
+        {
+          "name": "Monthly Coverage Note",
+          "expression": "VAR SourceEnd = CALCULATE(MAX(\u0027Calendar\u0027[Date]), REMOVEFILTERS(\u0027Calendar\u0027))\nRETURN\n    IF(\n        CONTAINS(VALUES(\u0027Calendar\u0027[Date]), \u0027Calendar\u0027[Date], SourceEnd)\n            \u0026\u0026 SourceEnd \u003C EOMONTH(SourceEnd, 0),\n        \u0022* Partial month through \u0022 \u0026 FORMAT(SourceEnd, \u0022d mmm yyyy\u0022, \u0022en-GB\u0022),\n        BLANK()\n    )",
+          "format": "",
+          "description": "Explains the asterisk on the partial final month when it is included in the current date selection."
+        },
+        {
+          "name": "Country Sales Note",
+          "expression": "VAR UKSales = CALCULATE([Net Sales], KEEPFILTERS(\u0027Online Retail\u0027[Country] = \u0022United Kingdom\u0022))\nVAR Share = DIVIDE(UKSales, [Net Sales])\nRETURN\n    IF(\n        NOT ISBLANK(Share),\n        FORMAT(Share, \u00220.00%\u0022, \u0022en-GB\u0022) \u0026 \u0022 of net sales from the UK\u0022,\n        \u0022Net sales for the selected markets\u0022\n    )",
+          "format": "",
+          "description": "United Kingdom share of signed net merchandise sales in the current selection."
+        },
+        {
+          "name": "Product Reversal Note",
+          "expression": "VAR ProductsWithReversals =\n    FILTER(VALUES(DimProduct[Stock_Code]), [Returns Amount] \u003E 0)\nVAR TopProducts = TOPN(2, ProductsWithReversals, [Returns Amount], DESC, DimProduct[Stock_Code], ASC)\nVAR FirstProduct = TOPN(1, TopProducts, [Returns Amount], DESC, DimProduct[Stock_Code], ASC)\nVAR Share = DIVIDE(SUMX(TopProducts, [Returns Amount]), [Returns Amount])\nRETURN\n    IF(\n        NOT ISBLANK(Share),\n        \u0022Top \u0022 \u0026 COUNTROWS(TopProducts) \u0026 \u0022: \u0022 \u0026 FORMAT(Share, \u00220.00%\u0022, \u0022en-GB\u0022) \u0026 \u0022 of reversals | \u0022\n            \u0026 MAXX(FirstProduct, DimProduct[Stock_Code]) \u0026 \u0022: \u0022\n            \u0026 FORMAT(MAXX(FirstProduct, [Returns Amount]), \u0022\u00A3#,0.00\u0022, \u0022en-GB\u0022),\n        \u0022No merchandise reversals in this selection\u0022\n    )",
+          "format": "",
+          "description": "Reversal share of up to two leading stock codes and the largest individual stock-code reversal total in the current selection."
         }
       ],
       "partitions": [

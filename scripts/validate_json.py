@@ -17,6 +17,7 @@ CACHE.mkdir(parents=True, exist_ok=True)
 used = {}
 unavailable = {}
 KNOWN_UNPUBLISHED = {
+    "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.15.0/schema.json": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.13.0/schema.json",
     "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.13.0/schema.json": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
     "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/report/3.3.0/schema.json": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/report/3.2.0/schema.json",
 }

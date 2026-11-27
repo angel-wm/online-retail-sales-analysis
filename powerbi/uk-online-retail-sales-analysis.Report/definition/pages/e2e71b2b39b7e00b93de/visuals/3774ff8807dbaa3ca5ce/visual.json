@@ -247,7 +247,7 @@
             "altText": {
               "expr": {
                 "Literal": {
-                  "Value": "'Clear all filters'"
+                  "Value": "'Clear Year, Country and Line Type selectors'"
                 }
               }
             }

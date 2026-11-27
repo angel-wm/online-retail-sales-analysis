@@ -516,7 +516,7 @@
             "altText": {
               "expr": {
                 "Literal": {
-                  "Value": "'cardVisual'"
+                  "Value": "'Net merchandise sales'"
                 }
               }
             }

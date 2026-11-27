@@ -380,7 +380,7 @@
             "altText": {
               "expr": {
                 "Literal": {
-                  "Value": "'cardVisual'"
+                  "Value": "'Reversal value as a share of gross merchandise sales'"
                 }
               }
             }

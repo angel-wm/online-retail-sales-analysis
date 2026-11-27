@@ -552,14 +552,14 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Top 30 by gross sales. Bubble = sale invoices'"
+                  "Value": "'Top 30 by gross sales | Bubble size: sale invoices | Log scale'"
                 }
               }
             },
             "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "9D"
+                  "Value": "10D"
                 }
               }
             },

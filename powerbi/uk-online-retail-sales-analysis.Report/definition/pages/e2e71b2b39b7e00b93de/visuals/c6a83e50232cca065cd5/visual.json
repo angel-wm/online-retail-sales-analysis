@@ -27,8 +27,9 @@
                 }
               },
               "queryRef": "Online Retail.Orders",
-              "nativeQueryRef": "Orders",
-              "format": "#,0"
+              "nativeQueryRef": "Sale invoices",
+              "format": "#,0",
+              "displayName": "Sale invoices"
             }
           ]
         }
@@ -109,7 +110,7 @@
             "labelDisplayUnits": {
               "expr": {
                 "Literal": {
-                  "Value": "0D"
+                  "Value": "1D"
                 }
               }
             },
@@ -373,7 +374,7 @@
             "altText": {
               "expr": {
                 "Literal": {
-                  "Value": "'cardVisual'"
+                  "Value": "'Sale invoices'"
                 }
               }
             }

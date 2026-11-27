@@ -1,6 +1,6 @@
 # Project structure
 
-Open [uk-online-retail-sales-analysis.pbip](../uk-online-retail-sales-analysis.pbip) in the root. It points to the report in `powerbi/`; the report points to the semantic model beside it. Keep these items together when cloning, moving or downloading the project.
+Open [the PBIX export](../exports/uk-online-retail-sales-analysis.pbix) to explore the report with the included data. For editing, [uk-online-retail-sales-analysis.pbip](../uk-online-retail-sales-analysis.pbip) points to the report under `powerbi/`, which points to the semantic model beside it. Keep these items together when cloning, moving or downloading the project.
 
 ## Versioned project
 
@@ -22,6 +22,8 @@ online-retail-sales-analysis/
 ├── data/
 │   ├── data-dictionary.md
 │   └── raw/Online Retail.xlsx
+├── exports/
+│   └── uk-online-retail-sales-analysis.pbix
 ├── docs/
 │   ├── SETUP.md
 │   ├── METRICS.md
@@ -53,6 +55,7 @@ online-retail-sales-analysis/
 | `powerbi/` | Active PBIR report definitions, resources and TMDL semantic model. |
 | `exports/` | Optional single-file Power BI Desktop snapshot; PBIP remains the maintained source. |
 | `data/` | Unchanged source workbook and current field reference. |
+| `exports/` | Power BI Desktop snapshot with the imported model and both report pages. |
 | `docs/` | User procedures, explanations, references and validation scope. |
 | `screenshots/` | The two current report images linked from both README files. |
 | `scripts/` | Source configuration and supported validation utilities. |
