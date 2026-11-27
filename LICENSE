@@ -19,17 +19,3 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-
-Third-party dataset notice
---------------------------
-
-The MIT License above applies to repository-authored project materials. It does
-not relicense the third-party dataset at:
-
-    data/raw/Online Retail.xlsx
-
-That file is the Online Retail dataset by Daqing Chen, distributed by the UCI
-Machine Learning Repository under the Creative Commons Attribution 4.0
-International license (CC BY 4.0).
-
-See DATA_LICENSE.md for dataset attribution and reuse terms.
