@@ -62,6 +62,8 @@ A missing eligible population or denominator can return **BLANK**, rather than a
 
 The scatter's log axis requires positive reversal values. Products with blank reversal measures can disappear under a filter; the displayed point count need not remain 30. No blank measure was replaced with zero, and no outlier was removed to spread the points.
 
+The selected-period header uses the first and last Calendar dates in context. The merchandise activity message appears when both gross sales and reversals are blank. The country note divides United Kingdom net merchandise sales by net merchandise sales in the selected context. The product note divides the reversal value of up to two leading eligible stock codes by total reversal value in that context, with stock code breaking ties. It also shows the leading product's code and reversal value. Both notes use the full selected population even when the adjacent charts show only their top ten.
+
 ## Reference values
 
 These values cover all source dates and countries with no external selection. They are reconstructed from the unchanged Excel source and checked against native DAX; provenance and comparison policy are in [Validation](VALIDATION.md#recorded-desktop-checks).
@@ -85,7 +87,7 @@ The [financial reconciliation](../evidence/financial/RECONCILIATION.md) explains
 
 ## Period coverage
 
-The source spans **1 December 2010 at 08:26 through 9 December 2011 at 12:50**. The Calendar has 374 continuous dates; its boundaries are source boundaries, not full calendar years. There are 13 monthly points.
+The source spans **1 December 2010 at 08:26 through 9 December 2011 at 12:50**. The Calendar has 374 continuous dates over 13 months, bounded by the source dates. Both monthly charts mark December 2011 with an asterisk because the source ends during that month.
 
 November 2011 has £1,432,734.99 net sales over its full 30-day calendar span. December has £441,366.51 through day 9. The apparent monthly fall of 69.19% compares unequal coverage and does not establish a collapse over a complete month.
 

@@ -2,9 +2,10 @@
 
 # Análisis de ventas de retail online del Reino Unido
 
-Proyecto de Power BI de dos páginas para explorar ventas de mercancía, cobertura de clientes y valor de cancelaciones/reversos del dataset Online Retail de UCI. Incluye el Excel original, las definiciones editables del reporte y del modelo, y comprobaciones financieras reproducibles.
+Proyecto de Power BI de dos páginas para explorar ventas de mercancía, cobertura de clientes y valor de cancelaciones/reversos del dataset Online Retail de UCI. Incluye un PBIX interactivo, el Excel original, las definiciones editables del reporte y del modelo, y comprobaciones financieras reproducibles.
 
-**Empieza por la [guía de apertura](docs/SETUP.md).** El acceso es [uk-online-retail-sales-analysis.pbip](uk-online-retail-sales-analysis.pbip), en la raíz del repositorio. Las referencias detalladas están en inglés.
+- **[Abre el PBIX](exports/uk-online-retail-sales-analysis.pbix)** para explorar el reporte en Power BI Desktop con los datos ya cargados.
+- **[Edita el PBIP](uk-online-retail-sales-analysis.pbip)** desde una copia completa del repositorio. La [guía de configuración](docs/SETUP.md), en inglés, explica cómo conectar el Excel y actualizar el modelo.
 
 Los importes están en **GBP (£)**, la moneda de la fuente. Los datos abarcan del **1 de diciembre de 2010 al 9 de diciembre de 2011**: 2010 sólo contiene diciembre y diciembre de 2011 está incompleto. Las transacciones negativas identifican reversos registrados; no acreditan devoluciones físicas ni insatisfacción de clientes.
 
@@ -18,19 +19,19 @@ El reporte interactivo requiere Power BI Desktop en Windows. Python y .NET sólo
 
 ## Vista previa del dashboard
 
-Las dos imágenes se capturaron del reporte actual en Power BI Desktop el 10 de octubre de 2026, con ambos años incluidos, Country y Line Type en All, y sin marcas seleccionadas en los gráficos.
+Las imágenes y el PBIX todavía muestran el diseño de octubre de 2026. El PBIP revisado incluye el comportamiento descrito abajo. Ambas capturas se tomaron en Power BI Desktop con ambos años incluidos, Country y Line Type en All, y todas las selecciones de los gráficos despejadas.
 
 ### Sales Overview
 
 ![Sales Overview: KPIs comerciales, ventas netas mensuales, principales países y productos, y facturas de venta por mes](screenshots/sales-overview.png)
 
-La primera página reúne ventas netas de mercancía, facturas de venta, clientes conocidos, valor neto por factura y reversos como proporción del bruto. El gráfico mensual identifica diciembre de 2011 como mes parcial.
+La primera página reúne ventas netas de mercancía, facturas de venta, clientes conocidos, valor neto por factura y reversos como proporción del bruto. Ambos gráficos mensuales identifican diciembre de 2011 como mes parcial. Reino Unido representó el **84,77 % de las ventas netas de mercancía** en el período completo.
 
 ### Product & Customer Insights
 
 ![Product and Customer Insights: cobertura de clientes, rankings de clientes y reversos, y dispersión con eje de reversos logarítmico](screenshots/product-customer-insights.png)
 
-La segunda página muestra cobertura de clientes y rankings por ventas netas o valor de reversos. La dispersión compara ventas brutas y reversos de los 30 productos principales por bruto. Su eje vertical es logarítmico y el tamaño de las burbujas representa facturas de venta.
+La segunda página muestra cobertura de clientes y rankings por ventas netas o valor de reversos. Dos productos concentraron el **51,38 % del valor de los reversos de mercancía**, con el código `23843` a la cabeza por **£168.469,60**. La dispersión compara ventas brutas y reversos de los 30 productos principales por bruto. Su eje vertical es logarítmico y el tamaño de las burbujas representa facturas de venta.
 
 Estas imágenes muestran las páginas renderizadas. El alcance de las comprobaciones numéricas y de interacción se explica en [Validación](docs/VALIDATION.md).
 

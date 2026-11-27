@@ -8,7 +8,7 @@ This page is the status reference. [Metrics](METRICS.md) defines business meanin
 
 ### Prerequisites
 
-Run from the repository root with **Python 3.12**, **.NET SDK 8** and network access for the first dependency and schema download. The recorded environment used Python 3.12.14 and .NET SDK 8.0.425. Python packages are pinned in [requirements-analysis.txt](../requirements-analysis.txt); the [C# project](../scripts/tmdl-check/TmdlCheck.csproj) pins Microsoft Analysis Services libraries to 19.114.12.
+Run from the repository root with **Python 3.12**, **.NET SDK 8** and network access for the first dependency and schema download. The latest recorded environment used Python 3.12.10 and .NET SDK 8.0.428. Python packages are pinned in [requirements-analysis.txt](../requirements-analysis.txt). The [C# project](../scripts/tmdl-check/TmdlCheck.csproj) pins Microsoft Analysis Services libraries to 19.114.12.
 
 These checks do not require an open Desktop session, a loaded-data cache, Git history or local backups. Git's whitespace check runs additionally when the directory is a Git checkout. The runner writes derived financial and validation results, plus ignored local caches; it does not edit the Excel, report or semantic model.
 
@@ -38,7 +38,7 @@ Power BI Desktop adds terminal blank lines when saving TMDL. [.gitattributes](..
 
 4. Read [validation-run.json](../evidence/validation/validation-run.json) for exit codes, timing and the source fingerprint. Full diagnostic output remains in `.cache/validation/`, excluded from Git.
 
-The current successful status is `PASS_SOURCE_AND_STATIC_CHECKS_WITH_PARTIAL_SCHEMA_COVERAGE`: 46 JSON files parse, 10 use exact declared schemas, 33 visual containers use the documented compatibility schema, and three files have no declared schema. The report schema has exact coverage in this run. Do not describe this as a complete native or exact-schema certification.
+The current status is `PASS_SOURCE_AND_STATIC_CHECKS`. All 48 project JSON files parse and 45 validate against their exact declared schemas, including all 35 visual containers. The remaining three files have no declared schema. Desktop rendering and interactions have separate checks below.
 
 Without `--fresh`, the source reader can reuse its SHA-256-keyed local cache; the independent XML reader still reads the workbook. After a downstream failure, `--resume-from tmdl` reuses successful source prerequisites only if the workbook and source-check implementation fingerprints still match. Do not use it to skip a changed source or calculation implementation.
 
@@ -48,9 +48,9 @@ Without `--fresh`, the source reader can reuse its SHA-256-keyed local cache; th
 | --- | --- |
 | [Source reconciliation](../evidence/financial/before_after.json) | Reconstructs original and current rules using integer pennies; confirms preserved original KPI expectations and the signed financial bridge. |
 | [Independent XML crosscheck](../evidence/validation/independent_xml.json) | A second XLSX reader and calculation path checks selected totals. |
-| [TMDL parser](../evidence/validation/final-tom.json) | Official TOM deserialization: five tables, three relationships, 17 measures. No DAX or M execution. |
+| [TMDL parser](../evidence/validation/final-tom.json) | Official TOM deserialization: five tables, three relationships, 17 financial and diagnostic measures, and four report text measures. No DAX or M execution. |
 | [Model checks](../evidence/validation/model-checks.json) | Reconstructs keys, joins, calendar, financial values and 15 filter contexts; compares measure expressions and formats with the contract. |
-| [Report checks](../evidence/validation/report-checks.json) | Visual identities and types, bounds, references, dependencies, resource paths, Top N and interaction configuration; records all 33 visual hashes. |
+| [Report checks](../evidence/validation/report-checks.json) | Visual identities and types, bounds, references, dependencies, resource paths, Top N and interaction configuration. Records all 35 visual hashes. |
 | [JSON schema checks](../evidence/validation/final-json-schema.json) | Checks versioned project JSON against exact or explicitly identified compatibility schemas. Desktop's ignored `.pbi` files are outside this scope. |
 | [Project integrity](../evidence/validation/project-integrity.json) | Source fingerprint and workbook ZIP integrity, one active root PBIP, resolving item paths, license-document presence and current PNG metadata. |
 
@@ -68,27 +68,30 @@ python scripts/run_validation.py --fresh
 
 This re-reads the versioned Excel and checks the source reconciliation, independent XLSX XML crosscheck, official TOM/TMDL deserialization, model invariants and filters, report definitions and dependencies, JSON schemas, project integrity, and Git whitespace. No proprietary Desktop cache or local recovery backup is needed. The committed `SourceFilePath` is a machine-local Power Query parameter and **is not used to refresh M in CI**; configure it when opening the project locally.
 
-The workflow fails if a source/static step exits unsuccessfully. It uploads its validation receipts and step logs as a short-lived GitHub Actions artifact (seven days), including when a validation step fails. Some project schema versions use a documented compatibility schema; `PASS_SOURCE_AND_STATIC_CHECKS_WITH_PARTIAL_SCHEMA_COVERAGE` is therefore a successful *partial-coverage* result, not a claim of exact-schema verification.
+The workflow fails if a source/static step exits unsuccessfully. It uploads its validation receipts and step logs as a short-lived GitHub Actions artifact (seven days), including when a validation step fails. If a declared version is unavailable and a documented compatibility schema is used, the runner reports `PASS_SOURCE_AND_STATIC_CHECKS_WITH_PARTIAL_SCHEMA_COVERAGE`.
 
 **CI does not open Power BI Desktop, execute M refresh or DAX against a newly loaded native model, render visuals, test interactive selections, or export PBIX/PDF.** For those checks, use the dated Desktop evidence and the remaining acceptance tasks below.
 
 ## Recorded Desktop checks
 
-The native receipts were recorded in Power BI Desktop **2.158.1304.0**, with engine timestamps in each JSON and visual-test dates as recorded by the observer. They are dated evidence, not a claim that this documentation update reran Desktop tests.
+The October 2026 baseline receipts were recorded in Power BI Desktop **2.158.1304.0**, with engine timestamps in each JSON and visual-test dates as recorded by the observer. They cover the model and presentation at that checkpoint.
 
 | Result | Evidence and limit |
 | --- | --- |
 | Full M refresh completed; expected row counts loaded | [desktop-native-refresh.json](../evidence/validation/desktop-native-refresh.json). The overall attempt failed its original comparison assumptions; see the explanation below. |
-| All 17 DAX measures checked in 15 contexts, zero discrepancies under native-type policy | [desktop-native-check.json](../evidence/validation/desktop-native-check.json), retaining the later successful query dated 9 October 2026 UTC. It does not test report interactions. |
+| All 17 financial and diagnostic DAX measures checked in 15 contexts, zero discrepancies under native-type policy | [desktop-native-check.json](../evidence/validation/desktop-native-check.json), retaining the later successful query dated 9 October 2026 UTC. It does not test report interactions. |
 | Thirteen monthly observations agree with Excel and chart binding | [monthly-chart-check.json](../evidence/validation/monthly-chart-check.json), supported by [source](../evidence/validation/monthly-source-check.json) and [native monthly query](../evidence/validation/desktop-monthly-check.json). |
 | Thirty scatter products, 90 values agree with the source | [scatter-source-check.json](../evidence/validation/scatter-source-check.json) and [native scatter query](../evidence/validation/desktop-scatter-check.json). |
 | Both pages rendered, complete headers and cards, ten country rows without scroll, dropdown options visible without hover | [Native visual observation on 9 October](../evidence/validation/report-load-repair.json). Save, close and reopen were observed; full interaction acceptance was not. |
 | Log scatter axis, tested 2010 and Bahrain views, scatter focus mode and save/reopen | [Native scatter observation on 10 October](../evidence/validation/scatter-scale-revision.json). Tested selectors were restored to All. |
-| Current whole-page previews | [Sales Overview](../screenshots/sales-overview.png) and [Product & Customer Insights](../screenshots/product-customer-insights.png), captured on 10 October 2026 at 1245 × 856 pixels. |
 
 The retained refresh attempt has `nativeMRefreshCompleted: true` and expected fact, product and calendar row counts, but its overall status is `FAIL_OR_INCOMPLETE_NATIVE_CHECK`. Its eleven reported differences came from comparing native Currency AOV against an unquantized quotient and treating a blank known-customer count as zero. The comparison policy was corrected; the later successful DAX receipt uses Currency's four-decimal scale and native BLANK semantics. The failed attempt is retained because it is the direct record of M refresh, and is not relabeled as a pass.
 
 The native scatter revision references [presentation-json-schema.json](../evidence/validation/presentation-json-schema.json), the schema snapshot used for that dated test. Current source/static checks use `final-json-schema.json`; the historical snapshot is retained for provenance, not as a replacement for the current check.
+
+### Dashboard context and comparisons
+
+On 27 November 2026, [native DAX checks of the revised PBIP](../evidence/validation/desktop-dashboard-review.json) verified the full dataset, Year 2010, Adjustment and markets outside the UK. The full view returns 19,773 sale invoices and 4,334 known customers, a UK net merchandise sales share of 84.77%, and a top-two reversal share of 51.38%. Year 2010 ends on 31 December 2010 and has no partial-month note. The Adjustment selection returns blank merchandise KPIs and an explanation in the report context measure. The query used the loaded model.
 
 ## Optional native query checks
 
@@ -113,7 +116,7 @@ The report was rendered and saved/reopened, and selected filter cases were exerc
 2. Check every configured chart-to-chart and chart-to-card interaction, page navigation and what selections persist. Confirm the selector lists stay stable when a chart mark is selected.
 3. Check all dynamic Top N populations and tie cases, full product names and tooltip fields under narrow filters, and known-customer exclusion of blanks. Fewer eligible entries can legitimately produce fewer marks.
 4. Review the complete report at 100% zoom and any intended display sizes. Scatter focus mode was checked; that does not cover every visual at 100%.
-5. If PBIX or PDF is included in a future deliverable, export from the accepted project and verify the exported file. Accessibility, mobile layouts, Power BI Service behavior and performance testing have not been established here.
+5. When updating the PBIX snapshot, repeat the [export and reopen checks](SETUP.md#refresh-the-pbix-export). Accessibility, mobile layouts, Power BI Service behavior and performance testing have not been established here.
 
 These limits should travel with any claims about the report. They do not prevent inspecting the PBIP, its current screenshots or the supported numerical checks.
 
@@ -127,4 +130,4 @@ python scripts/validate_integrity.py --local-recovery
 
 This requires the original recovered ZIP, original PBIX snapshot, archived checkout and `consolidation-backup.json` inside `backups/`. It verifies the recovered manifest and archive hashes, then writes `backups/recovery-check.json`. It does not assert a branch name, a remote commit or publication status.
 
-The maintained public deliverable is the PBIP, its item folders, source, documentation, screenshots and retained evidence. A commit/push or a Power BI Service deployment is a separate publication action; it is not performed by any validation command.
+The maintained public deliverable includes the PBIP, its item folders, the PBIX snapshot, source, documentation, screenshots and retained evidence. Git publication and Power BI Service deployment are separate from the validation commands.

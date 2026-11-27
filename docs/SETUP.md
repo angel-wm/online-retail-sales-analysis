@@ -1,6 +1,6 @@
 # Open the Power BI project
 
-Use this procedure to open the editable report from a new checkout or after moving the project. The single entry point is [uk-online-retail-sales-analysis.pbip](../uk-online-retail-sales-analysis.pbip), in the repository root.
+Open the [PBIX snapshot](../exports/uk-online-retail-sales-analysis.pbix) in Power BI Desktop to explore the October 2026 version with the included data. For the revised report, edits and source refreshes, use [uk-online-retail-sales-analysis.pbip](../uk-online-retail-sales-analysis.pbip) from a complete checkout and follow the procedure below.
 
 ## Prerequisites
 
@@ -30,7 +30,9 @@ Alternatively, set **SourceFilePath** through Power Query's **Manage Parameters*
 
 ## Explore the report
 
-Year, Country and Line Type selectors are synchronized across both pages. Select a chart mark to filter the cards and other charts on that page; select it again to clear that mark. **Clear selectors** resets the three selectors. Chart selections and the charts' Top N rules have their own behavior; the button is not a universal reset.
+Year, Country and Line Type selectors are synchronized across both pages. To compare markets outside the UK, open **Country**, choose **Select all**, and deselect **United Kingdom**. Select a chart mark to filter the cards and other charts on that page, then select the mark again to clear it. **Clear selectors** resets Year, Country and Line Type. Clear chart marks separately.
+
+The line beneath each page title shows the selected calendar period. It also explains when a selection has no eligible merchandise activity. The asterisk on the monthly charts identifies an incomplete final source month.
 
 The rankings use net merchandise sales or merchandise reversal value, as their titles indicate. Product labels combine stock code with a representative source description. The scatter plot uses gross sales on X, reversal value on a logarithmic Y axis and sale-invoice count for bubble size. Read [metric interpretation](METRICS.md) before comparing periods or treating a reversal as a physical return.
 
@@ -48,12 +50,12 @@ Confirm both `powerbi/` item folders were downloaded and open the root PBIP. Rec
 
 Run **Refresh** and wait for completion, then clear Year, Country and Line Type. Confirm the Excel parameter and check for a query error. Administrative or gift-voucher selections can legitimately leave merchandise measures blank; see [filter and blank behavior](METRICS.md#filters-and-blank-values).
 
-### December drops sharply in the monthly chart
+### December drops sharply in the monthly charts
 
-The source ends on 9 December 2011. The last monthly point contains a shorter period than November. Keep that point and its partial-month annotation; use the [documented period comparison](METRICS.md#period-coverage) when interpreting it.
+The source ends on 9 December 2011. Both monthly charts mark the final month with an asterisk and show the source cutoff when that month is selected. Use the [documented period comparison](METRICS.md#period-coverage) when interpreting it.
 
-## Optional PBIX or PDF
+## Refresh the PBIX export
 
-The maintained deliverable is the PBIP and its item folders. A current PBIX or PDF is not included. To provide a PBIX, open the accepted project in Desktop and use **File > Save as**; verify the exported file opens and matches the report. Microsoft documents the [Desktop conversion workflow](https://learn.microsoft.com/en-us/power-bi/developer/projects/projects-overview#frequently-asked-questions). A local historical PBIX in `backups/` is an earlier snapshot.
+After an accepted report change, refresh the model from the versioned Excel source, clear chart selections and selectors, and open **Sales Overview**. Use **File > Save as** in Desktop to update the snapshot in `exports/`. Reopen the PBIX and check its starting page, both report pages and the reference values. Capture the two previews from the same version when the visuals change. See Microsoft's [Desktop conversion workflow](https://learn.microsoft.com/en-us/power-bi/developer/projects/projects-overview#frequently-asked-questions).
 
 For developer checks, continue to [Validation](VALIDATION.md). For folder purposes, see [Project structure](PROJECT_STRUCTURE.md).

@@ -136,7 +136,7 @@ for pagefile in sorted((REPORT / "definition/pages").glob("*/page.json")):
         pairs.add(pair)
     charts = [j for j in visuals if j["visual"]["visualType"] in {"clusteredBarChart", "clusteredColumnChart", "lineChart", "scatterChart"}]
     slicers = [j for j in visuals if j["visual"]["visualType"] == "slicer"]
-    targets = [j for j in visuals if j["visual"]["visualType"] in {"cardVisual", "tableEx"}] + charts
+    targets = [j for j in visuals if j["visual"]["visualType"] in {"card", "cardVisual", "tableEx"}] + charts
     actual = {(i["source"], i["target"]): i["type"] for i in page["visualInteractions"]}
     for source in charts + slicers:
         for target in targets:
@@ -146,7 +146,7 @@ for pagefile in sorted((REPORT / "definition/pages").glob("*/page.json")):
         for target in slicers:
             require(actual.get((source["name"], target["name"])) == "NoFilter", "Chart changed slicer list")
     pages.append({"page": page["displayName"], "visuals": len(visuals), "width": page["width"], "height": page["height"], "interaction_pairs": len(pairs), "container_overlaps_excluding_background_shapes": 0})
-require(len(pages) == 2 and len(present) == 33, "Expected two pages / 33 visuals after five requested removals")
+require(len(pages) == 2 and len(present) == 35, "Expected two pages and 35 visuals, including both ranking notes")
 require(original <= present, "Original visual removed")
 report_definition = json.loads((REPORT / "definition/report.json").read_text(encoding="utf-8"))
 for package in report_definition.get("resourcePackages", []):

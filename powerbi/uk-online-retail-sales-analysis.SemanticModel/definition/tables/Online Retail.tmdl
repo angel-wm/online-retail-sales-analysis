@@ -106,6 +106,64 @@ table 'Online Retail'
 		displayFolder: Measures
 		lineageTag: 3f512b08-ba03-57fd-9e6a-9e0c99ec5419
 
+	/// Calendar date scope under the current selection and a message when no eligible merchandise activity is present.
+	measure 'Report Context' =
+			VAR FirstDate = MIN('Calendar'[Date])
+			VAR LastDate = MAX('Calendar'[Date])
+			VAR Period = "Selected period: " & FORMAT(FirstDate, "d mmm yyyy", "en-GB") & " to " & FORMAT(LastDate, "d mmm yyyy", "en-GB")
+			RETURN
+			    IF(
+			        ISBLANK([Net Sales]),
+			        Period & "  |  No eligible merchandise activity for this selection",
+			        Period
+			    )
+		isHidden
+		lineageTag: 89b30e93-fbc9-4796-a79f-07a7d4fd6186
+
+	/// Explains the asterisk on the partial final month when it is included in the current date selection.
+	measure 'Monthly Coverage Note' =
+			VAR SourceEnd = CALCULATE(MAX('Calendar'[Date]), REMOVEFILTERS('Calendar'))
+			RETURN
+			    IF(
+			        CONTAINS(VALUES('Calendar'[Date]), 'Calendar'[Date], SourceEnd)
+			            && SourceEnd < EOMONTH(SourceEnd, 0),
+			        "* Partial month through " & FORMAT(SourceEnd, "d mmm yyyy", "en-GB"),
+			        BLANK()
+			    )
+		isHidden
+		lineageTag: 0cd4b71a-5baf-4d2e-be02-61cd27077b7f
+
+	/// United Kingdom share of signed net merchandise sales in the current selection.
+	measure 'Country Sales Note' =
+			VAR UKSales = CALCULATE([Net Sales], KEEPFILTERS('Online Retail'[Country] = "United Kingdom"))
+			VAR Share = DIVIDE(UKSales, [Net Sales])
+			RETURN
+			    IF(
+			        NOT ISBLANK(Share),
+			        FORMAT(Share, "0.00%", "en-GB") & " from the UK | Use Country to compare other markets",
+			        BLANK()
+			    )
+		isHidden
+		lineageTag: 933c781b-9713-4acf-a854-3f48705bb728
+
+	/// Reversal share of up to two leading stock codes and the largest individual stock-code reversal total in the current selection.
+	measure 'Product Reversal Note' =
+			VAR ProductsWithReversals =
+			    FILTER(VALUES(DimProduct[Stock_Code]), [Returns Amount] > 0)
+			VAR TopProducts = TOPN(2, ProductsWithReversals, [Returns Amount], DESC, DimProduct[Stock_Code], ASC)
+			VAR FirstProduct = TOPN(1, TopProducts, [Returns Amount], DESC, DimProduct[Stock_Code], ASC)
+			VAR Share = DIVIDE(SUMX(TopProducts, [Returns Amount]), [Returns Amount])
+			RETURN
+			    IF(
+			        NOT ISBLANK(Share),
+			        "Top " & COUNTROWS(TopProducts) & ": " & FORMAT(Share, "0.00%", "en-GB") & " of reversals | "
+			            & MAXX(FirstProduct, DimProduct[Stock_Code]) & ": "
+			            & FORMAT(MAXX(FirstProduct, [Returns Amount]), "£#,0.00", "en-GB"),
+			        BLANK()
+			    )
+		isHidden
+		lineageTag: 545acc6a-f9d0-4047-8683-cfc6451c6506
+
 	column Invoice_ID
 		dataType: string
 		lineageTag: 01dbd32b-3c46-40e8-8270-3f36b2529fe1

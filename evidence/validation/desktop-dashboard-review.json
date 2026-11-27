@@ -1,0 +1,53 @@
+{
+  "status": "PASS_NATIVE_DAX_DASHBOARD_CONTEXT",
+  "checked_date": "2026-11-27",
+  "source": "Loaded semantic model of the revised local PBIP in Power BI Desktop",
+  "model_refreshed_in_this_check": false,
+  "query": "EVALUATE\nUNION(\n    ROW(\"Scenario\", \"All\", \"Net\", [Net Sales], \"Invoices\", [Orders], \"Customers\", [Unique Customers], \"Header\", [Report Context], \"MonthNote\", [Monthly Coverage Note], \"CountryNote\", [Country Sales Note], \"ProductNote\", [Product Reversal Note], \"LastMonth\", CALCULATE(SELECTEDVALUE('Calendar'[YearMonth_Label]), 'Calendar'[Date] = DATE(2011, 12, 9))),\n    CALCULATETABLE(ROW(\"Scenario\", \"Year 2010\", \"Net\", [Net Sales], \"Invoices\", [Orders], \"Customers\", [Unique Customers], \"Header\", [Report Context], \"MonthNote\", [Monthly Coverage Note], \"CountryNote\", [Country Sales Note], \"ProductNote\", [Product Reversal Note], \"LastMonth\", SELECTEDVALUE('Calendar'[YearMonth_Label])), 'Calendar'[Year] = 2010),\n    CALCULATETABLE(ROW(\"Scenario\", \"Adjustment\", \"Net\", [Net Sales], \"Invoices\", [Orders], \"Customers\", [Unique Customers], \"Header\", [Report Context], \"MonthNote\", [Monthly Coverage Note], \"CountryNote\", [Country Sales Note], \"ProductNote\", [Product Reversal Note], \"LastMonth\", BLANK()), 'Online Retail'[Line_Type] = \"Adjustment\"),\n    CALCULATETABLE(ROW(\"Scenario\", \"Outside the UK\", \"Net\", [Net Sales], \"Invoices\", [Orders], \"Customers\", [Unique Customers], \"Header\", [Report Context], \"MonthNote\", [Monthly Coverage Note], \"CountryNote\", [Country Sales Note], \"ProductNote\", [Product Reversal Note], \"LastMonth\", BLANK()), 'Online Retail'[Country] <> \"United Kingdom\")\n)",
+  "rows": [
+    {
+      "Scenario": "All",
+      "Net": 9792591.63,
+      "Invoices": 19773,
+      "Customers": 4334,
+      "Header": "Selected period: 1 Dec 2010 to 9 Dec 2011",
+      "MonthNote": "* Partial month through 9 Dec 2011",
+      "CountryNote": "84.77% from the UK | Use Country to compare other markets",
+      "ProductNote": "Top 2: 51.38% of reversals | 23843: £168,469.60",
+      "LastMonth": "Dec 2011*"
+    },
+    {
+      "Scenario": "Year 2010",
+      "Net": 760289.99,
+      "Invoices": 1550,
+      "Customers": 884,
+      "Header": "Selected period: 1 Dec 2010 to 31 Dec 2010",
+      "MonthNote": null,
+      "CountryNote": "91.15% from the UK | Use Country to compare other markets",
+      "ProductNote": "Top 2: 14.45% of reversals | 85123A: £1,356.40",
+      "LastMonth": "Dec 2010"
+    },
+    {
+      "Scenario": "Adjustment",
+      "Net": null,
+      "Invoices": null,
+      "Customers": null,
+      "Header": "Selected period: 1 Dec 2010 to 9 Dec 2011  |  No eligible merchandise activity for this selection",
+      "MonthNote": "* Partial month through 9 Dec 2011",
+      "CountryNote": null,
+      "ProductNote": null,
+      "LastMonth": null
+    },
+    {
+      "Scenario": "Outside the UK",
+      "Net": 1490990.6,
+      "Invoices": 1872,
+      "Customers": 418,
+      "Header": "Selected period: 1 Dec 2010 to 9 Dec 2011",
+      "MonthNote": "* Partial month through 9 Dec 2011",
+      "CountryNote": null,
+      "ProductNote": "Top 2: 10.67% of reversals | 22423: £1,855.20",
+      "LastMonth": null
+    }
+  ]
+}

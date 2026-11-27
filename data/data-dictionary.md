@@ -101,7 +101,7 @@ The calculated date dimension spans the minimum and maximum loaded `Invoice_Day`
 | `Month_short` | Abbreviated month name; sorted by `Month#`. |
 | `Year_Month` | `YYYY-MM` label; sorted by `YearMonthSort`. |
 | `YearMonthSort` | Whole-number key `Year * 100 + Month#`. |
-| `YearMonth_Label` | `MMM yyyy` label; sorted by `YearMonthSort`, used on monthly chart axes. |
+| `YearMonth_Label` | `MMM yyyy` label, with `*` on an incomplete final source month. Sorted by `YearMonthSort` and used on both monthly chart axes. |
 | `Day` | Day of month 1–31. |
 | `Weekday#` | Weekday number, Monday = 1. |
 | `Weekday` | Full weekday name; sorted by `Weekday#`. |
@@ -119,6 +119,6 @@ The label-selection algorithm and its limitations belong in [Product identity](.
 
 ## Measures
 
-All 17 measures live on `Online Retail`, under the Measures display folder. The [metric reference](../docs/METRICS.md) defines their commercial scope, counts, ratios, blank behavior and interpretation. [measure_definitions.json](../evidence/financial/measure_definitions.json) contains the exact expression and format contract used by the model validator.
+The 17 financial and diagnostic measures live on `Online Retail`, under the Measures display folder. The same table defines four hidden measures for report headings and subtitles. The [metric reference](../docs/METRICS.md) defines their scope and behavior. [measure_definitions.json](../evidence/financial/measure_definitions.json) contains the exact expression and format contract used by the model validator.
 
 Monetary measures display GBP with two decimals; unit, invoice, customer and record counts use whole-number formats; the two ratio measures display percentages. Formatting does not change the underlying calculation. Hidden automatic date tables and their preserved relationship are described in [Model](../docs/MODEL.md#main-tables-and-filter-paths).
