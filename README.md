@@ -19,7 +19,7 @@ Power BI Desktop on Windows is required for the interactive report. Python and .
 
 ## Dashboard preview
 
-The preview images and PBIX still show the October 2026 layout. The revised PBIP includes the behavior described below. Both previews were captured in Power BI Desktop with both years included, Country and Line Type set to All, and all chart marks cleared.
+Both previews were captured from the revised report in Power BI Desktop on 27 November 2026 with both years included, Country and Line Type set to All, and all chart marks cleared.
 
 ### Sales Overview
 

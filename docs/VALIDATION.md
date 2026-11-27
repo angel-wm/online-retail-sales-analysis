@@ -38,7 +38,7 @@ Power BI Desktop adds terminal blank lines when saving TMDL. [.gitattributes](..
 
 4. Read [validation-run.json](../evidence/validation/validation-run.json) for exit codes, timing and the source fingerprint. Full diagnostic output remains in `.cache/validation/`, excluded from Git.
 
-The current status is `PASS_SOURCE_AND_STATIC_CHECKS`. All 48 project JSON files parse and 45 validate against their exact declared schemas, including all 35 visual containers. The remaining three files have no declared schema. Desktop rendering and interactions have separate checks below.
+The current status is `PASS_SOURCE_AND_STATIC_CHECKS_WITH_PARTIAL_SCHEMA_COVERAGE`. All 48 project JSON files parse. Of those, 41 validate against their exact declared schemas, four Desktop-authored visuals validate against the published 2.13 compatibility schema, and three files have no declared schema. Desktop rendering and interactions have separate checks below.
 
 Without `--fresh`, the source reader can reuse its SHA-256-keyed local cache; the independent XML reader still reads the workbook. After a downstream failure, `--resume-from tmdl` reuses successful source prerequisites only if the workbook and source-check implementation fingerprints still match. Do not use it to skip a changed source or calculation implementation.
 
@@ -90,6 +90,8 @@ The retained refresh attempt has `nativeMRefreshCompleted: true` and expected fa
 The native scatter revision references [presentation-json-schema.json](../evidence/validation/presentation-json-schema.json), the schema snapshot used for that dated test. Current source/static checks use `final-json-schema.json`; the historical snapshot is retained for provenance, not as a replacement for the current check.
 
 ### Dashboard context and comparisons
+
+On 27 November 2026, both revised pages were rendered in Desktop and captured with all selectors clear. The PBIX opens on Sales Overview and its packaged page and visual definitions match the PBIP. Desktop added report-level schema metadata during export.
 
 On 27 November 2026, [native DAX checks of the revised PBIP](../evidence/validation/desktop-dashboard-review.json) verified the full dataset, Year 2010, Adjustment and markets outside the UK. The full view returns 19,773 sale invoices and 4,334 known customers, a UK net merchandise sales share of 84.77%, and a top-two reversal share of 51.38%. Year 2010 ends on 31 December 2010 and has no partial-month note. The Adjustment selection returns blank merchandise KPIs and an explanation in the report context measure. The query used the loaded model.
 

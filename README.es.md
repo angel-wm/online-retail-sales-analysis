@@ -19,7 +19,7 @@ El reporte interactivo requiere Power BI Desktop en Windows. Python y .NET sólo
 
 ## Vista previa del dashboard
 
-Las imágenes y el PBIX todavía muestran el diseño de octubre de 2026. El PBIP revisado incluye el comportamiento descrito abajo. Ambas capturas se tomaron en Power BI Desktop con ambos años incluidos, Country y Line Type en All, y todas las selecciones de los gráficos despejadas.
+Ambas capturas se tomaron del reporte revisado en Power BI Desktop el 27 de noviembre de 2026 con ambos años incluidos, Country y Line Type en All, y todas las selecciones de los gráficos despejadas.
 
 ### Sales Overview
 

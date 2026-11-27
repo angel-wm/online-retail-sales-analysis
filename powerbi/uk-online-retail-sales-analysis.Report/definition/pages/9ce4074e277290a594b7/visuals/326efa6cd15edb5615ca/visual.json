@@ -3,9 +3,9 @@
   "name": "326efa6cd15edb5615ca",
   "position": {
     "x": 32,
-    "y": 600,
+    "y": 626,
     "z": 13000,
-    "height": 312,
+    "height": 286,
     "width": 720,
     "tabOrder": 1400
   },
@@ -520,49 +520,6 @@
               "expr": {
                 "Literal": {
                   "Value": "'Top 10 products by reversal value'"
-                }
-              }
-            }
-          }
-        }
-      ],
-      "subTitle": [
-        {
-          "properties": {
-            "show": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
-            },
-            "text": {
-              "expr": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "Online Retail"
-                    }
-                  },
-                  "Property": "Product Reversal Note"
-                }
-              }
-            },
-            "fontSize": {
-              "expr": {
-                "Literal": {
-                  "Value": "10D"
-                }
-              }
-            },
-            "fontColor": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "Literal": {
-                      "Value": "'#475569'"
-                    }
-                  }
                 }
               }
             }

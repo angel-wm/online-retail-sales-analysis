@@ -88,7 +88,7 @@ table Calendar
 			VAR DayDate = 'Calendar'[Date]
 			VAR SourceEnd = MAX('Online Retail'[Invoice_Day])
 			VAR IsPartialMonth = EOMONTH(DayDate, 0) = EOMONTH(SourceEnd, 0) && SourceEnd < EOMONTH(SourceEnd, 0)
-			RETURN FORMAT(DayDate, "MMM yyyy", "en-GB") & IF(IsPartialMonth, "*", "")
+			RETURN FORMAT(DayDate, "MMM", "en-GB") & IF(IsPartialMonth, "*", "") & " " & FORMAT(DayDate, "yyyy", "en-GB")
 		lineageTag: 391def5b-cf7b-46ee-840c-2a31e83d503a
 		summarizeBy: none
 		sortByColumn: YearMonthSort

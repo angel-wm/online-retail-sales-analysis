@@ -10,13 +10,13 @@
   "current_screenshots": [
     {
       "path": "screenshots/sales-overview.png",
-      "sha256": "9b43eea0a6884888f8a7ad7e1eaefb1e53e8c624deda8a80beb6d742c6168781",
+      "sha256": "bda42c8f671571cbd7b9fa3d82babc99b281f933c6681ad66ea2c2b97e57cecd",
       "width": 1245,
       "height": 856
     },
     {
       "path": "screenshots/product-customer-insights.png",
-      "sha256": "e679fa09a6519dacbe5303030b50618b1d1984aae883dcb0f0c131a4db3d66a6",
+      "sha256": "41e876ec9992630ae11a197eb291dc6df04ed620edfcdca0d7202192c7c6bb93",
       "width": 1245,
       "height": 856
     }

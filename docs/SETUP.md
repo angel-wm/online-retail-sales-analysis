@@ -1,6 +1,6 @@
 # Open the Power BI project
 
-Open the [PBIX snapshot](../exports/uk-online-retail-sales-analysis.pbix) in Power BI Desktop to explore the October 2026 version with the included data. For the revised report, edits and source refreshes, use [uk-online-retail-sales-analysis.pbip](../uk-online-retail-sales-analysis.pbip) from a complete checkout and follow the procedure below.
+Open the [PBIX snapshot](../exports/uk-online-retail-sales-analysis.pbix) in Power BI Desktop to explore the report with the included data. It opens on **Sales Overview**. For edits and source refreshes, use [uk-online-retail-sales-analysis.pbip](../uk-online-retail-sales-analysis.pbip) from a complete checkout and follow the procedure below.
 
 ## Prerequisites
 

@@ -108,14 +108,19 @@ table 'Online Retail'
 
 	/// Calendar date scope under the current selection and a message when no eligible merchandise activity is present.
 	measure 'Report Context' =
-			VAR FirstDate = MIN('Calendar'[Date])
-			VAR LastDate = MAX('Calendar'[Date])
-			VAR Period = "Selected period: " & FORMAT(FirstDate, "d mmm yyyy", "en-GB") & " to " & FORMAT(LastDate, "d mmm yyyy", "en-GB")
+			VAR FirstSelectedDate = MIN('Calendar'[Date])
+			VAR LastSelectedDate = MAX('Calendar'[Date])
+			VAR SelectedPeriodText =
+			    IF(
+			        ISBLANK(FirstSelectedDate),
+			        "No dates in this selection",
+			        "Selected period: " & FORMAT(FirstSelectedDate, "d mmm yyyy", "en-GB") & " to " & FORMAT(LastSelectedDate, "d mmm yyyy", "en-GB")
+			    )
 			RETURN
 			    IF(
 			        ISBLANK([Net Sales]),
-			        Period & "  |  No eligible merchandise activity for this selection",
-			        Period
+			        SelectedPeriodText & "  |  No eligible merchandise activity for this selection",
+			        SelectedPeriodText
 			    )
 		isHidden
 		lineageTag: 89b30e93-fbc9-4796-a79f-07a7d4fd6186
@@ -140,8 +145,8 @@ table 'Online Retail'
 			RETURN
 			    IF(
 			        NOT ISBLANK(Share),
-			        FORMAT(Share, "0.00%", "en-GB") & " from the UK | Use Country to compare other markets",
-			        BLANK()
+			        FORMAT(Share, "0.00%", "en-GB") & " of net sales from the UK",
+			        "Net sales for the selected markets"
 			    )
 		isHidden
 		lineageTag: 933c781b-9713-4acf-a854-3f48705bb728
@@ -159,7 +164,7 @@ table 'Online Retail'
 			        "Top " & COUNTROWS(TopProducts) & ": " & FORMAT(Share, "0.00%", "en-GB") & " of reversals | "
 			            & MAXX(FirstProduct, DimProduct[Stock_Code]) & ": "
 			            & FORMAT(MAXX(FirstProduct, [Returns Amount]), "£#,0.00", "en-GB"),
-			        BLANK()
+			        "No merchandise reversals in this selection"
 			    )
 		isHidden
 		lineageTag: 545acc6a-f9d0-4047-8683-cfc6451c6506
